@@ -51,8 +51,8 @@
         </div>
         <!-- (menu) CODER -->
         <div class="menu menu--code" v-else>
-          <ul class="menu__inner">
-            <li class="menu__item">
+          <ul class="menu__inner typewriter">
+            <li class="menu__item mode--code">
               <a class="menu__link" href="#" data-switch="" title="Título menu desarrollador">
                 _as UX/UI &amp; web developer:
               </a>
@@ -60,7 +60,7 @@
             <!-- TODO: (apply me asap!) to get data from $store:
               <li class="menu__item" v-for="code in getLinksCoder" :key="code"> 
             -->
-            <li class="menu__item" v-for="(code, index) in links.coder" :key="index">
+            <li class="menu__item mode--code" v-for="(code, index) in links.coder" :key="index">
               <a
                 class="menu__link glitch"
                 :href="code.url"
@@ -184,6 +184,11 @@ export default {
             url: "https://jalofernandez.github.io/lfcabogados/",
             copy: "LFC; Abogados y Economistas",
             title: "LFC Abogados y Economistas expertos en Compliance penal. Asesoramos en materia jurídico penal preventiva."
+          },
+          {
+            url: "https://capaball.com/app/#/login",
+            copy: "Capaball",
+            title: "Capaball elearning platform"
           },
           {
             url: "https://github.com/jalofernandez",
