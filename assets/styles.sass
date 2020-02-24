@@ -1,0 +1,526 @@
+@import "_vars"
+@import "_loader"
+
+body
+  font-family: $font-family-text
+  color: #585656
+  background: $black
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+a
+  text-decoration: none
+  color: $designer-color
+  outline: none
+  cursor: pointer
+  &:hover
+    color: #f7f7f7
+  &:focus
+    outline: none
+
+main
+  display: flex
+  overflow: hidden
+  height: 100vh
+
+.btn
+  min-width: 100px
+  font-size: 1rem
+  font-weight: normal
+  text-decoration: none
+  cursor: pointer
+  color: $coder-color
+  line-height: normal
+  padding: 10px
+  margin: 0
+  height: auto
+  border: none
+  vertical-align: middle
+  -webkit-appearance: none
+  background-color: rgba(0, 0, 0, 0)
+  &:hover
+    color: #f7f7f7
+    text-decoration: none
+  &:focus
+    outline: none
+    // border-color: var(--darken-2)
+    // box-shadow: 0 0 0 3px var(--darken-3)
+  &.menu__link
+    &.glitch
+      &::after,
+      &::before
+        padding: 10px
+
+.menu__link
+  display: inline-block
+  font-family: $font-family-links
+  &:hover
+    color: #f7f7f7
+
+.menu--code
+  .menu__link
+    &.glitch
+      &::after,
+      &::before
+        width: 100%
+
+.menu__link
+  &.glitch
+    &::after,
+    &::before
+      opacity: 0
+    &::after
+      left: 2px
+    &::before
+      left: -2px
+  // to animate links
+  &:hover
+    &.glitch
+      &::after,
+      &::before
+        opacity: 1
+
+.pieces
+  width: 58.6572vh // make the size of container to be same ratio like image; will be reset dynamically
+  height: 90vh  // will be reset dynamically
+  flex: none
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  //background-size: contain
+  background-size: 100% auto!important
+  background-repeat: no-repeat
+  background-position: 0 0
+  // Media query (responsive behaviour)
+  @media screen and (max-aspect-ratio: 597/916)
+    width: 80vw
+    height: 122.75vw
+
+.piece
+  pointer-events: none
+
+
+.content,
+.content__inner
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  width: 100%
+  height: 100%
+
+.content__inner
+  z-index: 100
+  flex-direction: column
+  align-content: flex-start
+  padding: 2.5em 2.5em 0
+
+.content__top
+  display: flex
+  align-items: center
+  flex: none
+  width: 100%
+
+// "Header" row
+.title
+  display: flex
+  align-items: center
+  height: 1.75em
+  margin: 0
+  font-size: 1em
+  font-weight: normal
+  color: $designer-color
+  line-height: 1
+
+h1
+  flex: none
+  width: 100%
+  margin: 0
+  padding-left: 56px
+  font-family: $font-family-links
+  font-size: 1.8em
+  color: #ccc
+  text-align: left
+
+.title__inner.mode--design
+  font-size: 3em
+
+.title__inner.mode--code
+  text-transform: lowercase
+  font-size: 2.5em
+
+.controls
+  display: flex
+  justify-content: space-between
+  align-items: center
+  // width: 9em
+  margin: 1em 0 0 auto
+
+.controls a.icon
+  font-size: 25px
+  padding: 0 5px
+  color: #888
+
+.controls a.icon:hover
+  color: $designer-color
+
+.controls a.icon.icon-instagram
+  padding: 0 10px
+
+// "Content" row (links list)
+.mode--code,
+.menu--code .menu__link
+  font-family: $font-family-links
+  text-transform: lowercase
+  color: $coder-color
+
+.menu
+  font-size: 1.85em
+  flex: none
+  width: 100%
+  margin: 2em 0 0 auto
+  text-align: right
+
+.menu__inner
+  margin: 0
+  padding: 0
+  list-style: none
+
+.menu--code
+  font-size: 1.5em
+  flex: none
+  width: 100%
+  margin: auto 0 2em 0
+  text-align: left
+
+.menu:not(.menu--code) .menu__item
+  position: relative
+
+.menu__item:first-child
+  pointer-events: none
+  cursor: text
+
+.menu__item:not(:last-child)
+  margin: 0 0 0.25em 0
+
+.js .menu--code
+  display: none
+
+// "Footer" row
+.content__bottom
+  display: flex
+  align-items: center
+  width: 100%
+  margin: auto 0 0 0
+
+.switch
+  position: relative
+  display: flex
+  align-items: center
+  // bottom navbar links:
+  &.switch--navbar
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: space-between
+    width: 100%
+    bottom: 10px
+
+.switch__content
+  display: flex
+
+.switch__item
+  font-size: 1.5em
+  line-height: 1
+  position: relative
+  display: inline-block
+  margin: 0 1.5em 0 0
+  padding: 0 0 0.15em
+  color: #888
+  span
+    position: relative
+    display: inline-block
+    pointer-events: none
+
+.switch__item--current
+  pointer-events: none
+  color: $black
+  background-color: $designer-color
+
+.mode--code .switch__item--current
+  color: $black
+  background-color: $coder-color
+
+.switch__item:first-child::after
+  content: ''
+  position: absolute
+  top: -5%
+  left: calc(100% + 0.75em)
+  width: 1px
+  height: 110%
+  background: #464646
+  transform: rotate(22.5deg)
+  
+.link-wrap
+  display: flex
+  align-items: center
+  height: 4em
+  margin: 0 0 0 auto
+
+.contact-link
+  margin-right: 15px
+  display: inline-block
+  padding: 1em 0
+  font-size: 24px
+  @media (max-width: 768px)
+    font-size: 20px
+  @media (max-width: 450px)
+    font-size: 18px
+
+
+// (anim) glitch: noise & distortion effect
+.glitch
+  position: relative
+  &::after
+    content: attr(data-text)
+    position: absolute
+    left: 58px
+    text-shadow: -1px 0 red
+    top: 0
+    color: #eee
+    background-color: #232323
+    overflow: hidden
+    clip: rect(0, 900px, 0, 0)
+    animation: noise-anim 2s infinite linear alternate-reverse
+  &::before
+    content: attr(data-text)
+    position: absolute
+    left: 54px
+    text-shadow: 1px 0 blue
+    top: 0
+    color: #f7f7f7
+    background-color: #232323
+    overflow: hidden
+    clip: rect(0, 900px, 0, 0)
+    animation: noise-anim-2 3s infinite linear alternate-reverse
+
+@keyframes noise-anim
+  0%
+    clip: rect(90px, 9999px, 35px, 0)
+  5%
+    clip: rect(58px, 9999px, 68px, 0)
+  10%
+    clip: rect(59px, 9999px, 47px, 0)
+  15%
+    clip: rect(85px, 9999px, 61px, 0)
+  20%
+    clip: rect(61px, 9999px, 70px, 0)
+  25%
+    clip: rect(7px, 9999px, 90px, 0)
+  30%
+    clip: rect(5px, 9999px, 11px, 0)
+  35%
+    clip: rect(67px, 9999px, 40px, 0)
+  40%
+    clip: rect(90px, 9999px, 59px, 0)
+  45%
+    clip: rect(2px, 9999px, 80px, 0)
+  50%
+    clip: rect(97px, 9999px, 19px, 0)
+  55%
+    clip: rect(86px, 9999px, 99px, 0)
+  60%
+    clip: rect(94px, 9999px, 58px, 0)
+  65%
+    clip: rect(41px, 9999px, 15px, 0)
+  70%
+    clip: rect(12px, 9999px, 23px, 0)
+  75%
+    clip: rect(5px, 9999px, 55px, 0)
+  80%
+    clip: rect(57px, 9999px, 85px, 0)
+  85%
+    clip: rect(14px, 9999px, 26px, 0)
+  90%
+    clip: rect(31px, 9999px, 56px, 0)
+  95%
+    clip: rect(49px, 9999px, 66px, 0)
+  100%
+    clip: rect(45px, 9999px, 12px, 0)
+
+@keyframes noise-anim-2
+  0%
+    clip: rect(55px, 9999px, 23px, 0)
+  5%
+    clip: rect(88px, 9999px, 95px, 0)
+  10%
+    clip: rect(27px, 9999px, 49px, 0)
+  15%
+    clip: rect(31px, 9999px, 21px, 0)
+  20%
+    clip: rect(46px, 9999px, 94px, 0)
+  25%
+    clip: rect(26px, 9999px, 1px, 0)
+  30%
+    clip: rect(75px, 9999px, 32px, 0)
+  35%
+    clip: rect(18px, 9999px, 49px, 0)
+  40%
+    clip: rect(30px, 9999px, 49px, 0)
+  45%
+    clip: rect(62px, 9999px, 68px, 0)
+  50%
+    clip: rect(48px, 9999px, 49px, 0)
+  55%
+    clip: rect(47px, 9999px, 92px, 0)
+  60%
+    clip: rect(65px, 9999px, 66px, 0)
+  65%
+    clip: rect(14px, 9999px, 73px, 0)
+  70%
+    clip: rect(29px, 9999px, 74px, 0)
+  75%
+    clip: rect(92px, 9999px, 96px, 0)
+  80%
+    clip: rect(75px, 9999px, 35px, 0)
+  85%
+    clip: rect(27px, 9999px, 17px, 0)
+  90%
+    clip: rect(21px, 9999px, 99px, 0)
+  95%
+    clip: rect(93px, 9999px, 11px, 0)
+  100%
+    clip: rect(73px, 9999px, 13px, 0)
+
+// (anim) old CRT bg gaps
+.old-crt-effect
+  &::after
+    content: " "
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: rgba(18, 16, 16, 0.1)
+    opacity: 0
+    z-index: 2
+    pointer-events: none
+  &::before
+    content: " "
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))
+    z-index: 2
+    background-size: 100% 2px, 3px 100%
+    pointer-events: none
+
+// (anim) scrollin´Line
+.line-anim
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  //z-index: 4100
+  &::before
+    content: ''
+    position: absolute
+    top: 0px
+    width: 100%
+    height: 5px
+    background: #fff
+    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgba(255,250,250,1) 50%,rgba(255,255,255,0.98) 51%,rgba(255,0,0,0) 100%)
+    opacity: .1
+    animation: line-anim 5s linear infinite
+  &::after
+    box-shadow: 0 2px 6px rgba(25,25,25,0.2),inset 0 1px rgba(50,50,50,0.1),inset 0 3px rgba(50,50,50,0.05),inset 0 3px 8px rgba(64,64,64,0.05),inset 0 -5px 10px rgba(25,25,25,0.1)
+
+@keyframes line-anim
+  0%
+    top: 0
+  100%
+    top: 100%
+
+// (anim) old CRT turnin´off
+main
+  animation: turn-off 0.55s cubic-bezier(0.23, 1, 0.32, 1)
+
+@keyframes turn-off
+  0%
+    transform: scale(1, 1.3) translate3d(0, 0, 0)
+    filter: brightness(1)
+    opacity: 1
+  50%
+    transform: scale(1.3, 0.001) translate3d(0, 0, 0)
+    filter: brightness(10)
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: scale(0, 0.0001) translate3d(0, 0, 0)
+    filter: brightness(50)
+  80%
+    transform: scale(1.3, 0.001) translate3d(0, 0, 0)
+    filter: brightness(10)
+  100%
+    transform: scale(1, 1.3) translate3d(0, 0, 0)
+    filter: brightness(1)
+    opacity: 1
+
+
+// Responsive behaviour
+@media screen and (max-height: 38.5em)
+  .menu
+    text-align: left
+
+
+/* Tablets 768px (breakpoint) */
+@media screen and (max-width: 40em)
+  .content__top
+    font-size: 0.6em
+  
+  .content__bottom
+    font-size: 0.85em
+  
+  .menu__item:not(:last-child)
+    margin: 0 0 1em 0
+  
+  .menu
+    font-size: 1.2em
+  
+  .content__inner
+    padding: 1em 1em 0
+  
+  h1 
+    padding-left: 25px
+    font-size: 1.14em
+  
+  .glitch::after
+    left: 27px
+  
+  .glitch::before 
+    left: 23px
+
+
+/* Mobile (breakpoint) */
+@media screen and (max-width: 540px)
+  .content__top
+    flex-flow: column
+  
+  .controls
+    margin: 1em 1em 5em
+    order: 1
+  
+  .title
+    order: 2
+  
+  h1
+    margin: 1em auto
+    text-align: center
+
+  .glitch::after,
+  .glitch::before
+    left: 100px
