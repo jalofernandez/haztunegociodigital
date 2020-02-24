@@ -8,9 +8,16 @@
         <!-- (main) Header -->
         <div class="content__top">
           <h2 class="title">
-            <span class="title__inner mode mode--design" data-switch="" data-glitch="">
-              @jalofernandez
-            </span>
+            <transition name="fade" :duration="{ enter: 500, leave: 500 }">
+              <span class="mode mode--design is-glitch glitch--2" v-if="isModeDesign">
+                @jalofernandez
+              </span>
+            </transition>
+            <transition name="fade" :duration="{ enter: 600, leave: 500 }">
+              <span class="mode mode--code is-glitch glitch--1" v-if="isModeCode">
+                @jalofernandez
+              </span>
+            </transition>
           </h2>
           <nav class="controls">
             <a class="icon icon-twitter" href="https://twitter.com/jalofernandez" target="_blank" rel="noopener noreferrer" title="Ver cuenta de Twitter de @jalofernandez"></a>
@@ -20,7 +27,7 @@
           designer + coder
         </h1>
         <!-- (menu) DESIGNER -->
-        <div class="menu">
+        <div class="menu" v-if="isModeDesign">
           <ul class="menu__inner">
             <li class="menu__item">
               <a class="menu__link" href="javascript:" data-switch="" title="Título menu diseñador">
@@ -43,7 +50,7 @@
           </ul>
         </div>
         <!-- (menu) CODER -->
-        <div class="menu menu--code">
+        <div class="menu menu--code" v-else>
           <ul class="menu__inner">
             <li class="menu__item">
               <a class="menu__link" href="#" data-switch="" title="Título menu desarrollador">
@@ -90,11 +97,11 @@
             </a>
           </div>
           <div class="link-wrap">
-            <a class="contact-link mode mode--design" href="cv-resume.html" title="Ver C.V. de @jalofernandez" data-switch="" data-glitch="">
+            <a class="contact-link mode mode--design is-glitch glitch--1" href="cv-resume.html" title="Ver C.V. de @jalofernandez" data-switch="" data-glitch="">
               _check my profile
             </a>
           </div>
-          <a class="mode mode--coder" href="legal.html" title="Ver términos legales de @jalofernandez" data-switch="" data-glitch="">
+          <a class="mode mode--coder is-glitch glitch--3" href="legal.html" title="Ver términos legales de @jalofernandez" data-switch="" data-glitch="">
             Legal
           </a>
         </div>
@@ -200,3 +207,379 @@ export default {
   // }
 }
 </script>
+
+<style>
+/* (based on) https://codepen.io/lukemeyrick/pen/ayRgWO */
+.is-glitch {
+  outline: none;
+  text-align: center;
+}
+.is-glitch,
+.is-glitch * {
+  display: inline-block;
+  animation: animGlitch infinite steps(50);
+  animation-direction: alternate-reverse;
+}
+.glitch--1 {
+  animation-delay: 1s;
+  animation-duration: 10s;
+  animation-iteration-count: 5;
+}
+.glitch--2 {
+  animation-delay: 2s;
+  animation-duration: 12s;
+  animation-iteration-count: 2;
+}
+.glitch--3 {
+  animation-delay: 3s;
+  animation-duration: 15s;
+  animation-iteration-count: 3;
+}
+.glitch--5 {
+  animation-delay: 5s;
+  animation-duration: 12s;
+  animation-iteration-count: 5;
+}
+
+@keyframes animGlitch {
+  2% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  4% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  6% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: lowercase;
+  }
+  8% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  10% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  12% {
+    font-weight: 100;
+    font-style: italic;
+    color: #f4692a;
+    text-decoration: none;
+  }
+  14% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: lowercase;
+  }
+  16% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: lowercase;
+  }
+  18% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  20% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  22% {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  24% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  26% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  28% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: capitalize;
+  }
+  30% {
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  32% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  34% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  36% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  38% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  40% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  42% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  44% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  46% {
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: lowercase;
+  }
+  48% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  50% {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  52% {
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  54% {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  56% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  58% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: capitalize;
+  }
+  60% {
+    font-weight: 700;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  62% {
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: lowercase;
+  }
+  64% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  66% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  68% {
+    font-weight: 700;
+    font-style: normal;
+    color: #f4692a;
+    text-decoration: none;
+  }
+  70% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: capitalize;
+  }
+  72% {
+    font-weight: 400;
+    font-style: normal;
+    color: #f4692a;
+    text-decoration: none;
+  }
+  74% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  76% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  78% {
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: lowercase;
+  }
+  80% {
+    font-weight: 100;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  82% {
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  84% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  86% {
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: capitalize;
+  }
+  88% {
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  90% {
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: line-through;
+    color: #29cc00;
+    text-transform: none;
+  }
+  92% {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  94% {
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: none;
+  }
+  96% {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    color: #f4692a;
+    text-transform: lowercase;
+  }
+  98% {
+    font-weight: 400;
+    font-style: normal;
+    color: #f4692a;
+    text-decoration: none;
+  }
+}
+</style>
