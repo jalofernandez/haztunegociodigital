@@ -97,9 +97,12 @@
             </a>
           </div>
           <div class="link-wrap">
-            <a class="contact-link mode mode--design is-glitch glitch--1" href="cv-resume.html" title="Ver C.V. de @jalofernandez" data-switch="" data-glitch="">
+            <!-- <a class="contact-link mode mode--design is-glitch glitch--1" href="cv-resume.html" title="Ver C.V. de @jalofernandez" data-switch="" data-glitch="">
               _check my profile
-            </a>
+            </a> -->
+            <nuxt-link :to="{name: 'cv-resume'}" class="contact-link mode mode--design is-glitch glitch--1">
+              _check my profile
+            </nuxt-link>
           </div>
           <a class="mode mode--coder is-glitch glitch--3" href="legal.html" title="Ver términos legales de @jalofernandez" data-switch="" data-glitch="">
             Legal
