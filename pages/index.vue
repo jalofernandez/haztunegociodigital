@@ -69,11 +69,21 @@
         </div>
         <!-- (main) Footer -->
         <div class="content__bottom">
-          <div class="switch mode mode--design">
-            <a class="switch__item switch__item--current" href="javascript:" title="Ver menu diseñador">
-              Designer
+          <div :class="['switch', 'mode', {'mode--design' : isModeDesign, 'mode--code' : isModeCode}]">
+            <a 
+              :class="['switch__item', {'switch__item--current' : isModeDesign}]"
+              href="javascript:"
+              title="Ver menu diseñador"
+              @click="changeMode()">
+              <span class="mode mode--design" data-switch="" data-glitch="">
+                Designer
+              </span>
             </a>
-            <a class="switch__item" href="javascript:" title="Ver menu desarrollador">
+            <a 
+              :class="['switch__item', {'switch__item--current' : !isModeDesign}]"
+              href="javascript:"
+              title="Ver menu desarrollador"
+              @click="changeMode()">
               <span class="mode mode--design" data-switch="" data-glitch="">
                 Coder
               </span>
@@ -104,6 +114,8 @@ export default {
   },
   data() {
     return {
+      isModeDesign: true,
+      isModeCode: false,
       links: {
         designer: [
           {
@@ -170,6 +182,15 @@ export default {
           }
         ]
       }
+    }
+  },
+  mounted() {
+    console.log("Hola");
+  },
+  methods: {
+    changeMode() {
+      this.isModeDesign = !this.isModeDesign,
+      this.isModeCode = !this.isModeCode
     }
   }
   // computed: {
