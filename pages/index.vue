@@ -20,10 +20,19 @@
             </transition>
           </h2>
           <nav class="controls">
-            <a class="icon icon-twitter" href="https://twitter.com/jalofernandez" target="_blank" rel="noopener noreferrer" title="Ver cuenta de Twitter de @jalofernandez"></a>
+            <a 
+              class="icon icon-twitter"
+              href="https://twitter.com/jalofernandez"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Ver cuenta de Twitter de @jalofernandez">
+              Twitter
+              <!-- <i class="fab fa-twitter"></i> -->
+              <!-- <font-awesome-icon icon="twitter"/> -->
+            </a>
           </nav>
         </div>
-        <h1 class="glitch" href="index.html" title="Volver al índice del Website de @jalofernandez" data-text="designer + coder">
+        <h1 class="glitch" data-text="designer + coder">
           designer + coder
         </h1>
         <!-- (menu) DESIGNER -->
@@ -51,9 +60,9 @@
         </div>
         <!-- (menu) CODER -->
         <div class="menu menu--code" v-else>
-          <ul class="menu__inner typewriter">
+          <ul class="menu__inner typewriter is-home">
             <li class="menu__item mode--code">
-              <a class="menu__link" href="#" data-switch="" title="Título menu desarrollador">
+              <a class="menu__link" href="javascript:" title="Título menu desarrollador" data-switch="">
                 _as UX/UI &amp; web developer:
               </a>
             </li>
@@ -97,16 +106,13 @@
             </a>
           </div>
           <div class="link-wrap">
-            <!-- <a class="contact-link mode mode--design is-glitch glitch--1" href="cv-resume.html" title="Ver C.V. de @jalofernandez" data-switch="" data-glitch="">
-              _check my profile
-            </a> -->
-            <nuxt-link :to="{name: 'cv-resume'}" class="contact-link mode mode--design is-glitch glitch--1">
+            <nuxt-link :to="{name: 'cv-resume'}" class="contact-link mode mode--design is-glitch glitch--1" title="Ver portfolio de trabajos de @jalofernandez">
               _check my profile
             </nuxt-link>
           </div>
-          <a class="mode mode--coder is-glitch glitch--3" href="legal.html" title="Ver términos legales de @jalofernandez" data-switch="" data-glitch="">
+          <nuxt-link :to="{name: 'legal'}" class="mode mode--coder is-glitch glitch--3" title="Ver términos legales de @jalofernandez">
             Legal
-          </a>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -116,12 +122,12 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  },
+  // components: {
+  //   Logo
+  // },
   data() {
     return {
       isModeDesign: true,

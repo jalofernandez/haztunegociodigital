@@ -45,6 +45,17 @@ main
     outline: none
     // border-color: var(--darken-2)
     // box-shadow: 0 0 0 3px var(--darken-3)
+
+  &.is-link
+    padding: 15px
+    font-size: 1.5rem
+    @media (max-width: 640px)
+      font-size: 1.2em
+    &.btn--coder
+      color: $coder-color
+    &.btn--designer
+      color: $designer-color
+
   &.menu__link
     &.glitch
       &::after,
@@ -504,6 +515,7 @@ h1
     background-size: 100% 2px, 3px 100%
     pointer-events: none
 
+
 // (anim) scrollin´Line
 .line-anim
   position: absolute
@@ -532,6 +544,7 @@ h1
   100%
     top: 100%
 
+
 // (anim) old CRT turnin´off
 main
   animation: turn-off 0.55s cubic-bezier(0.23, 1, 0.32, 1)
@@ -555,14 +568,86 @@ main
     filter: brightness(1)
     opacity: 1
 
+// "overlay" Index
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  pointer-events: none
+  opacity: 0
 
-// Responsive behaviour
+// "overlay" common + (anim) blink
+.overlay,
+.flicker
+  &::after
+    /* to apply classical CRT screen blink (only shown in "coder" view) */
+    content: " "
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: rgba(18, 16, 16, 0.1)
+    opacity: 0
+    z-index: 2
+    pointer-events: none
+    animation: flicker 300ms infinite
+
+@keyframes flicker
+  0%
+    opacity: 0.23302
+  5%
+    opacity: 0.20709
+  10%
+    opacity: 0.93257
+  15%
+    opacity: 0.19935
+  20%
+    opacity: 0.17236
+  25%
+    opacity: 0.76051
+  30%
+    opacity: 0.47248
+  35%
+    opacity: 0.05872
+  40%
+    opacity: 0.11636
+  45%
+    opacity: 0.60796
+  50%
+    opacity: 0.39153
+  55%
+    opacity: 0.79261
+  60%
+    opacity: 0.38628
+  65%
+    opacity: 0.14743
+  70%
+    opacity: 0.396
+  75%
+    opacity: 0.02683 
+  80%
+    opacity: 0.72164
+  85%
+    opacity: 0.87112
+  90%
+    opacity: 0.30352
+  95%
+    opacity: 0.79692
+  100%
+    opacity: 0.81776
+
+
+/* -- RESPONSIVE BEHAVIOUR -- */
 @media screen and (max-height: 38.5em)
   .menu
     text-align: left
 
 
-/* Tablets 768px (breakpoint) */
+// Tablets 768px (breakpoint)
 @media screen and (max-width: 40em)
   .content__top
     font-size: 0.6em
@@ -590,7 +675,7 @@ main
     left: 23px
 
 
-/* Mobile (breakpoint) */
+// Mobile (breakpoint)
 @media screen and (max-width: 540px)
   .content__top
     flex-flow: column
@@ -627,63 +712,106 @@ main
   .mode--code
     padding-right: 5px
     border-right: .15em solid $coder-color
-    // font-family: $font-family-links
-    // color: $coder-color
-    // font-size: 1.5em
-    // @media (max-width: 640px)
-    //   font-size: 1em
     white-space: nowrap
     overflow: hidden
     opacity: 0
-    // (skills) Intro text
+
+.typewriter.is-resume
+  .mode--code
+    margin-top: 1em
+    font-family: $font-family-links
+    color: $coder-color
+    font-size: 1.5em
+    @media (max-width: 640px)
+      font-size: 1em
+    // (skill row) "HTML5, pug...""
+    &:nth-child(1)
+      width: 21em
+      animation: typewritting 2s steps(40, end)
+      animation-fill-mode: forwards
+      animation-delay: .5s
+    // (skill row) "vuejs, nuxtjs...""
+    &:nth-child(2)
+      width: 21em
+      animation: typewritting2 1.5s steps(40, end)
+      animation-delay: 2s
+      animation-fill-mode: forwards
+    // (skill row) "npm, yarn, gulp...""
+    &:nth-child(3)
+      width: 21em
+      animation: typewritting2 1.8s steps(20, end)
+      animation-delay: 4s
+      animation-fill-mode: forwards
+    // (skill row) "git, gitHub...""
+    &:nth-child(4)
+      width: 21em
+      animation: typewritting 1.5s steps(40, end)
+      animation-fill-mode: forwards
+      animation-delay: .5s
+    // (skill row) "scrum, agile...""
+    &:nth-child(5)
+      width: 21em
+      animation: typewritting2 1.8s steps(40, end)
+      animation-delay: 2s
+      animation-fill-mode: forwards
+    // (skill row) "responsive design, photo...""
+    &:nth-child(6)
+      width: 21em
+      animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
+      animation-delay: 4s
+      animation-fill-mode: forwards
+
+.typewriter.is-home
+  .mode--code
+    // (skill item) Intro text
     &:nth-child(1)
       width: 16em
       animation: typewritting 2s steps(40, end)
       animation-delay: .5s
       animation-fill-mode: forwards
-    // (skills) "Upplication"
+    // (skill item) "Upplication"
     &:nth-child(2)
       width: 7em
       animation: typewritting2 1s steps(40, end)
       animation-delay: 1s
       animation-fill-mode: forwards
-    // (skills) "Gastronomix"
+    // (skill item) "Gastronomix"
     &:nth-child(3)
       width: 7em
       animation: typewritting2 1s steps(20, end)
       animation-delay: 1.5s
       animation-fill-mode: forwards
-    // (skills) "Widitrade"
+    // (skill item) "Widitrade"
     &:nth-child(4)
       width: 6em
       animation: typewritting .7s steps(40, end)
       animation-delay: 1.8s
       animation-fill-mode: forwards
-    // (skills) "Canessa"
+    // (skill item) "Canessa"
     &:nth-child(5)
       width: 5em
       animation: typewritting2 .5s steps(40, end)
       animation-delay: 2s
       animation-fill-mode: forwards
-    // (skills) "Ecomerzpro Club"
+    // (skill item) "Ecomerzpro Club"
     &:nth-child(6)
       width: 10em
       animation: typewritting 1.2s steps(20, end)
       animation-delay: 2.2s
       animation-fill-mode: forwards
-    // (skills) "LFC; Abogados y Economistas"
+    // (skill item) "LFC; Abogados y Economistas"
     &:nth-child(7)
       width: 17em
       animation: typewritting2 1.8s steps(40, end)
       animation-delay: 2.4s
       animation-fill-mode: forwards
-    // (skills) "Capaball"
+    // (skill item) "Capaball"
     &:nth-child(8)
       width: 7em
       animation: typewritting 1s steps(20, end)
       animation-delay: 2.6s
       animation-fill-mode: forwards
-    // (skills) "> ...take a look on Github"
+    // (skill item) "> ...take a look on Github"
     &:nth-child(9)
       width: 17em
       animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
@@ -721,3 +849,39 @@ main
 @keyframes blink
   50%
     border-color: transparent
+
+
+// PAGES
+// Resume / C.V.
+.resume
+  .content__inner
+    align-items: flex-start
+  .skills-list
+    max-width: 600px
+    margin: 2em auto 0 auto
+  
+.resume-skills-title
+  font-family: $font-family-links
+  font-size: 1.5rem
+  @media (max-width: 640px)
+    font-size: .95em
+  font-weight: 400
+  color: $dark-grey
+  span
+    color: #cfcfcf
+
+/* -- RESPONSIVE BEHAVIOUR -- */
+// mobile, smartphones & small devices
+@media screen and (max-width: 480px)
+  #js-resume
+    display: none
+
+
+// to add more "typewritting" Text (block closer)
+// .typewrite
+//   padding-right: 5px
+//   font-family: $font-family-text
+//   font-size: 1.5em
+//   @media (max-width: 640px)
+//     font-size: 1em
+
