@@ -1,7 +1,7 @@
 <template>
   <main class="resume old-crt-effect">
     <div class="overlay overlay--hidden"></div>
-    <!-- Place here "Zeppelin" animation as a component (pug import in old porject) -->
+    <Zeppelin/>
     <div class="content">
       <div class="content__inner">
         <!-- (main) Header -->
@@ -91,7 +91,10 @@
 </template>
 
 <script>
+import Zeppelin from '~/components/Zeppelin'
+
 export default {
+  components: { Zeppelin },
   data() {
     return {
       modalShow: false,

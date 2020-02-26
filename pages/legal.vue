@@ -1,6 +1,6 @@
 <template>
   <main class="legal old-crt-effect">
-    <!-- Place here "Zeppelin" animation as a component (pug import in old porject) -->
+    <Zeppelin/>
     <div class="overlay overlay--hidden"></div>
     <div class="content">
       <div class="content__inner">
@@ -57,7 +57,10 @@
 </template>
 
 <script>
+import Zeppelin from '~/components/Zeppelin'
+
 export default {
+  components: { Zeppelin },
   data() {
     return {
       terms: [
