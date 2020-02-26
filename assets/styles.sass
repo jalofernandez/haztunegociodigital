@@ -823,14 +823,25 @@ main
       animation-delay: 2.8s
       animation-fill-mode: forwards
 
-.typewriter.in-error
+.typewriter.in-error,
+.typewriter.in-legal
   .mode--code
     font-size: 2em
-    margin-top: 2em
-    width: 18em
+    text-transform: capitalize
     animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
     animation-delay: .5s
     animation-fill-mode: forwards
+
+.typewriter.in-error
+  .mode--code
+    margin-top: 2em
+    width: 18em
+
+.typewriter.in-legal
+  min-height: initial
+  .mode--code
+    margin-top: 1em
+    width: 10em
 
 @keyframes typewritting
   0%
@@ -866,13 +877,17 @@ main
 
 
 // PAGES
-// Resume / C.V.
+// (page) Resume / C.V.
 .resume
   .content__inner
     align-items: flex-start
   .skills-list
     max-width: 600px
     margin: 2em auto 0 auto
+    span
+      margin: 0
+      color: #cfcfcf
+      font-weight: 300
   
 .resume-skills-title
   font-family: $font-family-links
@@ -881,18 +896,44 @@ main
     font-size: .95em
   font-weight: 400
   color: $dark-grey
-  span
-    color: #cfcfcf
 
-/* -- RESPONSIVE BEHAVIOUR -- */
 // mobile, smartphones & small devices
 @media screen and (max-width: 480px)
   #js-resume
     display: none
 
-// 404 page not found
+// (page) Legal terms
+.skills-list
+  max-width: 920px
+  @media (max-width: 980px)
+    max-width: 680px
+  @media (max-width: 768px)
+    max-width: 480px
+  @media (max-width: 540px)
+    max-width: 300px
+  margin: 2em auto 1em auto
+  overflow: auto
+  font-size: 16px
+  color: $dark-grey
+  line-height: 25px
+  > p 
+    margin-top: 1em
+  // subsection Titles
+  span
+    margin: 10px
+    font-size: 120%
+    font-weight: 600
+    letter-spacing: .03em
+    color: $coder-color
+  // remark lines
+  b, strong, em, i
+    letter-spacing: .03rem
+    color: #aaa
+
+// (page) 404 page not found
 .error
   background-color: $pure-back
+
 
 // to add more "typewritting" Text (block closer)
 // .typewrite
@@ -901,3 +942,109 @@ main
 //   font-size: 1.5em
 //   @media (max-width: 640px)
 //     font-size: 1em
+
+
+// Table styles
+table, th, td
+  border: none
+
+table
+  width: 100%
+  display: table
+  border-collapse: collapse
+  border-spacing: 0
+
+table.striped tr
+  border-bottom: none
+
+table.striped > tbody > tr:nth-child(odd)
+  background-color: rgba(242, 242, 242, 0.5)
+
+table.striped > tbody > tr > td
+  border-radius: 0
+
+table.highlight > tbody > tr
+  transition: background-color .25s ease
+
+table.highlight > tbody > tr:hover
+  background-color: rgba(242, 242, 242, 0.5)
+
+table.centered thead tr th, table.centered tbody tr td
+  text-align: center
+
+tr
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+
+td, th
+  padding: 15px 5px
+  display: table-cell
+  text-align: left
+  vertical-align: middle
+  border-radius: 2px
+
+@media only screen and (max-width: 992px)
+  table.responsive-table
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+    display: block
+    position: relative
+
+  table.responsive-table td:empty:before
+    content: '\00a0'
+
+  table.responsive-table th,
+  table.responsive-table td
+    margin: 0
+    vertical-align: top
+
+  table.responsive-table th
+    text-align: left
+
+  table.responsive-table thead
+    display: block
+    float: left
+
+  table.responsive-table thead tr
+    display: block
+    padding: 0 10px 0 0
+
+  table.responsive-table thead tr th::before
+    content: "\00a0"
+
+  table.responsive-table tbody
+    display: block
+    width: auto
+    position: relative
+    overflow-x: auto
+    white-space: nowrap
+
+  table.responsive-table tbody tr
+    display: inline-block
+    vertical-align: top
+
+  table.responsive-table th
+    display: block
+    text-align: right
+
+  table.responsive-table td
+    display: block
+    min-height: 1.25em
+    text-align: left
+
+  table.responsive-table tr
+    border-bottom: none
+    padding: 0 10px
+
+  table.responsive-table thead 
+    border: 0
+    border-right: 1px solid rgba(0, 0, 0, 0.12)
+
+// to overwrite "materializecss" Tables layout by default
+// In "Legal" view for example
+table
+  margin-bottom: 1rem
+td, th
+  vertical-align: top
+  font-size: 85%
+  line-height: 22px
