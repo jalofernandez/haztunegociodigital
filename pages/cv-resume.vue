@@ -33,7 +33,7 @@
             <span>[</span> Why <span>]</span> do you want to work with me?!
           </h3>
           <div class="typewriter is-resume">
-            <p class="mode--code" v-for="skill in skills" :key="skill">
+            <p class="mode--code" v-for="(skill, index) in skills" :key="index">
               {{ skill.row }}
             </p>
           </div>
@@ -49,7 +49,13 @@
             <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu__link glitch" data-text="<< Home">
               << Home
             </nuxt-link>
-            <a class="btn is-link btn--designer menu__link glitch js-modal-trigger" id="js-resume" href="javascript:" data-modal="modal-99" data-text="Resume / C.V.">
+            <a
+              class="btn is-link btn--designer menu__link glitch js-modal-trigger"
+              id="js-resume"
+              href="javascript:"
+              data-modal="modal-99"
+              data-text="Resume / C.V."
+              @click="modalShow = true">
               Resume / C.V.
             </a>
             <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu__link glitch" data-text="Portfolio >>">
@@ -62,6 +68,25 @@
     <div class="line-anim">
       <div class="flicker"></div>
     </div>
+    <!-- (common) "Resume / C.V." modal dialog -->
+    <div id="modal-99" :class="['md-modal', 'md-effect-16', { 'md-show' : modalShow }]">
+      <div class="md-content">
+        <img 
+          src="~assets/resume/jalofernandez_cv-resume_2020.jpg"
+          title="@jalofernandez resume of skills and professional experience"
+          alt="@jalofernandez resume of skills and professional experience"
+        />
+        <p>
+          <a href="~assets/resume/jalofernandez_CV-resume_2018.pdf" title="to download @jalofernandez resume" download>
+            Resume / C.V. (Download here!)
+          </a>
+        </p>
+        <button class="btn menu__link glitch js-modal-close" data-text="X Close me!" @click="closeModal()">
+          X Close me!
+        </button>
+      </div>
+    </div>
+    <div class="th-modal-overlay flicker" @click="closeModal()"></div>
   </main>
 </template>
 
@@ -69,6 +94,7 @@
 export default {
   data() {
     return {
+      modalShow: false,
       skills: [
         { row: "HTML5, pug, twig, CSS3, less, sass," },
         { row: "vuejs, nuxtjs, jQuery, javascript," },
@@ -83,11 +109,14 @@ export default {
     return {
       title: 'with modals'
     }
-  // },
-  // methods: {
-  //   modalTrigger() {
-  //     this.$emit('click')
-  //   }
+  },
+  methods: {
+    // modalTrigger() {
+    //   this.$emit('click')
+    // }
+    closeModal() {
+      this.modalShow = false;
+    }
   }
 }
 </script>
