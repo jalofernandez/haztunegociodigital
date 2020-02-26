@@ -108,13 +108,17 @@ main
     width: 80vw
     height: 122.75vw
   // (old JS)
-  background-image: url(~assets/jalofernandez.jpg)
-  background-size: 100%
   width: 540px
   height: 826px
   margin: 0 auto
   // transition: transform 0.2s ease-out 0s
   // transform: perspective(1000px) translate3d(5.8872px, -0.484848px, 0px) rotate3d(1, 0, 0, -0.484848deg) rotate3d(0, 1, 0, 2.9436deg
+  background-size: 100%
+  background-position: bottom center
+  background-image: url(~assets/jalofernandez.jpg)
+  &.in-error
+    background-image: url(~assets/404/fire.gif)
+    height: 100%
 
 .piece
   pointer-events: none
@@ -819,6 +823,15 @@ main
       animation-delay: 2.8s
       animation-fill-mode: forwards
 
+.typewriter.in-error
+  .mode--code
+    font-size: 2em
+    margin-top: 2em
+    width: 18em
+    animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
+    animation-delay: .5s
+    animation-fill-mode: forwards
+
 @keyframes typewritting
   0%
     width: 0
@@ -877,6 +890,9 @@ main
   #js-resume
     display: none
 
+// 404 page not found
+.error
+  background-color: $pure-back
 
 // to add more "typewritting" Text (block closer)
 // .typewrite
