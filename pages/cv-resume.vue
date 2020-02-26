@@ -47,7 +47,7 @@
         <div class="content__bottom">
           <div class="switch switch--navbar mode mode--code">
             <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu__link glitch" data-text="<< Home">
-              << Home
+              &lt;&lt; Home
             </nuxt-link>
             <a
               class="btn is-link btn--designer menu__link glitch js-modal-trigger"
@@ -59,7 +59,7 @@
               Resume / C.V.
             </a>
             <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu__link glitch" data-text="Portfolio >>">
-              Portfolio >>
+              Portfolio &gt;&gt;
             </nuxt-link>
           </div>
         </div>
@@ -120,7 +120,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
