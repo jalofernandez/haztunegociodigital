@@ -135,27 +135,27 @@ export default {
       links: {
         designer: [
           {
-            url: "portfolio.html",
+            url: "portfolio",
             copy: "layout",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio.html",
+            url: "portfolio",
             copy: "photography",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio.html",
+            url: "portfolio",
             copy: "UX & UI Web design",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio.html",
+            url: "portfolio",
             copy: "packaging",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio.html",
+            url: "portfolio",
             copy: "graphisms & draws",
             title: "Ver Portfolio completo de @jalofernandez"
           }
