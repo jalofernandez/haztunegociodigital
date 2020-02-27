@@ -275,13 +275,33 @@ export default {
         { name: 'og:image:height', content: '540' },
         { name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' }
       ],
-      // (custom) Favicons
-      // link: [
-      //   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      // ],
+      // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
         { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+      ],
+      // Pre-fetch and return recipe data server-side
+      // async asyncData(context) {
+      // },
+      link: [
+        // Canonical url
+        { rel: 'canonical', href: 'https://jalofernandez.com/' },
+        // Pre-fetch and return recipe data server-side
+        { rel: 'dns-prefetch', href: '//twitter.com/jalofernandez' },
+        { rel: 'dns-prefetch', href: '//www.instagram.com/jalofernandez/?ref=badge' },
+        { rel: 'dns-prefetch', href: '//www.linkedin.com/in/javierlorenzofernandez/' },
+        { rel: 'dns-prefetch', href: '//www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw' },
+        { rel: 'dns-prefetch', href: '//www.facebook.com/jalofernandez?ref=tn_tnmn' },
+        { rel: 'dns-prefetch', href: '//github.com/jalofernandez' },
+        { rel: 'dns-prefetch', href: '//www.upplication.com/en/' },
+        { rel: 'dns-prefetch', href: '//proyectogastronomix.org/' },
+        { rel: 'dns-prefetch', href: '//widitrade.com/' },
+        { rel: 'dns-prefetch', href: '//peluqueriacanessa.com/' },
+        { rel: 'dns-prefetch', href: '//ecomerzpro.net/' },
+        { rel: 'dns-prefetch', href: '//capaball.com/app/#/login/' },
+        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' }
+        // (custom) Favicons
+        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
   },
