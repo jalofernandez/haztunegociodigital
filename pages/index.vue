@@ -205,6 +205,52 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: 'es'
+      },
+      title: '@jalofernandez portfolio',
+      meta: [
+        // (metas) common
+        { hid: 'description', name: 'description', content: '@jalofernandez personal portfolio & C.V. resume' },
+        { hid: 'author', name: 'author', content: '@jalofernandez' },
+        { hid: 'copyright', name: 'copyright', content: 'Jalofernandez' },
+        { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
+        { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
+        { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
+        { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { hid: 'lang', name: 'lang', content: 'es-ES' },
+        { hid: 'Classification', name: 'Classification', content: 'Portfolio' },
+        { hid: 'subject', name: 'subject', content: 'Personal Portfolio and Resume' },
+        { hid: 'rating', name: 'rating', content: 'General' },
+        { hid: 'coverage', name: 'coverage', content: 'Worldwide' },
+        // (microdata) TWITTER
+        { name: 'twitter:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
+        { name: 'twitter:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
+        { name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@jalofernandez' },
+        { name: 'twitter:creator', content: '@jalofernandez' },
+        // (open-graph) FACEBOOK
+        { name: 'og:type', content: 'website' },
+        { name: 'og:locale', content: 'es_ES' },
+        { name: 'og:url', content: 'https://jalofernandez.com' },
+        { name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico' },
+        { name: 'og:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
+        { name: 'og:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
+        { name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'og:image:width', content: '960' },
+        { name: 'og:image:height', content: '540' },
+        { name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' }
+      // ],
+      // link: [
+      //   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
+    }
+  },
   mounted() {
     console.log("Hola");
   },
