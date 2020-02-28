@@ -21,12 +21,15 @@
           </h2>
           <nav class="controls">
             <a 
-              class="icon icon-twitter"
-              href="https://twitter.com/jalofernandez"
+              v-for="(social, index) in links.social"
+              :key="index"
+              :class="'icon icon-'+social.icon"
+              :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              title="Ver cuenta de Twitter de @jalofernandez">
-              Twitter
+              :title="social.title"
+            >
+              <img :src="'icons/'+social.icon+'-brands.svg'" :title="social.title" :alt="social.title"/>
               <!-- <i class="fab fa-twitter"></i> -->
               <!-- <font-awesome-icon icon="twitter"/> -->
             </a>
@@ -200,6 +203,43 @@ export default {
             url: "https://github.com/jalofernandez",
             copy: "> ...take a look on Github",
             title: "@jalofernandez GitHub account"
+          }
+        ],
+        social: [
+          {
+            url: "https://twitter.com/jalofernandez",
+            icon: "twitter",
+            title: "Ver cuenta de Twitter de @jalofernandez"
+          },
+          {
+            url: "https://www.instagram.com/jalofernandez/?ref=badge",
+            icon: "instagram",
+            title: "Ver perfil de Instagram de @jalofernandez"
+          },
+          {
+            url: "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
+            icon: "facebook",
+            title: "Ver perfil de Facebook de @jalofernandez"
+          },
+          {
+            url: "https://www.linkedin.com/in/javierlorenzofernandez/",
+            icon: "linkedin",
+            title: "Ver perfil de LinkedIn de @jalofernandez"
+          },
+          {
+            url: "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
+            icon: "youtube",
+            title: "Ver canal de Youtube de @jalofernandez"
+          },
+          {
+            url: "https://github.com/jalofernandez",
+            icon: "github",
+            title: "Ver perfil de Github de @jalofernandez"
+          },
+          {
+            url: "mailto:jalofernandez@gmail.com",
+            icon: "email",
+            title: "Enviar email a @jalofernandez"
           }
         ]
       },
