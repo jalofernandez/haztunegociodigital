@@ -38,6 +38,7 @@
         aria-labelledby="all"
         :data-rel="link.filter"
         :data-text="link.name"
+        @click="filterItems(link.filter)"
       >
         {{ link.name }}
       </button>
@@ -147,7 +148,20 @@ export default {
   },
   head() {
     return {
-      title: '@jalofernandez: portfolio'
+      title: '@jalofernandez: portfolio',
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      ]
+    }
+  },
+  methods: {
+    filterItems(dataRel) {
+      $("#portfolio").fadeTo(100, 0.1);
+      $("#portfolio div").not("." + dataRel).fadeOut().removeClass('scale-anm');
+      setTimeout(function () {
+          $("." + dataRel).fadeIn().addClass('scale-anm');
+          $("#portfolio").fadeTo(300, 1);
+      }, 300);
     }
   }
 }
