@@ -11,18 +11,7 @@
               @jalofernandez
             </span>
           </h2>
-          <nav class="controls">
-            <a 
-              class="icon icon-twitter"
-              href="https://twitter.com/jalofernandez"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Ver cuenta de Twitter de @jalofernandez">
-              Twitter
-              <!-- <i class="fab fa-twitter"></i> -->
-              <!-- <font-awesome-icon icon="twitter"/> -->
-            </a>
-          </nav>
+          <Social/>
         </div>
         <h1 class="glitch" data-text="designer + coder">
           designer + coder
@@ -53,19 +42,16 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
+import Social from '~/components/Social.vue'
 
-    }
+export default {
+  components: {
+    Social
   },
   head() {
     return {
       title: 'with modals'
     }
-  },
-  methods: {
-
   }
 }
 </script>

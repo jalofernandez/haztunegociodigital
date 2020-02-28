@@ -23,7 +23,7 @@
     </div>
 
     <Zeppelin/>
-    
+
     <div class="content">
       <div class="content__inner">
         <!-- (main) Header -->
@@ -33,18 +33,7 @@
               @jalofernandez
             </span>
           </h2>
-          <nav class="controls">
-            <a 
-              class="icon icon-twitter"
-              href="https://twitter.com/jalofernandez"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Ver cuenta de Twitter de @jalofernandez">
-              Twitter
-              <!-- <i class="fab fa-twitter"></i> -->
-              <!-- <font-awesome-icon icon="twitter"/> -->
-            </a>
-          </nav>
+          <Social/>
         </div>
         <h1 class="glitch" data-text="designer + coder">
           designer + coder
@@ -94,10 +83,14 @@
 </template>
 
 <script>
+import Social from '~/components/Social.vue'
 import Zeppelin from '~/components/Zeppelin'
 
 export default {
-  components: { Zeppelin },
+  components: {
+    Social,
+    Zeppelin
+  },
   data() {
     return {
       modalShow: false,
