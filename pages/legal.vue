@@ -6,11 +6,7 @@
       <div class="content__inner">
         <!-- (main) Header -->
         <div class="content__top">
-          <h2 class="title">
-            <span class="mode mode--design is-glitch glitch--2">
-              @jalofernandez
-            </span>
-          </h2>
+          <Logo/>
           <Social/>
         </div>
         <Slogan/>
@@ -44,12 +40,13 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
 import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
 import Zeppelin from '~/components/Zeppelin'
 
 export default {
-  components: { Slogan, Social, Zeppelin },
+  components: { Logo, Slogan, Social, Zeppelin },
   data() {
     return {
       terms: [
