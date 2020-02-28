@@ -13,9 +13,7 @@
           </h2>
           <Social/>
         </div>
-        <h1 class="glitch" data-text="designer + coder">
-          designer + coder
-        </h1>
+        <Slogan/>
         <!-- typewritin´Title -->
         <div class="typewriter in-legal">
           <h3 class="mode--code">
@@ -46,14 +44,12 @@
 </template>
 
 <script>
+import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
 import Zeppelin from '~/components/Zeppelin'
 
 export default {
-  components: {
-    Social,
-    Zeppelin
-  },
+  components: { Slogan, Social, Zeppelin },
   data() {
     return {
       terms: [

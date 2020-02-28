@@ -35,9 +35,7 @@
           </h2>
           <Social/>
         </div>
-        <h1 class="glitch" data-text="designer + coder">
-          designer + coder
-        </h1>
+        <Slogan/>
         <!-- C.V.: typewritin´summary -->
         <div class="skills-list">
           <h3 class="mode--code resume-skills-title">
@@ -83,14 +81,12 @@
 </template>
 
 <script>
+import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
 import Zeppelin from '~/components/Zeppelin'
 
 export default {
-  components: {
-    Social,
-    Zeppelin
-  },
+  components: { Slogan, Social, Zeppelin },
   data() {
     return {
       modalShow: false,

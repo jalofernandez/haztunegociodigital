@@ -13,9 +13,7 @@
           </h2>
           <Social/>
         </div>
-        <h1 class="glitch" data-text="designer + coder">
-          designer + coder
-        </h1>
+        <Slogan/>
         <!-- typewritin´Title -->
         <div class="typewriter in-error">
           <h3 class="mode--code">
@@ -42,12 +40,11 @@
 </template>
 
 <script>
+import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
 
 export default {
-  components: {
-    Social
-  },
+  components: { Slogan, Social },
   head() {
     return {
       title: 'with modals'

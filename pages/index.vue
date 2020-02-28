@@ -21,9 +21,7 @@
           </h2>
           <Social/>
         </div>
-        <h1 class="glitch" data-text="designer + coder">
-          designer + coder
-        </h1>
+        <Slogan/>
         <!-- (menu) DESIGNER -->
         <div class="menu" v-if="isModeDesign">
           <ul class="menu__inner">
@@ -111,12 +109,11 @@
 </template>
 
 <script>
+import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
 
 export default {
-  components: {
-    Social
-  },
+  components: { Slogan, Social },
   data() {
     return {
       isModeDesign: true,
