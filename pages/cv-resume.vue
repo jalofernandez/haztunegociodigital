@@ -1,7 +1,29 @@
 <template>
   <main class="resume old-crt-effect">
-    <div class="overlay overlay--hidden"></div>
+    <!-- (common) "Resume / C.V." modal dialog -->
+    <div :class="['modal-wrapper', { 'md-show' : modalShow }]">
+      <div id="modal-99" class="md-modal">
+        <div class="md-content">
+          <img 
+            src="~assets/resume/jalofernandez_cv-resume_2020.jpg"
+            title="@jalofernandez resume of skills and professional experience"
+            alt="@jalofernandez resume of skills and professional experience"
+          />
+          <p>
+            <a href="~assets/resume/jalofernandez_CV-resume_2018.pdf" title="to download @jalofernandez resume" download>
+              Resume / C.V. (Download here!)
+            </a>
+          </p>
+          <button class="btn menu__link glitch js-modal-close" data-text="X Close me!" @click="closeModal()">
+            X Close me!
+          </button>
+        </div>
+      </div>
+      <div class="modal-overlay flicker" @click="closeModal()"></div>
+    </div>
+
     <Zeppelin/>
+    
     <div class="content">
       <div class="content__inner">
         <!-- (main) Header -->
@@ -68,25 +90,6 @@
     <div class="line-anim">
       <div class="flicker"></div>
     </div>
-    <!-- (common) "Resume / C.V." modal dialog -->
-    <div id="modal-99" :class="['md-modal', 'md-effect-16', { 'md-show' : modalShow }]">
-      <div class="md-content">
-        <img 
-          src="~assets/resume/jalofernandez_cv-resume_2020.jpg"
-          title="@jalofernandez resume of skills and professional experience"
-          alt="@jalofernandez resume of skills and professional experience"
-        />
-        <p>
-          <a href="~assets/resume/jalofernandez_CV-resume_2018.pdf" title="to download @jalofernandez resume" download>
-            Resume / C.V. (Download here!)
-          </a>
-        </p>
-        <button class="btn menu__link glitch js-modal-close" data-text="X Close me!" @click="closeModal()">
-          X Close me!
-        </button>
-      </div>
-    </div>
-    <div class="th-modal-overlay flicker" @click="closeModal()"></div>
   </main>
 </template>
 
@@ -114,9 +117,6 @@ export default {
     }
   },
   methods: {
-    // modalTrigger() {
-    //   this.$emit('click')
-    // }
     closeModal() {
       this.modalShow = false;
     }
