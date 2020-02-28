@@ -1,7 +1,7 @@
 {
   "name": "jalofernandez",
   "version": "1.0.0",
-  "description": "Personal resume C.V. and pojects portfolio",
+  "description": "Personal resume C.V. and projects portfolio",
   "author": "Javier Lorenzo",
   "private": true,
   "scripts": {
@@ -11,10 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "nuxt": "^2.0.0",
-    "nuxt-fontawesome": "^0.4.0"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "node-sass": "^4.13.1",
