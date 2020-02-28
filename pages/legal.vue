@@ -3,9 +3,9 @@
     <Zeppelin/>
     <div class="overlay overlay--hidden"></div>
     <div class="content">
-      <div class="content__inner">
+      <div class="content--inner">
         <!-- (main) Header -->
-        <div class="content__top">
+        <div class="content--header">
           <Logo/>
           <Social/>
         </div>
@@ -21,19 +21,19 @@
           <p v-for="(term, index) in terms" :key="index" v-html="term.row"></p>
         </div>
         <!-- FOOTER navbar links -->
-        <div class="content__bottom">
+        <div class="content--footer">
           <div class="switch switch--navbar mode mode--code">
-            <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu__link glitch" data-text="<< Home">
+            <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
               &lt;&lt; Home
             </nuxt-link>
-            <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu__link glitch" data-text="Portfolio >>">
+            <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu--link glitch" data-text="Portfolio >>">
               Portfolio &gt;&gt;
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
-    <div class="line-anim">
+    <div class="line--anim">
       <div class="flicker"></div>
     </div>
   </main>

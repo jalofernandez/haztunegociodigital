@@ -4,9 +4,9 @@
     <div class="pieces"></div>
     <div class="overlay overlay--hidden"></div>
     <div class="content">
-      <div class="content__inner">
+      <div class="content--inner">
         <!-- (main) Header -->
-        <div class="content__top">
+        <div class="content--header">
           <h2 class="title">
             <transition name="fade" :duration="{ enter: 500, leave: 500 }">
               <span class="mode mode--design is-glitch glitch--2" v-if="isModeDesign">
@@ -24,18 +24,18 @@
         <Slogan/>
         <!-- (menu) DESIGNER -->
         <div class="menu" v-if="isModeDesign">
-          <ul class="menu__inner">
-            <li class="menu__item">
-              <a class="menu__link" href="javascript:" data-switch="" title="Título menu diseñador">
+          <ul class="menu--inner">
+            <li class="menu--item">
+              <a class="menu--link" href="javascript:" data-switch="" title="Título menu diseñador">
                 _as graphic designer:
               </a>
             </li>
             <!-- TODO: (apply me asap!) to get data from $store:
-              <li class="menu__item" v-for="design in getLinksDesigner" :key="design"> 
+              <li class="menu--item" v-for="design in getLinksDesigner" :key="design"> 
             -->
-            <li class="menu__item" v-for="(design, index) in links.designer" :key="index">
+            <li class="menu--item" v-for="(design, index) in links.designer" :key="index">
               <a
-                class="menu__link glitch"
+                class="menu--link glitch"
                 :href="design.url"
                 :data-text="design.copy"
                 data-switch=""
@@ -47,18 +47,18 @@
         </div>
         <!-- (menu) CODER -->
         <div class="menu menu--code" v-else>
-          <ul class="menu__inner typewriter is-home">
-            <li class="menu__item mode--code">
-              <a class="menu__link" href="javascript:" title="Título menu desarrollador" data-switch="">
+          <ul class="menu--inner typewriter is-home">
+            <li class="menu--item mode--code">
+              <a class="menu--link" href="javascript:" title="Título menu desarrollador" data-switch="">
                 _as UX/UI &amp; web developer:
               </a>
             </li>
             <!-- TODO: (apply me asap!) to get data from $store:
-              <li class="menu__item" v-for="code in getLinksCoder" :key="code"> 
+              <li class="menu--item" v-for="code in getLinksCoder" :key="code"> 
             -->
-            <li class="menu__item mode--code" v-for="(code, index) in links.coder" :key="index">
+            <li class="menu--item mode--code" v-for="(code, index) in links.coder" :key="index">
               <a
-                class="menu__link glitch"
+                class="menu--link glitch"
                 :href="code.url"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,10 +71,10 @@
           </ul>
         </div>
         <!-- (main) Footer -->
-        <div class="content__bottom">
+        <div class="content--footer">
           <div :class="['switch', 'mode', {'mode--design' : isModeDesign, 'mode--code' : isModeCode}]">
             <a 
-              :class="['switch__item', {'switch__item--current' : isModeDesign}]"
+              :class="['switch--item', {'is-current' : isModeDesign}]"
               href="javascript:"
               title="Ver menu diseñador"
               @click="changeMode()">
@@ -83,7 +83,7 @@
               </span>
             </a>
             <a 
-              :class="['switch__item', {'switch__item--current' : !isModeDesign}]"
+              :class="['switch--item', {'is-current' : !isModeDesign}]"
               href="javascript:"
               title="Ver menu desarrollador"
               @click="changeMode()">
@@ -104,7 +104,7 @@
       </div>
     </div>
     <div class="loading"></div>
-    <div class="line-anim"></div>
+    <div class="line--anim"></div>
   </main>
 </template>
 

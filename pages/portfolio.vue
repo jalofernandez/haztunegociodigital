@@ -16,7 +16,7 @@
           <p>
             {{ item.title }}
           </p>
-          <button class="btn menu__link glitch js-modal-close" data-text="X Close me!" @click="item.show = false">
+          <button class="btn menu--link glitch js-modal-close" data-text="X Close me!" @click="item.show = false">
             X Close me!
           </button>
         </div>
@@ -25,11 +25,11 @@
     </div>
     <!-- top Navbar to filter Gallery below -->
     <div class="toolbar mb2 mt2">
-      <nuxt-link :to="{name: 'index'}" class="btn menu__link glitch" data-text="<< Home">
+      <nuxt-link :to="{name: 'index'}" class="btn menu--link glitch" data-text="<< Home">
         &lt;&lt; Home
       </nuxt-link>
       <button
-        class="btn fil-cat menu__link glitch"
+        class="btn fil-cat menu--link glitch"
         v-for="(link, index) in links"
         :key="index"
         type="button"
