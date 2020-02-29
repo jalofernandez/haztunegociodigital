@@ -27,7 +27,7 @@
           <div class="menu" v-show="isModeDesign">
             <ul class="menu--inner">
               <li class="menu--item">
-                <a class="menu--link" href="javascript:" title="Título menu diseñador" data-switch="">
+                <a class="menu--link" href="javascript:" title="Título menu diseñador">
                   _as graphic designer:
                 </a>
               </li>
@@ -39,7 +39,6 @@
                   class="menu--link glitch"
                   :href="design.url"
                   :data-text="design.copy"
-                  data-switch=""
                   :title="design.title">
                   {{ design.copy }}
                 </a>
@@ -55,7 +54,7 @@
           <div class="menu menu--code" v-show="!isModeDesign">
             <ul class="menu--inner typewriter is-home">
               <li :class="['menu--item', 'mode--code', { 'anim--code' : !isModeDesign }]">
-                <a class="menu--link" href="javascript:" title="Título menu desarrollador" data-switch="">
+                <a class="menu--link" href="javascript:" title="Título menu desarrollador">
                   _as UX/UI &amp; web developer:
                 </a>
               </li>
@@ -69,7 +68,6 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   :data-text="code.copy"
-                  data-switch=""
                   :title="code.title">
                   {{ code.copy }}
                 </a>
@@ -88,7 +86,7 @@
               href="javascript:"
               title="Ver menu diseñador"
               @click="changeMode()">
-              <span class="mode mode--design" data-switch="" data-glitch="">
+              <span class="mode mode--design">
                 Designer
               </span>
             </a>
@@ -97,7 +95,7 @@
               href="javascript:"
               title="Ver menu desarrollador"
               @click="changeMode()">
-              <span class="mode mode--design" data-switch="" data-glitch="">
+              <span class="mode mode--design">
                 Coder
               </span>
             </a>
