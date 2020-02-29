@@ -277,31 +277,39 @@ h1
         transform: scale(1.25)
         filter: blur(0)
 
-// "Content" row (links list)
+// "Content" row (links list) in Home page
 .mode--code,
 .menu--code .menu--link
   font-family: $font-family-links
   text-transform: lowercase
   color: $coder-color
 
-.menu
-  font-size: 1.85em
+.menu,
+.menu--code
   flex: none
   width: 100%
-  margin: 2em 0 0 auto
+  // margin: 2em 0 0 auto
+  position: relative
+  top: 2em
+.menu
+  font-size: 1.85em
   text-align: right
+  .menu--inner
+    right: 0
+    z-index: 1
+.menu--code
+  font-size: 1.5em
+  text-align: left
+  .menu--inner
+    z-index: 2
+    left: 0
 
 .menu--inner
   margin: 0
   padding: 0
   list-style: none
-
-.menu--code
-  font-size: 1.5em
-  flex: none
-  width: 100%
-  margin: auto 0 2em 0
-  text-align: left
+  position: absolute
+  top: 0
 
 .menu:not(.menu--code) .menu--item
   position: relative
@@ -710,13 +718,28 @@ main
 
 
 // (animations)
-.fade-enter-active,
+.fade-enter-active
+  transition: opacity .6s
+
 .fade-leave-active
-  transition: opacity .5s
+  transition: opacity .2s
 
 .fade-enter,
 .fade-leave-to
   opacity: 0
+
+// (animations)
+.slide-fade-enter-active
+  transition: all .3s ease
+
+.slide-fade-leave-active
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-fade-enter,
+.slide-fade-leave-to
+  transform: translateX(10px)
+  opacity: 0
+
 
 // (animation) TYPEWRITING effect
 .typewriter
@@ -728,6 +751,7 @@ main
     white-space: nowrap
     overflow: hidden
     opacity: 0
+
 
 .typewriter.is-resume
   .mode--code
@@ -774,62 +798,63 @@ main
       animation-delay: 4s
       animation-fill-mode: forwards
 
+
 .typewriter.is-home
   .mode--code
     // (skill item) Intro text
     &:nth-child(1)
       width: 16em
-      animation: typewritting 2s steps(40, end)
-      animation-delay: .5s
+      animation: typewritting 1.6s steps(40, end)
       animation-fill-mode: forwards
     // (skill item) "Upplication"
     &:nth-child(2)
       width: 7em
-      animation: typewritting2 1s steps(40, end)
-      animation-delay: 1s
+      animation: typewritting2 .8s steps(20, end)
+      animation-delay: .5s
       animation-fill-mode: forwards
     // (skill item) "Gastronomix"
     &:nth-child(3)
       width: 7em
-      animation: typewritting2 1s steps(20, end)
-      animation-delay: 1.5s
+      animation: typewritting2 .8s steps(20, end)
+      animation-delay: .8s
       animation-fill-mode: forwards
     // (skill item) "Widitrade"
     &:nth-child(4)
       width: 6em
-      animation: typewritting .7s steps(40, end)
-      animation-delay: 1.8s
+      animation: typewritting .7s steps(20, end)
+      animation-delay: 1s
       animation-fill-mode: forwards
     // (skill item) "Canessa"
     &:nth-child(5)
       width: 5em
-      animation: typewritting2 .5s steps(40, end)
-      animation-delay: 2s
+      animation: typewritting2 .6s steps(20, end)
+      animation-delay: 1.3s
       animation-fill-mode: forwards
     // (skill item) "Ecomerzpro Club"
     &:nth-child(6)
       width: 10em
-      animation: typewritting 1.2s steps(20, end)
-      animation-delay: 2.2s
+      animation: typewritting 1s steps(40, end)
+      animation-delay: 1.8s
       animation-fill-mode: forwards
     // (skill item) "LFC; Abogados y Economistas"
     &:nth-child(7)
       width: 17em
       animation: typewritting2 1.8s steps(40, end)
-      animation-delay: 2.4s
+      animation-delay: 2.2s
       animation-fill-mode: forwards
     // (skill item) "Capaball"
     &:nth-child(8)
       width: 7em
       animation: typewritting 1s steps(20, end)
-      animation-delay: 2.6s
+      animation-delay: 2.5s
       animation-fill-mode: forwards
     // (skill item) "> ...take a look on Github"
     &:nth-child(9)
       width: 17em
-      animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
+      animation: typewritting3 1.8s steps(40, end), blink .5s step-end infinite alternate
       animation-delay: 2.8s
       animation-fill-mode: forwards
+
 
 .typewriter.in-error,
 .typewriter.in-legal

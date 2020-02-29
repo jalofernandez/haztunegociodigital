@@ -23,53 +23,63 @@
         </div>
         <Slogan/>
         <!-- (menu) DESIGNER -->
-        <div class="menu" v-if="isModeDesign">
-          <ul class="menu--inner">
-            <li class="menu--item">
-              <a class="menu--link" href="javascript:" data-switch="" title="Título menu diseñador">
-                _as graphic designer:
-              </a>
-            </li>
-            <!-- TODO: (apply me asap!) to get data from $store:
-              <li class="menu--item" v-for="design in getLinksDesigner" :key="design"> 
-            -->
-            <li class="menu--item" v-for="(design, index) in links.designer" :key="index">
-              <a
-                class="menu--link glitch"
-                :href="design.url"
-                :data-text="design.copy"
-                data-switch=""
-                :title="design.title">
-                {{ design.copy }}
-              </a>
-            </li>
-          </ul>
-        </div>
+        <transition name="slide-fade">
+          <div class="menu" v-show="isModeDesign">
+            <ul class="menu--inner">
+              <li class="menu--item">
+                <a class="menu--link" href="javascript:" title="Título menu diseñador" data-switch="">
+                  _as graphic designer:
+                </a>
+              </li>
+              <li
+                :class="'menu--item '+design.filter"
+                v-for="(design, index) in links.designer"
+                :key="index">
+                <a
+                  class="menu--link glitch"
+                  :href="design.url"
+                  :data-text="design.copy"
+                  data-switch=""
+                  :title="design.title">
+                  {{ design.copy }}
+                </a>
+              </li>
+              <!-- TODO: (apply me asap!) to get data from $store:
+                <li class="menu--item" v-for="design in getLinksDesigner" :key="design"> 
+              -->
+            </ul>
+          </div>
+        </transition>
         <!-- (menu) CODER -->
-        <div class="menu menu--code" v-else>
-          <ul class="menu--inner typewriter is-home">
-            <li class="menu--item mode--code">
-              <a class="menu--link" href="javascript:" title="Título menu desarrollador" data-switch="">
-                _as UX/UI &amp; web developer:
-              </a>
-            </li>
-            <!-- TODO: (apply me asap!) to get data from $store:
-              <li class="menu--item" v-for="code in getLinksCoder" :key="code"> 
-            -->
-            <li class="menu--item mode--code" v-for="(code, index) in links.coder" :key="index">
-              <a
-                class="menu--link glitch"
-                :href="code.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                :data-text="code.copy"
-                data-switch=""
-                :title="code.title">
-                {{ code.copy }}
-              </a>
-            </li>
-          </ul>
-        </div>
+        <transition name="fade">
+          <div class="menu menu--code" v-show="!isModeDesign">
+            <ul class="menu--inner typewriter is-home">
+              <li :class="['menu--item', 'mode--code', { 'anim--code' : !isModeDesign }]">
+                <a class="menu--link" href="javascript:" title="Título menu desarrollador" data-switch="">
+                  _as UX/UI &amp; web developer:
+                </a>
+              </li>
+              <li 
+                :class="['menu--item', 'mode--code', { 'anim--code' : !isModeDesign }]"
+                v-for="(code, index) in links.coder"
+                :key="index">
+                <a
+                  class="menu--link glitch"
+                  :href="code.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :data-text="code.copy"
+                  data-switch=""
+                  :title="code.title">
+                  {{ code.copy }}
+                </a>
+              </li>
+              <!-- TODO: (apply me asap!) to get data from $store:
+                <li class="menu--item" v-for="code in getLinksCoder" :key="code"> 
+              -->
+            </ul>
+          </div>
+        </transition>
         <!-- (main) Footer -->
         <div class="content--footer">
           <div :class="['switch', 'mode', {'mode--design' : isModeDesign, 'mode--code' : isModeCode}]">
@@ -122,26 +132,31 @@ export default {
         designer: [
           {
             url: "portfolio",
+            filter: "layout",
             copy: "layout",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
             url: "portfolio",
+            filter: "photo",
             copy: "photography",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
             url: "portfolio",
+            filter: "web",
             copy: "UX & UI Web design",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
             url: "portfolio",
+            filter: "pack",
             copy: "packaging",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
             url: "portfolio",
+            filter: "graph",
             copy: "graphisms & draws",
             title: "Ver Portfolio completo de @jalofernandez"
           }
