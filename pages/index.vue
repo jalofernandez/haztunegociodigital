@@ -53,13 +53,13 @@
         <transition name="fade">
           <div class="menu menu--code" v-show="!isModeDesign">
             <ul class="menu--inner typewriter is-home">
-              <li :class="['menu--item', 'mode--code', { 'anim--code' : !isModeDesign }]">
+              <li class="menu--item mode--code">
                 <a class="menu--link" href="javascript:" title="Título menu desarrollador">
                   _as UX/UI &amp; web developer:
                 </a>
               </li>
               <li 
-                :class="['menu--item', 'mode--code', { 'anim--code' : !isModeDesign }]"
+                class="menu--item mode--code"
                 v-for="(code, index) in links.coder"
                 :key="index">
                 <a
