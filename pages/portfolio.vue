@@ -227,7 +227,9 @@ export default {
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
-        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' },
+        // Third parties links
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
       ],
       link: [
         // Canonical url
@@ -247,10 +249,6 @@ export default {
         { rel: 'apple-touch-icon', sizes: "180x180", href: '/favicon/app-icon-180x180.png' },
         // Browsers Tabs
         { rel: 'mask-icon', color: "#333333", href: '/favicon/safari-pinned-tab.svg' }
-      ],
-      // Third parties links
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
       ]
     }
   },
