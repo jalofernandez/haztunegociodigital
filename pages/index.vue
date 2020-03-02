@@ -285,7 +285,9 @@ export default {
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
-        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' },
+        // (PWA) Service worker:
+        { src: '/sw.js' }
       ],
       // Pre-fetch and return recipe data server-side
       // async asyncData(context) {
@@ -326,7 +328,17 @@ export default {
     }
   },
   mounted() {
-    console.log("Hola");
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+          // Registration was successful :)
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function (err) {
+          // Registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
   },
   methods: {
     changeMode() {
