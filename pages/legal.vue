@@ -145,7 +145,27 @@ export default {
         { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: '@jalofernandez' },
         // (metas) IE (windows phone) browsers
         // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
-        { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' }
+        { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' },
+        // (microdata) TWITTER
+        { name: 'twitter:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
+        { name: 'twitter:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
+        { name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@jalofernandez' },
+        { name: 'twitter:creator', content: '@jalofernandez' },
+        // (open-graph) FACEBOOK
+        { name: 'og:type', content: 'website' },
+        { name: 'og:locale', content: 'es_ES' },
+        { name: 'og:url', content: 'https://jalofernandez.com' },
+        { name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico' },
+        { name: 'og:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
+        { name: 'og:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
+        { name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
+        { name: 'og:image:width', content: '960' },
+        { name: 'og:image:height', content: '540' },
+        { name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' }
       ],
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
