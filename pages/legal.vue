@@ -86,12 +86,46 @@ export default {
         { row: "<b>@jalofernandez</b> autoriza expresamente a que terceros puedan redirigir directamente a los contenidos concretos del sitio web, debiendo en todo caso redirigir al sitio web principal del prestador." },
         { row: "<b>@jalofernandez</b> reconoce a favor de sus titulares los correspondientes derechos de propiedad industrial e intelectual, no implicando su sola mención o aparición en el sitio web la existencia de derechos o responsabilidad alguna de <b>@jalofernandez</b> sobre los mismos, como tampoco respaldo, patrocinio o recomendación por parte del mismo." },
         { row: "Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos del sitio web, puede hacerlo a través del siguiente correo electrónico: <a href='mailto:jalofernandez@gmail.com' title='Escribir a @jalofernandez'>jalofernandez@gmail.com</a>" }
-      ]
+      ],
+      structuredData: {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "additionalType": "jalofernández design webmaster frontend diseño gráfico",
+        "@id": "https://jalofernandez.com",
+        "url": "https://jalofernandez.com",
+        "sameAs": [
+          "https://www.instagram.com/jalofernandez/?ref=badge",
+          "https://twitter.com/jalofernandez",
+          "https://www.linkedin.com/in/javierlorenzofernandez/",
+          "https://github.com/jalofernandez",
+          "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
+          "https://www.facebook.com/jalofernandez?ref=tn_tnmn"
+        ],
+        "logo": "",
+        "name": "jalofernández diseño gráfico y desarrollo web en Madrid, España",
+        "description": "Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.",
+        "telephone": "+34 696 682 791",
+        "email": "jalofernandez@gmail.com",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Efectivo, tarjeta de crédito, Cash, Credit Card",
+        "priceRange": "Desde 10€",
+        "image": "",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+34 696 682 791",
+          "contactType": "Llamar para pedir presupuestos"
+        }
+      }
     }
   },
   head() {
     return {
-      title: 'with modals'
+      title: 'with modals',
+      // Structured Data (Schema)
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [
+        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+      ]
     }
   }
 }

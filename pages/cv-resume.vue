@@ -94,12 +94,46 @@ export default {
         { row: "git, gitHub, bitbucket, subversion," },
         { row: "scrum, agile, trello, jira, slack," },
         { row: "responsive design, photo, video..." }
-      ]
+      ],
+      structuredData: {
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        "additionalType": "jalofernández design webmaster frontend diseño gráfico",
+        "@id": "https://jalofernandez.com",
+        "url": "https://jalofernandez.com",
+        "sameAs": [
+          "https://www.instagram.com/jalofernandez/?ref=badge",
+          "https://twitter.com/jalofernandez",
+          "https://www.linkedin.com/in/javierlorenzofernandez/",
+          "https://github.com/jalofernandez",
+          "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
+          "https://www.facebook.com/jalofernandez?ref=tn_tnmn"
+        ],
+        "logo": "",
+        "name": "jalofernández diseño gráfico y desarrollo web en Madrid, España",
+        "description": "Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.",
+        "telephone": "+34 696 682 791",
+        "email": "jalofernandez@gmail.com",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Efectivo, tarjeta de crédito, Cash, Credit Card",
+        "priceRange": "Desde 10€",
+        "image": "",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+34 696 682 791",
+          "contactType": "Llamar para pedir presupuestos"
+        }
+      }
     }
   },
   head() {
     return {
-      title: 'with modals'
+      title: 'with modals',
+      // Structured Data (Schema)
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [
+        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+      ]
     }
   },
   methods: {
