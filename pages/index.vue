@@ -204,7 +204,7 @@ export default {
       },
       structuredData: {
         "@context": "http://schema.org",
-        "@type": "Recipe",
+        "@type": "LocalBusiness",
         "additionalType": "jalofernández design webmaster frontend diseño gráfico",
         "@id": "https://jalofernandez.com",
         "url": "https://jalofernandez.com",
@@ -238,7 +238,7 @@ export default {
       htmlAttrs: {
         lang: 'es'
       },
-      title: '@jalofernandez portfolio',
+      title: 'Jalofernández: designer + coder',
       meta: [
         // (metas) common
         { hid: 'description', name: 'description', content: '@jalofernandez personal portfolio & C.V. resume' },
@@ -292,7 +292,7 @@ export default {
       // },
       link: [
         // Canonical url
-        { rel: 'canonical', href: 'https://jalofernandez.com/' },
+        { rel: 'canonical', hid: "canonical", href: 'https://jalofernandez.com/' },
         // Pre-fetch and return recipe data server-side
         { rel: 'dns-prefetch', href: '//twitter.com/jalofernandez' },
         { rel: 'dns-prefetch', href: '//www.instagram.com/jalofernandez/?ref=badge' },
