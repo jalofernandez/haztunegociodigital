@@ -180,14 +180,38 @@ export default {
       htmlAttrs: {
         lang: 'es'
       },
-      title: '@jalofernandez: portfolio',
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      title: '@jalofernandez: portfolio web + design',
+      meta: [
+        // (metas) common
+        { hid: 'description', name: 'description', content: 'Galería de trabajos del portfolio y CV personal de Javier Lorenzo Fernández (aka @jalofernandez). Diseñador gráfico y desarrollador web frontend de los que ya quedan pocos.' },
+        { hid: 'author', name: 'author', content: '@jalofernandez' },
+        { hid: 'copyright', name: 'copyright', content: 'Jalofernandez' },
+        { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
+        { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
+        { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
+        { hid: 'lang', name: 'lang', content: 'es-ES' },
+        { hid: 'Classification', name: 'Classification', content: 'Portfolio' },
+        { hid: 'subject', name: 'subject', content: 'Personal Portfolio and Resume' },
+        { hid: 'rating', name: 'rating', content: 'General' },
+        { hid: 'coverage', name: 'coverage', content: 'Worldwide' },
+        // (metas) to customize (all browsers) top navbar
+        { hid: 'theme-color', name: 'theme-color', content: '#f4692a' },
+        // (metas) to Webkit (iOS Safari) browsers
+        { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { hid: 'apple-mobile-web-app-status-bar-style', name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+        { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: '@jalofernandez' },
+        // (metas) IE (windows phone) browsers
+        // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
+        { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' }
       ],
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
         { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
+      ],
+      // Third parties links
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
       ]
     }
   },

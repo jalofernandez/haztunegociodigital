@@ -238,10 +238,10 @@ export default {
       htmlAttrs: {
         lang: 'es'
       },
-      title: 'Jalofernández: designer + coder',
+      title: '@jalofernandez: designer + coder',
       meta: [
         // (metas) common
-        { hid: 'description', name: 'description', content: '@jalofernandez personal portfolio & C.V. resume' },
+        { hid: 'description', name: 'description', content: '@jalofernandez: designer + coder personal portfolio & C.V. resume' },
         { hid: 'author', name: 'author', content: '@jalofernandez' },
         { hid: 'copyright', name: 'copyright', content: 'Jalofernandez' },
         { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
