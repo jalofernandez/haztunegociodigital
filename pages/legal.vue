@@ -173,6 +173,8 @@ export default {
         { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
       ],
       link: [
+        // Canonical url
+        { rel: 'canonical', hid: "canonical", href: 'https://jalofernandez.com' + this.$route.path },
         // (custom) Favicons
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon/favicon-16x16.png' },
