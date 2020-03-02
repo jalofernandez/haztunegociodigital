@@ -120,6 +120,9 @@ export default {
   },
   head() {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: 'with modals',
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
