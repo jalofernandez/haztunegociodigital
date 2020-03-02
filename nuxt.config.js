@@ -26,9 +26,10 @@ export default {
     '@/assets/styles.sass'
   ],
   /*
-  ** Plugins to load before mounting the App
+  ** Plugins to load before mounting the App as: Google Analytics (ga)
   */
   plugins: [
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
