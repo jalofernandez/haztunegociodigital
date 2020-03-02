@@ -41,7 +41,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/sitemap' // always declare the sitemap module at end of array
   ],
+  sitemap: {
+    routes: [
+      { url: '/', changefreq: 'daily', priority: 1, lastmod: '2020-03-02T13:30:00.000Z' },
+      { url: '/portfolio', changefreq: 'daily', priority: 2, lastmod: '2020-03-02T13:30:00.000Z' },
+      { url: '/cv-resume', changefreq: 'daily', priority: 3, lastmod: '2020-03-02T13:30:00.000Z' },
+      { url: '/legal', changefreq: 'daily', priority: 4, lastmod: '2020-03-02T13:30:00.000Z' },
+      { url: '/404', changefreq: 'daily', priority: 5, lastmod: '2020-03-02T13:30:00.000Z' }
+    ]
+  },
   /*
   ** Build configuration
   */
