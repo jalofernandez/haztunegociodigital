@@ -81,11 +81,15 @@ export default {
   ],
   // Nuxt.js dev-modules
   buildModules: [
+    // '@nuxtjs/google-analytics'
   ],
   // Nuxt.js modules
   modules: [
     '@nuxtjs/sitemap' // always declare the sitemap module at end of array
   ],
+  // googleAnalytics: {
+  //   id: 'UA-113398984-1'
+  // },
   sitemap: {
     hostname: `https://jalofernandez.com`,
     gzip: true,
