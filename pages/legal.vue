@@ -26,6 +26,9 @@
             <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
               &lt;&lt; Home
             </nuxt-link>
+            <nuxt-link :to="{name: 'cv-resume'}" class="contact-link mode mode--design is-glitch glitch--1" title="Ver portfolio de trabajos de @jalofernandez">
+              _Resume/C.V.
+            </nuxt-link>
             <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu--link glitch" data-text="Portfolio >>">
               Portfolio &gt;&gt;
             </nuxt-link>

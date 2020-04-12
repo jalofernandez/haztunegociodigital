@@ -63,7 +63,7 @@
                 v-for="(code, index) in links.coder"
                 :key="index">
                 <a
-                  class="menu--link glitch"
+                  :class="['menu--link', 'glitch', { 'random-anim' : randomAnim }]"
                   :href="code.url"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -124,6 +124,7 @@ export default {
   components: { Slogan, Social },
   data() {
     return {
+      randomAnim: true,
       isModeDesign: true,
       isModeCode: false,
       links: {
