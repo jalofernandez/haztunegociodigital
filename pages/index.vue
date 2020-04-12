@@ -235,52 +235,9 @@ export default {
   },
   head() {
     return {
-      htmlAttrs: {
-        lang: 'es'
-      },
       title: '@jalofernandez: designer + coder',
       meta: [
-        // (metas) common
-        { hid: 'description', name: 'description', content: '@jalofernandez: designer + coder personal portfolio & C.V. resume' },
-        { hid: 'author', name: 'author', content: '@jalofernandez' },
-        { hid: 'copyright', name: 'copyright', content: 'Jalofernandez' },
-        { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
-        { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
-        { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
-        { hid: 'lang', name: 'lang', content: 'es-ES' },
-        { hid: 'Classification', name: 'Classification', content: 'Portfolio' },
-        { hid: 'subject', name: 'subject', content: 'Personal Portfolio and Resume' },
-        { hid: 'rating', name: 'rating', content: 'General' },
-        { hid: 'coverage', name: 'coverage', content: 'Worldwide' },
-        // (metas) to customize (all browsers) top navbar
-        { hid: 'theme-color', name: 'theme-color', content: '#f4692a' },
-        // (metas) to Webkit (iOS Safari) browsers
-        { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { hid: 'apple-mobile-web-app-status-bar-style', name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-        { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: '@jalofernandez' },
-        // (metas) IE (windows phone) browsers
-        // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
-        { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' },
-        // (microdata) TWITTER
-        { name: 'twitter:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
-        { name: 'twitter:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
-        { name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: '@jalofernandez' },
-        { name: 'twitter:creator', content: '@jalofernandez' },
-        // (open-graph) FACEBOOK
-        { name: 'og:type', content: 'website' },
-        { name: 'og:locale', content: 'es_ES' },
-        { name: 'og:url', content: 'https://jalofernandez.com' },
-        { name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico' },
-        { name: 'og:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
-        { name: 'og:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
-        { name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'og:image:width', content: '960' },
-        { name: 'og:image:height', content: '540' },
-        { name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' }
+        { hid: 'description', name: 'description', content: '@jalofernandez: designer + coder personal portfolio & C.V. resume' }
       ],
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
@@ -308,22 +265,7 @@ export default {
         { rel: 'dns-prefetch', href: '//peluqueriacanessa.com/' },
         { rel: 'dns-prefetch', href: '//ecomerzpro.net/' },
         { rel: 'dns-prefetch', href: '//capaball.com/app/#/login/' },
-        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' },
-        // (custom) Favicons
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon/favicon-16x16.png' },
-        { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon/favicon-32x32.png' },
-        { rel: 'apple-touch-icon', sizes: "57x57", href: '/favicon/app-icon-57x57.png' },
-        { rel: 'apple-touch-icon', sizes: "60x60", href: '/favicon/app-icon-60x60.png' },
-        { rel: 'apple-touch-icon', sizes: "72x72", href: '/favicon/app-icon-72x72.png' },
-        { rel: 'apple-touch-icon', sizes: "76x76", href: '/favicon/app-icon-76x76.png' },
-        { rel: 'apple-touch-icon', sizes: "114x114", href: '/favicon/app-icon-114x114.png' },
-        { rel: 'apple-touch-icon', sizes: "120x120", href: '/favicon/app-icon-120x120.png' },
-        { rel: 'apple-touch-icon', sizes: "144x144", href: '/favicon/app-icon-144x144.png' },
-        { rel: 'apple-touch-icon', sizes: "152x152", href: '/favicon/app-icon-152x152.png' },
-        { rel: 'apple-touch-icon', sizes: "180x180", href: '/favicon/app-icon-180x180.png' },
-        // Browsers Tabs
-        { rel: 'mask-icon', color: "#333333", href: '/favicon/safari-pinned-tab.svg' }
+        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' }
       ]
     }
   },
