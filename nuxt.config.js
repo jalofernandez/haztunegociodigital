@@ -101,6 +101,7 @@ export default {
       lastmodrealtime: true
     }
   },
+  generate: {subFolders: false},
   // Build configuration
   build: {
     // You can extend webpack config here
