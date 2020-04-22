@@ -102,7 +102,7 @@ export default {
     }
   },
   router: {
-    base: '/cv/' // in orden to deploy in Microsoft Github ('/' by default to localhost)
+    base: '/cv/dist/' // in orden to deploy in Microsoft Github ('/' by default to localhost)
   },
   generate: {
     subFolders: false,
