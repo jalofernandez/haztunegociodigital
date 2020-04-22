@@ -9,7 +9,7 @@
       <div :id="'modal-'+item.id" class="md-modal">
         <div class="md-content">
           <img
-            :src="'/portfolio/' + item.img"
+            :src="'portfolio/' + item.img"
             :title="item.title + ' ' + byJalo"
             :alt="item.title + ' ' + byJalo"
           />
@@ -53,7 +53,11 @@
         :data-modal="'modal-'+item.id"
         @click="item.show = !item.show"
       >
-        <img :src="'/portfolio/'+item.img" :title="item.title+' '+byJalo" :alt="item.title+' '+byJalo"/>
+        <img
+          :src="'portfolio/'+item.img"
+          :title="item.title+' '+byJalo"
+          :alt="item.title+' '+byJalo"
+        />
         <div class="overlay">
           {{ overlay }}
         </div>

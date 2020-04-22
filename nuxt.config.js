@@ -102,11 +102,11 @@ export default {
     }
   },
   router: {
-    base: '/cv/' // in orden to deploy in Microsoft Github ('/' by default to localhost)
+    base: '/cv/dist/' // to deploy in Microsoft Github ('/' by default to localhost)
   },
   generate: {
     subFolders: false,
-    // dir: 'public' // in orden to deploy in Google Firebase ('dist' by default)
+    // dir: 'public' // to deploy in Google Firebase ('dist' by default)
   },
   // Webpack config here
   build: {
