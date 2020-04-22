@@ -101,10 +101,15 @@ export default {
       lastmodrealtime: true
     }
   },
-  generate: {subFolders: false},
-  // Build configuration
+  router: {
+    base: '/cv/' // in orden to deploy in Microsoft Github ('/' by default to localhost)
+  },
+  generate: {
+    subFolders: false,
+    // dir: 'public' // in orden to deploy in Google Firebase ('dist' by default)
+  },
+  // Webpack config here
   build: {
-    // You can extend webpack config here
     extend (config, ctx) {
     }
   }
