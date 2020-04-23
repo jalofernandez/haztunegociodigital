@@ -9,7 +9,7 @@
       <div :id="'modal-'+item.id" class="md-modal">
         <div class="md-content">
           <img
-            :src="'portfolio/' + item.img"
+            :src="'~assets/portfolio/' + item.img"
             :title="item.title + ' ' + byJalo"
             :alt="item.title + ' ' + byJalo"
           />
