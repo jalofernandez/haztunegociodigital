@@ -9,7 +9,7 @@
       <div :id="'modal-'+item.id" class="md-modal">
         <div class="md-content">
           <img
-            :src="'~assets/portfolio/' + item.img"
+            :src="require(`~/assets/portfolio/${item.img}`)"
             :title="item.title + ' ' + byJalo"
             :alt="item.title + ' ' + byJalo"
           />
@@ -54,7 +54,7 @@
         @click="item.show = !item.show"
       >
         <img
-          :src="'portfolio/'+item.img"
+          :src="require(`~/assets/portfolio/${item.img}`)"
           :title="item.title+' '+byJalo"
           :alt="item.title+' '+byJalo"
         />
