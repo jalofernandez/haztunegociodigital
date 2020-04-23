@@ -101,9 +101,6 @@ export default {
       lastmodrealtime: true
     }
   },
-  router: {
-    base: '/cv/dist/' // to deploy in Microsoft Github ('/' by default to localhost)
-  },
   generate: {
     subFolders: false,
     // dir: 'public' // to deploy in Google Firebase ('dist' by default)
