@@ -52,14 +52,19 @@ main
     // box-shadow: 0 0 0 3px var(--darken-3)
 
   &.is-link
-    padding: 15px
+    padding: 1rem
     font-size: 1.5rem
     @media (max-width: 640px)
       font-size: 1.2em
+      padding: .5rem
     &.btn--coder
       color: $coder-color
+      @media (max-width: 640px)
+        padding-left: 0
     &.btn--designer
       color: $designer-color
+      @media (max-width: 640px)
+        padding-right: 0
 
   &.menu--link
     &.glitch
@@ -171,7 +176,8 @@ main
     font-family: $font-family-links
   position: relative
   .mode--design, .mode--code
-    position: absolute
+    @media (min-width: 541px)
+      position: absolute
 
 // (designer + coder)
 h1
@@ -342,6 +348,9 @@ h1
     justify-content: space-between
     width: 100%
     bottom: 10px
+    .contact-link.mode--design
+      @media (max-width: 640px)
+        padding: .5rem 0
 
 .switch__content
   display: flex
@@ -385,14 +394,15 @@ h1
   margin: 0 0 0 auto
 
 .contact-link
-  margin-right: 15px
   display: inline-block
   padding: 1em 0
-  font-size: 24px
+  margin-right: 15px
+  font-size: 1.5rem
   @media (max-width: 768px)
-    font-size: 20px
+    font-size: 1.2rem
   @media (max-width: 450px)
-    font-size: 18px
+    font-size: 1rem
+    margin-right: 0
 
 
 // (anim) glitch: noise & distortion effect
@@ -669,6 +679,12 @@ main
 
 
 // Tablets 768px (breakpoint)
+@media screen and (max-width: 48em)
+  .content--inner
+    padding: 1em 1em 0
+
+
+// Smartphones 640px (breakpoint)
 @media screen and (max-width: 40em)
   .content--header
     font-size: 0.6em
@@ -677,14 +693,11 @@ main
     font-size: 0.85em
   
   .menu--item:not(:last-child)
-    margin: 0 0 1em 0
+    margin: 0 0 .75em 0
   
   .menu
     font-size: 1.2em
-  
-  .content--inner
-    padding: 1em 1em 0
-  
+
   h1 
     padding-left: 25px
     font-size: 1.14em
@@ -696,8 +709,8 @@ main
     left: 23px
 
 
-// Mobile (breakpoint)
-@media screen and (max-width: 540px)
+// Mobile 540px (breakpoint)
+@media screen and (max-width: 33.75em)
   .content--header
     flex-flow: column
   
@@ -869,12 +882,18 @@ main
   .mode--code
     margin-top: 2em
     width: 18em
+    @media (max-width: 768px)
+      font-size: 1.5rem
+    @media (max-width: 540px)
+      font-size: 1rem
 
 .typewriter.in-legal
   min-height: initial
   .mode--code
     margin-top: 1em
     width: 10em
+    @media (max-width: 540px)
+      font-size: 1rem
 
 @keyframes typewritting
   0%
@@ -937,6 +956,7 @@ main
 
 // (page) Legal terms
 .skills-list
+  max-height: 40vh
   max-width: 920px
   @media (max-width: 980px)
     max-width: 680px
@@ -954,10 +974,11 @@ main
   // subsection Titles
   span
     margin: 10px
-    font-size: 120%
     font-weight: 600
     letter-spacing: .03em
     color: $coder-color
+    @media (min-width: 541px)
+      font-size: 120%
   // remark lines
   b, strong, em, i
     letter-spacing: .03rem
@@ -975,6 +996,9 @@ main
   background: rgba(35, 35, 35, .98)
   width: 100%
   min-height: 50px
+  padding: .5rem 0
+  // @media (min-width: 541px)
+  //   font-size: 120%
   display: flex
   flex-direction: row
   flex-wrap: wrap
@@ -983,6 +1007,7 @@ main
   align-content: space-around
   .btn
     font-size: 1.2rem
+    padding: 8px
   a.btn
     color: $designer-color
     text-align: center
