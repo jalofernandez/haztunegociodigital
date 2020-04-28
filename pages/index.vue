@@ -35,13 +35,13 @@
                 :class="'menu--item '+design.filter"
                 v-for="(design, index) in links.designer"
                 :key="index">
-                <a
-                  class="menu--link glitch"
-                  :href="design.url"
+                <nuxt-link
+                  :to="{name: 'portfolio'}"
+                  class="menu--link glitch carapo"
                   :data-text="design.copy"
                   :title="design.title">
                   {{ design.copy }}
-                </a>
+                </nuxt-link>
               </li>
               <!-- TODO: (apply me asap!) to get data from $store:
                 <li class="menu--item" v-for="design in getLinksDesigner" :key="design"> 
@@ -130,31 +130,26 @@ export default {
       links: {
         designer: [
           {
-            url: "portfolio",
             filter: "layout",
             copy: "layout",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio",
             filter: "photo",
             copy: "photography",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio",
             filter: "web",
             copy: "UX & UI Web design",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio",
             filter: "pack",
             copy: "packaging",
             title: "Ver Portfolio completo de @jalofernandez"
           },
           {
-            url: "portfolio",
             filter: "graph",
             copy: "graphisms & draws",
             title: "Ver Portfolio completo de @jalofernandez"
