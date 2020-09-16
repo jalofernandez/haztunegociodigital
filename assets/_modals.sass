@@ -6,7 +6,7 @@
     top: 50%
     left: 50%
     width: 50%
-    width: initial
+    // width: initial
     height: auto
     z-index: 2000
     backface-visibility: hidden
@@ -114,7 +114,8 @@
 // Blur effect in layout elements below
 .md-show ~ .content,
 .md-show ~ .toolbar,
-.md-show ~ #portfolio
+.md-show ~ #portfolio,
+.md-show ~ .dishes
   filter: blur(3px)
   transition: all 0.3s
 
@@ -129,3 +130,49 @@
     .md-content
       transform: scale(1)
       opacity: 1
+
+// Modal in Product or Service pages
+.modal-wrapper
+  .md-modal.has-dish
+    width: 100%
+    max-width: 420px // same as Dish list (responsive)
+    padding: 0 1rem
+    .md-content
+      border-radius: 3px
+      background: #f6f7f9 // $color-bg
+      .img
+        background-size: cover
+        width: 100%
+        height: 250px
+        border: 1px solid #f6f7f9 // $color-bg
+        border-radius: 3px
+        &.is-bottom
+          background-position: bottom
+      .details
+        width: 100%
+        padding: .75rem 1rem
+        color: #1b3a57 // $color-primary
+        .quantity
+          font-size: 1.5rem
+        .name:not(.price)
+          font-size: 1.25rem
+        .desc
+          font-size: 1.1rem
+        .name.price
+          font-size: 1rem
+        .prices
+          margin: 1rem 0 0 0
+          &.allergens .price.item
+            align-items: center
+          .helper
+            font-size: .8rem
+            text-transform: capitalize
+            margin-bottom: .25rem
+      .button
+        min-width: initial
+        position: absolute
+        // top: -2rem // to fit just over image container
+        // right: 0
+        top: -1rem
+        right: .5rem
+        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)

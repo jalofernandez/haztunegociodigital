@@ -6,23 +6,25 @@
       <div class="content--inner">
         <!-- (main) Header -->
         <div class="content--header">
-          <Logo/>
-          <Social/>
+          <Logo />
+          <Social />
         </div>
-        <Slogan/>
+        <Slogan />
         <!-- typewritin´Title -->
         <div class="typewriter in-error">
-          <h3 class="mode--code">
-            <span>[</span> Error 404 <span>]</span> Page Not Found
-          </h3>
+          <h3 class="mode--code"> <span>[</span> Error 404 <span>]</span> Page Not Found </h3>
         </div>
         <!-- FOOTER navbar links -->
         <div class="content--footer">
           <div class="switch switch--navbar mode mode--code">
-            <nuxt-link :to="{name: 'index'}" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
+            <nuxt-link :to="{ name: 'index' }" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
               &lt;&lt; Home
             </nuxt-link>
-            <nuxt-link :to="{name: 'portfolio'}" class="btn is-link btn--designer menu--link glitch" data-text="Portfolio >>">
+            <nuxt-link
+              :to="{ name: 'portfolio' }"
+              class="btn is-link btn--designer menu--link glitch"
+              data-text="Portfolio >>"
+            >
               Portfolio &gt;&gt;
             </nuxt-link>
           </div>
@@ -45,110 +47,73 @@ export default {
   data() {
     return {
       structuredData: {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        "additionalType": "jalofernández design webmaster frontend diseño gráfico",
-        "@id": "https://jalofernandez.com",
-        "url": "https://jalofernandez.com",
-        "sameAs": [
-          "https://www.instagram.com/jalofernandez/?ref=badge",
-          "https://twitter.com/jalofernandez",
-          "https://www.linkedin.com/in/javierlorenzofernandez/",
-          "https://github.com/jalofernandez",
-          "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
-          "https://www.facebook.com/jalofernandez?ref=tn_tnmn"
+        '@context': 'http://schema.org',
+        '@type': 'LocalBusiness',
+        'additionalType': 'jalofernández design webmaster frontend diseño gráfico',
+        '@id': 'https://haztunegociodigital.com',
+        'url': 'https://haztunegociodigital.com',
+        'sameAs': [
+          'https://www.instagram.com/jalofernandez/?ref=badge',
+          'https://twitter.com/jalofernandez',
+          'https://www.linkedin.com/in/javierlorenzofernandez/',
+          'https://github.com/jalofernandez',
+          'https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw',
+          'https://www.facebook.com/jalofernandez?ref=tn_tnmn',
         ],
-        "logo": "",
-        "name": "jalofernández diseño gráfico y desarrollo web en Madrid, España",
-        "description": "Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.",
-        "telephone": "+34 696 682 791",
-        "email": "jalofernandez@gmail.com",
-        "currenciesAccepted": "EUR",
-        "paymentAccepted": "Efectivo, tarjeta de crédito, Cash, Credit Card",
-        "priceRange": "Desde 10€",
-        "image": "",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+34 696 682 791",
-          "contactType": "Llamar para pedir presupuestos"
-        }
-      }
+        'logo': '',
+        'name': 'jalofernández diseño gráfico y desarrollo web en Madrid, España',
+        'description':
+          'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
+        'telephone': '+34 696 682 791',
+        'email': 'jalofernandez@gmail.com',
+        'currenciesAccepted': 'EUR',
+        'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
+        'priceRange': 'Desde 10€',
+        'image': '',
+        'contactPoint': {
+          '@type': 'ContactPoint',
+          'telephone': '+34 696 682 791',
+          'contactType': 'Llamar para pedir presupuestos',
+        },
+      },
     }
   },
   head() {
+    const title = 'Page not found | #HazTuNegocioDigital'
+    const description =
+      'Página de error de #HazTuNegocioDigital donde tu negocio o comercio podrán estar online, en internet, e incrementar su ventas y clientes. Desarrollado por @jalofernandez'
+    const canonical = 'https://haztunegociodigital.com' + this.$route.path
+
     return {
-      htmlAttrs: {
-        lang: 'es'
-      },
-      title: '@jalofernandez: page not found',
+      title,
       meta: [
-        // (metas) common
-        { hid: 'description', name: 'description', content: 'Página de error del portfolio y CV personal de Javier Lorenzo Fernández (aka @jalofernandez). Diseñador gráfico y desarrollador web frontend un poco friki como podéis comprobar...' },
-        { hid: 'author', name: 'author', content: '@jalofernandez' },
-        { hid: 'copyright', name: 'copyright', content: 'Jalofernandez' },
-        { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
-        { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
-        { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
-        { hid: 'lang', name: 'lang', content: 'es-ES' },
+        { hid: 'description', name: 'description', content: description },
         { hid: 'Classification', name: 'Classification', content: 'Portfolio' },
         { hid: 'subject', name: 'subject', content: 'Personal Portfolio and Resume' },
-        { hid: 'rating', name: 'rating', content: 'General' },
-        { hid: 'coverage', name: 'coverage', content: 'Worldwide' },
-        // (metas) to customize (all browsers) top navbar
-        { hid: 'theme-color', name: 'theme-color', content: '#f4692a' },
-        // (metas) to Webkit (iOS Safari) browsers
-        { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { hid: 'apple-mobile-web-app-status-bar-style', name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-        { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: '@jalofernandez' },
-        // (metas) IE (windows phone) browsers
-        // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
-        { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' },
-        // (microdata) TWITTER
-        { name: 'twitter:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
-        { name: 'twitter:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
-        { name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: '@jalofernandez' },
-        { name: 'twitter:creator', content: '@jalofernandez' },
-        // (open-graph) FACEBOOK
-        { name: 'og:type', content: 'website' },
-        { name: 'og:locale', content: 'es_ES' },
-        { name: 'og:url', content: 'https://jalofernandez.com' },
-        { name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico' },
-        { name: 'og:title', content: 'Jalofernández diseño gráfico y desarrollo web en Madrid, España' },
-        { name: 'og:description', content: 'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.' },
-        { name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg' },
-        { name: 'og:image:width', content: '960' },
-        { name: 'og:image:height', content: '540' },
-        { name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' }
+
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: description },
+        { hid: 'og:url', property: 'og:url', content: canonical },
+        // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
+        // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'og:image:width', name: 'og:image:width', content: '960' },
+        // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
+        // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
+
+        { hid: 'twitter:title', name: 'twitter:title', content: title },
+        { hid: 'twitter:description', name: 'twitter:description', content: description },
+        // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
+        // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
+        // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
       ],
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
-      script: [
-        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }
-      ],
-      link: [
-        // Canonical url
-        { rel: 'canonical', hid: "canonical", href: 'https://jalofernandez.com' + this.$route.path },
-        // (custom) Favicons
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/favicon/favicon-16x16.png' },
-        { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/favicon/favicon-32x32.png' },
-        { rel: 'apple-touch-icon', sizes: "57x57", href: '/favicon/app-icon-57x57.png' },
-        { rel: 'apple-touch-icon', sizes: "60x60", href: '/favicon/app-icon-60x60.png' },
-        { rel: 'apple-touch-icon', sizes: "72x72", href: '/favicon/app-icon-72x72.png' },
-        { rel: 'apple-touch-icon', sizes: "76x76", href: '/favicon/app-icon-76x76.png' },
-        { rel: 'apple-touch-icon', sizes: "114x114", href: '/favicon/app-icon-114x114.png' },
-        { rel: 'apple-touch-icon', sizes: "120x120", href: '/favicon/app-icon-120x120.png' },
-        { rel: 'apple-touch-icon', sizes: "144x144", href: '/favicon/app-icon-144x144.png' },
-        { rel: 'apple-touch-icon', sizes: "152x152", href: '/favicon/app-icon-152x152.png' },
-        { rel: 'apple-touch-icon', sizes: "180x180", href: '/favicon/app-icon-180x180.png' },
-        // Browsers Tabs
-        { rel: 'mask-icon', color: "#333333", href: '/favicon/safari-pinned-tab.svg' }
-      ]
+      script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
+      link: [{ rel: 'canonical', hid: 'canonical', href: canonical }],
     }
-  }
+  },
 }
 </script>

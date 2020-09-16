@@ -19,9 +19,9 @@
               </span>
             </transition>
           </h2>
-          <Social/>
+          <Social />
         </div>
-        <Slogan/>
+        <Slogan />
         <!-- (menu) DESIGNER -->
         <transition name="slide-fade">
           <div class="menu" v-show="isModeDesign">
@@ -31,15 +31,13 @@
                   _as graphic designer:
                 </a>
               </li>
-              <li
-                :class="'menu--item '+design.filter"
-                v-for="(design, index) in links.designer"
-                :key="index">
+              <li :class="'menu--item ' + design.filter" v-for="(design, index) in links.designer" :key="index">
                 <nuxt-link
-                  :to="{name: 'portfolio'}"
+                  :to="{ name: 'portfolio' }"
                   class="menu--link glitch carapo"
                   :data-text="design.copy"
-                  :title="design.title">
+                  :title="design.title"
+                >
                   {{ design.copy }}
                 </nuxt-link>
               </li>
@@ -58,17 +56,15 @@
                   _as UX/UI &amp; web developer:
                 </a>
               </li>
-              <li 
-                class="menu--item mode--code"
-                v-for="(code, index) in links.coder"
-                :key="index">
+              <li class="menu--item mode--code" v-for="(code, index) in links.coder" :key="index">
                 <a
-                  :class="['menu--link', 'glitch', { 'random-anim' : randomAnim }]"
+                  :class="['menu--link', 'glitch', { 'random-anim': randomAnim }]"
                   :href="code.url"
                   target="_blank"
                   rel="noopener noreferrer"
                   :data-text="code.copy"
-                  :title="code.title">
+                  :title="code.title"
+                >
                   {{ code.copy }}
                 </a>
               </li>
@@ -80,32 +76,42 @@
         </transition>
         <!-- (main) Footer -->
         <div class="content--footer">
-          <div :class="['switch', 'mode', {'mode--design' : isModeDesign, 'mode--code' : isModeCode}]">
-            <a 
-              :class="['switch--item', {'is-current' : isModeDesign}]"
+          <div :class="['switch', 'mode', { 'mode--design': isModeDesign, 'mode--code': isModeCode }]">
+            <a
+              :class="['switch--item', { 'is-current': isModeDesign }]"
               href="javascript:"
               title="Ver menu diseñador"
-              @click="changeMode()">
+              @click="changeMode()"
+            >
               <span class="mode mode--design">
                 Designer
               </span>
             </a>
-            <a 
-              :class="['switch--item', {'is-current' : !isModeDesign}]"
+            <a
+              :class="['switch--item', { 'is-current': !isModeDesign }]"
               href="javascript:"
               title="Ver menu desarrollador"
-              @click="changeMode()">
+              @click="changeMode()"
+            >
               <span class="mode mode--design">
                 Coder
               </span>
             </a>
           </div>
           <div class="link-wrap">
-            <nuxt-link :to="{name: 'cv-resume'}" class="contact-link mode mode--design is-glitch glitch--1" title="Ver portfolio de trabajos de @jalofernandez">
+            <nuxt-link
+              :to="{ name: 'cv-resume' }"
+              class="contact-link mode mode--design is-glitch glitch--1"
+              title="Ver portfolio de trabajos de @jalofernandez"
+            >
               _check my profile
             </nuxt-link>
           </div>
-          <nuxt-link :to="{name: 'legal'}" class="mode mode--coder is-glitch glitch--3" title="Ver términos legales de @jalofernandez">
+          <nuxt-link
+            :to="{ name: 'legal' }"
+            class="mode mode--coder is-glitch glitch--3"
+            title="Ver términos legales de @jalofernandez"
+          >
             Legal
           </nuxt-link>
         </div>
@@ -130,124 +136,154 @@ export default {
       links: {
         designer: [
           {
-            filter: "layout",
-            copy: "layout",
-            title: "Ver Portfolio completo de @jalofernandez"
+            filter: 'layout',
+            copy: 'layout',
+            title: 'Ver Portfolio completo de @jalofernandez',
           },
           {
-            filter: "photo",
-            copy: "photography",
-            title: "Ver Portfolio completo de @jalofernandez"
+            filter: 'photo',
+            copy: 'photography',
+            title: 'Ver Portfolio completo de @jalofernandez',
           },
           {
-            filter: "web",
-            copy: "UX & UI Web design",
-            title: "Ver Portfolio completo de @jalofernandez"
+            filter: 'web',
+            copy: 'UX & UI Web design',
+            title: 'Ver Portfolio completo de @jalofernandez',
           },
           {
-            filter: "pack",
-            copy: "packaging",
-            title: "Ver Portfolio completo de @jalofernandez"
+            filter: 'pack',
+            copy: 'packaging',
+            title: 'Ver Portfolio completo de @jalofernandez',
           },
           {
-            filter: "graph",
-            copy: "graphisms & draws",
-            title: "Ver Portfolio completo de @jalofernandez"
-          }
+            filter: 'graph',
+            copy: 'graphisms & draws',
+            title: 'Ver Portfolio completo de @jalofernandez',
+          },
         ],
         coder: [
           {
-            url: "https://www.upplication.com/en/",
-            copy: "Upplication",
-            title: "Upplication® App builder. Create the app for your business, no coding required, fast and simple. Android and iOS app"
+            url: 'https://www.upplication.com/en/',
+            copy: 'Upplication',
+            title:
+              'Upplication® App builder. Create the app for your business, no coding required, fast and simple. Android and iOS app',
           },
           {
-            url: "http://proyectogastronomix.org/",
-            copy: "Gastronomix",
-            title: "Gastronomix es un proyecto social gratuito de cocina, gastronomía creativa y reciclaje personal. Organizado por J.P. Morgan, Basque Culinary Center, La Casa y el Mundo y Fundación Tomillo"
+            url: 'http://proyectogastronomix.org/',
+            copy: 'Gastronomix',
+            title:
+              'Gastronomix es un proyecto social gratuito de cocina, gastronomía creativa y reciclaje personal. Organizado por J.P. Morgan, Basque Culinary Center, La Casa y el Mundo y Fundación Tomillo',
           },
           {
-            url: "https://widitrade.com/",
-            copy: "Widitrade",
-            title: "Widitrade to Increase Your Online Sales Now!"
+            url: 'https://widitrade.com/',
+            copy: 'Widitrade',
+            title: 'Widitrade to Increase Your Online Sales Now!',
           },
           {
-            url: "https://peluqueriacanessa.com/",
-            copy: "Canessa",
-            title: "Canessa ofrece servicios de peluquería y belleza canina y felina con cortes de pelo comerciales y de exposición. Servicio de autolavado y de un completo SPA canino."
+            url: 'https://peluqueriacanessa.com/',
+            copy: 'Canessa',
+            title:
+              'Canessa ofrece servicios de peluquería y belleza canina y felina con cortes de pelo comerciales y de exposición. Servicio de autolavado y de un completo SPA canino.',
           },
           {
-            url: "https://ecomerzpro.net/",
-            copy: "Ecomerzpro Club",
-            title: "Ecomerzpro Club for ecommerce offers and discounts"
+            url: 'https://ecomerzpro.net/',
+            copy: 'Ecomerzpro Club',
+            title: 'Ecomerzpro Club for ecommerce offers and discounts',
           },
           {
-            url: "https://jalofernandez.github.io/lfcabogados/",
-            copy: "LFC; Abogados y Economistas",
-            title: "LFC Abogados y Economistas expertos en Compliance penal. Asesoramos en materia jurídico penal preventiva."
+            url: 'https://jalofernandez.github.io/lfcabogados/',
+            copy: 'LFC; Abogados y Economistas',
+            title:
+              'LFC Abogados y Economistas expertos en Compliance penal. Asesoramos en materia jurídico penal preventiva.',
           },
           {
-            url: "https://capaball.com/app/#/login",
-            copy: "Capaball",
-            title: "Capaball elearning platform"
+            url: 'https://capaball.com/app/#/login',
+            copy: 'Capaball',
+            title: 'Capaball elearning platform',
           },
           {
-            url: "https://github.com/jalofernandez",
-            copy: "> ...take a look on Github",
-            title: "@jalofernandez GitHub account"
-          }
-        ]
+            url: 'https://github.com/jalofernandez',
+            copy: '> ...take a look on Github',
+            title: '@jalofernandez GitHub account',
+          },
+        ],
       },
       structuredData: {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        "additionalType": "jalofernández design webmaster frontend diseño gráfico",
-        "@id": "https://jalofernandez.com",
-        "url": "https://jalofernandez.com",
-        "sameAs": [
-          "https://www.instagram.com/jalofernandez/?ref=badge",
-          "https://twitter.com/jalofernandez",
-          "https://www.linkedin.com/in/javierlorenzofernandez/",
-          "https://github.com/jalofernandez",
-          "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
-          "https://www.facebook.com/jalofernandez?ref=tn_tnmn"
+        '@context': 'http://schema.org',
+        '@type': 'LocalBusiness',
+        'additionalType': 'jalofernández design webmaster frontend diseño gráfico',
+        '@id': 'https://haztunegociodigital.com',
+        'url': 'https://haztunegociodigital.com',
+        'sameAs': [
+          'https://www.instagram.com/jalofernandez/?ref=badge',
+          'https://twitter.com/jalofernandez',
+          'https://www.linkedin.com/in/javierlorenzofernandez/',
+          'https://github.com/jalofernandez',
+          'https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw',
+          'https://www.facebook.com/jalofernandez?ref=tn_tnmn',
         ],
-        "logo": "",
-        "name": "jalofernández diseño gráfico y desarrollo web en Madrid, España",
-        "description": "Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.",
-        "telephone": "+34 696 682 791",
-        "email": "jalofernandez@gmail.com",
-        "currenciesAccepted": "EUR",
-        "paymentAccepted": "Efectivo, tarjeta de crédito, Cash, Credit Card",
-        "priceRange": "Desde 10€",
-        "image": "",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+34 696 682 791",
-          "contactType": "Llamar para pedir presupuestos"
-        }
-      }
+        'logo': '',
+        'name': 'jalofernández diseño gráfico y desarrollo web en Madrid, España',
+        'description':
+          'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
+        'telephone': '+34 696 682 791',
+        'email': 'jalofernandez@gmail.com',
+        'currenciesAccepted': 'EUR',
+        'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
+        'priceRange': 'Desde 10€',
+        'image': '',
+        'contactPoint': {
+          '@type': 'ContactPoint',
+          'telephone': '+34 696 682 791',
+          'contactType': 'Llamar para pedir presupuestos',
+        },
+      },
     }
   },
   head() {
+    const title = '#HazTuNegocioDigital por @jalofernandez'
+    const description =
+      'En #HazTuNegocioDigital digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder'
+    const canonical = 'https://haztunegociodigital.com'
+
     return {
-      title: '@jalofernandez: designer + coder',
+      title,
       meta: [
-        { hid: 'description', name: 'description', content: '@jalofernandez: designer + coder personal portfolio & C.V. resume' }
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'Classification', name: 'Classification', content: 'Diseño gráfico y desarrollo web' },
+        { hid: 'subject', name: 'subject', content: description },
+
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: description },
+        { hid: 'og:url', property: 'og:url', content: canonical },
+        // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
+        // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'og:image:width', name: 'og:image:width', content: '960' },
+        // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
+        // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
+
+        { hid: 'twitter:title', name: 'twitter:title', content: title },
+        { hid: 'twitter:description', name: 'twitter:description', content: description },
+        // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
+        // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
+        // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
+        // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
       ],
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
         { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' },
         // (PWA) Service worker:
-        { src: '/sw.js' }
+        { src: '/sw.js' },
       ],
       // Pre-fetch and return recipe data server-side
       // async asyncData(context) {
       // },
       link: [
         // Canonical url
-        { rel: 'canonical', hid: "canonical", href: 'https://jalofernandez.com/' },
+        { rel: 'canonical', hid: 'canonical', href: canonical },
         // Pre-fetch and return recipe data server-side
         { rel: 'dns-prefetch', href: '//twitter.com/jalofernandez' },
         { rel: 'dns-prefetch', href: '//www.instagram.com/jalofernandez/?ref=badge' },
@@ -261,33 +297,35 @@ export default {
         { rel: 'dns-prefetch', href: '//peluqueriacanessa.com/' },
         { rel: 'dns-prefetch', href: '//ecomerzpro.net/' },
         { rel: 'dns-prefetch', href: '//capaball.com/app/#/login/' },
-        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' }
-      ]
+        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' },
+      ],
     }
   },
   mounted() {
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js').then(function (registration) {
-          // Registration was successful :)
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }).catch(function (err) {
-          // Registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
+      window.addEventListener('load', function() {
+        navigator.serviceWorker
+          .register('/sw.js')
+          .then(function(registration) {
+            // Registration was successful :)
+            console.log('ServiceWorker registration successful with scope: ', registration.scope)
+          })
+          .catch(function(err) {
+            // Registration failed :(
+            console.log('ServiceWorker registration failed: ', err)
+          })
+      })
     }
   },
   methods: {
     changeMode() {
-      this.isModeDesign = !this.isModeDesign,
-      this.isModeCode = !this.isModeCode
-    }
-  }
+      ;(this.isModeDesign = !this.isModeDesign), (this.isModeCode = !this.isModeCode)
+    },
+  },
   // computed: {
   //   getLinksDesigner() {
   //     return this.$store.state.links.designer.find(design => design.id === this.id) // when items are placed in store
-  //   } 
+  //   }
   // }
 }
 </script>
