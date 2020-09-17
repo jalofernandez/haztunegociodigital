@@ -13,7 +13,7 @@ $color-tertiary: #940202 // Gallician Red
 
 // TODO: remove me when aside works
 .aside-menu, .js-aside
-  //display: none!important
+  display: none!important
 
 ul
   margin: 0
@@ -35,9 +35,6 @@ ul
       background: lightgoldenrodyellow
       border-radius: 50%
       text-align: center
-      span
-        position: relative
-        right: 2px
     .copy
       font-size: .9rem
   &.thankfulness
@@ -52,7 +49,7 @@ main.horeca
 
 .business
   &.cover
-    box-shadow: inset 0 0 5px #333333
+    // box-shadow: inset 0 0 5px #333333
     background-size: cover
     width: 100%
     height: 230px
@@ -60,20 +57,18 @@ main.horeca
     border-radius: 6px
   &.data
     width: calc(100% - 1rem)
-    background-color: white
+    background-color: lighten($color-bg, 3%)
     margin: 0 auto
     border-radius: 15px
-    box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
+    // box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
     position: relative
     bottom: 2rem
     z-index: 10
     .name
-      font-family: cursive
       font-size: 2rem
       margin: .25rem 1rem
       text-align: left
       padding: 0
-      color: #940202
     ul
       padding: 0 1rem
       li
@@ -184,6 +179,8 @@ main.horeca
   &.light
     background-color: $color-bg
     color: $color-primary
+    font-size: 1rem
+    box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
   &.js-close
     color: #f4692a // $designer-color
     font-weight: 600
@@ -192,15 +189,11 @@ main.horeca
       font-size: 2rem
       font-weight: 400
       line-height: .5
-      position: relative
-      top: 5px
   &.js-aside
-    color: #f4692a // $designer-color
-    background-color: rgba(#222222, .8)
     font-size: 1rem
     position: fixed
-    bottom: .5rem
-    left: .5rem
+    bottom: .75rem
+    left: .75rem
     z-index: 101 // more than Aside
 
 // ASIDE

@@ -33,7 +33,7 @@ export default {
   name: 'Footer',
   props: {
     data: {
-      type: Object,
+      type: String,
       default: null,
       required: true,
     },

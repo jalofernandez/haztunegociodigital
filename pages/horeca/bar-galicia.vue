@@ -1,10 +1,10 @@
 <template>
   <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
     <!-- BTN :: floating one to trigger aside -->
-    <!-- <button class="button js-aside" type="button" @click="showAside = !showAside">
+    <button class="button js-aside light" type="button" @click="showAside = !showAside">
       <span class v-if="!showAside">Abrir secciones +</span>
-      <span class v-else>Cerrar secciones X</span>
-    </button> -->
+      <span class v-else>Cerrar secciones &times;</span>
+    </button>
 
     <Modal
       :class="{ 'md-show': isModalVisible }"
@@ -1528,8 +1528,11 @@ export default {
 <style lang="sass">
 main.horeca
   &.bar-galicia
+    .business.data .name,
     .footer .name
       font-family: cursive
-      font-size: 1.2rem
       color: #940202
+    .footer .name
+      font-size: 1.4rem
+      font-weight: 600
 </style>
