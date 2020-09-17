@@ -1,10 +1,17 @@
 <template>
   <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
     <!-- BTN :: floating one to trigger aside -->
-    <button class="button js-aside" type="button" @click="showAside = !showAside">
+    <!-- <button class="button js-aside" type="button" @click="showAside = !showAside">
       <span class v-if="!showAside">Abrir secciones +</span>
       <span class v-else>Cerrar secciones X</span>
-    </button>
+    </button> -->
+
+    <Modal
+      :class="{ 'md-show': isModalVisible }"
+      @close="closeModal()"
+      :data="business.schedule"
+      v-if="business.schedule"
+    />
 
     <!-- ASIDE :: to navigate across dishes sections -->
     <nav class="aside-menu with-anim">
@@ -42,7 +49,7 @@
     <div v-for="(menu, index) in business.menus" :key="index" :class="['modal-wrapper', { 'md-show': menu.show }]">
       <div :id="`modal-${menu.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="menu.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="menu.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover"
             :style="{
@@ -88,7 +95,7 @@
     >
       <div :id="`modal-${dish.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="dish.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="dish.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover"
             :style="{
@@ -134,7 +141,7 @@
     >
       <div :id="`modal-${cup.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="cup.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="cup.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover"
             :style="{
@@ -180,7 +187,7 @@
     >
       <div :id="`modal-${beer.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="beer.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="beer.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover"
             :style="{
@@ -226,7 +233,7 @@
     >
       <div :id="`modal-${wine.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="wine.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="wine.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover is-bottom"
             :style="{
@@ -272,7 +279,7 @@
     >
       <div :id="`modal-${drink.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="drink.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="drink.show = false">Cerrar <span>&times;</span></button>
           <div
             class="img cover"
             :style="{
@@ -318,7 +325,9 @@
     >
       <div :id="`modal-${spirit.id}`" class="md-modal has-dish">
         <div class="md-content dish info">
-          <button class="button js-close" type="button" @click="spirit.show = false">Cerrar X</button>
+          <button class="button js-close" type="button" @click="spirit.show = false"
+            >Cerrar <span>&times;</span></button
+          >
           <div
             class="img cover"
             :style="{
@@ -370,7 +379,7 @@
       ></div>
       <div class="business data">
         <h1 class="data name">{{ business.name }}</h1>
-        <ul>
+        <ul v-if="business.address || business.phone || business.schedule">
           <li>
             <a
               class="data address"
@@ -378,22 +387,27 @@
               :title="`Ver dirección de ${business.name}`"
               target="_blank"
               rel="noopener noreferrer"
+              v-if="business.address"
               >{{ business.address }}</a
             >
           </li>
-          <li>
+          <li :class="business.schedule ? 'has-schedule' : null">
             <a
               class="data phone"
               :href="`tel:${business.phone}`"
               :title="`Llamar al ${business.name}: ${business.phone}`"
+              v-if="business.phone"
               >{{ business.phone }}</a
             >
+            <button type="button" class="button light" @click="showModal()" v-if="business.schedule">
+              Ver horario
+            </button>
           </li>
         </ul>
       </div>
-      <p class="alert">
-        Disponemos de productos
-        <b>sin gluten</b>. Consultar con el camarero.
+      <p class="message alert">
+        <span class="emoji"><span>🔔</span></span>
+        <span class="copy">Disponemos de productos <b>sin gluten</b>. <br />Consultar con el camarero.</span>
       </p>
       <!-- 01 :: items list :: Daily menu -->
       <h2 class="section name with-desc">Menú del día</h2>
@@ -756,22 +770,23 @@
       </div>
     </div>
 
-    <!-- Common Footer -->
-    <!-- <footer class="footer">
-      <nuxt-link
-        :to="{name: 'index'}"
-        class="btn is-link btn--coder menu--link glitch"
-        data-text="<< Home"
-      >&lt;&lt; Home</nuxt-link>
-    </footer>-->
+    <div class="message thankfulness">
+      <p>¡<b>Gracias</b> por su visita! 😊</p>
+    </div>
+
+    <Footer :data="business.name" />
   </main>
 </template>
 
 <script>
+import Modal from '~/components/Modal.vue'
+import Footer from '~/components/Footer.vue'
+
 export default {
-  // components: { Logo, Slogan, Social },
+  components: { Modal, Footer },
   data() {
     return {
+      isModalVisible: false,
       showAside: false,
       business: {
         name: 'Bar Galicia',
@@ -782,6 +797,17 @@ export default {
         place: 'Valdemoro, Madrid',
         gmap: 'https://goo.gl/maps/TGCdSV6Y9rZ1gxQU6',
         phone: '918955364',
+        schedule: {
+          days: [
+            { day: 'Lunes', hour: 'Cerrado' },
+            { day: 'Martes', hour: '9:00 - 1:00' },
+            { day: 'Miercoles', hour: '9:00 - 1:00' },
+            { day: 'Jueves', hour: '9:00 - 1:00' },
+            { day: 'Viernes', hour: '9:00 - 1:00' },
+            { day: 'Sábado', hour: '9:00 - 1:00' },
+            { day: 'Domingo', hour: '9:00 - 1:00' },
+          ],
+        },
         menus: [
           {
             id: '99',
@@ -1488,16 +1514,22 @@ export default {
       ],
     }
   },
-  // methods: {
-  //   closeModal() {
-  //     this.modalShow = false;
-  //   },
-  // },
+  methods: {
+    showModal() {
+      this.isModalVisible = true
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
+  },
 }
 </script>
 
 <style lang="sass">
 main.horeca
   &.bar-galicia
-    // custom code here!
+    .footer .name
+      font-family: cursive
+      font-size: 1.2rem
+      color: #940202
 </style>

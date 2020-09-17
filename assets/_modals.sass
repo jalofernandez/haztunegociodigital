@@ -135,7 +135,7 @@
 .modal-wrapper
   .md-modal.has-dish
     width: 100%
-    max-width: 420px // same as Dish list (responsive)
+    max-width: $width-phones // same as Dish list (responsive)
     padding: 0 1rem
     .md-content
       border-radius: 3px
@@ -168,6 +168,17 @@
             font-size: .8rem
             text-transform: capitalize
             margin-bottom: .25rem
+        .schedule
+          margin-top: .5rem
+          .day
+            min-width: 95px
+            display: inline-block
+            text-align: right
+            padding-right: .5rem
+          .cerrado
+            color: orangered
+          .abierto
+            color: dodgerblue
       .button
         min-width: initial
         position: absolute
