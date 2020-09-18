@@ -1,9 +1,9 @@
 <template>
   <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
-    <button class="button js-aside light" type="button" @click="showAside = !showAside">
-      <span class v-if="!showAside">Abrir secciones +</span>
-      <span class v-else>Cerrar secciones &times;</span>
+    <button class="button js-aside light" type="button" @click="asideBehaviour">
+      <span class="opener" v-if="!showAside">Abrir <b>Carta</b></span>
+      <span class="closer" v-else>Cerrar <b>Carta</b></span>
     </button>
 
     <Modal
@@ -18,7 +18,9 @@
       <h2 class="icon icon-lab">{{ business.name }}</h2>
       <ul>
         <li v-for="(menu, index) in business.menus" :key="index">
-          <a class="icon icon-data" href="#">{{ menu.title }}</a>
+          <a href="#" class="aside-menu-link" v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }">
+            {{ menu.title }}
+          </a>
         </li>
       </ul>
     </nav>
@@ -854,6 +856,9 @@ export default {
     closeModal() {
       this.isModalVisible = false
     },
+    asideBehaviour() {
+      this.showAside = !this.showAside
+    },
   },
 }
 </script>
@@ -861,6 +866,8 @@ export default {
 <style lang="sass">
 main.horeca
   &.bar-galicia
+    .aside-menu h2
+      font-family: cursive
     .business.data .name,
     .footer .name
       font-family: cursive

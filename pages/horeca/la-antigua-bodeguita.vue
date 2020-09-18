@@ -1,7 +1,7 @@
 <template>
   <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
-    <button class="button js-aside light" type="button" @click="showAside = !showAside">
+    <button class="button js-aside light" type="button" @click="asideBehaviour">
       <span class v-if="!showAside">Abrir secciones +</span>
       <span class v-else>Cerrar secciones &times;</span>
     </button>
@@ -18,7 +18,9 @@
       <h2 class="icon icon-lab">{{ business.name }}</h2>
       <ul>
         <li v-for="(menu, index) in business.menus" :key="index">
-          <a class="icon icon-data" href="#">{{ menu.title }}</a>
+          <a href="#" class="aside-menu-link" v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }">
+            {{ menu.title }}
+          </a>
         </li>
       </ul>
     </nav>
@@ -71,7 +73,7 @@
       <Item :business="business" />
     </div>
 
-    <div class="message thankfulness">
+    <div class="message thankfulness" id="platos">
       <p>¡<b>Gracias</b> por su visita! 😊</p>
     </div>
 
@@ -283,6 +285,9 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false
+    },
+    asideBehaviour() {
+      this.showAside = !this.showAside
     },
     // modalsBlockTitle(info) {
     //   let strClean = info.replace(/[^èéòàùì\w\s]/gi, '')

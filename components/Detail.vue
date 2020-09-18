@@ -32,8 +32,8 @@
                   <img
                     class="allergen"
                     :src="require(`~/assets/allergens/${allergen}.svg`)"
-                    :title="'Alérgeno: ' + allergen"
-                    :alt="'Alérgeno: ' + allergen"
+                    :title="`Alérgeno: ${allergen}`"
+                    :alt="`Alérgeno: ${allergen}`"
                     width="30"
                     height="30"
                   />

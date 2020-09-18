@@ -1,13 +1,13 @@
 <template>
   <div>
     <div v-for="(menu, index) in business.menus" :key="index">
-      <h2 :class="['section', 'name', { 'with-desc': menu.desc }]">{{ menu.title }}</h2>
+      <h2 :id="`section-${index}`" :class="['section', 'name', { 'with-desc': menu.desc }]">{{ menu.title }}</h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
       <div
         class="dish item"
         v-for="(item, index) in menu.items"
         :key="index"
-        :data-modal="'modal-' + item.id"
+        :data-modal="`modal-${item.id}`"
         @click="item.show = !item.show"
       >
         <div class="dish info">

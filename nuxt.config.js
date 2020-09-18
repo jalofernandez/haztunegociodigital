@@ -68,6 +68,7 @@ export default {
   buildModules: ['@nuxtjs/google-analytics'],
   // Nuxt.js modules
   modules: [
+    'vue-scrollto/nuxt',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap', // always declare the sitemap module at end of array
   ],
