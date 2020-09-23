@@ -1,8 +1,11 @@
 <template>
   <div class="footer">
-    <ul class="">
+    <ul>
       <li>
-        <span class="name">{{ data }}</span> en <span>#HazTuNegocioDigital</span>
+        <span class="name">{{ data }}</span> en
+      </li>
+      <li>
+        <span>#HazTuNegocioDigital</span>
       </li>
       <li>
         por
@@ -13,24 +16,24 @@
           target="_blank"
           rel="noopener noreferrer"
           >jalofernandez.com</a
-        ></li
-      >
+        >
+      </li>
       <li class="copyright">
         <span>© Todos los derechos reservados</span>,
-        <b
-          ><small>{{ currentYear }}</small></b
-        >
+        <b>
+          <small>{{ currentYear }}</small>
+        </b>
       </li>
     </ul>
     <!-- <nuxt-link :to="{ name: 'index' }" class="btn is-link btn--coder menu--link glitch" data-text="<< Home"
       >&lt;&lt; Home</nuxt-link
-    > -->
+    >-->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer',
+  name: "TheFooter",
   props: {
     data: {
       type: String,
@@ -41,7 +44,7 @@ export default {
   data() {
     return {
       currentYear: new Date().getFullYear(),
-    }
+    };
   },
-}
+};
 </script>

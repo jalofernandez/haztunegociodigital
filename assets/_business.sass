@@ -11,10 +11,6 @@ $color-tertiary: #940202 // Gallician Red
 // $color-default-border: #c3cfdd
 // $color-rgb: 71,98,130
 
-// TODO: remove me when aside works
-.aside-menu, .js-aside
-  // display: none!important
-
 ul
   margin: 0
   padding: 0
@@ -51,10 +47,11 @@ main.horeca
   &.cover
     // box-shadow: inset 0 0 5px #333333
     background-size: cover
-    width: 100%
+    margin: -.5rem
+    width: calc(100% + 1rem)
     height: 230px
     background-position: top
-    border-radius: 6px
+    border-radius: 0
   &.data
     width: calc(100% - 1rem)
     background-color: lighten($color-bg, 3%)
@@ -136,11 +133,13 @@ main.horeca
       margin-bottom: .5rem
     .name
       &:not(.price)
+        font-family: $font-family-name
         font-size: 1.1rem
       &.price
         font-size: .75rem
         letter-spacing: .01rem
     .desc
+      font-family: $font-family-desc
       font-size: .9rem
       font-weight: 400
       letter-spacing: .01rem
@@ -153,12 +152,14 @@ main.horeca
       align-items: flex-start
       .price
         &.item
-          margin-right: .75rem
-          margin-bottom: .25rem
           display: flex
           flex-direction: column
           justify-content: flex-start
           align-items: flex-start
+          margin-bottom: .25rem
+          margin-right: 1rem
+          &:last-child
+            margin-right: 0
         &.name
           margin-bottom: .25rem
         &.quantity
@@ -192,8 +193,8 @@ main.horeca
       line-height: .5
   &.js-aside
     position: fixed
-    bottom: .75rem
-    left: .75rem
+    bottom: 1.25rem
+    right: 1rem
     z-index: 101 // more than Aside
     padding: .5rem .66rem
     font-size: 1rem
@@ -205,7 +206,6 @@ main.horeca
 // ASIDE
 .aside-menu
   position: fixed
-  // position: absolute
   top: 0
   left: 0
   z-index: 100
@@ -214,16 +214,17 @@ main.horeca
   height: 100%
   background-color: $color-secondary
   transition: all 0.5s
-  &::after
-    content: ''
-    position: absolute
-    top: 0
-    right: 0
-    width: 100%
-    height: 100%
-    background: rgba(0,0,0,0.2)
-    opacity: 1
-    transition: opacity 0.5s
+  // &::before
+  //   content: ''
+  //   display: block
+  //   position: absolute
+  //   top: 0
+  //   right: 0
+  //   width: 100%
+  //   height: 100%
+  //   background: rgba(0,0,0,0.2)
+  //   opacity: 1
+  //   transition: opacity 0.5s
   h2, ul li a
     padding: 1rem 1.5rem
   h2
@@ -237,6 +238,7 @@ main.horeca
       display: block
       outline: none
       box-shadow: inset 0 -1px rgba(0,0,0,0.2)
+      font-size: 1.1rem
       color: #f3efe0
       // text-transform: uppercase
       text-decoration: none
@@ -265,10 +267,11 @@ main.horeca
 .footer
   max-width: $width-phones
   margin: 0 auto
-  padding: 2rem 1rem 2rem 1.16rem
+  padding: 2rem 1rem 4.5rem 1.16rem
   text-align: center
   ul li
     color: $color-primary
+    line-height: 1.5
     &.copyright
       font-size: .85rem
       margin-top: .5rem

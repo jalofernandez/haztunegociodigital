@@ -2,11 +2,17 @@
   <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <button class="button js-aside light" type="button" @click="asideBehaviour">
-      <span class="opener" v-if="!showAside">Abrir <b>Carta</b></span>
-      <span class="closer" v-else>Cerrar <b>Carta</b></span>
+      <span class="opener" v-if="!showAside">
+        Abrir
+        <b>Carta</b>
+      </span>
+      <span class="closer" v-else>
+        Cerrar
+        <b>Carta</b>
+      </span>
     </button>
 
-    <Modal
+    <BaseModal
       :class="{ 'md-show': isModalVisible }"
       @close="closeModal()"
       :data="business.schedule"
@@ -14,19 +20,10 @@
     />
 
     <!-- Aside to navigate across dishes sections -->
-    <nav class="aside-menu with-anim">
-      <h2 class="icon icon-lab">{{ business.name }}</h2>
-      <ul>
-        <li v-for="(menu, index) in business.menus" :key="index">
-          <a href="#" class="aside-menu-link" v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }">
-            {{ menu.title }}
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <TheAside :business="business" @aside="asideBehaviour()" />
 
     <!-- Modal dialogs for each item to shown info details -->
-    <Detail :business="business" class="modal-pollas" />
+    <BusinessItemModal :business="business" />
 
     <div class="dishes">
       <!-- Business info -->
@@ -34,7 +31,9 @@
         class="business cover"
         :style="{
           'background-image':
-            'url(' + require(`@/assets/negocios/${business.short}/${business.short}-${business.cover}.jpg`) + ')',
+            'url(' +
+            require(`@/assets/negocios/${business.short}/${business.short}-${business.cover}.jpg`) +
+            ')',
         }"
         v-if="business.cover"
       ></div>
@@ -60,700 +59,793 @@
               v-if="business.phone"
               >{{ business.phone }}</a
             >
-            <button type="button" class="button light" @click="showModal()" v-if="business.schedule">
+            <button
+              type="button"
+              class="button light"
+              @click="showModal()"
+              v-if="business.schedule"
+            >
               Ver horario
             </button>
           </li>
         </ul>
       </div>
 
-      <Message :data="business.messages.gluten" v-if="business.messages" />
+      <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
 
       <!-- Items list :: all Menu Dishes & Beverages -->
-      <Item :business="business" />
+      <BusinessItemList :business="business" />
     </div>
 
     <div class="message thankfulness">
-      <p>¡<b>Gracias</b> por su visita! 😊</p>
+      <p><b>Gracias</b> por su visita 😊</p>
     </div>
 
-    <Footer :data="business.name" />
+    <TheFooter :data="business.name" />
   </main>
 </template>
 
 <script>
-import Modal from '~/components/Modal.vue'
-import Message from '~/components/Message.vue'
-import Detail from '~/components/Detail.vue'
-import Item from '~/components/Item.vue'
-import Footer from '~/components/Footer.vue'
+import BaseModal from "~/components/BaseModal.vue";
+import BaseMessage from "~/components/BaseMessage.vue";
+import BusinessItemModal from "~/components/BusinessItemModal.vue";
+import BusinessItemList from "~/components/BusinessItemList.vue";
+import TheAside from "~/components/TheAside.vue";
+import TheFooter from "~/components/TheFooter.vue";
 
 export default {
-  components: { Modal, Message, Detail, Item, Footer },
+  components: {
+    BaseModal,
+    BaseMessage,
+    BusinessItemModal,
+    BusinessItemList,
+    TheAside,
+    TheFooter,
+  },
   data() {
     return {
       isModalVisible: false,
       showAside: false,
       business: {
-        name: 'Bar Galicia',
-        short: 'bar-galicia',
-        type: 'Restaurante, bar, cafetería',
-        cover: 'cover',
-        address: 'Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid',
-        place: 'Valdemoro, Madrid',
-        gmap: 'https://goo.gl/maps/TGCdSV6Y9rZ1gxQU6',
-        phone: '918955364',
+        name: "Bar Galicia",
+        short: "bar-galicia",
+        type: "Restaurante, bar, cafetería",
+        cover: "cover",
+        address: "Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid",
+        place: "Valdemoro, Madrid",
+        gmap: "https://goo.gl/maps/TGCdSV6Y9rZ1gxQU6",
+        phone: "918955364",
+        // social: {
+        //   facebook: "https://www.facebook.com/¿?/",
+        //   instagram: "https://www.instagram.com/¿?/",
+        //   tripadvisor: "https://www.tripadvisor.es/¿?.html",
+        // },
         schedule: {
           days: [
-            { day: 'Lunes', hour: 'Cerrado' },
-            { day: 'Martes', hour: '9:00 - 1:00' },
-            { day: 'Miercoles', hour: '9:00 - 1:00' },
-            { day: 'Jueves', hour: '9:00 - 1:00' },
-            { day: 'Viernes', hour: '9:00 - 1:00' },
-            { day: 'Sábado', hour: '9:00 - 1:00' },
-            { day: 'Domingo', hour: '9:00 - 1:00' },
+            { day: "Lunes", hour: "Cerrado" },
+            { day: "Martes", hour: "9:00 - 1:00" },
+            { day: "Miercoles", hour: "9:00 - 1:00" },
+            { day: "Jueves", hour: "9:00 - 1:00" },
+            { day: "Viernes", hour: "9:00 - 1:00" },
+            { day: "Sábado", hour: "9:00 - 1:00" },
+            { day: "Domingo", hour: "9:00 - 1:00" },
           ],
         },
         messages: {
           gluten: {
-            type: 'alert',
-            copy: 'Disponemos de productos <b>sin gluten</b>. <br />Consultar con el camarero.',
+            type: "alert",
+            copy:
+              "Disponemos de productos <b>sin gluten</b>. <br />Consultar con el camarero.",
           },
         },
         menus: [
           {
-            title: 'Menú del día',
-            desc: 'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
+            title: "Menú del día",
+            desc:
+              'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: [
               {
-                id: '99',
+                id: 99,
                 show: false,
-                name: 'Menú diario',
+                name: "Menú diario",
                 img: null,
-                desc: 'Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.',
-                prices: [{ name: 'Precio', price: '10' }],
+                desc:
+                  "Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.",
+                prices: [{ name: "Precio", price: "10" }],
                 allergens: null,
               },
             ],
           },
           {
-            title: 'Raciones',
-            desc: 'También <span class="semibold">para llevar</span> . Recoger en el local.',
+            title: "Raciones",
+            desc:
+              'También <span class="semibold">para llevar</span>. Recoger en el local.',
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: [
               {
-                id: '01',
+                id: 1,
                 show: false,
-                name: 'Patatas bravas o mixtas',
-                img: 'racion-braviolis',
-                desc: 'Ración de patatas bravas picantes.',
+                name: "Patatas bravas o mixtas",
+                img: "racion-braviolis",
+                desc: "Ración de patatas bravas picantes.",
                 prices: [
-                  { name: 'Ración', price: '9' },
-                  { name: '1/2 ración', price: '6' },
+                  { name: "Ración", price: "9" },
+                  { name: "1/2 ración", price: "6" },
                 ],
-                allergens: ['sulfitos', 'huevos'],
+                allergens: ["sulfitos", "huevos"],
               },
               {
-                id: '02',
+                id: 2,
                 show: false,
-                name: 'Carne de pincho',
-                img: 'racion-carnepincho',
-                desc: 'Ración de carne de pincho con patatas fritas y pimientos de Padrón.',
+                name: "Carne de pincho",
+                img: "racion-carnepincho",
+                desc:
+                  "Ración de carne de pincho con patatas fritas y pimientos de Padrón.",
                 prices: [
-                  { name: 'Ración', price: '15' },
-                  { name: '1/2 ración', price: '10' },
+                  { name: "Ración", price: "15" },
+                  { name: "1/2 ración", price: "10" },
                 ],
-                allergens: ['sulfitos'],
+                allergens: ["sulfitos"],
               },
               {
-                id: '03',
+                id: 3,
                 show: false,
-                name: 'Croquetas de jamón',
-                img: 'racion-croquetas',
-                desc: 'Ración de croquetas caseras de jamón serrano.',
+                name: "Croquetas de jamón",
+                img: "racion-croquetas",
+                desc: "Ración de croquetas caseras de jamón serrano.",
                 prices: [
-                  { name: 'Ración', price: '10' },
-                  { name: '1/2 ración', price: '7,50' },
+                  { name: "Ración", price: "10" },
+                  { name: "1/2 ración", price: "7,50" },
                 ],
-                allergens: ['huevos', 'lacteos', 'sulfitos'],
+                allergens: ["huevos", "lacteos", "sulfitos"],
               },
               {
-                id: '04',
+                id: 4,
                 show: false,
-                name: 'Ensalada mixta',
-                img: 'racion-ensalada-mixta',
-                desc: 'Ensalada de mezclun de lechugas, tomate, espáragos, atún, maiz...',
+                name: "Ensalada mixta",
+                img: "racion-ensalada-mixta",
+                desc:
+                  "Ensalada de mezclun de lechugas, tomate, espáragos, atún, maiz...",
                 prices: [
-                  { name: 'Entera', price: '9' },
-                  { name: '1/2 ensalada', price: '7' },
+                  { name: "Entera", price: "9" },
+                  { name: "1/2 ensalada", price: "7" },
                 ],
-                allergens: ['huevos'],
+                allergens: ["huevos"],
               },
               {
-                id: '05',
+                id: 5,
                 show: false,
-                name: 'Jamón ibérico',
+                name: "Jamón ibérico",
                 img: null,
                 desc: null,
                 prices: [
-                  { name: 'Ración', price: '18' },
-                  { name: '1/2 ración', price: '13' },
+                  { name: "Ración", price: "18" },
+                  { name: "1/2 ración", price: "13" },
                 ],
                 allergens: null,
               },
               {
-                id: '06',
+                id: 6,
                 show: false,
-                name: 'Queso curado',
+                name: "Queso curado",
                 img: null,
                 desc: null,
                 prices: [
-                  { name: 'Ración', price: '12,50' },
-                  { name: '1/2 ración', price: '8' },
+                  { name: "Ración", price: "12,50" },
+                  { name: "1/2 ración", price: "8" },
                 ],
-                allergens: ['lacteos'],
+                allergens: ["lacteos"],
               },
               {
-                id: '07',
+                id: 7,
                 show: false,
-                name: 'Lacón a la gallega',
+                name: "Lacón a la gallega",
                 img: null,
-                desc: 'Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.',
+                desc:
+                  "Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.",
                 prices: [
-                  { name: 'Ración', price: '12' },
-                  { name: '1/2 ración', price: '8' },
+                  { name: "Ración", price: "12" },
+                  { name: "1/2 ración", price: "8" },
                 ],
                 allergens: null,
               },
               {
-                id: '08',
+                id: 8,
                 show: false,
-                name: 'Tabla de salchipapas',
+                name: "Tabla de salchipapas",
                 img: null,
-                desc: 'Patatas fritas con salchichas acompañado de salsa brava, kepchup, mostaza, alioli...',
+                desc:
+                  "Patatas fritas con salchichas acompañado de salsa brava, kepchup, mostaza, alioli...",
                 prices: [
-                  { name: 'Ración', price: '9' },
-                  { name: '1/2 ración', price: '7' },
+                  { name: "Ración", price: "9" },
+                  { name: "1/2 ración", price: "7" },
                 ],
-                allergens: ['mostaza', 'huevos', 'sulfitos'],
+                allergens: ["mostaza", "huevos", "sulfitos"],
               },
               {
-                id: '09',
+                id: 9,
                 show: false,
-                name: 'Tortilla de patatas',
-                img: 'racion-tortilla',
-                desc: 'Básico de la comida española. Con o sin cebolla. Al punto, jugosilla.',
+                name: "Tortilla de patatas",
+                img: "racion-tortilla",
+                desc:
+                  "Básico de la comida española. Con o sin cebolla. Al punto, jugosilla.",
                 prices: [
-                  { name: 'Entera', price: '9' },
-                  { name: 'Media', price: '5' },
+                  { name: "Entera", price: "9" },
+                  { name: "Media", price: "5" },
                 ],
-                allergens: ['huevos', 'sulfitos'],
+                allergens: ["huevos", "sulfitos"],
               },
               {
-                id: '10',
+                id: 10,
                 show: false,
-                name: 'Alitas de pollo',
+                name: "Alitas de pollo",
                 img: null,
-                desc: 'Alitas de pollo con patatas fritas y pimientos al punto de sal.',
+                desc:
+                  "Alitas de pollo con patatas fritas y pimientos al punto de sal.",
                 prices: [
-                  { name: 'Ración', price: '12' },
-                  { name: '1/2 ración', price: '8' },
+                  { name: "Ración", price: "12" },
+                  { name: "1/2 ración", price: "8" },
                 ],
-                allergens: ['sulfitos'],
+                allergens: ["sulfitos"],
               },
               {
-                id: '11',
+                id: 11,
                 show: false,
-                name: 'Nuggets de pollo',
+                name: "Nuggets de pollo",
                 img: null,
-                desc: 'Pequeñas piezas de pechuga de pollo rebozadas y fritas.',
+                desc: "Pequeñas piezas de pechuga de pollo rebozadas y fritas.",
                 prices: [
-                  { name: 'Ración', price: '11' },
-                  { name: '1/2 ración', price: '7' },
+                  { name: "Ración", price: "11" },
+                  { name: "1/2 ración", price: "7" },
                 ],
-                allergens: ['sulfitos'],
+                allergens: ["sulfitos"],
               },
               {
-                id: '12',
+                id: 12,
                 show: false,
-                name: 'Oreja a la plancha',
+                name: "Oreja a la plancha",
                 img: null,
-                desc: 'La radicional oreja de cerdo a la plancha al punto que desse con un punto picante.',
+                desc:
+                  "La radicional oreja de cerdo a la plancha al punto que desse con un punto picante.",
                 prices: [
-                  { name: 'Ración', price: '13,50' },
-                  { name: '1/2 ración', price: '8,80' },
+                  { name: "Ración", price: "13,50" },
+                  { name: "1/2 ración", price: "8,80" },
                 ],
-                allergens: ['sulfitos'],
+                allergens: ["sulfitos"],
               },
               {
-                id: '13',
+                id: 13,
                 show: false,
-                name: 'Huevos rotos con jamón',
+                name: "Huevos rotos con jamón",
                 img: null,
-                desc: 'Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico.',
+                desc:
+                  "Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico.",
                 prices: [
-                  { name: 'Ración', price: '13' },
-                  { name: '1/2 ración', price: '8,50' },
+                  { name: "Ración", price: "13" },
+                  { name: "1/2 ración", price: "8,50" },
                 ],
-                allergens: ['huevos', 'sulfitos'],
+                allergens: ["huevos", "sulfitos"],
               },
               {
-                id: '14',
+                id: 14,
                 show: false,
-                name: 'Pimientos de Padrón',
+                name: "Pimientos de Padrón",
                 img: null,
-                desc: 'Como dirían en Galicia: Os pementos de Padrón, uns pican e outros non.',
+                desc:
+                  "Como dirían en Galicia: Os pementos de Padrón, uns pican e outros non.",
                 prices: [
-                  { name: 'Ración', price: '10' },
-                  { name: '1/2 ración', price: '6' },
+                  { name: "Ración", price: "10" },
+                  { name: "1/2 ración", price: "6" },
                 ],
-                allergens: ['sulfitos'],
+                allergens: ["sulfitos"],
               },
               {
-                id: '15',
+                id: 15,
                 show: false,
-                name: 'Pulpo a la gallega',
-                img: 'racion-pulpo',
-                desc: 'Pulpo cocido con cachelos y su toque de sal, aceite de oliva y pimentón.',
-                prices: [{ name: 'Ración', price: '15' }],
-                allergens: ['moluscos', 'pescado'],
+                name: "Pulpo a la gallega",
+                img: "racion-pulpo",
+                desc:
+                  "Pulpo cocido con cachelos y su toque de sal, aceite de oliva y pimentón.",
+                prices: [{ name: "Ración", price: "15" }],
+                allergens: ["moluscos", "pescado"],
               },
               {
-                id: '16',
+                id: 16,
                 show: false,
-                name: 'Chopitos',
-                img: null,
-                desc: null,
-                prices: [
-                  { name: 'Ración', price: '13' },
-                  { name: '1/2 ración', price: '8,80' },
-                ],
-                allergens: ['moluscos', 'pescado', 'sulfitos'],
-              },
-              {
-                id: '17',
-                show: false,
-                name: 'Calamares a la romana',
-                img: null,
-                desc: 'Calamares rebozados fritos con su toque de limón.',
-                prices: [
-                  { name: 'Ración', price: '14' },
-                  { name: '1/2 ración', price: '9' },
-                ],
-                allergens: ['moluscos', 'pescado', 'sulfitos'],
-              },
-              {
-                id: '18',
-                show: false,
-                name: 'Boquerones fritos',
-                img: 'racion-boquerones-fritos',
-                desc: 'Al estilo andaluz, con su toque de vinagre, pimentón y limón.',
-                prices: [
-                  { name: 'Ración', price: '12' },
-                  { name: '1/2 ración', price: '8' },
-                ],
-                allergens: ['pescado', 'sulfitos'],
-              },
-              {
-                id: '19',
-                show: false,
-                name: 'Patas de calamar',
-                img: 'racion-rabas',
-                desc: 'Patas de calamar rebozadas fritas con su toque de limón.',
-                prices: [
-                  { name: 'Ración', price: '14' },
-                  { name: '1/2 ración', price: '9' },
-                ],
-                allergens: ['moluscos', 'pescado', 'sulfitos'],
-              },
-              {
-                id: '20',
-                show: false,
-                name: 'Fritura de pescado',
-                img: 'racion-fritura',
-                desc: 'Fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...',
-                prices: [
-                  { name: 'Ración', price: '15' },
-                  { name: '1/2 ración', price: '10' },
-                ],
-                allergens: ['moluscos', 'crustaceos', 'pescado', 'sulfitos'],
-              },
-              {
-                id: '21',
-                show: false,
-                name: 'Sepia a la plancha',
-                img: 'racion-sepia',
-                desc: 'Sepia con salsa alioli y guarnición de ensalada.',
-                prices: [{ name: 'Ración', price: '14' }],
-                allergens: ['moluscos', 'pescado', 'huevos', 'sulfitos'],
-              },
-              {
-                id: '22',
-                show: false,
-                name: 'Gambón a la plancha',
+                name: "Chopitos",
                 img: null,
                 desc: null,
-                prices: [{ name: 'Ración', price: '17' }],
-                allergens: ['crustaceos', 'pescado', 'sulfitos'],
+                prices: [
+                  { name: "Ración", price: "13" },
+                  { name: "1/2 ración", price: "8,80" },
+                ],
+                allergens: ["moluscos", "pescado", "sulfitos"],
               },
               {
-                id: '23',
+                id: 17,
                 show: false,
-                name: 'Boquerones en vinagre',
+                name: "Calamares a la romana",
                 img: null,
-                desc: 'Boquerones en vinagre con su toque de ajo y perejil.',
+                desc: "Calamares rebozados fritos con su toque de limón.",
                 prices: [
-                  { name: 'Ración', price: '10' },
-                  { name: '1/2 ración', price: '6,50' },
+                  { name: "Ración", price: "14" },
+                  { name: "1/2 ración", price: "9" },
                 ],
-                allergens: ['pescado'],
+                allergens: ["moluscos", "pescado", "sulfitos"],
               },
               {
-                id: '24',
+                id: 18,
                 show: false,
-                name: 'Anchoas',
-                img: null,
-                desc: 'Anchoas en aceite de oliva virgen.',
+                name: "Boquerones fritos",
+                img: "racion-boquerones-fritos",
+                desc:
+                  "Al estilo andaluz, con su toque de vinagre, pimentón y limón.",
                 prices: [
-                  { name: 'Ración', price: '12' },
-                  { name: '1/2 ración', price: '7,50' },
+                  { name: "Ración", price: "12" },
+                  { name: "1/2 ración", price: "8" },
                 ],
-                allergens: ['pescado'],
+                allergens: ["pescado", "sulfitos"],
               },
               {
-                id: '25',
+                id: 19,
                 show: false,
-                name: 'Matrimonio',
-                img: null,
-                desc: 'Clásico combinado de anchoas en aceite y boquerones en vinagre.',
+                name: "Patas de calamar",
+                img: "racion-rabas",
+                desc:
+                  "Patas de calamar rebozadas fritas con su toque de limón.",
                 prices: [
-                  { name: 'Ración', price: '11' },
-                  { name: '1/2 ración', price: '7' },
+                  { name: "Ración", price: "14" },
+                  { name: "1/2 ración", price: "9" },
                 ],
-                allergens: ['pescado'],
+                allergens: ["moluscos", "pescado", "sulfitos"],
+              },
+              {
+                id: 20,
+                show: false,
+                name: "Fritura de pescado",
+                img: "racion-fritura",
+                desc:
+                  "Fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...",
+                prices: [
+                  { name: "Ración", price: "15" },
+                  { name: "1/2 ración", price: "10" },
+                ],
+                allergens: ["moluscos", "crustaceos", "pescado", "sulfitos"],
+              },
+              {
+                id: 21,
+                show: false,
+                name: "Sepia a la plancha",
+                img: "racion-sepia",
+                desc: "Sepia con salsa alioli y guarnición de ensalada.",
+                prices: [{ name: "Ración", price: "14" }],
+                allergens: ["moluscos", "pescado", "huevos", "sulfitos"],
+              },
+              {
+                id: 22,
+                show: false,
+                name: "Gambón a la plancha",
+                img: null,
+                desc: null,
+                prices: [{ name: "Ración", price: "17" }],
+                allergens: ["crustaceos", "pescado", "sulfitos"],
+              },
+              {
+                id: 23,
+                show: false,
+                name: "Boquerones en vinagre",
+                img: null,
+                desc: "Boquerones en vinagre con su toque de ajo y perejil.",
+                prices: [
+                  { name: "Ración", price: "10" },
+                  { name: "1/2 ración", price: "6,50" },
+                ],
+                allergens: ["pescado"],
+              },
+              {
+                id: 24,
+                show: false,
+                name: "Anchoas",
+                img: null,
+                desc: "Anchoas en aceite de oliva virgen.",
+                prices: [
+                  { name: "Ración", price: "12" },
+                  { name: "1/2 ración", price: "7,50" },
+                ],
+                allergens: ["pescado"],
+              },
+              {
+                id: 25,
+                show: false,
+                name: "Matrimonio",
+                img: null,
+                desc:
+                  "Clásico combinado de anchoas en aceite y boquerones en vinagre.",
+                prices: [
+                  { name: "Ración", price: "11" },
+                  { name: "1/2 ración", price: "7" },
+                ],
+                allergens: ["pescado"],
               },
             ],
           },
           {
-            title: 'Bocadillos y Montados',
-            desc: 'Preguntar precios y disponibilidad.',
+            title: "Bocadillos y Montados",
+            desc: "Preguntar precios y disponibilidad.",
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: null,
           },
           {
-            title: 'Desayunos',
-            desc: 'En horario de mañana.',
+            title: "Desayunos",
+            desc: "En horario de mañana.",
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: [
               {
-                id: '41',
+                id: 41,
                 show: false,
-                name: 'Café y tostada',
+                name: "Café y tostada",
                 img: null,
-                desc: 'Café al gusto (cortado, sólo, con leche...) con tostada de mantequilla y mermelada o tomate.',
+                desc:
+                  "Café al gusto (cortado, sólo, con leche...) con tostada de mantequilla y mermelada o tomate.",
                 prices: [
-                  { name: 'Entera', price: '2,50' },
-                  { name: 'Media', price: '2,20' },
+                  { name: "Entera", price: "2,50" },
+                  { name: "Media", price: "2,20" },
                 ],
                 allergens: null,
               },
               {
-                id: '42',
+                id: 42,
                 show: false,
-                name: 'Café y tostada con jamón',
+                name: "Café y tostada con jamón",
                 img: null,
-                desc: 'Café al gusto (cortado, sólo, con leche...) con tostada de tomate y jamón.',
-                prices: [{ name: 'Entera', price: '3,80' }],
+                desc:
+                  "Café al gusto (cortado, sólo, con leche...) con tostada de tomate y jamón.",
+                prices: [{ name: "Entera", price: "3,80" }],
                 allergens: null,
               },
             ],
           },
           {
-            title: 'Cervezas',
-            items: [
-              {
-                id: '50',
-                show: false,
-                name: 'Cerveza de grifo',
-                img: 'cerveza-grifo',
-                desc: 'Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.',
-                prices: [
-                  { name: 'Caña', price: '1,80' },
-                  { name: 'Copa', price: '2,50' },
-                  { name: 'Maceta', price: '3' },
-                  { name: 'Jarra', price: '3,40' },
-                ],
-                allergens: ['gluten'],
-              },
-              {
-                id: '51',
-                show: false,
-                name: 'Cerveza en botella',
-                img: 'cerveza-tercio',
-                desc: 'Disponemos de: Estrella de Galicia, Mahou y Heineken.',
-                prices: [
-                  { name: 'Botellín', price: '1,60' },
-                  { name: 'Tercio', price: '2,50' },
-                ],
-                allergens: ['gluten'],
-              },
-              {
-                id: '52',
-                show: false,
-                name: 'Cerveza sin gluten',
-                img: 'cerveza-tercio-sin-gluten',
-                desc: 'Tercio de Mahou sin gluten.',
-                prices: [{ name: 'Tercio', price: '2,80' }],
-                allergens: null,
-              },
-              {
-                id: '53',
-                show: false,
-                name: 'Cerveza 1906',
-                img: 'cerveza-1906',
-                desc: 'Tercio de cerveza especial reserva 1906 de Estrella de Galicia.',
-                prices: [{ name: 'Tercio', price: '2,90' }],
-                allergens: ['gluten'],
-              },
-              {
-                id: '54',
-                show: false,
-                name: 'Cerveza tostada 0,0',
-                img: 'cerveza-tostada-00',
-                desc: 'Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.',
-                prices: [{ name: 'Tercio', price: '2,50' }],
-                allergens: ['gluten'],
-              },
-            ],
-          },
-          {
-            title: 'Vinos',
-            desc: 'Amplia variedad de vinos.',
-            items: [
-              {
-                id: '80',
-                show: false,
-                name: 'Condado de Haza',
-                img: 'vino-condado-haza',
-                desc: 'Crianza 2017 es un vino limpio y brillante, ideal para maridar con asados de carne.',
-                prices: [
-                  { name: 'Copa', price: '3' },
-                  { name: 'Botella', price: '18' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '81',
-                show: false,
-                name: 'La Planta',
-                img: 'vino-la-planta',
-                desc: 'Ribera del Duero 2018. Ideal para embutidos y quesos así como para guisos.',
-                prices: [
-                  { name: 'Copa', price: '2,60' },
-                  { name: 'Botella', price: '15' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '82',
-                show: false,
-                name: 'Albariño Altos de Torona',
-                img: 'vino-altos-de-torona',
-                desc: 'Vino blanco de uva Albariño, recogida en las laderas del río Miño.',
-                prices: [
-                  { name: 'Copa', price: '2,50' },
-                  { name: 'Botella', price: '14' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '83',
-                show: false,
-                name: 'Manzanilla Solear',
-                img: 'vino-manzanilla-solear',
-                desc: 'Manzanilla fina y vieja, de carácter alegre que funcionará de maravilla con ibéricos.',
-                prices: [
-                  { name: 'Copa', price: '2,50' },
-                  { name: 'Botella', price: '15' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '84',
-                show: false,
-                name: 'Portocelo Roble',
-                img: 'vino-portocelo-rivera',
-                desc: 'Vino tinto tempranillo con denominación de origen Ribera del Duero.',
-                prices: [
-                  { name: 'Copa', price: '2,20' },
-                  { name: 'Botella', price: '12' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '85',
-                show: false,
-                name: 'Lan Crianza',
-                img: 'vino-lan-crianza',
-                desc: 'Vino crianza de la Rioja Alta y Rioja Alavesa perfecto para acompañar tapas y entremeses.',
-                prices: [
-                  { name: 'Copa', price: '2,90' },
-                  { name: 'Botella', price: '17' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '86',
-                show: false,
-                name: 'Rueda Heredad de Peñalosa',
-                img: 'vino-rueda-penalosa',
-                desc: 'Vino blanco 100% Verdejo con denominación de origen Rueda.',
-                prices: [
-                  { name: 'Copa', price: '2,20' },
-                  { name: 'Botella', price: '12' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '87',
-                show: false,
-                name: 'Alma de Valdeguerra',
-                img: 'vino-alma-valdeguerra',
-                desc: 'Vino rosado semidulce con denominación de origen Madrid.',
-                prices: [
-                  { name: 'Copa', price: '2,20' },
-                  { name: 'Botella', price: '12' },
-                ],
-                allergens: null,
-              },
-              {
-                id: '88',
-                show: false,
-                name: 'Viñaredo Godello',
-                img: 'vino-vinaredo-godello',
-                desc: 'Vino blanco fresco y afrutado procedente de viñedos de Valdeorras.',
-                prices: [
-                  { name: 'Copa', price: '2,20' },
-                  { name: 'Botella', price: '14' },
-                ],
-                allergens: null,
-              },
-            ],
-          },
-          {
-            title: 'Bebidas',
+            title: "Cervezas",
             desc: null,
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: [
               {
-                id: '60',
+                id: 50,
                 show: false,
-                name: 'Café o infusión',
-                img: 'cafe-con-leche',
-                desc: 'Café al gusto (cortado, sólo, con leche...) o infusión.',
-                prices: [{ name: 'Precio', price: '1,30' }],
-                allergens: null,
-              },
-              {
-                id: '61',
-                show: false,
-                name: 'Carajillo',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '2,50' }],
-                allergens: null,
-              },
-              {
-                id: '62',
-                show: false,
-                name: 'Colacao',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '1,40' }],
-                allergens: null,
-              },
-              {
-                id: '63',
-                show: false,
-                name: 'Botella de agua',
-                img: 'botella-agua',
-                desc: 'El agua de Cabreiroá destaca por sus propiedades minero-medicinales.',
+                name: "Cerveza de grifo",
+                img: "cerveza-grifo",
+                desc:
+                  "Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.",
                 prices: [
-                  { name: '1/2 litro', price: '1,60' },
-                  { name: '1 litro', price: '2,80' },
+                  { name: "Caña", price: "1,80" },
+                  { name: "Copa", price: "2,50" },
+                  { name: "Maceta", price: "3" },
+                  { name: "Jarra", price: "3,40" },
+                ],
+                allergens: ["gluten"],
+              },
+              {
+                id: 51,
+                show: false,
+                name: "Cerveza en botella",
+                img: "cerveza-tercio",
+                desc: "Disponemos de: Estrella de Galicia, Mahou y Heineken.",
+                prices: [
+                  { name: "Botellín", price: "1,60" },
+                  { name: "Tercio", price: "2,50" },
+                ],
+                allergens: ["gluten"],
+              },
+              {
+                id: 52,
+                show: false,
+                name: "Cerveza sin gluten",
+                img: "cerveza-tercio-sin-gluten",
+                desc: "Tercio de Mahou sin gluten.",
+                prices: [{ name: "Tercio", price: "2,80" }],
+                allergens: null,
+              },
+              {
+                id: 53,
+                show: false,
+                name: "Cerveza 1906",
+                img: "cerveza-1906",
+                desc:
+                  "Tercio de cerveza especial reserva 1906 de Estrella de Galicia.",
+                prices: [{ name: "Tercio", price: "2,90" }],
+                allergens: ["gluten"],
+              },
+              {
+                id: 54,
+                show: false,
+                name: "Cerveza tostada 0,0",
+                img: "cerveza-tostada-00",
+                desc:
+                  "Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.",
+                prices: [{ name: "Tercio", price: "2,50" }],
+                allergens: ["gluten"],
+              },
+            ],
+          },
+          {
+            title: "Vinos",
+            desc: "Amplia variedad de vinos.",
+            imgs: {
+              position: "bottom",
+              width: 90,
+              height: 101,
+            },
+            items: [
+              {
+                id: "80",
+                show: false,
+                name: "Condado de Haza",
+                img: "vino-condado-haza",
+                desc:
+                  "Crianza 2017 es un vino limpio y brillante, ideal para maridar con asados de carne.",
+                prices: [
+                  { name: "Copa", price: "3" },
+                  { name: "Botella", price: "18" },
                 ],
                 allergens: null,
               },
               {
-                id: '64',
+                id: "81",
                 show: false,
-                name: 'Refrescos',
-                img: 'refrescos',
-                desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
-                prices: [{ name: 'Precio', price: '2,40' }],
+                name: "La Planta",
+                img: "vino-la-planta",
+                desc:
+                  "Ribera del Duero 2018. Ideal para embutidos y quesos así como para guisos.",
+                prices: [
+                  { name: "Copa", price: "2,60" },
+                  { name: "Botella", price: "15" },
+                ],
                 allergens: null,
               },
               {
-                id: '65',
+                id: "82",
                 show: false,
-                name: 'Zumos',
-                img: 'zumos',
-                desc: 'De piña, melocotón...',
-                prices: [{ name: 'Precio', price: '2,40' }],
+                name: "Albariño Altos de Torona",
+                img: "vino-altos-de-torona",
+                desc:
+                  "Vino blanco de uva Albariño, recogida en las laderas del río Miño.",
+                prices: [
+                  { name: "Copa", price: "2,50" },
+                  { name: "Botella", price: "14" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "83",
+                show: false,
+                name: "Manzanilla Solear",
+                img: "vino-manzanilla-solear",
+                desc:
+                  "Manzanilla fina y vieja, de carácter alegre que funcionará de maravilla con ibéricos.",
+                prices: [
+                  { name: "Copa", price: "2,50" },
+                  { name: "Botella", price: "15" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "84",
+                show: false,
+                name: "Portocelo Roble",
+                img: "vino-portocelo-rivera",
+                desc:
+                  "Vino tinto tempranillo con denominación de origen Ribera del Duero.",
+                prices: [
+                  { name: "Copa", price: "2,20" },
+                  { name: "Botella", price: "12" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "85",
+                show: false,
+                name: "Lan Crianza",
+                img: "vino-lan-crianza",
+                desc:
+                  "Vino crianza de la Rioja Alta y Rioja Alavesa perfecto para acompañar tapas y entremeses.",
+                prices: [
+                  { name: "Copa", price: "2,90" },
+                  { name: "Botella", price: "17" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "86",
+                show: false,
+                name: "Rueda Heredad de Peñalosa",
+                img: "vino-rueda-penalosa",
+                desc:
+                  "Vino blanco 100% Verdejo con denominación de origen Rueda.",
+                prices: [
+                  { name: "Copa", price: "2,20" },
+                  { name: "Botella", price: "12" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "87",
+                show: false,
+                name: "Alma de Valdeguerra",
+                img: "vino-alma-valdeguerra",
+                desc:
+                  "Vino rosado semidulce con denominación de origen Madrid.",
+                prices: [
+                  { name: "Copa", price: "2,20" },
+                  { name: "Botella", price: "12" },
+                ],
+                allergens: null,
+              },
+              {
+                id: "88",
+                show: false,
+                name: "Viñaredo Godello",
+                img: "vino-vinaredo-godello",
+                desc:
+                  "Vino blanco fresco y afrutado procedente de viñedos de Valdeorras.",
+                prices: [
+                  { name: "Copa", price: "2,20" },
+                  { name: "Botella", price: "14" },
+                ],
                 allergens: null,
               },
             ],
           },
           {
-            title: 'Licores y combinados',
+            title: "Bebidas",
             desc: null,
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
             items: [
               {
-                id: '70',
+                id: 60,
                 show: false,
-                name: 'Tinto de verano',
-                img: 'tinto-de-verano',
-                desc: 'Vino tinto con gaseosa o limón bien fresquito.',
+                name: "Café o infusión",
+                img: "cafe-con-leche",
+                desc: "Café al gusto (cortado, sólo, con leche...) o infusión.",
+                prices: [{ name: "Precio", price: "1,30" }],
+                allergens: null,
+              },
+              {
+                id: 61,
+                show: false,
+                name: "Carajillo",
+                img: null,
+                desc: null,
+                prices: [{ name: "Precio", price: "2,50" }],
+                allergens: null,
+              },
+              {
+                id: 62,
+                show: false,
+                name: "Colacao",
+                img: null,
+                desc: null,
+                prices: [{ name: "Precio", price: "1,40" }],
+                allergens: null,
+              },
+              {
+                id: 63,
+                show: false,
+                name: "Botella de agua",
+                img: "botella-agua",
+                desc:
+                  "El agua de Cabreiroá destaca por sus propiedades minero-medicinales.",
                 prices: [
-                  { name: 'Maceta', price: '2,50' },
-                  { name: 'Jarra', price: '3,20' },
+                  { name: "1/2 litro", price: "1,60" },
+                  { name: "1 litro", price: "2,80" },
                 ],
                 allergens: null,
               },
               {
-                id: '71',
+                id: 64,
                 show: false,
-                name: 'Chupito',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '1,40' }],
+                name: "Refrescos",
+                img: "refrescos",
+                desc: "Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...",
+                prices: [{ name: "Precio", price: "2,40" }],
                 allergens: null,
               },
               {
-                id: '72',
+                id: 65,
                 show: false,
-                name: 'Copa de licor',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '2,40' }],
+                name: "Zumos",
+                img: "zumos",
+                desc: "De piña, melocotón...",
+                prices: [{ name: "Precio", price: "2,40" }],
                 allergens: null,
               },
+            ],
+          },
+          {
+            title: "Licores y combinados",
+            desc: null,
+            imgs: {
+              position: "top",
+              width: 90,
+              height: 90,
+            },
+            items: [
               {
-                id: '73',
+                id: 70,
                 show: false,
-                name: 'Copa de Baileys',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '3,80' }],
-                allergens: null,
-              },
-              {
-                id: '74',
-                show: false,
-                name: 'Combinados',
-                img: 'combinados',
-                desc: 'Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores.',
+                name: "Tinto de verano",
+                img: "tinto-de-verano",
+                desc: "Vino tinto con gaseosa o limón bien fresquito.",
                 prices: [
-                  { name: 'Nacional', price: '5' },
-                  { name: 'Importación', price: '5,50' },
-                  { name: 'Nordes', price: '7,30' },
-                  { name: 'Legendario', price: '5,80' },
+                  { name: "Maceta", price: "2,50" },
+                  { name: "Jarra", price: "3,20" },
+                ],
+                allergens: null,
+              },
+              {
+                id: 71,
+                show: false,
+                name: "Chupito",
+                img: null,
+                desc: null,
+                prices: [{ name: "Precio", price: "1,40" }],
+                allergens: null,
+              },
+              {
+                id: 72,
+                show: false,
+                name: "Copa de licor",
+                img: null,
+                desc: null,
+                prices: [{ name: "Precio", price: "2,40" }],
+                allergens: null,
+              },
+              {
+                id: 73,
+                show: false,
+                name: "Copa de Baileys",
+                img: null,
+                desc: null,
+                prices: [{ name: "Precio", price: "3,80" }],
+                allergens: null,
+              },
+              {
+                id: 74,
+                show: false,
+                name: "Combinados",
+                img: "combinados",
+                desc:
+                  "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores.",
+                prices: [
+                  { name: "Nacional", price: "5" },
+                  { name: "Importación", price: "5,50" },
+                  { name: "Nordes", price: "7,30" },
+                  { name: "Legendario", price: "5,80" },
                 ],
                 allergens: null,
               },
@@ -762,11 +854,11 @@ export default {
         ],
       },
       structuredData: {
-        '@context': 'http://schema.org',
-        '@type': 'LocalBusiness',
-        'additionalType': 'Bar Galicia de Valdemoro en jalofernández',
-        '@id': 'https://haztunegociodigital.com/horeca/bar-galicia',
-        'url': 'https://haztunegociodigital.com/horeca/bar-galicia',
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        additionalType: "Bar Galicia de Valdemoro en jalofernández",
+        "@id": "https://haztunegociodigital.com/horeca/bar-galicia",
+        url: "https://haztunegociodigital.com/horeca/bar-galicia",
         // sameAs: [
         //   "https://www.instagram.com/jalofernandez/?ref=badge",
         //   "https://twitter.com/jalofernandez",
@@ -775,43 +867,48 @@ export default {
         //   "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
         //   "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
         // ],
-        'logo': '',
-        'name': 'Bar Galicia Valdemoro',
-        'description': 'Bar Galicia de Valdemoro especializado en raciones y cocina gallega',
-        'telephone': '+34 696 682 791',
-        'email': 'jalofernandez@gmail.com',
-        'currenciesAccepted': 'EUR',
-        'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
-        'priceRange': 'Desde 2€',
-        'image': '',
-        'contactPoint': {
-          '@type': 'ContactPoint',
-          'telephone': '+34 91 895 53 64',
-          'contactType': 'Llamar para reservar o recoger pedidos',
+        logo: "",
+        name: "Bar Galicia Valdemoro",
+        description:
+          "Bar Galicia de Valdemoro especializado en raciones y cocina gallega",
+        telephone: "+34 696 682 791",
+        email: "jalofernandez@gmail.com",
+        currenciesAccepted: "EUR",
+        paymentAccepted: "Efectivo, tarjeta de crédito, Cash, Credit Card",
+        priceRange: "Desde 2€",
+        image: "",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+34 91 895 53 64",
+          contactType: "Llamar para reservar o recoger pedidos",
         },
       },
-    }
+    };
   },
   head() {
-    const businessName = this.business.name
-    const businessShort = this.business.short
-    const businessPlace = this.business.place
-    const businessType = this.business.type
+    const businessName = this.business.name;
+    const businessShort = this.business.short;
+    const businessPlace = this.business.place;
+    const businessType = this.business.type;
 
-    const title = `${businessName} en #HazTuNegocioDigital`
-    const description = `${businessName} en ${businessPlace} por @jalofernandez`
-    const type = `${businessType} en ${businessPlace}`
+    const title = `${businessName} en #HazTuNegocioDigital`;
+    const description = `${businessName} en ${businessPlace} por @jalofernandez`;
+    const type = `${businessType} en ${businessPlace}`;
 
-    const canonical = `https://haztunegociodigital.com/horeca/${businessShort}`
+    const canonical = `https://haztunegociodigital.com/horeca/${businessShort}`;
 
     const meta = [
-      { hid: 'description', name: 'description', content: description },
-      { hid: 'Classification', name: 'Classification', content: businessType },
-      { hid: 'subject', name: 'subject', content: type },
+      { hid: "description", name: "description", content: description },
+      { hid: "Classification", name: "Classification", content: businessType },
+      { hid: "subject", name: "subject", content: type },
 
-      { hid: 'og:title', property: 'og:title', content: title },
-      { hid: 'og:description', property: 'og:description', content: description },
-      { hid: 'og:url', property: 'og:url', content: canonical },
+      { hid: "og:title", property: "og:title", content: title },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: description,
+      },
+      { hid: "og:url", property: "og:url", content: canonical },
       // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
       // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
       // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
@@ -819,17 +916,21 @@ export default {
       // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
       // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
 
-      { hid: 'twitter:title', name: 'twitter:title', content: title },
-      { hid: 'twitter:description', name: 'twitter:description', content: description },
+      { hid: "twitter:title", name: "twitter:title", content: title },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: description,
+      },
 
       // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
       // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
       // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
       // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
-    ]
+    ];
 
-    const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
+    const link = [{ rel: "canonical", hid: "canonical", href: canonical }];
 
     // if (this.restaurant.web) {
     //   link.push({ rel: 'dns-prefetch', href: this.restaurant.web })
@@ -840,27 +941,32 @@ export default {
       meta,
       link,
       // Structured Data (Schema)
-      __dangerouslyDisableSanitizers: ['script'],
+      __dangerouslyDisableSanitizers: ["script"],
       script: [
         {
           innerHTML: JSON.stringify(this.structuredData),
-          type: 'application/ld+json',
+          type: "application/ld+json",
         },
       ],
-    }
+    };
+  },
+  computed: {
+    renderAllergens() {
+      console.log("check it! " + this.business.menus.items.allergens);
+    },
   },
   methods: {
     showModal() {
-      this.isModalVisible = true
+      this.isModalVisible = true;
     },
     closeModal() {
-      this.isModalVisible = false
+      this.isModalVisible = false;
     },
     asideBehaviour() {
-      this.showAside = !this.showAside
+      this.showAside = !this.showAside;
     },
   },
-}
+};
 </script>
 
 <style lang="sass">

@@ -1,7 +1,10 @@
 <template>
   <div>
     <div v-for="(menu, index) in business.menus" :key="index">
-      <h2 :id="`section-${index}`" :class="['section', 'name', { 'with-desc': menu.desc }]">{{ menu.title }}</h2>
+      <h2
+        :id="`section-${index}`"
+        :class="['section', 'name', { 'with-desc': menu.desc }]"
+      >{{ menu.title }}</h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
       <div
         class="dish item"
@@ -13,8 +16,14 @@
         <div class="dish info">
           <h3 class="name">{{ item.name }}</h3>
           <p class="desc" v-if="item.desc">{{ item.desc }}</p>
+          <!-- <p class="desc" v-if="item.desc">{{ setDescription(item.desc) }}</p> -->
           <div class="prices">
-            <div class="price item" v-for="(price, index) in item.prices" :key="index" v-if="item.prices">
+            <div
+              class="price item"
+              v-for="(price, index) in item.prices"
+              :key="index"
+              v-if="item.prices"
+            >
               <small class="price name">{{ price.name }}</small>
               <span class="price quantity">
                 <b>{{ price.price }}</b> €
@@ -39,8 +48,8 @@
             :src="require(`~/assets/negocios/${business.short}/${business.short}-${item.img}.jpg`)"
             :title="`${business.name}: ${item.desc}`"
             :alt="`${business.name}: ${item.desc}`"
-            width="90"
-            height="90"
+            :width="menu.imgs.width"
+            :height="menu.imgs.height"
           />
         </figure>
       </div>
@@ -50,7 +59,7 @@
 
 <script>
 export default {
-  name: 'Item',
+  name: "Item",
   props: {
     business: {
       type: Object,
@@ -58,5 +67,18 @@ export default {
       required: true,
     },
   },
-}
+  // methods: {
+  //   setDescription(str) {
+  //     let count = str.length;
+  //     let slc = str.slice(0, 75).trim();
+  //     let dsc = slc.concat("...");
+
+  //     if (count <= 50) {
+  //       return str;
+  //     } else {
+  //       return dsc;
+  //     }
+  //   },
+  // },
+};
 </script>
