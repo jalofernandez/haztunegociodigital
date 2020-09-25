@@ -1,5 +1,5 @@
 <template>
-  <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
+  <main :class="['horeca', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <button class="button js-aside light" type="button" @click="asideBehaviour">
       <span class="opener" v-if="!showAside">
@@ -32,7 +32,7 @@
         :style="{
           'background-image':
             'url(' +
-            require(`@/assets/negocios/${business.short}/${business.short}-${business.cover}.jpg`) +
+            require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) +
             ')',
         }"
         v-if="business.cover"
@@ -43,7 +43,7 @@
           <li>
             <a
               class="data address"
-              :href="business.gmap"
+              :href="`https://goo.gl/maps/${business.gmap}`"
               :title="`Ver dirección de ${business.name}`"
               target="_blank"
               rel="noopener noreferrer"
@@ -107,13 +107,13 @@ export default {
       isModalVisible: false,
       showAside: false,
       business: {
+        id: "bar-galicia",
         name: "Bar Galicia",
-        short: "bar-galicia",
         type: "Restaurante, bar, cafetería",
         cover: "cover",
         address: "Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid",
         place: "Valdemoro, Madrid",
-        gmap: "https://goo.gl/maps/TGCdSV6Y9rZ1gxQU6",
+        gmap: "TGCdSV6Y9rZ1gxQU6",
         phone: "918955364",
         // social: {
         //   facebook: "https://www.facebook.com/¿?/",
@@ -887,7 +887,7 @@ export default {
   },
   head() {
     const businessName = this.business.name;
-    const businessShort = this.business.short;
+    const businessId = this.business.id;
     const businessPlace = this.business.place;
     const businessType = this.business.type;
 
@@ -895,7 +895,7 @@ export default {
     const description = `${businessName} en ${businessPlace} por @jalofernandez`;
     const type = `${businessType} en ${businessPlace}`;
 
-    const canonical = `https://haztunegociodigital.com/horeca/${businessShort}`;
+    const canonical = `https://haztunegociodigital.com/horeca/${businessId}`;
 
     const meta = [
       { hid: "description", name: "description", content: description },
@@ -949,11 +949,6 @@ export default {
         },
       ],
     };
-  },
-  computed: {
-    renderAllergens() {
-      console.log("check it! " + this.business.menus.items.allergens);
-    },
   },
   methods: {
     showModal() {

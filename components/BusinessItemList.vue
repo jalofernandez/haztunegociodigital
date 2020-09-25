@@ -4,7 +4,9 @@
       <h2
         :id="`section-${index}`"
         :class="['section', 'name', { 'with-desc': menu.desc }]"
-      >{{ menu.title }}</h2>
+      >
+        {{ menu.title }}
+      </h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
       <div
         class="dish item"
@@ -45,7 +47,9 @@
         </div>
         <figure class="dish img" v-if="item.img">
           <img
-            :src="require(`~/assets/negocios/${business.short}/${business.short}-${item.img}.jpg`)"
+            :src="
+              require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)
+            "
             :title="`${business.name}: ${item.desc}`"
             :alt="`${business.name}: ${item.desc}`"
             :width="menu.imgs.width"
@@ -59,7 +63,7 @@
 
 <script>
 export default {
-  name: "Item",
+  name: "BusinessItemList",
   props: {
     business: {
       type: Object,

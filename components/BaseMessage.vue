@@ -7,12 +7,12 @@
 
 <script>
 export default {
-  name: 'Message',
+  name: "Message",
   props: {
     data: {
       type: Object,
       default: null,
     },
   },
-}
+};
 </script>

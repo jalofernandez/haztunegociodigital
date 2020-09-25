@@ -7,7 +7,8 @@
           href="#"
           class="aside-menu-link"
           v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }"
-        >{{ menu.title }}</a>
+          >{{ menu.title }}</a
+        >
       </li>
     </ul>
   </nav>

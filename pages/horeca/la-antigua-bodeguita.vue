@@ -1,5 +1,5 @@
 <template>
-  <main :class="['horeca', business.short, { 'aside-menu-open': showAside }]">
+  <main :class="['horeca', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <button
       class="button js-aside light"
@@ -15,6 +15,21 @@
         <b>Carta</b>
       </span>
     </button>
+
+    <a
+      class="button whatsapp light"
+      :href="`https://wa.me/${business.whatsapp}`"
+      :title="`Llamar o escribir al Whatsapp de ${business.name}`"
+      v-if="business.whatsapp"
+    >
+      <img
+        src="/icons/whatsapp-brands.svg"
+        :title="`Whatsapp de ${business.name}`"
+        :alt="`Whatsapp de ${business.name}`"
+        width="50"
+        height="50"
+      />
+    </a>
 
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
@@ -38,7 +53,7 @@
         :style="{
           'background-image':
             'url(' +
-            require(`@/assets/negocios/${business.short}/${business.short}-${business.cover}.jpg`) +
+            require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) +
             ')',
         }"
         v-if="business.cover"
@@ -49,7 +64,7 @@
           <li>
             <a
               class="data address"
-              :href="business.gmap"
+              :href="`https://goo.gl/maps/${business.gmap}`"
               :title="`Ver dirección de ${business.name}`"
               target="_blank"
               rel="noopener noreferrer"
@@ -83,7 +98,7 @@
       <BusinessItemList :business="business" />
     </div>
 
-    <div class="message thankfulness" id="platos">
+    <div class="message thankfulness">
       <p><b>Gracias</b> por su visita 😊</p>
     </div>
 
@@ -113,15 +128,16 @@ export default {
       isModalVisible: false,
       showAside: false,
       business: {
+        id: "la-antigua-bodeguita",
         name: "La Antigua Bodeguita",
-        short: "la-antigua-bodeguita",
         type: "Restaurante, bar, cafetería",
         cover: "cover",
         // desc: 'En pleno centro de Valdemoro ofrecemos alta cocina mediterránea especializándonos en arroces y mariscos. Nuestra cocinera, Ioana, se instruyó con el chef Paco Roncero.',
         address: "Pje. de Colón, 2, 28341 Valdemoro, Madrid, España",
         place: "Valdemoro, Madrid",
-        gmap: "https://goo.gl/maps/fGcJ3LA1DA4ETxTd8",
+        gmap: "fGcJ3LA1DA4ETxTd8",
         phone: "644093470",
+        whatsapp: "34644093470",
         // social: {
         //   facebook: "https://www.facebook.com/laantiguabodeguitavaldemoro/",
         //   instagram: "https://www.instagram.com/antiguabodeguita/",
@@ -129,13 +145,13 @@ export default {
         // },
         schedule: {
           days: [
-            { day: "Lunes", hour: "Cerrado" },
-            { day: "Martes", hour: "9:00 - 1:00" },
-            { day: "Miercoles", hour: "9:00 - 1:00" },
-            { day: "Jueves", hour: "9:00 - 1:00" },
-            { day: "Viernes", hour: "9:00 - 1:00" },
-            { day: "Sábado", hour: "9:00 - 1:00" },
-            { day: "Domingo", hour: "9:00 - 1:00" },
+            { day: "Lunes", hour: "11:00 - 1:00" },
+            { day: "Martes", hour: "11:00 - 1:00" },
+            { day: "Miercoles", hour: "11:00 - 1:00" },
+            { day: "Jueves", hour: "Cerrado" },
+            { day: "Viernes", hour: "11:00 - 1:00" },
+            { day: "Sábado", hour: "11:00 - 1:00" },
+            { day: "Domingo", hour: "11:00 - 1:00" },
           ],
         },
         messages: null,
@@ -708,7 +724,7 @@ export default {
   },
   head() {
     const businessName = this.business.name;
-    const businessShort = this.business.short;
+    const businessId = this.business.id;
     const businessPlace = this.business.place;
     const businessType = this.business.type;
 
@@ -716,7 +732,7 @@ export default {
     const description = `${businessName} en ${businessPlace} por @jalofernandez`;
     const type = `${businessType} en ${businessPlace}`;
 
-    const canonical = `https://haztunegociodigital.com/horeca/${businessShort}`;
+    const canonical = `https://haztunegociodigital.com/horeca/${businessId}`;
 
     const meta = [
       { hid: "description", name: "description", content: description },
@@ -793,7 +809,9 @@ export default {
 $font-family-name: 'Times', sans-serif
 $font-family-desc: ' Arial', sans-serif
 $font-color: #221303 // superdark Orange
-$bg-color: #fcf0e3 // superlight Orange
+$bg-color: #f9e0c4 // superlight Orange
+$card-color: lighten($bg-color, 5%)
+$border-radius: 12px
 // $shadow-color: #502e08
 
 main.horeca.la-antigua-bodeguita
@@ -803,7 +821,7 @@ main.horeca.la-antigua-bodeguita
   .dish.item,
   .button.light,
   .button.js-close
-    background-color: darken($bg-color, 5%)
+    background-color: $card-color
   .button
     border-color: $bg-color
     border-width: 2px
@@ -813,6 +831,7 @@ main.horeca.la-antigua-bodeguita
 
   .dish
     &.item
+      border-radius: $border-radius
       box-shadow: none
     &.info
       .name:not(.price)
@@ -825,6 +844,8 @@ main.horeca.la-antigua-bodeguita
         color: lighten($font-color, 5%)
       .prices .price.quantity
         color: coral
+    &.img img
+      border-radius: $border-radius
 
   .section.name,
   .message
@@ -859,10 +880,14 @@ main.horeca.la-antigua-bodeguita
       color: $font-color
 
   .modal-wrapper .md-modal.has-dish .md-content
-    background-color: darken($bg-color, 5%)
+    background-color: $card-color
+    border-radius: $border-radius
     .img
-      border-color: darken($bg-color, 5%)
+      border-color: $card-color
+      border-width: 3px
+      border-radius: $border-radius
     .details
+      border-radius: $border-radius
       .prices .helper,
       .schedule .day
         font-family: $font-family-desc
