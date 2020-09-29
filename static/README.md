@@ -4,7 +4,6 @@ An experimental page layout concept with a developer/designer theme and a specia
 
 - Error 404, Catalog Gallery and Legal Terms added pages.
 - A lot of "old fashion" computing effects (pure css) added.
-- Blade Runner zeppelin animation included in error 404 page.
 
 ## Credits
 

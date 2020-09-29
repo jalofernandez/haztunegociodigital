@@ -1,6 +1,5 @@
 <template>
   <main class="legal old-crt-effect">
-    <Zeppelin />
     <div class="overlay overlay--hidden"></div>
     <div class="content">
       <div class="content--inner">
@@ -54,10 +53,9 @@
 import Logo from '~/components/Logo.vue'
 import Slogan from '~/components/Slogan.vue'
 import Social from '~/components/Social.vue'
-import Zeppelin from '~/components/Zeppelin'
 
 export default {
-  components: { Logo, Slogan, Social, Zeppelin },
+  components: { Logo, Slogan, Social },
   data() {
     return {
       terms: [
