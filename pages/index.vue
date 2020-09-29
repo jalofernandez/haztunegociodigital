@@ -117,6 +117,7 @@
   <!-- </main> -->
 
   <main class="home">
+    <TheNavbar />
     <section class="hero is-success is-fullheight">
       <div class="hero-body">
         <div class="container">
@@ -134,10 +135,11 @@
 </template>
 
 <script>
+import TheNavbar from '~/components/TheNavbar.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { TheFooter },
+  components: { TheNavbar, TheFooter },
   data() {
     return {
       business: this.$store.state.footer.landing,

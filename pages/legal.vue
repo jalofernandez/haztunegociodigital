@@ -1,25 +1,25 @@
 <template>
-  <main class="legal old-crt-effect">
+  <!-- <main class="legal old-crt-effect">
     <div class="overlay overlay--hidden"></div>
     <div class="content">
       <div class="content--inner">
-        <!-- (main) Header -->
+        
         <div class="content--header">
           <Logo />
           <Social />
         </div>
         <Slogan />
-        <!-- typewritin´Title -->
+        
         <div class="typewriter in-legal">
           <h3 class="mode--code">
             Legal Disclaimer
           </h3>
         </div>
-        <!-- all Legal Terms typewriting -->
+        
         <div class="skills-list">
           <p v-for="(term, index) in terms" :key="index" v-html="term.row"></p>
         </div>
-        <!-- FOOTER navbar links -->
+        
         <div class="content--footer">
           <div class="switch switch--navbar mode mode--code">
             <nuxt-link :to="{ name: 'index' }" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
@@ -46,18 +46,42 @@
     <div class="line--anim">
       <div class="flicker"></div>
     </div>
+  </main> -->
+
+  <main class="error">
+    <TheNavbar />
+    <section class="hero is-warning is-small mt-6">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Términos legales
+          </h1>
+          <h2 class="subtitle">
+            Política de Cookies, términos de uso y política de Privacidad
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <p v-for="(term, index) in terms" :key="index" v-html="term.row"></p>
+        </div>
+      </div>
+    </section>
+    <TheFooter :data="business.name" />
   </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Slogan from '~/components/Slogan.vue'
-import Social from '~/components/Social.vue'
+import TheNavbar from '~/components/TheNavbar.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { Logo, Slogan, Social },
+  components: { TheNavbar, TheFooter },
   data() {
     return {
+      business: this.$store.state.footer.landing,
       terms: [
         {
           row:

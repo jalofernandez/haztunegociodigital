@@ -648,53 +648,6 @@ h1
     overflow: hidden
     opacity: 0
 
-
-.typewriter.is-resume
-  .mode--code
-    margin-top: 1em
-    font-family: $font-family-links
-    color: $coder-color
-    font-size: 1.5em
-    @media (max-width: 640px)
-      font-size: 1em
-    // (skill row) "HTML5, pug...""
-    &:nth-child(1)
-      width: 21em
-      animation: typewritting 2s steps(40, end)
-      animation-fill-mode: forwards
-      animation-delay: .5s
-    // (skill row) "vuejs, nuxtjs...""
-    &:nth-child(2)
-      width: 21em
-      animation: typewritting2 1.5s steps(40, end)
-      animation-delay: 2s
-      animation-fill-mode: forwards
-    // (skill row) "npm, yarn, gulp...""
-    &:nth-child(3)
-      width: 21em
-      animation: typewritting2 1.8s steps(20, end)
-      animation-delay: 4s
-      animation-fill-mode: forwards
-    // (skill row) "git, gitHub...""
-    &:nth-child(4)
-      width: 21em
-      animation: typewritting 1.5s steps(40, end)
-      animation-fill-mode: forwards
-      animation-delay: .5s
-    // (skill row) "scrum, agile...""
-    &:nth-child(5)
-      width: 21em
-      animation: typewritting2 1.8s steps(40, end)
-      animation-delay: 2s
-      animation-fill-mode: forwards
-    // (skill row) "responsive design, photo...""
-    &:nth-child(6)
-      width: 21em
-      animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
-      animation-delay: 4s
-      animation-fill-mode: forwards
-
-
 .typewriter.is-home
   .mode--code
     // (skill item) Intro text
@@ -750,56 +703,6 @@ h1
       animation: typewritting3 1.8s steps(40, end), blink .5s step-end infinite alternate
       animation-delay: 2.8s
       animation-fill-mode: forwards
-
-
-.typewriter.in-legal
-  .mode--code
-    font-size: 2em
-    text-transform: capitalize
-    animation: typewritting3 2s steps(20, end), blink .5s step-end infinite alternate
-    animation-delay: .5s
-    animation-fill-mode: forwards
-
-
-.typewriter.in-legal
-  min-height: initial
-  .mode--code
-    margin-top: 1em
-    width: 10em
-    @media (max-width: 540px)
-      font-size: 1rem
-
-@keyframes typewritting
-  0%
-    width: 0
-  99.9%
-    border-right: .15em solid $coder-color
-  100%
-    opacity: 1
-    border: none
-
-@keyframes typewritting2
-  0%
-    width: 0
-  1%
-    opacity: 1
-  99.9%
-    border-right: .15em solid $coder-color
-  100%
-    opacity: 1
-    border: none
-
-@keyframes typewritting3
-  0%
-    width: 0
-  1%
-    opacity: 1
-  100%
-    opacity: 1
-
-@keyframes blink
-  50%
-    border-color: transparent
 
 
 // PAGES
