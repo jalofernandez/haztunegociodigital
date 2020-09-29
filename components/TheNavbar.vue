@@ -5,13 +5,12 @@
         <nuxt-link class="navbar-item" to="/">
           <img src="https://bulma.io/images/bulma-logo.png" title="" width="112" height="28" />
         </nuxt-link>
-
         <a
           role="button"
-          class="navbar-burger burger"
+          :class="['navbar-burger', 'burger', { 'is-active': active }]"
           aria-label="menu"
           aria-expanded="false"
-          data-target="navbarBasicExample"
+          @click.prevent="active = !active"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -19,7 +18,7 @@
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div :class="['navbar-menu', { 'is-active': active }]">
         <div class="navbar-start">
           <nuxt-link to="/" class="navbar-item">
             <span>Inicio</span>
@@ -86,11 +85,30 @@ export default {
   //   },
   // },
   data() {
-    return {
-      //
-    }
+    return { active: false }
   },
 }
 </script>
 
-<style scoped lang="sass"></style>
+<style scoped lang="sass">
+.navbar-burger
+  width: 4rem
+  &:hover
+    background-color: transparent
+  &:not(.is-active), &:not(.is-active):hover
+    color: transparent
+  span
+    width: 24px
+    height: 2px
+    color: green
+    left: calc(50% - 12px)
+    &:nth-child(1)
+      top: calc(50% - 8px)
+    &:nth-child(3)
+      top: calc(50% + 6px)
+  &.is-active, &.is-active:hover
+    span
+      color: red
+      &:nth-child(1)
+        transform: translateY(9px) rotate(45deg)
+</style>
