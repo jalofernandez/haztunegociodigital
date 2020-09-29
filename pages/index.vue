@@ -1,11 +1,12 @@
 <template>
-  <main class="home old-crt-effect">
-    <!-- <div class="pieces" style='background-image: url(img/index/normal.jpg); background-size: 100% auto;' data-img-alt='url(img/index/alt.jpg)' data-img-code='url(img/index/code.jpg)'></div> -->
-    <div class="pieces"></div>
+  <!-- <main class="home old-crt-effect"> -->
+  <!-- <div class="pieces" style='background-image: url(img/index/normal.jpg); background-size: 100% auto;' data-img-alt='url(img/index/alt.jpg)' data-img-code='url(img/index/code.jpg)'></div> -->
+
+  <!-- <div class="pieces"></div>
     <div class="overlay overlay--hidden"></div>
     <div class="content">
+
       <div class="content--inner">
-        <!-- (main) Header -->
         <div class="content--header">
           <h2 class="title">
             <transition name="fade" :duration="{ enter: 500, leave: 500 }">
@@ -22,7 +23,7 @@
           <Social />
         </div>
         <Slogan />
-        <!-- (menu) DESIGNER -->
+
         <transition name="slide-fade">
           <div class="menu" v-show="isModeDesign">
             <ul class="menu--inner">
@@ -41,13 +42,10 @@
                   {{ design.copy }}
                 </nuxt-link>
               </li>
-              <!-- TODO: (apply me asap!) to get data from $store:
-                <li class="menu--item" v-for="design in getLinksDesigner" :key="design"> 
-              -->
             </ul>
           </div>
         </transition>
-        <!-- (menu) CODER -->
+        
         <transition name="fade">
           <div class="menu menu--code" v-show="!isModeDesign">
             <ul class="menu--inner typewriter is-home">
@@ -68,13 +66,10 @@
                   {{ code.copy }}
                 </a>
               </li>
-              <!-- TODO: (apply me asap!) to get data from $store:
-                <li class="menu--item" v-for="code in getLinksCoder" :key="code"> 
-              -->
             </ul>
           </div>
         </transition>
-        <!-- (main) Footer -->
+        
         <div class="content--footer">
           <div :class="['switch', 'mode', { 'mode--design': isModeDesign, 'mode--code': isModeCode }]">
             <a
@@ -118,95 +113,41 @@
       </div>
     </div>
     <div class="loading"></div>
-    <div class="line--anim"></div>
+    <div class="line--anim"></div> -->
+  <!-- </main> -->
+
+  <main class="home">
+    <section class="hero is-success is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Home page
+          </h1>
+          <h2 class="subtitle">
+            #HazTuNegocioDigital
+          </h2>
+        </div>
+      </div>
+    </section>
+    <TheFooter :data="business.name" />
   </main>
 </template>
 
 <script>
-import Slogan from '~/components/Slogan.vue'
-import Social from '~/components/Social.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { Slogan, Social },
+  components: { TheFooter },
   data() {
     return {
+      business: this.$store.state.footer.landing,
+      // Oldies: erase them asap!
       randomAnim: true,
       isModeDesign: true,
       isModeCode: false,
       links: {
-        designer: [
-          {
-            filter: 'layout',
-            copy: 'layout',
-            title: 'Ver Portfolio completo de @jalofernandez',
-          },
-          {
-            filter: 'photo',
-            copy: 'photography',
-            title: 'Ver Portfolio completo de @jalofernandez',
-          },
-          {
-            filter: 'web',
-            copy: 'UX & UI Web design',
-            title: 'Ver Portfolio completo de @jalofernandez',
-          },
-          {
-            filter: 'pack',
-            copy: 'packaging',
-            title: 'Ver Portfolio completo de @jalofernandez',
-          },
-          {
-            filter: 'graph',
-            copy: 'graphisms & draws',
-            title: 'Ver Portfolio completo de @jalofernandez',
-          },
-        ],
-        coder: [
-          {
-            url: 'https://www.upplication.com/en/',
-            copy: 'Upplication',
-            title:
-              'Upplication® App builder. Create the app for your business, no coding required, fast and simple. Android and iOS app',
-          },
-          {
-            url: 'http://proyectogastronomix.org/',
-            copy: 'Gastronomix',
-            title:
-              'Gastronomix es un proyecto social gratuito de cocina, gastronomía creativa y reciclaje personal. Organizado por J.P. Morgan, Basque Culinary Center, La Casa y el Mundo y Fundación Tomillo',
-          },
-          {
-            url: 'https://widitrade.com/',
-            copy: 'Widitrade',
-            title: 'Widitrade to Increase Your Online Sales Now!',
-          },
-          {
-            url: 'https://peluqueriacanessa.com/',
-            copy: 'Canessa',
-            title:
-              'Canessa ofrece servicios de peluquería y belleza canina y felina con cortes de pelo comerciales y de exposición. Servicio de autolavado y de un completo SPA canino.',
-          },
-          {
-            url: 'https://ecomerzpro.net/',
-            copy: 'Ecomerzpro Club',
-            title: 'Ecomerzpro Club for ecommerce offers and discounts',
-          },
-          {
-            url: 'https://jalofernandez.github.io/lfcabogados/',
-            copy: 'LFC; Abogados y Economistas',
-            title:
-              'LFC Abogados y Economistas expertos en Compliance penal. Asesoramos en materia jurídico penal preventiva.',
-          },
-          {
-            url: 'https://capaball.com/app/#/login',
-            copy: 'Capaball',
-            title: 'Capaball elearning platform',
-          },
-          {
-            url: 'https://github.com/jalofernandez',
-            copy: '> ...take a look on Github',
-            title: '@jalofernandez GitHub account',
-          },
-        ],
+        designer: [],
+        coder: [],
       },
       structuredData: {
         '@context': 'http://schema.org',
@@ -225,7 +166,7 @@ export default {
         'logo': '',
         'name': 'jalofernández diseño gráfico y desarrollo web en Madrid, España',
         'description':
-          'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
+          'Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
         'telephone': '+34 696 682 791',
         'email': 'jalofernandez@gmail.com',
         'currenciesAccepted': 'EUR',
@@ -301,407 +242,30 @@ export default {
       ],
     }
   },
-  mounted() {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker
-          .register('/sw.js')
-          .then(function(registration) {
-            // Registration was successful :)
-            console.log('ServiceWorker registration successful with scope: ', registration.scope)
-          })
-          .catch(function(err) {
-            // Registration failed :(
-            console.log('ServiceWorker registration failed: ', err)
-          })
-      })
-    }
-  },
-  methods: {
-    changeMode() {
-      ;(this.isModeDesign = !this.isModeDesign), (this.isModeCode = !this.isModeCode)
-    },
-  },
-  // computed: {
-  //   getLinksDesigner() {
-  //     return this.$store.state.links.designer.find(design => design.id === this.id) // when items are placed in store
+  // mounted() {
+  //   if ('serviceWorker' in navigator) {
+  //     window.addEventListener('load', function() {
+  //       navigator.serviceWorker
+  //         .register('/sw.js')
+  //         .then(function(registration) {
+  //           // Registration was successful :)
+  //           console.log('ServiceWorker registration successful with scope: ', registration.scope)
+  //         })
+  //         .catch(function(err) {
+  //           // Registration failed :(
+  //           console.log('ServiceWorker registration failed: ', err)
+  //         })
+  //     })
   //   }
-  // }
+  // },
+  methods: {
+    // changeMode() {
+    //   ;(this.isModeDesign = !this.isModeDesign), (this.isModeCode = !this.isModeCode)
+    // },
+  },
 }
 </script>
 
-<style>
-/* (based on) https://codepen.io/lukemeyrick/pen/ayRgWO */
-.is-glitch {
-  outline: none;
-  text-align: center;
-}
-.is-glitch,
-.is-glitch * {
-  display: inline-block;
-  animation: animGlitch infinite steps(50);
-  animation-direction: alternate-reverse;
-}
-.glitch--1 {
-  animation-delay: 1s;
-  animation-duration: 10s;
-  animation-iteration-count: 5;
-}
-.glitch--2 {
-  animation-delay: 2s;
-  animation-duration: 12s;
-  animation-iteration-count: 2;
-}
-.glitch--3 {
-  animation-delay: 3s;
-  animation-duration: 15s;
-  animation-iteration-count: 3;
-}
-.glitch--5 {
-  animation-delay: 5s;
-  animation-duration: 12s;
-  animation-iteration-count: 5;
-}
-
-@keyframes animGlitch {
-  2% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  4% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  6% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: lowercase;
-  }
-  8% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  10% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  12% {
-    font-weight: 100;
-    font-style: italic;
-    color: #f4692a;
-    text-decoration: none;
-  }
-  14% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: lowercase;
-  }
-  16% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: lowercase;
-  }
-  18% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  20% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  22% {
-    font-weight: 600;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  24% {
-    font-weight: 100;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  26% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  28% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: capitalize;
-  }
-  30% {
-    font-weight: 400;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  32% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  34% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  36% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  38% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  40% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  42% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  44% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  46% {
-    font-weight: 500;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: lowercase;
-  }
-  48% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  50% {
-    font-weight: 500;
-    font-style: italic;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  52% {
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  54% {
-    font-weight: 600;
-    font-style: italic;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  56% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  58% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: capitalize;
-  }
-  60% {
-    font-weight: 700;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  62% {
-    font-weight: 300;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: lowercase;
-  }
-  64% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  66% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  68% {
-    font-weight: 700;
-    font-style: normal;
-    color: #f4692a;
-    text-decoration: none;
-  }
-  70% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: capitalize;
-  }
-  72% {
-    font-weight: 400;
-    font-style: normal;
-    color: #f4692a;
-    text-decoration: none;
-  }
-  74% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  76% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  78% {
-    font-weight: 200;
-    font-style: normal;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: lowercase;
-  }
-  80% {
-    font-weight: 100;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  82% {
-    font-weight: 300;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  84% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  86% {
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: capitalize;
-  }
-  88% {
-    font-weight: 200;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  90% {
-    font-weight: 400;
-    font-style: italic;
-    text-decoration: line-through;
-    color: #29cc00;
-    text-transform: none;
-  }
-  92% {
-    font-weight: 500;
-    font-style: italic;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  94% {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: none;
-  }
-  96% {
-    font-weight: 700;
-    font-style: normal;
-    text-decoration: none;
-    color: #f4692a;
-    text-transform: lowercase;
-  }
-  98% {
-    font-weight: 400;
-    font-style: normal;
-    color: #f4692a;
-    text-decoration: none;
-  }
-}
+<style lang="sass">
+@import '~assets/bulma'
 </style>

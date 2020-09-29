@@ -1,5 +1,5 @@
 <template>
-  <main :class="['horeca', business.id, { 'aside-menu-open': showAside }]">
+  <main :class="['business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <button
       class="button js-aside light"
@@ -814,7 +814,7 @@ $card-color: lighten($bg-color, 5%)
 $border-radius: 12px
 // $shadow-color: #502e08
 
-main.horeca.la-antigua-bodeguita
+main.business.la-antigua-bodeguita
   background-color: $bg-color
 
   .business.data,
@@ -850,7 +850,6 @@ main.horeca.la-antigua-bodeguita
   .section.name,
   .message
     color: $font-color
-
   .section.desc
     color: lighten($font-color, 10%)
 
@@ -861,6 +860,7 @@ main.horeca.la-antigua-bodeguita
 
   .business.data
     .name
+      padding: .5rem 0
       font-size: 1.5rem
     ul li a
       color: $font-color

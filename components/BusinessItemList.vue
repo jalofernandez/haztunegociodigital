@@ -15,6 +15,13 @@
         :data-modal="`modal-${item.id}`"
         @click="item.show = !item.show"
       >
+        <!-- <div
+        class="dish item"
+        v-for="(item, index) in menu.items"
+        :key="index"
+        :data-modal="`modal-${item.id}`"
+        @click="showItemDetail(item.id)"
+      > -->
         <div class="dish info">
           <h3 class="name">{{ item.name }}</h3>
           <p class="desc" v-if="item.desc">{{ item.desc }}</p>
@@ -72,6 +79,12 @@ export default {
     },
   },
   // methods: {
+  //   // TODO: to use Vuex with global data & mutations
+  //   showItemDetail(id) {
+  //     console.log(this.$store.state.business.services + " : " + id);
+  //     this.$store.commit("business/modalBehaviour", id);
+  //   },
+  //   // TODO: description slice trial
   //   setDescription(str) {
   //     let count = str.length;
   //     let slc = str.slice(0, 75).trim();

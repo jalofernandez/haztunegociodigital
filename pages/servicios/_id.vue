@@ -1,5 +1,5 @@
 <template>
-  <main :class="['horeca', item.id, { 'aside-menu-open': showAside }]">
+  <main :class="['business', item.id, { 'aside-menu-open': showAside }]">
     <button
       class="button js-aside light"
       type="button"
@@ -77,7 +77,7 @@
       <BusinessItemList :business="item" />
     </div>
 
-    <ul class="others">
+    <ul class="others" style="text-align: center">
       <li v-for="other in otherBusiness">
         <!-- <nuxt-link :to="`/servicios/${other.id}`">{{ other.name }}</nuxt-link> -->
         <nuxt-link :to="{ name: 'servicios-id', params: { id: other.id } }">{{
@@ -116,201 +116,7 @@ export default {
       isModalVisible: false,
       showAside: false,
       id: this.$route.params.id,
-      business: [
-        {
-          id: "canessa",
-          name: "Peluquería canina Canessa",
-          type: "Peluquería, dog grooming, estética canina",
-          cover: "cover",
-          address: "Calle Vicente Aleixandre, 5, 28342 Valdemoro, Madrid",
-          place: "Valdemoro, Madrid",
-          gmap: "yAZmAMEMtTABiJUC7",
-          phone: "912480430",
-          // social: {
-          //   facebook: "https://www.facebook.com/laantiguabodeguitavaldemoro/",
-          //   instagram: "https://www.instagram.com/antiguabodeguita/",
-          //   tripadvisor: "https://www.tripadvisor.es/Restaurant_Review-g1063667-d6962779-Reviews-La_Bodeguita_del_Tio_Rosa-Valdemoro.html",
-          // },
-          schedule: {
-            days: [
-              { day: "Lunes", hour: "10:00-14:00 / 16:00-20:00" },
-              { day: "Martes", hour: "Cerrado" },
-              { day: "Miercoles", hour: "10:00-14:00 / 16:00-20:00" },
-              { day: "Jueves", hour: "10:00-14:00 / 16:00-20:00" },
-              { day: "Viernes", hour: "10:00-14:00 / 16:00-20:00" },
-              { day: "Sábado", hour: "Cerrado" },
-              { day: "Domingo", hour: "Cerrado" },
-            ],
-          },
-          messages: null,
-          menus: [
-            {
-              title: "Cervezas",
-              desc: null,
-              imgs: {
-                position: "top",
-                width: 90,
-                height: 90,
-              },
-              items: [
-                {
-                  id: 50,
-                  show: false,
-                  name: "Cerveza de grifo",
-                  img: "cerveza-grifo",
-                  desc:
-                    "Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.",
-                  prices: [
-                    { name: "Caña", price: "1,80" },
-                    { name: "Copa", price: "2,50" },
-                    { name: "Maceta", price: "3" },
-                    { name: "Jarra", price: "3,40" },
-                  ],
-                  allergens: ["gluten"],
-                },
-                {
-                  id: 51,
-                  show: false,
-                  name: "Cerveza en botella",
-                  img: "cerveza-tercio",
-                  desc: "Disponemos de: Estrella de Galicia, Mahou y Heineken.",
-                  prices: [
-                    { name: "Botellín", price: "1,60" },
-                    { name: "Tercio", price: "2,50" },
-                  ],
-                  allergens: ["gluten"],
-                },
-                {
-                  id: 52,
-                  show: false,
-                  name: "Cerveza sin gluten",
-                  img: "cerveza-tercio-sin-gluten",
-                  desc: "Tercio de Mahou sin gluten.",
-                  prices: [{ name: "Tercio", price: "2,80" }],
-                  allergens: null,
-                },
-                {
-                  id: 53,
-                  show: false,
-                  name: "Cerveza 1906",
-                  img: "cerveza-1906",
-                  desc:
-                    "Tercio de cerveza especial reserva 1906 de Estrella de Galicia.",
-                  prices: [{ name: "Tercio", price: "2,90" }],
-                  allergens: ["gluten"],
-                },
-                {
-                  id: 54,
-                  show: false,
-                  name: "Cerveza tostada 0,0",
-                  img: "cerveza-tostada-00",
-                  desc:
-                    "Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.",
-                  prices: [{ name: "Tercio", price: "2,50" }],
-                  allergens: ["gluten"],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "jalofernandez",
-          name: "Jalofernandez: designer + coder",
-          type: "Diseño gráfico, desarrollo web, programamción",
-          cover: "cover",
-          address:
-            "Calle Vicente Bascuñana, 6, 28224 Pozuelo de Alarcón, Madrid",
-          place: "Pozuelo de Alarcón, Madrid",
-          gmap: "rBLjwME49KtSmdHu9",
-          phone: "696682791",
-          // social: {
-          //   facebook: "https://www.facebook.com/laantiguabodeguitavaldemoro/",
-          //   instagram: "https://www.instagram.com/antiguabodeguita/",
-          //   tripadvisor: "https://www.tripadvisor.es/Restaurant_Review-g1063667-d6962779-Reviews-La_Bodeguita_del_Tio_Rosa-Valdemoro.html",
-          // },
-          schedule: {
-            days: [
-              { day: "Lunes", hour: "9:00-14:00 / 16:00-20:00" },
-              { day: "Martes", hour: "9:00-14:00 / 16:00-20:00" },
-              { day: "Miercoles", hour: "9:00-14:00 / 16:00-20:00" },
-              { day: "Jueves", hour: "9:00-14:00 / 16:00-20:00" },
-              { day: "Viernes", hour: "9:00-14:00 / 16:00-20:00" },
-              { day: "Sábado", hour: "Cerrado" },
-              { day: "Domingo", hour: "Cerrado" },
-            ],
-          },
-          messages: {
-            gluten: {
-              type: "alert",
-              copy:
-                "Disponemos de productos <b>sin gluten</b>. <br />Consultar con el camarero.",
-            },
-          },
-          menus: [
-            {
-              title: "Arroces",
-              desc:
-                'Selección de arroces caldosos o melosos de marisco. <span class="semibold">40 minutos</span> de tiempo de elaboración. <span class="semibold">Pedido mínimo</span> para 2 comensales.',
-              imgs: {
-                position: "top",
-                width: 90,
-                height: 90,
-              },
-              items: [
-                {
-                  id: 60,
-                  show: false,
-                  name: "Arroz con bogavante",
-                  img: "arroz-bogavante",
-                  desc:
-                    "Clásico arroz con bogavante caldoso o suelto, según preferencia del comensal.",
-                  prices: [{ name: "Precio", price: "20" }],
-                  allergens: ["crustaceos", "pescado"],
-                },
-                {
-                  id: 61,
-                  show: false,
-                  name: "Arroz con zamburiñas",
-                  img: "arroz-zamburinas",
-                  desc: "Arroz con zamburiñas al gusto: caldoso o suelto.",
-                  prices: [{ name: "Precio", price: "18" }],
-                  allergens: ["crustaceos", "pescado", "moluscos"],
-                },
-                {
-                  id: 62,
-                  show: false,
-                  name: "Paella de marisco",
-                  img: "arroz-paella-marisco",
-                  desc:
-                    "Paella española de marisco con langostinos rojos, mejillones, almejas...",
-                  prices: [{ name: "Precio", price: "18" }],
-                  allergens: ["crustaceos", "pescado", "moluscos"],
-                },
-                {
-                  id: 63,
-                  show: false,
-                  name: "Paella de pulpo y gambas 🍤",
-                  img: "arroz-pulpo-gambas",
-                  desc:
-                    "Paella especial de pulpo y gambas al gusto, meloso o suelto.",
-                  prices: [{ name: "Precio", price: "18" }],
-                  allergens: ["crustaceos", "pescado", "moluscos"],
-                },
-                {
-                  id: 64,
-                  show: false,
-                  name: "Arroz negro al gusto",
-                  img: "arroz-al-gusto",
-                  desc:
-                    "Arroz con tinta de calamar (negro) al gusto: gambas, pulpo, almejas, mejillones, zamburiñas...",
-                  prices: [{ name: "Precio", price: "18" }],
-                  allergens: ["crustaceos", "pescado", "moluscos"],
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      // services: {},
     };
   },
   head() {
@@ -380,12 +186,24 @@ export default {
   },
   computed: {
     item() {
-      return this.business.find((item) => item.id === this.id);
+      // return this.business.find((item) => item.id === this.id); // local json consume
+      return this.$store.state.business.services.find(
+        (item) => item.id === this.id
+      ); // "store" json consume
     },
     otherBusiness() {
-      return this.business.filter((item) => item.id !== this.id);
+      // return this.business.filter((item) => item.id !== this.id); // local json consume
+      return this.$store.state.business.services.filter(
+        (item) => item.id !== this.id
+      ); // "store" json consume
     },
+    // products() {
+    //   return this.$store.state.services;
+    // },
   },
+  // created() {
+  //   this.$store.state.services = products;
+  // },
   methods: {
     showModal() {
       this.isModalVisible = true;
@@ -396,6 +214,7 @@ export default {
     asideBehaviour() {
       this.showAside = !this.showAside;
     },
+    showItemDetail() {},
   },
 };
 </script>

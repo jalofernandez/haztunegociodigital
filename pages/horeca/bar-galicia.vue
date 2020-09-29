@@ -1,5 +1,5 @@
 <template>
-  <main :class="['horeca', business.id, { 'aside-menu-open': showAside }]">
+  <main :class="['business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <button class="button js-aside light" type="button" @click="asideBehaviour">
       <span class="opener" v-if="!showAside">
@@ -965,7 +965,7 @@ export default {
 </script>
 
 <style lang="sass">
-main.horeca
+main.business
   &.bar-galicia
     .aside-menu h2
       font-family: cursive

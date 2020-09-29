@@ -1,31 +1,27 @@
 <template>
-  <main class="error old-crt-effect">
+  <!-- <main class="error old-crt-effect">
     <div class="pieces in-error"></div>
     <div class="overlay overlay--hidden"></div>
     <div class="content">
       <div class="content--inner">
-        <!-- (main) Header -->
+        
         <div class="content--header">
           <Logo />
           <Social />
         </div>
         <Slogan />
-        <!-- typewritin´Title -->
+        
         <div class="typewriter in-error">
           <h3 class="mode--code"> <span>[</span> Error 404 <span>]</span> Page Not Found </h3>
         </div>
-        <!-- FOOTER navbar links -->
+        
         <div class="content--footer">
           <div class="switch switch--navbar mode mode--code">
             <nuxt-link :to="{ name: 'index' }" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
               &lt;&lt; Home
             </nuxt-link>
-            <nuxt-link
-              :to="{ name: 'portfolio' }"
-              class="btn is-link btn--designer menu--link glitch"
-              data-text="Portfolio >>"
-            >
-              Portfolio &gt;&gt;
+            <nuxt-link :to="{ name: 'legal' }" class="btn is-link btn--designer menu--link glitch" data-text="legal >>">
+              Legal &gt;&gt;
             </nuxt-link>
           </div>
         </div>
@@ -34,18 +30,32 @@
     <div class="line--anim">
       <div class="flicker"></div>
     </div>
+  </main> -->
+  <main class="error">
+    <section class="hero is-danger is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Error 404
+          </h1>
+          <h2 class="subtitle">
+            La página que estás buscando no está aquí :(
+          </h2>
+        </div>
+      </div>
+    </section>
+    <TheFooter :data="business.name" />
   </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Slogan from '~/components/Slogan.vue'
-import Social from '~/components/Social.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: { Logo, Slogan, Social },
+  components: { TheFooter },
   data() {
     return {
+      business: this.$store.state.footer.landing,
       structuredData: {
         '@context': 'http://schema.org',
         '@type': 'LocalBusiness',
@@ -62,8 +72,7 @@ export default {
         ],
         'logo': '',
         'name': 'jalofernández diseño gráfico y desarrollo web en Madrid, España',
-        'description':
-          'Portfolio y CV personal de Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
+        'description': 'Página de error de Haz tu negocio digital',
         'telephone': '+34 696 682 791',
         'email': 'jalofernandez@gmail.com',
         'currenciesAccepted': 'EUR',
@@ -88,8 +97,8 @@ export default {
       title,
       meta: [
         { hid: 'description', name: 'description', content: description },
-        { hid: 'Classification', name: 'Classification', content: 'Portfolio' },
-        { hid: 'subject', name: 'subject', content: 'Personal Portfolio and Resume' },
+        { hid: 'Classification', name: 'Classification', content: 'Error' },
+        { hid: 'subject', name: 'subject', content: 'Error 404' },
 
         { hid: 'og:title', property: 'og:title', content: title },
         { hid: 'og:description', property: 'og:description', content: description },
@@ -117,3 +126,7 @@ export default {
   },
 }
 </script>
+
+<style lang="sass">
+@import '~assets/bulma'
+</style>

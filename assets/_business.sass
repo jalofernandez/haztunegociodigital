@@ -37,7 +37,7 @@ ul
     font-size: 1.2rem
     text-align: center
 
-main.horeca
+main.business
   background-color: $color-bg
   // min-height: 100vh
   height: auto
@@ -75,6 +75,7 @@ main.horeca
           @media (hover: hover)
             &:hover, &:focus
               color: darken($color-secondary, 5%)
+              text-decoration: underline
           &.phone
             font-weight: 600
             letter-spacing: .05rem
@@ -264,7 +265,7 @@ main.horeca
     &::after
       display: none
 
-main.horeca
+main.business
   position: relative
   &.aside-menu-open
     overflow: hidden
@@ -273,8 +274,13 @@ main.horeca
       visibility: visible
       transform: translate3d(0, 0, 0)
 
+main
+  &:not(.business) .footer
+    width: 100%
+  &.business .footer
+    max-width: $width-phones
+
 .footer
-  max-width: $width-phones
   margin: 0 auto
   padding: 2rem 1rem 4.5rem 1.16rem
   text-align: center
@@ -289,3 +295,6 @@ main.horeca
         &:hover, &:focus
           text-decoration: underline
           color: darken($designer-color, 10%)
+
+// Custom for Business
+@import "_services"
