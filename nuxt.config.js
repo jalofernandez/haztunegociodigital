@@ -74,6 +74,7 @@ export default {
   //- Nuxt.js modules
   modules: [
     'vue-scrollto/nuxt',
+    'nuxt-webfontloader',
     // '@nuxtjs/pwa',
     '@nuxtjs/gtm',
     [
@@ -131,6 +132,11 @@ export default {
     ],
     '@nuxtjs/sitemap', // always declare the sitemap module at end of array
   ],
+  webfontloader: {
+    google: {
+      families: ['Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap'],
+    },
+  },
   pwa: {
     manifest: {
       name: 'HazTuNegocioDigital',
