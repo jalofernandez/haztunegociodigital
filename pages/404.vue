@@ -1,51 +1,46 @@
 <template>
-  <!-- <main class="error old-crt-effect">
-    <div class="pieces in-error"></div>
-    <div class="overlay overlay--hidden"></div>
-    <div class="content">
-      <div class="content--inner">
-        
-        <div class="content--header">
-          <Logo />
-          <Social />
-        </div>
-        <Slogan />
-        
-        <div class="typewriter in-error">
-          <h3 class="mode--code"> <span>[</span> Error 404 <span>]</span> Page Not Found </h3>
-        </div>
-        
-        <div class="content--footer">
-          <div class="switch switch--navbar mode mode--code">
-            <nuxt-link :to="{ name: 'index' }" class="btn is-link btn--coder menu--link glitch" data-text="<< Home">
-              &lt;&lt; Home
-            </nuxt-link>
-            <nuxt-link :to="{ name: 'legal' }" class="btn is-link btn--designer menu--link glitch" data-text="legal >>">
-              Legal &gt;&gt;
-            </nuxt-link>
+  <main class="error">
+    <TheNavbar />
+    <!-- <div class="waveWrapper waveAnimation">
+      <div class="waveWrapperInner bgTop">
+        <div
+          class="wave waveTop"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div
+          class="wave waveMiddle"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"
+        ></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div
+          class="wave waveBottom"
+          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
+        ></div>
+      </div>
+    </div> -->
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title text-shadow is-size-1 is-size-2-mobile"> <span class="has-text-danger">Error</span> 404 </h1>
+          <h2 class="subtitle is-size-5 is-size-6-mobile">
+            La página que estás buscando <span class="has-text-weight-medium">no está aquí</span> 🥵
+          </h2>
+          <div class="artwork">
+            <img
+              src="/artworks/htnd-artwork--broken-glass.svg"
+              :title="`Creatividad de #${owner.name}: cristal roto para error 404`"
+              :alt="`Creatividad de #${owner.name}: cristal roto para error 404`"
+              width="400"
+              height="338"
+            />
           </div>
         </div>
       </div>
-    </div>
-    <div class="line--anim">
-      <div class="flicker"></div>
-    </div>
-  </main> -->
-  <main class="error">
-    <TheNavbar />
-    <section class="hero is-danger is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Error 404
-          </h1>
-          <h2 class="subtitle">
-            La página que estás buscando no está aquí :(
-          </h2>
-        </div>
-      </div>
     </section>
-    <TheFooter :data="business.name" />
+    <TheFooter :data="owner.footer" />
   </main>
 </template>
 
@@ -57,7 +52,7 @@ export default {
   components: { TheNavbar, TheFooter },
   data() {
     return {
-      business: this.$store.state.footer.landing,
+      owner: this.$store.state.landing.owner,
       structuredData: {
         '@context': 'http://schema.org',
         '@type': 'LocalBusiness',
@@ -128,7 +123,3 @@ export default {
   },
 }
 </script>
-
-<style lang="sass">
-@import '~assets/bulma'
-</style>

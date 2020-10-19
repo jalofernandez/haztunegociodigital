@@ -1,7 +1,110 @@
+@charset "utf-8"
 // TODO: check it to import only usefull "utilities" not all by default
-@import "~bulma/sass/utilities/_all.sass"
+// @import "~bulma/sass/utilities/_all.sass"
 
 // custom vars
-$titlecolor: red
+$bg-color: #fbf8ff // superlight Lilac
+$green: #24cf09 // Bulma "green" & "success"
+$orange: #f59d00 // Orange (brand)
+$link: $orange
+$shadow: 4px 4px 8px #bdbdbd, -4px -4px 8px #ffffff, inset 0px 0px 0px #bdbdbd, inset 0px 0px 0px #ffffff
+$navbar-shadow: 0 10px 6px -6px #bdbdbd
+$radius: 1rem
+
+$body-background-color: $bg-color
+$navbar-background-color: $bg-color
+$footer-background-color: $bg-color
+$table-background-color: $bg-color
+// $table-cell-border: 2px dashed darken($bg-color, 15%)
+$navbar-item-hover-color: $green
+
+$card-background-color: white
+$card-shadow: $shadow
+$card-radius: $radius
+$card-footer-border-top: none
+// TODO: check them cause they don´t work
+$navbar-dropdown-background-color: white
+$dropdown-content-arrow: $green
+$dropdown-content-padding-top: 0
+$dropdown-content-padding-bottom: 0
+$dropdown-content-radius: $radius
+$dropdown-content-shadow: $shadow
+$dropdown-navbar-shadow: $navbar-shadow
 
 @import "~bulma/bulma"
+
+// "Bulma" code overwrites
+a
+  color: $link
+  @media (hover: hover)
+    &:hover, &:focus, &:active
+      color: lighten($link, 5%)
+      text-decoration: underline
+
+.navbar-menu
+  a.navbar-item, .navbar-link
+    &:focus, &:focus-within, &:hover, &.is-active
+      background-color: transparent
+
+.menu-list .navbar-item
+  &:focus, &:focus-within, &:hover, &.is-active
+    background-color: darken($bg-color, 1%)
+
+.navbar.has-shadow
+  box-shadow: $dropdown-navbar-shadow
+
+a.navbar-item:not(.dropdown-inner), .navbar-link:not(.dropdown-inner)
+  @media screen and (min-width: 1024px)
+    &:hover, &:focus
+      color: black
+      text-decoration: underline
+// a.navbar-item:not(.dropdown-inner), .navbar-link:not(.dropdown-inner)
+//   span
+//     background-color: transparent
+//     padding: 0 .5rem
+//     border-radius: 0
+//     transition: all .3 ease
+//   @media screen and (min-width: 1024px)
+//     &:hover, &:focus
+//       span
+//         background-color: black
+//         border-radius: 1rem
+//         color: white
+
+.navbar-dropdown
+  padding: .5rem
+  @media screen and (min-width: 1024px)
+    border-top: none
+    border-radius: $radius/2
+    box-shadow: $shadow
+    a.navbar-item:focus,
+    a.navbar-item:hover
+      border-radius: $radius/3
+
+.navbar-divider
+  margin: 0 .25rem
+
+.select:not(.is-multiple):not(.is-loading)::after,
+.navbar-link:not(.is-arrowless)::after
+  border-color: $green
+
+.hero
+  &.is-fullheight-with-navbar .hero-body
+    @media screen and (max-width: 768px)
+      margin-top: 56px // same as main top navbar height
+  &.is-small
+    margin-top: 56px // same as main top navbar height
+
+.media + .media
+  border-top: none
+
+.button
+  &.has-img
+    padding-right: .33rem
+    .image img
+      width: initial
+      margin-left: .75em
+    @media (hover: hover)
+      &:hover, &:focus
+        background-color: #2f2f2f!important // "is-dark" Bulma color
+        color: #25d366 // Whatsapp brand color as "$whatsapp" var

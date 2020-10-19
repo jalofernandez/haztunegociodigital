@@ -1,714 +1,42 @@
 @import "_vars"
+@import "_bulma"
+
+::selection
+  background: black
+  color: white
 
 ::-moz-focus-inner
   border: 0
   padding: 0
 
+// Bulma (css framework) overwrites
+body, button, input, optgroup, select, textarea
+  font-family: $font-family
+
 body
-  font-family: $font-family-text
+  font-family: $font-family-text!important
   color: #585656
   // background: $black
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-a
-  text-decoration: none
-  color: $designer-color
-  outline: none
-  cursor: pointer
-  &:hover
-    color: #f7f7f7
-  &:focus
-    outline: none
-
-// main
-//   &:not(.business)
-//     display: flex
-//   &:not(.portfolio),
-//   &:not(.business)
-//     overflow: hidden
-//     height: 100vh
-
-.btn
-  min-width: 100px
-  font-size: 1rem
-  font-weight: normal
-  text-decoration: none
-  cursor: pointer
-  color: $coder-color
-  line-height: normal
-  padding: 10px
-  margin: 0
-  height: auto
-  border: none
-  vertical-align: middle
-  -webkit-appearance: none
-  background-color: rgba(0, 0, 0, 0)
-  &:hover
-    color: #f7f7f7
-    text-decoration: none
-  &:focus
-    outline: none
-    // border-color: var(--darken-2)
-    // box-shadow: 0 0 0 3px var(--darken-3)
-
-  &.is-link
-    padding: 1rem
-    font-size: 1.5rem
-    @media (max-width: 640px)
-      font-size: 1.2em
-      padding: .5rem
-    &.btn--coder
-      color: $coder-color
-      @media (max-width: 640px)
-        padding-left: 0
-    &.btn--designer
-      color: $designer-color
-      @media (max-width: 640px)
-        padding-right: 0
-
-  &.menu--link
-    &.glitch
-      &::after,
-      &::before
-        padding: 10px
-
-.menu--link
-  display: inline-block
-  font-family: $font-family-links
-  &:hover
-    color: #f7f7f7
-
-.menu--code
-  .menu--link
-    &.glitch
-      &::after,
-      &::before
-        width: 100%
-
-.menu--link
-  &.glitch
-    &::after,
-    &::before
-      opacity: 0
-    &::after
-      left: 2px
-    &::before
-      left: -2px
-  // to animate links
-  &:hover, &.is-active, &.is-active:hover
-    &.glitch
-      &::after,
-      &::before
-        opacity: 1
-
-// .pieces
-//   width: 58.6572vh // make the size of container to be same ratio like image; will be reset dynamically
-//   height: 90vh  // will be reset dynamically
-//   flex: none
-//   position: relative
-//   display: flex
-//   flex-wrap: wrap
-//   //background-size: contain
-//   background-size: 100% auto!important
-//   background-repeat: no-repeat
-//   background-position: 0 0
-//   // Media query (responsive behaviour)
-//   @media screen and (max-aspect-ratio: 597/916)
-//     width: 80vw
-//     height: 122.75vw
-//   // (old JS)
-//   width: 540px
-//   height: 826px
-//   margin: 0 auto
-//   // transition: transform 0.2s ease-out 0s
-//   // transform: perspective(1000px) translate3d(5.8872px, -0.484848px, 0px) rotate3d(1, 0, 0, -0.484848deg) rotate3d(0, 1, 0, 2.9436deg
-//   background-size: 100%
-//   background-position: bottom center
-//   background-image: url(~assets/jalofernandez.jpg)
-//   &.in-error
-//     background-image: url(~assets/404/fire.gif)
-//     height: 100%
-
-// .piece
-//   pointer-events: none
-
-
-.content,
-.content--inner
-  position: absolute
-  top: 0
-  left: 0
-  display: flex
-  align-items: center
-  width: 100%
-  height: 100%
-  overflow: hidden // be careful with this class
-
-.content--inner
-  z-index: 100
-  flex-direction: column
-  align-content: flex-start
-  padding: 2.5em 2.5em 0
-
-.content--header
-  display: flex
-  align-items: center
-  flex: none
-  width: 100%
-
-// "Header" row 
-// (jalofernandez)
-.title
-  display: flex
-  align-items: center
-  height: 1.75em
-  margin: 0
-  font-size: 1em
-  font-weight: normal
-  line-height: 1
-  .mode--design
-    font-size: 3em
-    color: $designer-color
-    font-family: $font-family-text
-  .mode--code
-    font-size: 2.5em
-    color: $coder-color
-    font-family: $font-family-links
-  position: relative
-  .mode--design, .mode--code
-    @media (min-width: 541px)
-      position: absolute
-
-// (designer + coder)
-h1
-  flex: none
-  width: 100%
-  margin: 0
-  padding-left: 56px
-  font-family: $font-family-links
-  font-size: 1.8em
-  color: #ccc
-  text-align: left
-
-
-// Social Media: top icons navbar with third parties links
-.controls
-  display: flex
-  justify-content: space-between
-  align-items: center
-  margin: 1em 0 0 auto    
-  .icon
-    img
-      width: 40px
-      height: 40px
-      padding: 5px
-      transition: all .15s ease
-      transform: scale(1)
-      filter: blur(.5px)
-    &:active, &:focus, &:visited
-      img
-        transform: scale(1)
-        filter: blur(.5px)
-    &:hover
-      img
-        transform: scale(1.25)
-        filter: blur(0)
-
-
-// "Content" row (links list) in Home page
-.mode--code,
-.menu--code .menu--link
-  font-family: $font-family-links
-  text-transform: lowercase
-  color: $coder-color
-
-.menu,
-.menu--code
-  flex: none
-  width: 100%
-  // margin: 2em 0 0 auto
-  position: relative
-  top: 2em
-.menu
-  font-size: 1.85em
-  text-align: right
-  .menu--inner
-    right: 0
-    z-index: 1
-.menu--code
-  font-size: 1.5em
-  text-align: left
-  .menu--inner
-    z-index: 2
-    left: 0
-
-.menu--inner
-  margin: 0
-  padding: 0
-  list-style: none
-  position: absolute
-  top: 0
-
-.menu:not(.menu--code) .menu--item
-  position: relative
-
-.menu--item:first-child
-  pointer-events: none
-  cursor: text
-
-.menu--item:not(:last-child)
-  margin: 0 0 0.25em 0
-
-.js .menu--code
-  display: none
-
-// "Footer" row
-.content--footer
-  display: flex
-  align-items: center
-  width: 100%
-  margin: auto 0 0 0
-
-.switch
-  position: relative
-  display: flex
-  align-items: center
-  // bottom navbar links:
-  &.switch--navbar
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: space-between
-    width: 100%
-    bottom: 10px
-    .contact-link.mode--design
-      @media (max-width: 640px)
-        padding: .5rem 0
-
-.switch__content
-  display: flex
-
-.switch--item
-  font-size: 1.5em
-  line-height: 1
-  position: relative
-  display: inline-block
-  margin: 0 1.5em 0 0
-  padding: 0 0 0.15em
-  color: #888
-  span
-    position: relative
-    display: inline-block
-    pointer-events: none
-
-.is-current
-  pointer-events: none
-  color: $black
-  background-color: $designer-color
-
-.mode--code .is-current
-  color: $black
-  background-color: $coder-color
-
-.switch--item:first-child::after
-  content: ''
-  position: absolute
-  top: -5%
-  left: calc(100% + 0.75em)
-  width: 1px
-  height: 110%
-  background: #464646
-  transform: rotate(22.5deg)
-  
-.link-wrap
-  display: flex
-  align-items: center
-  height: 4em
-  margin: 0 0 0 auto
-
-.contact-link
-  display: inline-block
-  padding: 1em 0
-  margin-right: 15px
-  font-size: 1.5rem
-  @media (max-width: 768px)
-    font-size: 1.2rem
-  @media (max-width: 450px)
-    font-size: 1rem
-    margin-right: 0
-
-
-// (anim) glitch: noise & distortion effect
-.glitch
-  position: relative
-  &::after
-    content: attr(data-text)
-    position: absolute
-    left: 58px
-    text-shadow: -1px 0 red
-    top: 0
-    color: #eee
-    background-color: #232323
-    overflow: hidden
-    clip: rect(0, 900px, 0, 0)
-    animation: noise-anim 2s infinite linear alternate-reverse
-  &::before
-    content: attr(data-text)
-    position: absolute
-    left: 54px
-    text-shadow: 1px 0 blue
-    top: 0
-    color: #f7f7f7
-    background-color: #232323
-    overflow: hidden
-    clip: rect(0, 900px, 0, 0)
-    animation: noise-anim-2 3s infinite linear alternate-reverse
-
-@keyframes noise-anim
-  0%
-    clip: rect(90px, 9999px, 35px, 0)
-  5%
-    clip: rect(58px, 9999px, 68px, 0)
-  10%
-    clip: rect(59px, 9999px, 47px, 0)
-  15%
-    clip: rect(85px, 9999px, 61px, 0)
-  20%
-    clip: rect(61px, 9999px, 70px, 0)
-  25%
-    clip: rect(7px, 9999px, 90px, 0)
-  30%
-    clip: rect(5px, 9999px, 11px, 0)
-  35%
-    clip: rect(67px, 9999px, 40px, 0)
-  40%
-    clip: rect(90px, 9999px, 59px, 0)
-  45%
-    clip: rect(2px, 9999px, 80px, 0)
-  50%
-    clip: rect(97px, 9999px, 19px, 0)
-  55%
-    clip: rect(86px, 9999px, 99px, 0)
-  60%
-    clip: rect(94px, 9999px, 58px, 0)
-  65%
-    clip: rect(41px, 9999px, 15px, 0)
-  70%
-    clip: rect(12px, 9999px, 23px, 0)
-  75%
-    clip: rect(5px, 9999px, 55px, 0)
-  80%
-    clip: rect(57px, 9999px, 85px, 0)
-  85%
-    clip: rect(14px, 9999px, 26px, 0)
-  90%
-    clip: rect(31px, 9999px, 56px, 0)
-  95%
-    clip: rect(49px, 9999px, 66px, 0)
-  100%
-    clip: rect(45px, 9999px, 12px, 0)
-
-@keyframes noise-anim-2
-  0%
-    clip: rect(55px, 9999px, 23px, 0)
-  5%
-    clip: rect(88px, 9999px, 95px, 0)
-  10%
-    clip: rect(27px, 9999px, 49px, 0)
-  15%
-    clip: rect(31px, 9999px, 21px, 0)
-  20%
-    clip: rect(46px, 9999px, 94px, 0)
-  25%
-    clip: rect(26px, 9999px, 1px, 0)
-  30%
-    clip: rect(75px, 9999px, 32px, 0)
-  35%
-    clip: rect(18px, 9999px, 49px, 0)
-  40%
-    clip: rect(30px, 9999px, 49px, 0)
-  45%
-    clip: rect(62px, 9999px, 68px, 0)
-  50%
-    clip: rect(48px, 9999px, 49px, 0)
-  55%
-    clip: rect(47px, 9999px, 92px, 0)
-  60%
-    clip: rect(65px, 9999px, 66px, 0)
-  65%
-    clip: rect(14px, 9999px, 73px, 0)
-  70%
-    clip: rect(29px, 9999px, 74px, 0)
-  75%
-    clip: rect(92px, 9999px, 96px, 0)
-  80%
-    clip: rect(75px, 9999px, 35px, 0)
-  85%
-    clip: rect(27px, 9999px, 17px, 0)
-  90%
-    clip: rect(21px, 9999px, 99px, 0)
-  95%
-    clip: rect(93px, 9999px, 11px, 0)
-  100%
-    clip: rect(73px, 9999px, 13px, 0)
-
-
-// (anim) scrollin´Line
-.line--anim
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  width: 100%
-  height: 100%
-  //z-index: 4100
-  &::before
-    content: ''
-    position: absolute
-    top: 0px
-    width: 100%
-    height: 5px
-    background: #fff
-    background: linear-gradient(to bottom, rgba(255,0,0,0) 0%,rgba(255,250,250,1) 50%,rgba(255,255,255,0.98) 51%,rgba(255,0,0,0) 100%)
-    opacity: .1
-    animation: line--anim 5s linear infinite
-  &::after
-    box-shadow: 0 2px 6px rgba(25,25,25,0.2),inset 0 1px rgba(50,50,50,0.1),inset 0 3px rgba(50,50,50,0.05),inset 0 3px 8px rgba(64,64,64,0.05),inset 0 -5px 10px rgba(25,25,25,0.1)
-
-@keyframes line--anim
-  0%
-    top: 0
-  100%
-    top: 100%
-
-
-// "overlay" Index
-.overlay
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  pointer-events: none
-  opacity: 0
-
-// "overlay" common + (anim) blink
-.overlay,
-.flicker
-  &::after
-    /* to apply classical CRT screen blink (only shown in "coder" view) */
-    content: " "
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    background: rgba(18, 16, 16, 0.1)
-    opacity: 0
-    z-index: 2
-    pointer-events: none
-    animation: flicker 300ms infinite
-
-@keyframes flicker
-  0%
-    opacity: 0.23302
-  5%
-    opacity: 0.20709
-  10%
-    opacity: 0.93257
-  15%
-    opacity: 0.19935
-  20%
-    opacity: 0.17236
-  25%
-    opacity: 0.76051
-  30%
-    opacity: 0.47248
-  35%
-    opacity: 0.05872
-  40%
-    opacity: 0.11636
-  45%
-    opacity: 0.60796
-  50%
-    opacity: 0.39153
-  55%
-    opacity: 0.79261
-  60%
-    opacity: 0.38628
-  65%
-    opacity: 0.14743
-  70%
-    opacity: 0.396
-  75%
-    opacity: 0.02683 
-  80%
-    opacity: 0.72164
-  85%
-    opacity: 0.87112
-  90%
-    opacity: 0.30352
-  95%
-    opacity: 0.79692
-  100%
-    opacity: 0.81776
-
-
-/* -- RESPONSIVE BEHAVIOUR -- */
-@media screen and (max-height: 38.5em)
-  .menu
-    text-align: left
-
-
-// Tablets 768px (breakpoint)
-@media screen and (max-width: 48em)
-  .content--inner
-    padding: 1em 1em 0
-
-
-// Smartphones 640px (breakpoint)
-@media screen and (max-width: 40em)
-  .content--header
-    font-size: 0.6em
-  
-  .content--footer
-    font-size: 0.85em
-  
-  .menu--item:not(:last-child)
-    margin: 0 0 .75em 0
-  
-  .menu
-    font-size: 1.2em
-
-  h1 
-    padding-left: 25px
-    font-size: 1.14em
-  
-  .glitch::after
-    left: 27px
-  
-  .glitch::before 
-    left: 23px
-
-
-// Mobile 540px (breakpoint)
-@media screen and (max-width: 33.75em)
-  .content--header
-    flex-flow: column
-  
-  .controls
-    margin: 1em 1em 5em
-    order: 1
-  
-  .title
-    order: 2
-  
-  h1
-    margin: 1em auto
-    text-align: center
-
-  .glitch::after,
-  .glitch::before
-    left: 100px
-
-
-// (animations)
-.fade-enter-active
-  transition: opacity .6s
-
-.fade-leave-active
-  transition: opacity .2s
-
-.fade-enter,
-.fade-leave-to
-  opacity: 0
-
-// (animations)
-.slide-fade-enter-active
-  transition: all .3s ease
-
-.slide-fade-leave-active
-  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
-
-.slide-fade-enter,
-.slide-fade-leave-to
-  transform: translateX(10px)
-  opacity: 0
-
-
-// (animation) TYPEWRITING effect
-.typewriter
-  min-height: 340px
-  text-align: left
-  .mode--code
-    padding-right: 5px
-    border-right: .15em solid $coder-color
-    white-space: nowrap
-    overflow: hidden
-    opacity: 0
-
-.typewriter.is-home
-  .mode--code
-    // (skill item) Intro text
-    &:nth-child(1)
-      width: 16em
-      animation: typewritting 1.6s steps(40, end)
-      animation-fill-mode: forwards
-    // (skill item) "Upplication"
-    &:nth-child(2)
-      width: 7em
-      animation: typewritting2 .8s steps(20, end)
-      animation-delay: .5s
-      animation-fill-mode: forwards
-    // (skill item) "Gastronomix"
-    &:nth-child(3)
-      width: 7em
-      animation: typewritting2 .8s steps(20, end)
-      animation-delay: .8s
-      animation-fill-mode: forwards
-    // (skill item) "Widitrade"
-    &:nth-child(4)
-      width: 6em
-      animation: typewritting .7s steps(20, end)
-      animation-delay: 1s
-      animation-fill-mode: forwards
-    // (skill item) "Canessa"
-    &:nth-child(5)
-      width: 5em
-      animation: typewritting2 .6s steps(20, end)
-      animation-delay: 1.3s
-      animation-fill-mode: forwards
-    // (skill item) "Ecomerzpro Club"
-    &:nth-child(6)
-      width: 10em
-      animation: typewritting 1s steps(40, end)
-      animation-delay: 1.8s
-      animation-fill-mode: forwards
-    // (skill item) "LFC; Abogados y Economistas"
-    &:nth-child(7)
-      width: 17em
-      animation: typewritting2 1.8s steps(40, end)
-      animation-delay: 2.2s
-      animation-fill-mode: forwards
-    // (skill item) "Capaball"
-    &:nth-child(8)
-      width: 7em
-      animation: typewritting 1s steps(20, end)
-      animation-delay: 2.5s
-      animation-fill-mode: forwards
-    // (skill item) "> ...take a look on Github"
-    &:nth-child(9)
-      width: 17em
-      animation: typewritting3 1.8s steps(40, end), blink .5s step-end infinite alternate
-      animation-delay: 2.8s
-      animation-fill-mode: forwards
-
-
 // PAGES
-// (page) 404 page not found
-.error
-  // background-color: $pure-back
+.sitemap
+  .menu
+    width: 280px
+    margin: 0 auto
+
+.legal .title + .subtitle
+  @media only screen and (min-width: 1024px)
+    margin-right: 3.5rem
+    margin-left: 3.5rem
+  
+.responsability, .privacy, .terms, .cookies
+  &.media .image img
+    padding: .5rem
+  .media-content
+    @media only screen and (min-width: 769px)
+      margin-top: 1rem
 
 
 // Table styles
@@ -817,5 +145,241 @@ td, th
   line-height: 22px
 
 
+// * -- NEW: #HazTuNegocioDigital -- *
+
+// (animations)
+.fade-enter-active, .fade-leave-active
+  transition: opacity .8s ease-in-out
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  opacity: 0
+
+.slide-fade-enter-active
+  transition: all .3s ease
+
+.slide-fade-leave-active
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-fade-enter,
+.slide-fade-leave-to
+  transform: translateX(10px)
+  opacity: 0
+
+// main top NAVBAR
+.navbar-item
+  &.logo img
+    max-height: none
+  &.is-overlay
+    // max-width: 135px
+    height: 35px
+    padding: .25rem .5rem
+    z-index: 2
+  @media screen and (max-width: 1023px)
+    &.has-dropdown .navbar-link
+      display: none
+    .navbar-dropdown.is-boxed
+      padding: 0
+      text-align: center
+
+.navbar-brand
+  justify-content: space-between
+  .has-cta-btn
+    align-items: center
+
+.navbar-burger
+  width: 4rem
+  &:hover
+    background-color: transparent
+  &:not(.is-active), &:not(.is-active):hover
+    color: transparent
+  span
+    height: 3px
+    border-radius: 3px
+    color: #48c774
+    left: calc(50% - 15px)
+    &:nth-child(1)
+      width: 24px
+      top: calc(50% - 9px)
+    &:nth-child(2)
+      width: 28px
+    &:nth-child(3)
+      width: 20px
+      top: calc(50% + 7px)
+  &.is-active, &.is-active:hover
+    span
+      color: orange
+      &:nth-child(1), &:nth-child(3)
+        width: 26px
+      &:nth-child(1)
+        transform: translateY(7px) rotate(45deg)
+      &:nth-child(3)
+        transform: translateY(-9px) rotate(-45deg)
+
+.level .card
+  width: 250px
+  @media (max-width: 768px)
+    width: 275px
+
+.card-bg-img
+  width: 200px
+  height: 200px
+  // background-size: 200px 200px
+  @media (max-width: 480px)
+    width: 150px
+    height: 150px
+    // background-size: 150px 150px
+
+.card-bg-img + .card-content
+  padding-top: 0
+
+.card-bg-img
+  margin: 0 auto
+  background-repeat: no-repeat
+  background-position: center center
+  &.is-mobile-apps
+    background-image: url(~static/anim/mobile-apps-animate.svg)
+  &.is-online-world
+    background-image: url(~static/anim/online-world-animate.svg)
+  &.is-mobile-marketing
+    background-image: url(~static/anim/mobile-marketing-animate.svg)
+  &.is-agreement
+    background-image: url(~static/anim/agreement-animate.svg)
+
+.tabs
+  &.is-sticky
+    margin-right: -1.5rem
+    margin-left: -1.5rem
+    margin-bottom: 2rem
+    background-color: #fbf8ff // superlight Lilac
+    box-shadow: $dropdown-navbar-shadow
+    position: sticky
+    top: 55px
+    z-index: 31
+    @media (min-width: 1024px)
+      border-bottom-left-radius: $radius
+      border-bottom-right-radius: $radius
+      margin-right: -.5rem
+      margin-left: -.5rem
+      margin-bottom: 4rem
+  a
+    @media (max-width: 768px)
+      font-size: 14px
+
+.underline
+  text-decoration: underline
+
+.text-shadow
+  text-shadow: 4px 6px 3px rgba(0, 0, 0, 0.075)
+  @media (max-width: 768px)
+    text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.075)
+
+// BTNS!!
+.button
+  // border-radius: .5rem!important
+  &.neomorph
+    background: #fbf8ff // superlight Lilac
+    border: none
+    color: #444
+    font-size: 1rem
+    font-weight: 700
+    letter-spacing: .02rem
+    text-align: center
+    outline: none
+    cursor: pointer
+    transition: .2s ease-in-out
+    box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),  -6px -6px 10px rgba(255, 255, 255, .5), 6px 6px 8px rgba(255, 255, 255, .075), 6px 6px 10px rgba(0, 0, 0, .15)
+    @media (hover: hover)
+      &:hover
+        box-shadow: -2px -2px 6px rgba(255, 255, 255, .6), -2px -2px 4px rgba(255, 255, 255, .4), 2px 2px 2px rgba(255, 255, 255, .05), 2px 2px 4px rgba(0, 0, 0, .1)
+      &:active
+        box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7), inset -2px -2px 4px rgba(255, 255, 255, .5), inset 2px 2px 2px rgba(255, 255, 255, .075), inset 2px 2px 4px rgba(0, 0, 0, .15)
+
+.neomorph:not(.quote)
+  background-color: #fbf8ff // superlight Lilac
+  box-shadow: 4px 4px 8px #bdbdbd, -4px -4px 8px #ffffff, inset 0px 0px 0px #bdbdbd, inset 0px 0px 0px #ffffff
+  transition: all 0.2s linear
+  position: relative
+  cursor: pointer
+  @media (hover: hover)
+    &:hover
+      box-shadow: 0px 0px 0px #bdbdbd, 0px 0px 0px #ffffff, inset 4px 4px 8px #bdbdbd, inset -4px -4px 8px #ffffff
+  &.circle
+    border-radius: 100%
+
+.neomorph.quote
+  background-color: #fbf8ff // superlight Lilac
+  border-radius: 1rem
+  -webkit-filter: drop-shadow(3px 1px 18px rgb(255, 255, 255))
+  box-shadow: inset 5.3px 5.3px 7px rgba(183, 177, 181, 0.34)
+  border: 1px solid rgb(255, 255, 255)
+  color: #666
+  text-shadow: 1px 1px 1px white
+
+// @keyframes move_wave
+//     0%
+//         transform: translateX(0) translateZ(0) scaleY(1)
+//     50%
+//         transform: translateX(-25%) translateZ(0) scaleY(0.55)
+//     100%
+//         transform: translateX(-50%) translateZ(0) scaleY(1)
+    
+// .waveWrapper
+//     overflow: hidden
+//     position: absolute
+//     left: 0
+//     right: 0
+//     bottom: 0
+//     top: 0
+//     margin: auto
+
+// .waveWrapperInner
+//     position: absolute
+//     width: 100%
+//     overflow: hidden
+//     height: 100%
+//     bottom: -1px
+//     // background-image: linear-gradient(to top, #86377b 20%, #27273c 80%)
+
+// .bgTop
+//     z-index: 15
+//     opacity: 0.5
+
+// .bgMiddle
+//     z-index: 10
+//     opacity: 0.75
+
+// .bgBottom
+//     z-index: 5
+
+// .wave
+//     position: absolute
+//     left: 0
+//     width: 200%
+//     height: 100%
+//     background-repeat: repeat no-repeat
+//     background-position: 0 bottom
+//     transform-origin: center bottom
+
+// .waveTop
+//     background-size: 50% 100px
+
+// .waveAnimation .waveTop
+//   animation: move-wave 3s
+//   animation-delay: 1s
+
+// .waveMiddle
+//     background-size: 50% 120px
+
+// .waveAnimation .waveMiddle
+//     animation: move_wave 10s linear infinite
+
+// .waveBottom
+//     background-size: 50% 100px
+
+// .waveAnimation .waveBottom
+//     animation: move_wave 15s linear infinite
+
+@import "_cookies" 
+@import "_contact"
 @import "_modals"
 @import "_business"

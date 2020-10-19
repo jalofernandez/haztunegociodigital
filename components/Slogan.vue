@@ -1,5 +1,5 @@
 <template>
-  <h1 class="glitch" data-text="designer + coder">
+  <h1 class="glitch title--slogan" data-text="designer + coder">
     designer + coder
   </h1>
 </template>

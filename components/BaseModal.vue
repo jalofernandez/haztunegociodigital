@@ -7,7 +7,7 @@
       aria-describedby="modalDescription"
     >
       <div class="md-content dish info">
-        <button class="button js-close" type="button" @click="close()">
+        <button class="btn js-close" type="button" @click="close()">
           Cerrar
           <span>&times;</span>
         </button>

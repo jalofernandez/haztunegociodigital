@@ -9,7 +9,7 @@
         <div :id="`modal-${item.id}`" class="md-modal has-dish">
           <div class="md-content dish info">
             <button
-              class="button js-close"
+              class="btn js-close"
               type="button"
               @click="item.show = false"
             >

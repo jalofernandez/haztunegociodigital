@@ -1,0 +1,69 @@
+@mixin cookieBtn()
+  border-radius: 290486px
+  padding: .5rem .75rem!important
+  font-size: 14px!important
+  font-weight: 500
+
+@mixin cookieBtnType($color)
+  color: white
+  background-color: $color
+  @media (hover: hover)
+    &:hover, &:focus
+      background-color: darken($color, 15%)
+
+$btn-success: #48c774
+$btn-manager: #adadad
+  
+.cookieControl
+  // code nested to overwrite "nuxt-cookie-control" CSS by default
+  .cookieControl__BarContainer
+    padding: .5rem .75rem .75rem
+
+  .cookieControl__Bar
+    h3
+      font-size: 16px
+      font-weight: 600
+    p
+      font-size: 14px
+
+  .cookieControl__BarButtons
+    min-width: 300px
+    button
+      width: 50%
+      @include cookieBtn()
+      &:first-child
+        @include cookieBtnType($btn-manager)
+      &:last-child
+        @include cookieBtnType($btn-success)
+
+.cookieControl__Modal
+  // code nested to overwrite "nuxt-cookie-control" CSS by default
+  button
+    @include cookieBtn()
+    &.cookieControl__ModalClose
+      min-width: 90px
+      background-color: #f14668
+      @media (hover: hover)
+        &:hover, &:focus
+          background-color: #ed1741
+      + h3 + ul + h3 + ul li:nth-child(2)
+        display: none
+
+  .cookieControl__ModalContent
+    padding: 2rem
+    h3
+      margin: 1rem 0 1rem
+      font-size: 1.25rem
+    @media (min-width: 769px)
+      border-radius: 1rem
+
+  .cookieControl__ModalButtons
+    margin-top: 2rem
+    button
+      min-width: 125px
+      &:first-child
+        @include cookieBtnType($btn-success)
+      &:last-child
+        @include cookieBtnType($btn-manager)
+      @media (max-width: 768px)
+        min-width: calc(50% - 10px)

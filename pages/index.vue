@@ -1,136 +1,92 @@
 <template>
-  <!-- <main class="home old-crt-effect"> -->
-  <!-- <div class="pieces" style='background-image: url(img/index/normal.jpg); background-size: 100% auto;' data-img-alt='url(img/index/alt.jpg)' data-img-code='url(img/index/code.jpg)'></div> -->
-
-  <!-- <div class="pieces"></div>
-    <div class="overlay overlay--hidden"></div>
-    <div class="content">
-
-      <div class="content--inner">
-        <div class="content--header">
-          <h2 class="title">
-            <transition name="fade" :duration="{ enter: 500, leave: 500 }">
-              <span class="mode mode--design is-glitch glitch--2" v-if="isModeDesign">
-                @jalofernandez
-              </span>
-            </transition>
-            <transition name="fade" :duration="{ enter: 600, leave: 500 }">
-              <span class="mode mode--code is-glitch glitch--1" v-if="isModeCode">
-                @jalofernandez
-              </span>
-            </transition>
-          </h2>
-          <Social />
-        </div>
-        <Slogan />
-
-        <transition name="slide-fade">
-          <div class="menu" v-show="isModeDesign">
-            <ul class="menu--inner">
-              <li class="menu--item">
-                <a class="menu--link" href="javascript:" title="Título menu diseñador">
-                  _as graphic designer:
-                </a>
-              </li>
-              <li :class="'menu--item ' + design.filter" v-for="(design, index) in links.designer" :key="index">
-                <nuxt-link
-                  :to="{ name: 'portfolio' }"
-                  class="menu--link glitch carapo"
-                  :data-text="design.copy"
-                  :title="design.title"
-                >
-                  {{ design.copy }}
-                </nuxt-link>
-              </li>
-            </ul>
-          </div>
-        </transition>
-        
-        <transition name="fade">
-          <div class="menu menu--code" v-show="!isModeDesign">
-            <ul class="menu--inner typewriter is-home">
-              <li class="menu--item mode--code">
-                <a class="menu--link" href="javascript:" title="Título menu desarrollador">
-                  _as UX/UI &amp; web developer:
-                </a>
-              </li>
-              <li class="menu--item mode--code" v-for="(code, index) in links.coder" :key="index">
-                <a
-                  :class="['menu--link', 'glitch', { 'random-anim': randomAnim }]"
-                  :href="code.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :data-text="code.copy"
-                  :title="code.title"
-                >
-                  {{ code.copy }}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </transition>
-        
-        <div class="content--footer">
-          <div :class="['switch', 'mode', { 'mode--design': isModeDesign, 'mode--code': isModeCode }]">
-            <a
-              :class="['switch--item', { 'is-current': isModeDesign }]"
-              href="javascript:"
-              title="Ver menu diseñador"
-              @click="changeMode()"
-            >
-              <span class="mode mode--design">
-                Designer
-              </span>
-            </a>
-            <a
-              :class="['switch--item', { 'is-current': !isModeDesign }]"
-              href="javascript:"
-              title="Ver menu desarrollador"
-              @click="changeMode()"
-            >
-              <span class="mode mode--design">
-                Coder
-              </span>
-            </a>
-          </div>
-          <div class="link-wrap">
-            <nuxt-link
-              :to="{ name: 'cv-resume' }"
-              class="contact-link mode mode--design is-glitch glitch--1"
-              title="Ver portfolio de trabajos de @jalofernandez"
-            >
-              _check my profile
-            </nuxt-link>
-          </div>
-          <nuxt-link
-            :to="{ name: 'legal' }"
-            class="mode mode--coder is-glitch glitch--3"
-            title="Ver términos legales de @jalofernandez"
-          >
-            Legal
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
-    <div class="loading"></div>
-    <div class="line--anim"></div> -->
-  <!-- </main> -->
-
   <main class="home">
     <TheNavbar />
-    <section class="hero is-success is-fullheight">
+    <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Home page
+        <div class="container has-text-centered">
+          <h1 class="title text-shadow is-size-1 is-size-3-mobile">
+            Tu <span class="has-text-success">negocio</span> también en internet
           </h1>
-          <h2 class="subtitle">
-            #HazTuNegocioDigital
+          <h2 class="subtitle is-size-5 is-size-6-mobile">
+            #{{ owner.name }}
+            <span class="has-text-weight-medium">digitaliza tus productos</span>
+            y <span class="has-text-weight-medium">servicios</span> para
+            <b class="has-text-link">vender más</b>
           </h2>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="container">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <div class="card mb-2">
+                <div class="card-bg-img is-mobile-apps"></div>
+                <div class="card-content">
+                  <p class="subtitle is-size-6-mobile">
+                    <b class="has-text-success">Únete</b> a la
+                    <span class="has-text-weight-medium">transformación digital</span>
+                    optimizando el rendimiento de tu negocio. Internet
+                    <span class="has-text-weight-medium">suma</span>.
+                  </p>
+                </div>
+                <!-- <footer class="card-footer">
+                  <p class="card-footer-item">
+                    <span>
+                      <a href="#">Saber más</a>
+                    </span>
+                  </p>
+                </footer> -->
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div class="card mb-2">
+                <div class="card-bg-img is-mobile-marketing"></div>
+                <div class="card-content">
+                  <p class="subtitle is-size-6-mobile">
+                    <b class="has-text-success">Aumenta</b>
+                    <span class="has-text-weight-medium">la visibilidad</span>
+                    de tus productos y servicios fácilmente a través de
+                    <span class="has-text-weight-medium">redes sociales</span>,
+                    <span class="has-text-weight-medium">whatsapp</span>...
+                  </p>
+                </div>
+                <!-- <footer class="card-footer">
+                  <p class="card-footer-item">
+                    <span>
+                      <a href="#">Saber más</a>
+                    </span>
+                  </p>
+                </footer> -->
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div class="card mb-2">
+                <div class="card-bg-img is-online-world"></div>
+                <div class="card-content">
+                  <p class="subtitle is-size-6-mobile">
+                    <b class="has-text-success">Incrementa</b>
+                    <span class="has-text-weight-medium">tus ventas</span>
+                    porque en internet tu negocio abre
+                    <span class="has-text-weight-medium">24 días</span> a la semana y
+                    <span class="has-text-weight-medium">365 días</span>
+                    al año.
+                  </p>
+                </div>
+                <!-- <footer class="card-footer">
+                  <p class="card-footer-item">
+                    <span>
+                      <a href="#">Saber más</a>
+                    </span>
+                  </p>
+                </footer> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <TheFooter :data="business.name" />
+    <TheFooter :data="owner.footer" />
+    <CookieControl locale="es" />
   </main>
 </template>
 
@@ -142,15 +98,7 @@ export default {
   components: { TheNavbar, TheFooter },
   data() {
     return {
-      business: this.$store.state.footer.landing,
-      // Oldies: erase them asap!
-      randomAnim: true,
-      isModeDesign: true,
-      isModeCode: false,
-      links: {
-        designer: [],
-        coder: [],
-      },
+      owner: this.$store.state.landing.owner,
       structuredData: {
         '@context': 'http://schema.org',
         '@type': 'LocalBusiness',
@@ -193,11 +141,19 @@ export default {
       title,
       meta: [
         { hid: 'description', name: 'description', content: description },
-        { hid: 'Classification', name: 'Classification', content: 'Diseño gráfico y desarrollo web' },
+        {
+          hid: 'Classification',
+          name: 'Classification',
+          content: 'Diseño gráfico y desarrollo web',
+        },
         { hid: 'subject', name: 'subject', content: description },
 
         { hid: 'og:title', property: 'og:title', content: title },
-        { hid: 'og:description', property: 'og:description', content: description },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
         { hid: 'og:url', property: 'og:url', content: canonical },
         // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
         // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
@@ -207,7 +163,11 @@ export default {
         // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
 
         { hid: 'twitter:title', name: 'twitter:title', content: title },
-        { hid: 'twitter:description', name: 'twitter:description', content: description },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description,
+        },
         // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
         // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
         // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
@@ -217,7 +177,10 @@ export default {
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
-        { innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' },
+        {
+          innerHTML: JSON.stringify(this.structuredData),
+          type: 'application/ld+json',
+        },
         // (PWA) Service worker:
         { src: '/sw.js' },
       ],
@@ -227,20 +190,6 @@ export default {
       link: [
         // Canonical url
         { rel: 'canonical', hid: 'canonical', href: canonical },
-        // Pre-fetch and return recipe data server-side
-        { rel: 'dns-prefetch', href: '//twitter.com/jalofernandez' },
-        { rel: 'dns-prefetch', href: '//www.instagram.com/jalofernandez/?ref=badge' },
-        { rel: 'dns-prefetch', href: '//www.linkedin.com/in/javierlorenzofernandez/' },
-        { rel: 'dns-prefetch', href: '//www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw' },
-        { rel: 'dns-prefetch', href: '//www.facebook.com/jalofernandez?ref=tn_tnmn' },
-        { rel: 'dns-prefetch', href: '//github.com/jalofernandez' },
-        { rel: 'dns-prefetch', href: '//www.upplication.com/en/' },
-        { rel: 'dns-prefetch', href: '//proyectogastronomix.org/' },
-        { rel: 'dns-prefetch', href: '//widitrade.com/' },
-        { rel: 'dns-prefetch', href: '//peluqueriacanessa.com/' },
-        { rel: 'dns-prefetch', href: '//ecomerzpro.net/' },
-        { rel: 'dns-prefetch', href: '//capaball.com/app/#/login/' },
-        { rel: 'dns-prefetch', href: '//jalofernandez.github.io/lfcabogados/' },
       ],
     }
   },
@@ -260,14 +209,5 @@ export default {
   //     })
   //   }
   // },
-  methods: {
-    // changeMode() {
-    //   ;(this.isModeDesign = !this.isModeDesign), (this.isModeCode = !this.isModeCode)
-    // },
-  },
 }
 </script>
-
-<style lang="sass">
-@import '~assets/bulma'
-</style>

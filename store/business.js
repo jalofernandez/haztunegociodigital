@@ -185,11 +185,10 @@ export const state = () => ({
 
 // // are responsible for setting & updating the "state"
 export const mutations = {
-  modalBehaviour(state, payload) {
-    console.log(payload)
-    return state.services.find((item) => (item.id = payload))
-  },
-
+  // modalBehaviour(state, payload) {
+  //   console.log(payload)
+  //   return state.services.find((item) => (item.id = payload))
+  // },
   // toggleModal(state, services) {
   //   menus.items.show = false ? true : false
   // },

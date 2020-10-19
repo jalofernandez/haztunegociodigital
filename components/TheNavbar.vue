@@ -1,72 +1,110 @@
 <template>
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <nuxt-link class="navbar-item" to="/">
-          <img src="https://bulma.io/images/bulma-logo.png" title="" width="112" height="28" />
+        <nuxt-link class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">
+          <img src="/haztunegociodigital-icon.svg" :title="`Logotipo de #${owner.name}`" width="40" height="40" />
         </nuxt-link>
-        <a
-          role="button"
-          :class="['navbar-burger', 'burger', { 'is-active': active }]"
-          aria-label="menu"
-          aria-expanded="false"
-          @click.prevent="active = !active"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+        <div class="has-cta-btn is-flex">
+          <a
+            :href="`https://wa.me/${owner.whatsapp}`"
+            class="navbar-item button has-img is-dark is-rounded is-overlay is-hidden-desktop"
+            :title="`Whatsapp de #${owner.name}`"
+          >
+            <span>Pregúntanos</span>
+            <figure class="image is-28x28">
+              <img
+                src="/icons/whatsapp-brands.svg"
+                :title="`Whatsapp de #${owner.name}`"
+                :alt="`Whatsapp de #${owner.name}`"
+                width="28"
+                height="28"
+              />
+            </figure>
+          </a>
+          <a
+            role="button"
+            :class="['navbar-burger', 'burger', { 'is-active': active }]"
+            aria-label="menu"
+            aria-expanded="false"
+            @click.prevent="active = !active"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
       </div>
 
       <div :class="['navbar-menu', { 'is-active': active }]">
-        <div class="navbar-start">
-          <nuxt-link to="/" class="navbar-item">
-            <span>Inicio</span>
+        <div class="navbar-start has-text-centered">
+          <nuxt-link to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
+            <span>
+              #<b>{{ owner.name }}</b>
+            </span>
           </nuxt-link>
-          <nuxt-link to="/legal" class="navbar-item">
-            <span>Legal</span>
-          </nuxt-link>
-          <!-- <nuxt-link to="/servicios" class="navbar-item">
+          <!-- <nuxt-link to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
             <span>Servicios</span>
           </nuxt-link>
-          <nuxt-link to="/nosotros" class="navbar-item">
+          <nuxt-link to="/nosotros" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
             <span>Nosotros</span>
-          </nuxt-link>
-          <nuxt-link to="/contacto" class="navbar-item">
-            <span>Contacto</span>
           </nuxt-link> -->
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Ya nos usan
-            </a>
+            <a class="navbar-link"> Ya nos usan </a>
             <div class="navbar-dropdown">
-              <nuxt-link to="/horeca/bar-galicia" class="navbar-item">
+              <nuxt-link
+                to="/horeca/bar-galicia"
+                class="navbar-item dropdown-inner bar-galicia"
+                :title="`Ir a la página del Bar Galicia en #${owner.name}`"
+              >
                 <span>Bar galicia</span>
               </nuxt-link>
-              <nuxt-link to="/horeca/la-antigua-bodeguita" class="navbar-item">
+              <nuxt-link
+                to="/horeca/la-antigua-bodeguita"
+                class="navbar-item dropdown-inner la-antigua-bodeguita"
+                :title="`Ir a la página de La antigua Bodeguita en #${owner.name}`"
+              >
                 <span>La Antigua Bodeguita</span>
               </nuxt-link>
-              <nuxt-link to="/servicios/canessa" class="navbar-item">
+              <!-- <nuxt-link to="/servicios/canessa" class="navbar-item" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`">
                 <span>Peluquería canina Canessa</span>
               </nuxt-link>
-              <nuxt-link to="/servicios/jalofernandez" class="navbar-item">
+              <nuxt-link to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                 <span>Jalofernandez: designer + coder</span>
-              </nuxt-link>
+              </nuxt-link> -->
               <hr class="navbar-divider" />
-              <a class="navbar-item">
-                ¿Te unes?
+              <a
+                :href="`https://wa.me/${owner.whatsapp}`"
+                class="navbar-item dropdown-inner has-text-weight-medium"
+                :title="`Whatsapp de #${owner.name}`"
+              >
+                ¿Te <b class="has-text-success pl-1">unes</b>?
               </a>
             </div>
           </div>
+          <nuxt-link to="/contacto" class="navbar-item" :title="`Ir a la página de contacto de #${owner.name}`">
+            <span>Contacto</span>
+          </nuxt-link>
         </div>
 
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-success">
-                <strong>Infórmate aquí</strong>
-              </a>
-            </div>
+          <div class="navbar-item is-hidden-touch">
+            <a
+              :href="`https://wa.me/${owner.whatsapp}`"
+              class="button has-img is-dark is-rounded"
+              :title="`Whatsapp de #${owner.name}`"
+            >
+              <b>Pregúntanos</b>
+              <figure class="image is-28x28">
+                <img
+                  src="/icons/whatsapp-brands.svg"
+                  :title="`Whatsapp de #${owner.name}`"
+                  :alt="`Whatsapp de #${owner.name}`"
+                  width="28"
+                  height="28"
+                />
+              </figure>
+            </a>
           </div>
         </div>
       </div>
@@ -85,30 +123,27 @@ export default {
   //   },
   // },
   data() {
-    return { active: false }
+    return {
+      active: false,
+      scrollin: false,
+      owner: this.$store.state.landing.owner,
+    }
+  },
+  created() {
+    if (process.client) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.client) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
+  methods: {
+    handleScroll() {
+      const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+      this.scrollin = top > 30
+    },
   },
 }
 </script>
-
-<style scoped lang="sass">
-.navbar-burger
-  width: 4rem
-  &:hover
-    background-color: transparent
-  &:not(.is-active), &:not(.is-active):hover
-    color: transparent
-  span
-    width: 24px
-    height: 2px
-    color: green
-    left: calc(50% - 12px)
-    &:nth-child(1)
-      top: calc(50% - 8px)
-    &:nth-child(3)
-      top: calc(50% + 6px)
-  &.is-active, &.is-active:hover
-    span
-      color: red
-      &:nth-child(1)
-        transform: translateY(9px) rotate(45deg)
-</style>

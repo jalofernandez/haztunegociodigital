@@ -1,10 +1,6 @@
 <template>
   <main :class="['business', item.id, { 'aside-menu-open': showAside }]">
-    <button
-      class="button js-aside light"
-      type="button"
-      @click="asideBehaviour()"
-    >
+    <button class="btn js-aside light" type="button" @click="asideBehaviour()">
       <span class="opener" v-if="!showAside">
         Abrir
         <b>Carta</b>
@@ -31,10 +27,7 @@
       <div
         class="business cover"
         :style="{
-          'background-image':
-            'url(' +
-            require(`@/assets/negocios/${item.id}/${item.id}-${item.cover}.jpg`) +
-            ')',
+          'background-image': 'url(' + require(`@/assets/negocios/${item.id}/${item.id}-${item.cover}.jpg`) + ')',
         }"
         v-if="item.cover"
       ></div>
@@ -60,12 +53,7 @@
               v-if="item.phone"
               >{{ item.phone }}</a
             >
-            <button
-              type="button"
-              class="button light"
-              @click="showModal()"
-              v-if="item.schedule"
-            >
+            <button type="button" class="btn light" @click="showModal()" v-if="item.schedule">
               Ver horario
             </button>
           </li>
@@ -79,10 +67,12 @@
 
     <ul class="others" style="text-align: center">
       <li v-for="other in otherBusiness">
-        <!-- <nuxt-link :to="`/servicios/${other.id}`">{{ other.name }}</nuxt-link> -->
-        <nuxt-link :to="{ name: 'servicios-id', params: { id: other.id } }">{{
-          other.name
-        }}</nuxt-link>
+        <!-- <nuxt-link :to="`/servicios/${other.id}`" :title="`Ir a la página de #${owner.name}`">{{ other.name }}</nuxt-link> -->
+        <nuxt-link
+          :to="{ name: 'servicios-id', params: { id: other.id } }"
+          :title="`Ir a la página de #${owner.name}`"
+          >{{ other.name }}</nuxt-link
+        >
       </li>
     </ul>
 
@@ -95,12 +85,12 @@
 </template>
 
 <script>
-import BaseModal from "~/components/BaseModal.vue";
-import BaseMessage from "~/components/BaseMessage.vue";
-import BusinessItemModal from "~/components/BusinessItemModal.vue";
-import BusinessItemList from "~/components/BusinessItemList.vue";
-import TheAside from "~/components/TheAside.vue";
-import TheFooter from "~/components/TheFooter.vue";
+import BaseModal from '~/components/BaseModal.vue'
+import BaseMessage from '~/components/BaseMessage.vue'
+import BusinessItemModal from '~/components/BusinessItemModal.vue'
+import BusinessItemList from '~/components/BusinessItemList.vue'
+import TheAside from '~/components/TheAside.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
   components: {
@@ -117,32 +107,32 @@ export default {
       showAside: false,
       id: this.$route.params.id,
       // services: {},
-    };
+    }
   },
   head() {
-    const businessName = this.item.name;
-    const businessId = this.item.id;
-    const businessPlace = this.item.place;
-    const businessType = this.item.type;
+    const businessName = this.item.name
+    const businessId = this.item.id
+    const businessPlace = this.item.place
+    const businessType = this.item.type
 
-    const title = `${businessName} en #HazTuNegocioDigital`;
-    const description = `${businessName} en ${businessPlace} por @jalofernandez`;
-    const type = `${businessType} en ${businessPlace}`;
+    const title = `${businessName} en #HazTuNegocioDigital`
+    const description = `${businessName} en ${businessPlace} por @jalofernandez`
+    const type = `${businessType} en ${businessPlace}`
 
-    const canonical = `https://haztunegociodigital.com/horeca/${businessId}`;
+    const canonical = `https://haztunegociodigital.com/horeca/${businessId}`
 
     const meta = [
-      { hid: "description", name: "description", content: description },
-      { hid: "Classification", name: "Classification", content: businessType },
-      { hid: "subject", name: "subject", content: type },
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'Classification', name: 'Classification', content: businessType },
+      { hid: 'subject', name: 'subject', content: type },
 
-      { hid: "og:title", property: "og:title", content: title },
+      { hid: 'og:title', property: 'og:title', content: title },
       {
-        hid: "og:description",
-        property: "og:description",
+        hid: 'og:description',
+        property: 'og:description',
         content: description,
       },
-      { hid: "og:url", property: "og:url", content: canonical },
+      { hid: 'og:url', property: 'og:url', content: canonical },
       // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
       // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
       // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
@@ -150,10 +140,10 @@ export default {
       // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
       // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
 
-      { hid: "twitter:title", name: "twitter:title", content: title },
+      { hid: 'twitter:title', name: 'twitter:title', content: title },
       {
-        hid: "twitter:description",
-        name: "twitter:description",
+        hid: 'twitter:description',
+        name: 'twitter:description',
         content: description,
       },
 
@@ -162,9 +152,9 @@ export default {
       // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
       // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
-    ];
+    ]
 
-    const link = [{ rel: "canonical", hid: "canonical", href: canonical }];
+    const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
 
     // if (this.restaurant.web) {
     //   link.push({ rel: 'dns-prefetch', href: this.restaurant.web })
@@ -175,27 +165,23 @@ export default {
       meta,
       link,
       // Structured Data (Schema)
-      __dangerouslyDisableSanitizers: ["script"],
+      __dangerouslyDisableSanitizers: ['script'],
       script: [
         {
           innerHTML: JSON.stringify(this.structuredData),
-          type: "application/ld+json",
+          type: 'application/ld+json',
         },
       ],
-    };
+    }
   },
   computed: {
     item() {
       // return this.business.find((item) => item.id === this.id); // local json consume
-      return this.$store.state.business.services.find(
-        (item) => item.id === this.id
-      ); // "store" json consume
+      return this.$store.state.business.services.find((item) => item.id === this.id) // "store" json consume
     },
     otherBusiness() {
       // return this.business.filter((item) => item.id !== this.id); // local json consume
-      return this.$store.state.business.services.filter(
-        (item) => item.id !== this.id
-      ); // "store" json consume
+      return this.$store.state.business.services.filter((item) => item.id !== this.id) // "store" json consume
     },
     // products() {
     //   return this.$store.state.services;
@@ -206,15 +192,15 @@ export default {
   // },
   methods: {
     showModal() {
-      this.isModalVisible = true;
+      this.isModalVisible = true
     },
     closeModal() {
-      this.isModalVisible = false;
+      this.isModalVisible = false
     },
     asideBehaviour() {
-      this.showAside = !this.showAside;
+      this.showAside = !this.showAside
     },
     showItemDetail() {},
   },
-};
+}
 </script>

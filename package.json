@@ -1,8 +1,8 @@
 {
   "name": "jalofernandez",
-  "version": "1.0.0",
-  "description": "Personal resume C.V. and projects portfolio",
-  "author": "Javier Lorenzo",
+  "version": "1.0.1",
+  "description": "Únete a la transformación digital: aumenta tus ventas con tu negocio también en internet",
+  "author": "@jalofernandez",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,15 +11,16 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/pwa": "^3.0.2",
-    "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/bulma": "^1.2.1",
-    "nuxt": "^2.0.0",
+    "@nuxtjs/gtm": "^2.3.2",
+    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "nuxt": "^2.14.3",
+    "nuxt-cookie-control": "^1.9.5",
     "vue-scrollto": "^2.18.2"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.2"
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   }
 }
