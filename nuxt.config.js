@@ -59,7 +59,7 @@ export default {
       //- Browsers Tabs
       { rel: 'mask-icon', color: '#333333', href: '/favicon/safari-pinned-tab.svg' },
       { rel: 'dns-prefetch', href: '//wa.me/34696682791' },
-      { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: true },
+      // { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: true },
     ],
   },
   //- Customize the progress-bar color
@@ -150,6 +150,9 @@ export default {
       lang: 'es-ES',
       // dir: 'ltr', // value by default
       useWebmanifestExtension: false,
+    },
+    workbox: {
+      // enabled: true, // check it asap!
     },
   },
   gtm: {
