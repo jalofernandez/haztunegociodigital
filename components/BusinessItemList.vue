@@ -1,10 +1,7 @@
 <template>
   <div>
     <div v-for="(menu, index) in business.menus" :key="index">
-      <h2
-        :id="`section-${index}`"
-        :class="['section', 'name', { 'with-desc': menu.desc }]"
-      >
+      <h2 :id="`section-${index}`" :class="['section', 'name', { 'with-desc': menu.desc }]">
         {{ menu.title }}
       </h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
@@ -24,17 +21,12 @@
       > -->
         <div class="dish info">
           <h3 class="name">{{ item.name }}</h3>
-          <p class="desc" v-if="item.desc">{{ item.desc }}</p>
+          <p class="desc" v-html="item.desc" v-if="item.desc"></p>
           <!-- <p class="desc" v-if="item.desc">{{ setDescription(item.desc) }}</p> -->
           <div class="prices">
-            <div
-              class="price item"
-              v-for="(price, index) in item.prices"
-              :key="index"
-              v-if="item.prices"
-            >
-              <small class="price name">{{ price.name }}</small>
-              <span class="price quantity">
+            <div class="price item" v-for="(price, index) in item.prices" :key="index" v-if="item.prices">
+              <small class="price name" v-if="price.name">{{ price.name }}</small>
+              <span class="price quantity" v-if="price.price">
                 <b>{{ price.price }}</b> €
               </span>
             </div>
@@ -54,9 +46,7 @@
         </div>
         <figure class="dish img" v-if="item.img">
           <img
-            :src="
-              require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)
-            "
+            :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
             :title="`${business.name}: ${item.desc}`"
             :alt="`${business.name}: ${item.desc}`"
             :width="menu.imgs.width"
@@ -70,7 +60,7 @@
 
 <script>
 export default {
-  name: "BusinessItemList",
+  name: 'BusinessItemList',
   props: {
     business: {
       type: Object,
@@ -97,5 +87,5 @@ export default {
   //     }
   //   },
   // },
-};
+}
 </script>

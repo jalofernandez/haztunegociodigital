@@ -1,18 +1,10 @@
 <template>
   <div>
     <div v-for="(menu, index) in business.menus" :key="index">
-      <div
-        v-for="(item, index) in menu.items"
-        :key="index"
-        :class="['modal-wrapper', { 'md-show': item.show }]"
-      >
+      <div v-for="(item, index) in menu.items" :key="index" :class="['modal-wrapper', { 'md-show': item.show }]">
         <div :id="`modal-${item.id}`" class="md-modal has-dish">
           <div class="md-content dish info">
-            <button
-              class="btn js-close"
-              type="button"
-              @click="item.show = false"
-            >
+            <button class="btn js-close" type="button" @click="item.show = false">
               Cerrar
               <span>&times;</span>
             </button>
@@ -20,9 +12,7 @@
               class="img cover"
               :style="{
                 'background-image':
-                  'url(' +
-                  require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) +
-                  ')',
+                  'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
                 'background-position': menu.imgs.position,
               }"
               v-if="item.img"
@@ -31,11 +21,7 @@
               <h4 class="name">{{ item.name }}</h4>
               <p class="desc" v-if="item.desc">{{ item.desc }}</p>
               <div class="prices">
-                <div
-                  class="price item"
-                  v-for="(price, index) in item.prices"
-                  :key="index"
-                >
+                <div class="price item" v-for="(price, index) in item.prices" :key="index">
                   <small class="price name">{{ price.name }}</small>
                   <span class="price quantity">
                     <b>{{ price.price }}</b> €
@@ -43,11 +29,7 @@
                 </div>
               </div>
               <div class="allergens prices" v-if="item.allergens">
-                <div
-                  class="price item"
-                  v-for="(allergen, index) in item.allergens"
-                  :key="index"
-                >
+                <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
                   <small class="helper">{{ allergen }}</small>
                   <img
                     class="allergen"
@@ -62,10 +44,7 @@
             </div>
           </div>
         </div>
-        <div
-          :class="['modal-overlay', { 'md-show': item.show }]"
-          @click="item.show = false"
-        ></div>
+        <div :class="['modal-overlay', { 'md-show': item.show }]" @click="item.show = false"></div>
       </div>
     </div>
   </div>
@@ -73,7 +52,7 @@
 
 <script>
 export default {
-  name: "BusinessItemModal",
+  name: 'BusinessItemModal',
   props: {
     business: {
       type: Object,
@@ -108,5 +87,5 @@ export default {
       // console.log(item);
     },
   },
-};
+}
 </script>
