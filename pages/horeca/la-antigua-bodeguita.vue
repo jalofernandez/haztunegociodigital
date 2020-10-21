@@ -150,8 +150,8 @@ export default {
             desc: 'Una exquisita selección de <span class="semibold">productos frescos</span> y de la huerta.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -213,8 +213,8 @@ export default {
               {
                 id: 7,
                 show: false,
-                name: 'Setas gratinadas con espuma de ali oli a la miel',
-                img: null,
+                name: 'Setas gratinadas con ali oli',
+                img: 'setas-espuma-alioli',
                 desc: 'Setas gratinadas con espuma de ali oli a la miel.',
                 prices: [{ name: 'Precio', price: '13' }],
                 allergens: null,
@@ -241,7 +241,7 @@ export default {
                 id: 10,
                 show: false,
                 name: 'Alcachofitas salteadas con foie',
-                img: null,
+                img: 'alcachofitas-foie',
                 desc: 'Corazones de alcachofas baby ligeramente salteadas con foie gras de pato.',
                 prices: [{ name: 'Precio', price: '16' }],
                 allergens: null,
@@ -278,17 +278,8 @@ export default {
                 show: false,
                 name: 'Pimientos del padrón',
                 img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: null }],
-                allergens: null,
-              },
-              {
-                id: 15,
-                show: false,
-                name: 'Plato de cuchara',
-                img: null,
-                desc: null,
-                prices: [{ name: 'Precio', price: '12' }],
+                desc: 'Sin acompañamiento.',
+                prices: [{ name: 'Precio', price: '8' }],
                 allergens: null,
               },
             ],
@@ -298,16 +289,16 @@ export default {
             desc: 'Selección de <span class="semibold">productos mediterráneos</span> del mar del norte.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
                 id: 20,
                 show: false,
-                name: 'Mejillones a la Tratorria',
-                img: null,
-                desc: null,
+                name: 'Mejillones a la Trattoria',
+                img: 'mejillones-trattoria',
+                desc: 'Mejillones al vapor al estilo italiano con su vino blanco, pimienta negra, ajito y perejil.',
                 prices: [{ name: 'Precio', price: '9' }],
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
@@ -324,8 +315,9 @@ export default {
                 id: 22,
                 show: false,
                 name: 'Pulpo a la parrilla con patata asada',
-                img: null,
-                desc: null,
+                img: 'pulpo-parrilla',
+                desc:
+                  'Pulpo cocido con un toque de parrilla además de su pimentón de la Vera, sal gruesa y patata asada.',
                 prices: [{ name: 'Precio', price: '19' }],
                 allergens: ['moluscos', 'pescado'],
               },
@@ -360,8 +352,8 @@ export default {
                 id: 26,
                 show: false,
                 name: 'Boquerones fritos de Cádiz',
-                img: null,
-                desc: null,
+                img: 'boquerones-fritos',
+                desc: 'Boquerones fritos enharinados y salpimentados con su toque de limón.',
                 prices: [{ name: 'Precio', price: '9' }],
                 allergens: ['moluscos', 'pescado'],
               },
@@ -377,14 +369,23 @@ export default {
               {
                 id: 28,
                 show: false,
+                name: 'Tartar de atún',
+                img: null,
+                desc: 'Atún con sésamo y algas wakame.',
+                prices: [{ name: 'Precio', price: '16' }],
+                allergens: ['pescado'],
+              },
+              {
+                id: 29,
+                show: false,
                 name: 'Gamba blanca a la plancha 🍤',
-                img: 'gamba-plancha',
+                img: null, // foto mala, cambiar por otra
                 desc: 'Ración de gambas blancas frescas a la plancha con un toque de sal.',
                 prices: [{ name: 'Precio', price: '16' }],
                 allergens: null,
               },
               {
-                id: 29,
+                id: 30,
                 show: false,
                 name: 'Tataki de atún con sésamo',
                 img: null,
@@ -399,8 +400,8 @@ export default {
             desc: 'Selección de <span class="semibold">productos mediterráneos</span> de las tierras altas norteñas.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -442,18 +443,20 @@ export default {
               {
                 id: 44,
                 show: false,
-                name: 'Entrecot de vaca gallega a la parrilla de piedra volcánica',
-                img: null,
-                desc: null,
+                name: 'Entrecot a la parrilla',
+                img: 'entrecot-parrilla',
+                desc:
+                  'Entrecot de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.',
                 prices: [{ name: 'Precio', price: '22' }],
                 allergens: null,
               },
               {
                 id: 45,
                 show: false,
-                name: 'Chuletón de vaca gallega a la parrilla de piedra volcánica',
-                img: null,
-                desc: null,
+                name: 'Chuletón a la parrilla',
+                img: 'chuleton-parrilla',
+                desc:
+                  'Chuletón de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.',
                 prices: [{ name: 'Precio', price: '38' }],
                 allergens: null,
               },
@@ -501,8 +504,8 @@ export default {
               'Selección de arroces caldosos o melosos de marisco. <span class="semibold">40 minutos</span> de tiempo de elaboración. <span class="semibold">Pedido mínimo</span> para 2 comensales.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -511,7 +514,7 @@ export default {
                 name: 'Arroz con bogavante',
                 img: 'arroz-bogavante',
                 desc: 'Clásico arroz con bogavante caldoso o suelto, según preferencia del comensal.',
-                prices: [{ name: 'Precio', price: '20' }],
+                prices: [{ name: 'Por persona', price: '20' }],
                 allergens: ['crustaceos', 'pescado'],
               },
               {
@@ -520,7 +523,7 @@ export default {
                 name: 'Arroz con zamburiñas',
                 img: 'arroz-zamburinas',
                 desc: 'Arroz con zamburiñas al gusto: caldoso o suelto.',
-                prices: [{ name: 'Precio', price: '18' }],
+                prices: [{ name: 'Por persona', price: '18' }],
                 allergens: ['crustaceos', 'pescado', 'moluscos'],
               },
               {
@@ -529,7 +532,7 @@ export default {
                 name: 'Paella de marisco',
                 img: 'arroz-paella-marisco',
                 desc: 'Paella española de marisco con langostinos rojos, mejillones, almejas...',
-                prices: [{ name: 'Precio', price: '18' }],
+                prices: [{ name: 'Por persona', price: '18' }],
                 allergens: ['crustaceos', 'pescado', 'moluscos'],
               },
               {
@@ -538,7 +541,7 @@ export default {
                 name: 'Paella de pulpo y gambas 🍤',
                 img: 'arroz-pulpo-gambas',
                 desc: 'Paella especial de pulpo y gambas al gusto, meloso o suelto.',
-                prices: [{ name: 'Precio', price: '18' }],
+                prices: [{ name: 'Por persona', price: '18' }],
                 allergens: ['crustaceos', 'pescado', 'moluscos'],
               },
               {
@@ -547,8 +550,75 @@ export default {
                 name: 'Arroz negro al gusto',
                 img: 'arroz-al-gusto',
                 desc: 'Arroz con tinta de calamar (negro) al gusto: gambas, pulpo, almejas, mejillones, zamburiñas...',
-                prices: [{ name: 'Precio', price: '18' }],
+                prices: [{ name: 'Por persona', price: '18' }],
                 allergens: ['crustaceos', 'pescado', 'moluscos'],
+              },
+            ],
+          },
+          {
+            title: 'De cuchara',
+            desc: 'Pedido mínimo para <span class="semibold">2 comensales</span>.',
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
+            items: [
+              {
+                id: 80,
+                show: false,
+                name: 'Botillo del Bierzo',
+                img: 'botillo-bierzo',
+                desc: 'Botillo del Bierzo con su patata, zanahoria, berzas... Al pimentón de la Vera.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+              {
+                id: 81,
+                show: false,
+                name: 'Codillo asado',
+                img: 'codillo-asado',
+                desc: 'Codillo asado con verduras.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+              {
+                id: 82,
+                show: false,
+                name: 'Pochas con almejas',
+                img: null,
+                desc: 'Pochas con almejas típicas asturianas con su faba asturiana y almejas.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+              {
+                id: 83,
+                show: false,
+                name: 'Callos con garbanzos',
+                img: null,
+                desc: 'Cocinamos el famoso guiso de legumbres y casquería norteño que entra perfecto en días de frío.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+              {
+                id: 84,
+                show: false,
+                name: 'Cocido madrileño',
+                img: null,
+                desc:
+                  'Preparamos el guiso madrileño de garbanzos, verduras, carnes, tocino de cerdo, chorizo, morcilla...',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+              {
+                id: 85,
+                show: false,
+                name: 'Sopa de ajo',
+                img: null,
+                desc:
+                  'La famosa sopa castellana de caldo, pan, pimentón, laurel, ajo, aceite de oliva y huevo escalfado.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
               },
             ],
           },
@@ -557,8 +627,8 @@ export default {
             desc: 'Postres caseros para dejar un toque dulce en el paladar.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -575,7 +645,7 @@ export default {
                 show: false,
                 name: 'Flan de orujo',
                 img: null,
-                desc: 'Flan casero de orujo de licor café de Galicia',
+                desc: 'Flan casero de orujo de licor café de Galicia.',
                 prices: [{ name: 'Precio', price: '4,50' }],
                 allergens: null,
               },
@@ -591,12 +661,79 @@ export default {
             ],
           },
           {
+            title: 'Fuera de carta',
+            desc: 'Otras sugerencias culinarias de temporada. Preguntar disponibilidad.',
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 138,
+            },
+            items: [
+              {
+                id: 96,
+                show: false,
+                name: 'Pierna de cordero asada',
+                img: 'pierna-cordero-asada',
+                desc: 'Pierna de cordero asada a fuego lento con patatas asadas.',
+                prices: [{ name: 'Preguntar precio', price: null }],
+                allergens: null,
+              },
+            ],
+          },
+          {
+            title: 'Vinos',
+            desc: 'Amplia variedad de vinos.',
+            imgs: {
+              position: 'bottom',
+              width: 120,
+              height: 120,
+            },
+            items: [
+              {
+                id: 90,
+                show: false,
+                name: 'Condado de Oriza',
+                img: 'vino-condado-oriza',
+                desc: 'Crianza Rivera del Duero envejecido 14 meses en barricas de roble americano.',
+                prices: [
+                  { name: 'Copa', price: '2,80' },
+                  { name: 'Botella', price: '19' },
+                ],
+                allergens: null,
+              },
+              {
+                id: 91,
+                show: false,
+                name: 'Pulpo albariño',
+                img: 'vino-pulpo-albarino',
+                desc: 'Albariño de Pagos del Rey. Vino blanco de denominación de origen Rías Baixas.',
+                prices: [
+                  { name: 'Copa', price: '2,60' },
+                  { name: 'Botella', price: '18' },
+                ],
+                allergens: null,
+              },
+              {
+                id: 92,
+                show: false,
+                name: 'Arnegui',
+                img: 'vino-arnegui-rioja',
+                desc: 'Crianza Rioja tinto con aromas afrutados, con un toque de herbáceo y de roble bien integrado.',
+                prices: [
+                  { name: 'Copa', price: '2,50' },
+                  { name: 'Botella', price: '18' },
+                ],
+                allergens: null,
+              },
+            ],
+          },
+          {
             title: 'Cervezas',
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -605,12 +742,7 @@ export default {
                 name: 'Cerveza de grifo',
                 img: 'cerveza-grifo',
                 desc: 'Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.',
-                prices: [
-                  { name: 'Caña', price: '1,80' },
-                  { name: 'Copa', price: '2,50' },
-                  { name: 'Maceta', price: '3' },
-                  { name: 'Jarra', price: '3,40' },
-                ],
+                prices: [{ name: 'Copa', price: '2,50' }],
                 allergens: ['gluten'],
               },
               {
@@ -643,14 +775,121 @@ export default {
                 prices: [{ name: 'Tercio', price: '2,90' }],
                 allergens: ['gluten'],
               },
+              // {
+              //   id: 54,
+              //   show: false,
+              //   name: 'Cerveza tostada 0,0',
+              //   img: 'cerveza-tostada-00',
+              //   desc: 'Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.',
+              //   prices: [{ name: 'Tercio', price: '2,50' }],
+              //   allergens: ['gluten'],
+              // },
+            ],
+          },
+          {
+            title: 'Cerveza artesanal Yria',
+            desc:
+              'Yria es una pequeña <span class="semibold">cervecera nacional</span> con una marcada tendencia a la innovación.',
+            imgs: {
+              position: 'bottom',
+              width: 120,
+              height: 120,
+            },
+            items: [
               {
-                id: 54,
+                id: 56,
                 show: false,
-                name: 'Cerveza tostada 0,0',
-                img: 'cerveza-tostada-00',
-                desc: 'Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.',
-                prices: [{ name: 'Tercio', price: '2,50' }],
+                name: 'Bohemia lager',
+                img: 'cerveza-yria-bohemia',
+                desc: 'Cerveza rubia refrescante estilo lager de 4.7%',
+                prices: [{ name: 'Tercio', price: '3,00' }],
                 allergens: ['gluten'],
+              },
+              {
+                id: 57,
+                show: false,
+                name: 'Golden Ale',
+                img: 'cerveza-yria-golden',
+                desc: 'Cerveza dorada estilo ale donde predomina la malta. 5.5%',
+                prices: [{ name: 'Tercio', price: '3,00' }],
+                allergens: ['gluten'],
+              },
+              {
+                id: 58,
+                show: false,
+                name: 'Brutalism',
+                img: 'cerveza-yria-brutalism',
+                desc: 'Cerveza brut ipa refrescante y muy aromática. 7%',
+                prices: [{ name: 'Tercio', price: '3,00' }],
+                allergens: ['gluten'],
+              },
+            ],
+          },
+          {
+            title: 'Licores y combinados',
+            desc: null,
+            imgs: {
+              position: 'top',
+              width: 90,
+              height: 90,
+            },
+            items: [
+              {
+                id: 35,
+                show: false,
+                name: 'Tinto de verano',
+                img: 'tinto-de-verano',
+                desc: 'Vino tinto con gaseosa o limón bien fresquito.',
+                prices: [{ name: 'Vaso ancho', price: '2,80' }],
+                allergens: null,
+              },
+              {
+                id: 36,
+                show: false,
+                name: 'Chupito',
+                img: null,
+                desc: null,
+                prices: [{ name: 'Precio', price: '1,40' }],
+                allergens: null,
+              },
+              {
+                id: 37,
+                show: false,
+                name: 'Combinados',
+                img: 'combinados',
+                desc:
+                  'Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.',
+                prices: null,
+                allergens: null,
+              },
+            ],
+          },
+          {
+            title: 'Otras bebidas',
+            desc: null,
+            imgs: {
+              position: 'top',
+              width: 90,
+              height: 90,
+            },
+            items: [
+              {
+                id: 30,
+                show: false,
+                name: 'Café o infusión',
+                img: 'cafe-con-leche',
+                desc: 'Café al gusto (cortado, sólo, con leche...) o infusión.',
+                prices: [{ name: 'Precio', price: '1,30' }],
+                allergens: null,
+              },
+              {
+                id: 31,
+                show: false,
+                name: 'Refrescos',
+                img: 'refrescos',
+                desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
+                prices: [{ name: 'Precio', price: '2,40' }],
+                allergens: null,
               },
             ],
           },
@@ -773,7 +1012,7 @@ export default {
 <style lang="sass">
 $font-family-name: 'Times', sans-serif
 $font-family-desc: 'Arial', sans-serif
-$font-color: #221303 // superdark Orange
+$font-color: #412406 // superdark Orange
 $bg-color: #f9e0c4 // superlight Orange
 $card-color: lighten($bg-color, 5%)
 $border-radius: 12px
@@ -803,6 +1042,8 @@ main.business.la-antigua-bodeguita
         font-family: $font-family-name
         color: $font-color
         font-weight: 600
+        font-size: 1rem
+        line-height: 1.25
       .desc,
       .prices .price.name,
       .modal-wrapper .md-modal.has-dish .md-content .details
@@ -810,14 +1051,18 @@ main.business.la-antigua-bodeguita
         color: lighten($font-color, 5%)
       .prices .price.quantity
         color: coral
-    &.img img
-      border-radius: $border-radius
+    &.img
+      width: 120px
+      height: auto
+      img
+        border-radius: $border-radius
 
-  .section.name,
-  .message
+  .message,
+  .section
     color: $font-color
-  .section.desc
-    color: lighten($font-color, 10%)
+  .section.name
+    font-size: 120%
+    font-weight: 600
 
   .business.data .name,
   .footer .name
@@ -847,6 +1092,7 @@ main.business.la-antigua-bodeguita
     ul li a
       font-family: $font-family-desc
       color: $font-color
+      padding: .4rem 1.5rem
   .modal-wrapper .md-modal.has-dish .md-content
     background-color: $card-color
     border-radius: $border-radius
