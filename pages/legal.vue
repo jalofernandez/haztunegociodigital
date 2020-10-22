@@ -732,8 +732,7 @@
                 </p>
                 <blockquote class="quote neomorph">
                   <p class="block is-size-7-mobile">
-                    Cookies <b>propias</b> o aquellas generadas y gestionadas por la propia página o dominio que está visitando
-                    osea las nuestras de theseedsquad.com
+                    Cookies <b>propias</b> o aquellas generadas y gestionadas por la propia página o dominio que está visitando.
                   </p>
                   <p class="block is-size-7-mobile">
                     Cookies <b>de terceros</b> o aquellas generadas por servicios o proveedores externos como las que generará
@@ -796,8 +795,8 @@
                   hayas hecho de sus servicios (con tu cuenta personal de LinkedIn, por ejemplo).
                 </p>
                 <p class="block is-size-7-mobile">Eso sí, en ningún caso se van a utilizar cookies que comprometan tu privacidad.</p>
-                <p class="is-size-6 mb-4">
-                  Esta es la <span class="has-text-weight-medium">relación de cookies</span> que usa theseedsquad.com:
+                <p class="block is-size-7-mobile">
+                  Esta es la <span class="has-text-weight-medium">relación de cookies</span> que usa <span>#HazTuNegocioDigital</span>:
                 </p>
                 <div class="table-container">
                   <table class="table is-bordered is-narrow is-fullwidth is-size-7">
@@ -910,28 +909,28 @@
                         <td>i18n_redirected</td>
                         <td>Técnica propia</td>
                         <td>Persistente</td>
-                        <td>The Seed Squad S.L.</td>
+                        <td>@jalofernandez</td>
                         <td>Mantener idioma elegido por el ususario.</td>
-                        <td>theseedsquad.com</td>
+                        <td>haztunegociodigital.com</td>
                       </tr> -->
                       <!-- <tr>
                         <td>cookiesConsent</td>
                         <td>Técnica propia</td>
                         <td>Persistente</td>
-                        <td>The Seed Squad S.L.</td>
+                        <td>@jalofernandez</td>
                         <td>
                           Guardar el consentimiento y aceptación de la política de cookies por parte del <em class="has-text-weight-medium">Usuario</em> y no volver a
                           mostrar el banner de alerta sobre las cookies.
                         </td>
-                        <td>theseedsquad.com</td>
+                        <td>haztunegociodigital.com</td>
                       </tr> -->
                       <!-- <tr>
                         <td>auth.*</td>
                         <td>Técnicas propias</td>
                         <td>Sesión</td>
-                        <td>The Seed Squad S.L.</td>
+                        <td>@jalofernandez</td>
                         <td>Para identificar de manera unitaria al <em class="has-text-weight-medium">Usuario</em> respecto a otros.</td>
-                        <td>theseedsquad.com</td>
+                        <td>haztunegociodigital.com</td>
                       </tr> -->
                     </tbody>
                   </table>

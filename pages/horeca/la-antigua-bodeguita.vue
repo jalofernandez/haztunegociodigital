@@ -1042,7 +1042,6 @@ main.business.la-antigua-bodeguita
         font-family: $font-family-name
         color: $font-color
         font-weight: 600
-        font-size: 1rem
         line-height: 1.25
       .desc,
       .prices .price.name,
