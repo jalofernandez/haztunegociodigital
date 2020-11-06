@@ -115,7 +115,7 @@ export default {
     const businessPlace = this.item.place
     const businessType = this.item.type
 
-    const title = `${businessName} en #HazTuNegocioDigital`
+    const title = businessName
     const description = `${businessName} en ${businessPlace} por @jalofernandez`
     const type = `${businessType} en ${businessPlace}`
 

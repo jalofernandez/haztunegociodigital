@@ -85,7 +85,7 @@ export default {
     }
   },
   head() {
-    const title = 'Page not found | #HazTuNegocioDigital'
+    const title = 'Error: Page Not Found'
     const description =
       'Página de error de #HazTuNegocioDigital donde tu negocio o comercio podrán estar online, en internet, e incrementar su ventas y clientes. Desarrollado por @jalofernandez'
     const canonical = 'https://haztunegociodigital.com' + this.$route.path

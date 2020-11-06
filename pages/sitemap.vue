@@ -146,7 +146,7 @@ export default {
     }
   },
   head() {
-    const title = 'Sitio web | #HazTuNegocioDigital'
+    const title = 'Mapa del sitio web'
     const description =
       'Sitio web o índice de páginas de #HazTuNegocioDigital: Únete a la transformación digital y aumenta tus ventas con tu negocio también en internet. Desarrollado por @jalofernandez'
     const canonical = 'https://haztunegociodigital.com' + this.$route.path

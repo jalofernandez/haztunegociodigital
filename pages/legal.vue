@@ -1188,10 +1188,10 @@ export default {
     };
   },
   head() {
-    const title = "Aviso legal | @jalofernandez";
+    const title = "Aviso legal"
     const description =
-      "Aviso legal y política de cookies de #HazTuNegocioDigital donde digitalizamos tu negocio o comercio para que tengan presencia en internet. Desarrollado por @jalofernandez";
-    const canonical = "https://haztunegociodigital.com" + this.$route.path;
+      "Aviso legal y política de cookies de #HazTuNegocioDigital donde digitalizamos tu negocio o comercio para que tengan presencia en internet. Desarrollado por @jalofernandez"
+    const canonical = "https://haztunegociodigital.com" + this.$route.path
 
     return {
       title,

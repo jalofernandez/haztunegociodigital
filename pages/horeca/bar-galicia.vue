@@ -849,7 +849,7 @@ export default {
     const businessPlace = this.business.place
     const businessType = this.business.type
 
-    const title = `${businessName} en #HazTuNegocioDigital`
+    const title = businessName
     const description = `${businessName} en ${businessPlace} por @jalofernandez`
     const type = `${businessType} en ${businessPlace}`
 

@@ -9,7 +9,8 @@ export default {
     },
     bodyAttrs: {
       class: [ author.toLowerCase() ]
-    }, 
+    },
+    titleTemplate: '%s | #'+author+' por @jalofernandez',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -92,10 +92,10 @@ export default {
     };
   },
   head() {
-    const title = "Contacto | #HazTuNegocioDigital";
+    const title = "Contacto"
     const description =
-      "Contactar con #HazTuNegocioDigital para digitalizar tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder";
-    const canonical = "https://haztunegociodigital.com";
+      "Contactar con #HazTuNegocioDigital para digitalizar tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder"
+    const canonical = "https://haztunegociodigital.com"
 
     return {
       title,

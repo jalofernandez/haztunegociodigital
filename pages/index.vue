@@ -132,7 +132,7 @@ export default {
     }
   },
   head() {
-    const title = '#HazTuNegocioDigital por @jalofernandez'
+    const title = 'Inicio'
     const description =
       'En #HazTuNegocioDigital digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder'
     const canonical = 'https://haztunegociodigital.com'
