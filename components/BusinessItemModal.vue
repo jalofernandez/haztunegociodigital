@@ -23,7 +23,7 @@
               <div class="prices">
                 <div class="price item" v-for="(price, index) in item.prices" :key="index">
                   <small class="price name">{{ price.name }}</small>
-                  <span class="price quantity">
+                  <span class="price quantity" v-if="price.price">
                     <b>{{ price.price }}</b> €
                   </span>
                 </div>
@@ -60,32 +60,32 @@ export default {
       required: true,
     },
   },
-  methods: {
-    renderAllergens(item) {
-      // switch (item) {
-      //   case (item = "crustaceos"):
-      //     allergen = "crustáceos";
-      //     break;
-      //   case (item = "lacteos"):
-      //     allergen = "lácteos";
-      //     break;
-      //   case (item = "sesamo"):
-      //     allergen = "sésamo";
-      // }
-      // console.log(typeof item + " : " + item);
-      // item.forEach(function (allergen) {
-      //   if ((allergen = "crustaceos")) {
-      //     return (allergen = "crustáceos");
-      //   } else if ((allergen = "lacteos")) {
-      //     return (allergen = "lácteos");
-      //   } else if ((allergen = "sesamo")) {
-      //     return (allergen = "sésamo");
-      //   } else {
-      //     return allergen;
-      //   }
-      // });
-      // console.log(item);
-    },
-  },
+  // methods: {
+  //   renderAllergens(item) {
+  //     switch (item) {
+  //       case (item = "crustaceos"):
+  //         allergen = "crustáceos";
+  //         break;
+  //       case (item = "lacteos"):
+  //         allergen = "lácteos";
+  //         break;
+  //       case (item = "sesamo"):
+  //         allergen = "sésamo";
+  //     }
+  //     console.log(typeof item + " : " + item);
+  //     item.forEach(function (allergen) {
+  //       if ((allergen = "crustaceos")) {
+  //         return (allergen = "crustáceos");
+  //       } else if ((allergen = "lacteos")) {
+  //         return (allergen = "lácteos");
+  //       } else if ((allergen = "sesamo")) {
+  //         return (allergen = "sésamo");
+  //       } else {
+  //         return allergen;
+  //       }
+  //     });
+  //     console.log(item);
+  //   },
+  // },
 }
 </script>
