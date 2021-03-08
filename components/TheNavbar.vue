@@ -66,10 +66,25 @@
               >
                 <span>La Antigua Bodeguita</span>
               </nuxt-link>
-              <!-- <nuxt-link to="/servicios/canessa" class="navbar-item" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`">
+              <a
+                href="https://peluqueriacanessa.com"
+                class="navbar-item dropdown-inner peluqueriacanessa"
+                title="Ir a la página de peluquería canina Canessa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>Peluquería canina Canessa</span>
-              </nuxt-link>
-              <nuxt-link to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
+              </a>
+              <a
+                href="https://chefioana.firebaseapp.com"
+                class="navbar-item dropdown-inner chefioana"
+                title="Ir a la página de peluquería canina Canessa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Chef Ioana en tu casa</span>
+              </a>
+              <!-- <nuxt-link to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                 <span>Jalofernandez: designer + coder</span>
               </nuxt-link> -->
               <hr class="navbar-divider" />

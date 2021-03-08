@@ -63,6 +63,8 @@ export default {
       //- Browsers Tabs
       { rel: 'mask-icon', color: '#333333', href: '/favicon/safari-pinned-tab.svg' },
       { rel: 'dns-prefetch', href: '//wa.me/34696682791' },
+      { rel: 'dns-prefetch', href: '//peluqueriacanessa.com' },
+      { rel: 'dns-prefetch', href: '//chefioana.firebaseapp.com' },
       // { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: true },
     ],
   },
