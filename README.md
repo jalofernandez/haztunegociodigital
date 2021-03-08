@@ -1,6 +1,6 @@
 # jalofernandez
 
-> Personal resume C.V. and pojects portfolio
+> Personal resume C.V. and projects portfolio
 
 ## Build Setup
 

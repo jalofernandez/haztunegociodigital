@@ -29,9 +29,7 @@
             aria-expanded="false"
             @click.prevent="active = !active"
           >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <span aria-hidden="true" v-for="item in 3"></span>
           </a>
         </div>
       </div>
