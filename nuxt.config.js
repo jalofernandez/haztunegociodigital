@@ -72,6 +72,11 @@ export default {
   loading: { color: '#030203' },
   //- Global CSS
   css: ['@/assets/styles.sass'],
+  //- Global page animation transition
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   //- Plugins to load before mounting the App as: Google Analytics (ga)
   plugins: [],
   //- Nuxt.js dev-modules:
