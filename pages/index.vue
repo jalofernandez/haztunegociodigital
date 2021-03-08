@@ -193,6 +193,10 @@ export default {
       ],
     }
   },
+  // to enable "scroll to top" behaviour when page loads
+  mounted() {
+    window.scrollTo(0, 0)
+  },
   // mounted() {
   //   if ('serviceWorker' in navigator) {
   //     window.addEventListener('load', function() {

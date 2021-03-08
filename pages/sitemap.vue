@@ -182,5 +182,9 @@ export default {
       link: [{ rel: 'canonical', hid: 'canonical', href: canonical }],
     }
   },
+  // to enable "scroll to top" behaviour when page loads
+  mounted() {
+    window.scrollTo(0, 0)
+  },
 }
 </script>

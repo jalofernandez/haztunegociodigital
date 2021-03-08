@@ -171,6 +171,10 @@ export default {
       ],
     };
   },
+  // to enable "scroll to top" behaviour when page loads
+  mounted() {
+    window.scrollTo(0, 0)
+  },
   methods: {
     // changeMode() {
     //   ;(this.isModeDesign = !this.isModeDesign), (this.isModeCode = !this.isModeCode)

@@ -1280,5 +1280,9 @@ export default {
       ],
     };
   },
+  // to enable "scroll to top" behaviour when page loads
+  mounted() {
+    window.scrollTo(0, 0)
+  },
 };
 </script>
