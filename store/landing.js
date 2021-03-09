@@ -9,4 +9,7 @@ export const state = () => ({
     name: '@jalofernandez',
     url: 'https://jalofernandez.com',
   },
+  btn: {
+    backToHome: 'Volver a la <span class="has-text-weight-medium">página de inicio</span>',
+  }
 })
