@@ -1,15 +1,19 @@
 const author = 'HazTuNegocioDigital'
 const description = 'Únete a la transformación digital: aumenta tus ventas con tu negocio en internet'
+const url = author.toLowerCase() + '.com'
+const dataImage = 'haz-tu-negocio-digital-metadata-card.jpg'
 
 export default {
   mode: 'universal',
   head: {
     htmlAttrs: {
       lang: 'es',
+      // class: ['has-navbar-fixed-top', 'has-navbar-fixed-bottom']
     },
     bodyAttrs: {
       class: [ author.toLowerCase() ]
     },
+    title: process.env.npm_package_name || '',
     titleTemplate: '%s | #'+author+' por @jalofernandez',
     meta: [
       { charset: 'utf-8' },
@@ -35,58 +39,45 @@ export default {
       // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
       // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      { hid: 'twitter:site', name: 'twitter:site', content: author },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: author },
+      { hid: 'twitter:site', name: 'twitter:site', content: url },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: 'https://' + url + '/' + dataImage },
       //- (open-graph) FACEBOOK
-      { name: 'og:type', content: 'website' },
-      { name: 'og:locale', content: 'es_ES' },
-      { name: 'og:site_name', content: description },
+      { hid: 'og:locale', property: 'og:locale', content: 'es-ES' },
+      { hid: 'og:site_name', property: 'og:site_name', content: url },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:image', property: 'og:image', content: 'https://' + url + '/' + dataImage },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://' + url + '/' + dataImage },
+      { hid: 'og:image:type', property: 'og:image:type', content: 'image/jpeg' },
+      { hid: 'og:image:width', property: 'og:image:width', content: '960' },
+      { hid: 'og:image:height', property: 'og:image:height', content: '540' },
+      { hid: 'og:image:alt', property: 'og:image:alt', content: description },
     ],
     //- (metas) common global ones
     link: [
-      // TODO: remove the following code asap because "nuxt/pwa" module just handle it
-      // //- to PWA
-      // { rel: 'manifest', href: '/manifest.json' },
-      // //- (custom) Favicons
-      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      // { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
-      // { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
-      // { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicon/app-icon-57x57.png' },
-      // { rel: 'apple-touch-icon', sizes: '60x60', href: '/favicon/app-icon-60x60.png' },
-      // { rel: 'apple-touch-icon', sizes: '72x72', href: '/favicon/app-icon-72x72.png' },
-      // { rel: 'apple-touch-icon', sizes: '76x76', href: '/favicon/app-icon-76x76.png' },
-      // { rel: 'apple-touch-icon', sizes: '114x114', href: '/favicon/app-icon-114x114.png' },
-      // { rel: 'apple-touch-icon', sizes: '120x120', href: '/favicon/app-icon-120x120.png' },
-      // { rel: 'apple-touch-icon', sizes: '144x144', href: '/favicon/app-icon-144x144.png' },
-      // { rel: 'apple-touch-icon', sizes: '152x152', href: '/favicon/app-icon-152x152.png' },
-      // { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/app-icon-180x180.png' },
-      //- Browsers Tabs
-      { rel: 'mask-icon', color: '#333333', href: '/favicon/safari-pinned-tab.svg' },
+      { rel: 'author', type: 'text/plain', href: 'https://' + url + '/humans.txt' },
       { rel: 'dns-prefetch', href: '//wa.me/34696682791' },
       { rel: 'dns-prefetch', href: '//peluqueriacanessa.com' },
       { rel: 'dns-prefetch', href: '//chefioana.firebaseapp.com' },
       // { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: true },
     ],
   },
-  //- Customize the progress-bar color
+
   loading: { color: '#030203' },
-  //- Global CSS
+
   css: ['@/assets/styles.sass'],
-  //- Global page animation transition
+
   transition: {
     name: 'fade',
     mode: 'out-in'
   },
-  //- Plugins to load before mounting the App as: Google Analytics (ga)
+  
   plugins: [],
-  //- Nuxt.js dev-modules:
-  //- as of Nuxt 2.9+ the PWA ("@nuxtjs/pwa" module) needs to be registered in the build modules
+  
   buildModules: ['@nuxtjs/pwa'],
-  //- Nuxt.js modules
+  
   modules: [
     'vue-scrollto/nuxt',
     'nuxt-webfontloader',
-    // '@nuxtjs/pwa',
     '@nuxtjs/gtm',
     [
       // All info: https://www.npmjs.com/package/nuxt-cookie-control
@@ -141,18 +132,21 @@ export default {
         },
       },
     ],
+    // '@nuxtjs/robots', // TODO: install me asap!
     '@nuxtjs/sitemap', // always declare the sitemap module at end of array
   ],
+
   webfontloader: {
     google: {
       families: ['Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap'],
     },
   },
+
   pwa: {
     manifest: {
-      name: 'HazTuNegocioDigital',
-      short_name: '#HazTuNegocioDigital',
-      description: 'Únete a la transformación digital: aumenta tus ventas con tu negocio también en internet',
+      name: author,
+      short_name: '#' + author,
+      description: description,
       // start_url: 'index.html?launcher=true', // value by default ("/?standalone=true")
       lang: 'es',
       // display: 'standalone', // value by default
@@ -160,18 +154,27 @@ export default {
       theme_color: '#363636',
       lang: 'es-ES',
       // dir: 'ltr', // value by default
-      useWebmanifestExtension: false,
+      useWebmanifestExtension: false, // value by default. With true the file extension will be ".webmanifest" instead ".json"
     },
     workbox: {
       // enabled: true, // check it asap!
     },
   },
+
   gtm: {
     id: 'GTM-NCSZTTP',
     enabled: true,
     scriptDefer: true,
     pageTracking: true,
   },
+
+  // TODO: install me asap!
+  // robots: {
+  //   UserAgent: '*',
+  //   Allow: '/',
+  //   Sitemap: `https://` + url + `/sitemap.xml`,
+  // },
+
   cookies: {
     necessary: [
       {
@@ -207,6 +210,7 @@ export default {
       },
     ],
   },
+
   sitemap: {
     hostname: `https://haztunegociodigital.com`,
     gzip: true,
@@ -218,10 +222,12 @@ export default {
       lastmodrealtime: true,
     },
   },
+
   generate: {
     // subFolders: false,
     // dir: 'public' // to deploy in Google Firebase ('dist' by default)
   },
+
   //- Webpack config here
   build: {
     extend(config, ctx) {},

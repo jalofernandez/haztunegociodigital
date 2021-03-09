@@ -59,7 +59,7 @@
             </ul>
           </div>
 
-          <!-- 01 :: <em class="has-text-weight-medium">Prestador</em> Y RESPONSABILIDAD -->
+          <!-- 01 :: PRESTADOR Y RESPONSABILIDAD -->
           <article id="section-responsability" class="media responsability mb-6">
             <figure class="media-left is-hidden-mobile">
               <p class="image is-64x64 circle neomorph">
@@ -79,7 +79,7 @@
                 </h2>
                 <p class="block is-size-7-mobile">
                   <span>#HazTuNegocioDigital</span> se ciñe estrictamente a
-                  las leyes que regulan las relaciones entre el <em class="has-text-weight-medium"><em class="has-text-weight-medium">Prestador</em></em> (nosotros) y los <em class="has-text-weight-medium">Usuarios</em> (tú) vigentes en España y en Europa que son:
+                  las leyes que regulan las relaciones entre el <em class="has-text-weight-medium">Prestador</em> (nosotros) y los <em class="has-text-weight-medium">Usuarios</em> (tú) vigentes en España y en Europa que son:
                 </p>
                 <nav class="level">
                   <a
@@ -120,7 +120,7 @@
                   </a>
                 </nav>
                 <p class="block is-size-7-mobile">
-                  El <em class="has-text-weight-medium"><em class="has-text-weight-medium">Prestador</em></em> del presente sitio
+                  El <em class="has-text-weight-medium">Prestador</em> del presente sitio
                   web, <em>haztunegociodigital.com</em>, y su servicio asociado es: <span class="has-text-weight-medium">@jalofernandez</span> (<a
                     class="has-text-link"
                     href="https://jalofernandez.com"
@@ -206,8 +206,7 @@
                     <em>haztunegociodigital.com</em> y/o <em>jalofernandez.com</em> así como documentación relativa a ambos.
                   </p>
                   <p class="block is-size-7-mobile">
-                    Mejorar la <span class="has-text-weight-medium">experiencia de Usuario</span> analizándo cómo navegas por este sitio web y así 
-                    mediante herramientas como 
+                    Mejorar la <span class="has-text-weight-medium">experiencia de Usuario / UX</span> analizando cómo navegas por este sitio web mediante herramientas como 
                     <a
                       href="https://analytics.google.com/analytics/web/provision/#/provision"
                       class="has-text-weight-medium"
@@ -408,7 +407,7 @@
                 <p>
                   En caso de no quedar conforme en el ejercicio de sus derechos, podrá presentar una reclamación ante la
                   autoridad de control en materia de protección de datos,
-                  <i>la Agencia Española de Protección de Datos</i>, cuya página web es:
+                  <em>la Agencia Española de Protección de Datos</em>, cuya página web es:
                   <a
                     class="has-text-weight-medium"
                     href="https://www.aepd.es/es"
@@ -505,7 +504,7 @@
                 </h3>
                 <p class="block is-size-7-mobile">
                   Cualquier dato personal que facilites al <em class="has-text-weight-medium">Prestador</em> puede ser almacenado en bases de datos, cuya titularidad
-                  corresponde en exclusiva al <em class="has-text-weight-medium">Prestador</em> pero que se prestan a través de un tercero, simpre un proveedor de servicios
+                  corresponde en exclusiva al <em class="has-text-weight-medium">Prestador</em> pero que se prestan a través de un tercero, siempre un proveedor de servicios
                   de intenet reputado y homologado, que asume todas las medidas de índole técnica, organizativa y de
                   seguridad que garantizan la confidencialidad, integridad y calidad de la información contenida en las
                   mismas de acuerdo con lo establecido en la normativa vigente en protección de datos.
@@ -948,7 +947,7 @@
                   >
                     <div>
                       <!-- <i class="mdi mdi-google-analytics"></i> -->
-                      <p>Google <b>Tag Manager</b></p>
+                      <p>Google <b>Analytics</b></p>
                     </div>
                   </a>
                   <!-- <a
@@ -959,7 +958,7 @@
                     class="level-item facebook"
                   >
                     <div>
-                      <i class="mdi mdi-microsoft-internet-facebook"></i>
+                      <i class="mdi mdi-facebook"></i>
                       <p><b>Facebook</b></p>
                     </div>
                   </a> -->
@@ -983,7 +982,7 @@
                     class="level-item hubspot"
                   >
                     <div>
-                      <i class="mdi mdi-mdi-hubspot"></i>
+                      <i class="mdi mdi-hubspot"></i>
                       <p><b>Hubspot</b></p>
                     </div>
                   </a> -->
