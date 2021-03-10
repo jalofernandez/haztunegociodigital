@@ -119,7 +119,7 @@ export default {
       business: {
         id: 'la-antigua-bodeguita',
         name: 'La Antigua Bodeguita',
-        type: 'Restaurante, bar, cafetería',
+        type: 'Restaurante, marisquería, arrocería',
         cover: 'cover',
         // desc: 'En pleno centro de Valdemoro ofrecemos alta cocina mediterránea especializándonos en arroces y mariscos. Nuestra cocinera, Ioana, se instruyó con el chef Paco Roncero.',
         address: 'Pje. de Colón, 2, 28341 Valdemoro, Madrid, España',
@@ -898,21 +898,20 @@ export default {
       structuredData: {
         '@context': 'http://schema.org',
         '@type': 'LocalBusiness',
-        'additionalType': 'Bar Galicia de Valdemoro en jalofernández',
-        '@id': 'https://haztunegociodigital.com/horeca/bar-galicia',
-        'url': 'https://haztunegociodigital.com/horeca/bar-galicia',
+        'additionalType': 'Bar Galicia de Valdemoro en #HazTuNegocioDigital por @jalofernández',
+        '@id': 'https://haztunegociodigital.com/horeca/la-antigua-bodeguita',
+        'url': 'https://haztunegociodigital.com/horeca/la-antigua-bodeguita',
         // sameAs: [
         //   "https://www.instagram.com/jalofernandez/?ref=badge",
         //   "https://twitter.com/jalofernandez",
         //   "https://www.linkedin.com/in/javierlorenzofernandez/",
-        //   "https://github.com/jalofernandez",
         //   "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
         //   "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
         // ],
-        'logo': '',
-        'name': 'Bar Galicia Valdemoro',
-        'description': 'Bar Galicia de Valdemoro especializado en raciones y cocina gallega',
-        'telephone': '+34 696 682 791',
+        'logo': 'https://haztunegociodigital.com/assets/negocios/la-antigua-bodeguita/la-antigua-bodeguita-logo.png',
+        'name': 'La Antigua Bodeguita',
+        'description': 'Restaurante especializado en mariscos, carnes maduradas y arroces',
+        'telephone': '+34 644 09 34 70',
         'email': 'jalofernandez@gmail.com',
         'currenciesAccepted': 'EUR',
         'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
@@ -920,9 +919,44 @@ export default {
         'image': '',
         'contactPoint': {
           '@type': 'ContactPoint',
-          'telephone': '+34 91 895 53 64',
+          'telephone': '+34 644 09 34 70',
           'contactType': 'Llamar para reservar o recoger pedidos',
         },
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Pje. de Colón, 2',
+          'postalCode': '28341',
+          'addressLocality': 'Valdemoro',
+          'addressRegion': 'Madrid'
+        },
+        'hasMap': 'https://g.page/Bodeguitavaldemoro?share',
+        'geo' : {
+          '@type': 'GeoCoordinates',
+          'latitude': '40.19180347920824',
+          'longitude': '-3.674800017240268'
+        },
+        'aggregateRating': {
+          '@type': 'AggregateRating',
+          'ratingValue': '4.2',
+          'bestRating': '5',
+          'worstRating': '1',
+          'ratingCount': '288'
+        },
+        'openingHoursSpecification': [
+          {
+            '@type': 'OpeningHoursSpecification',
+            'dayOfWeek': [
+              'Lunes',
+              'Martes',
+              'Miércoles',
+              'Viernes',
+              'Sábado',
+              'Domingo'
+            ],
+            'opens': '09:00',
+            'closes': '23:00'
+          }
+        ]
       },
     }
   },
@@ -933,10 +967,11 @@ export default {
     const businessType = this.business.type
 
     const title = businessName
-    const description = `${businessName} en ${businessPlace} por @jalofernandez`
+    const description = `${businessName} en ${businessPlace} por ${this.$store.state.landing.author.name}`
     const type = `${businessType} en ${businessPlace}`
+    const ownerUrl = this.$store.state.landing.owner.url
 
-    const canonical = `https://haztunegociodigital.com/horeca/${businessId}`
+    const canonical = `${ownerUrl}/horeca/${businessId}`
 
     const meta = [
       { hid: 'description', name: 'description', content: description },
@@ -944,31 +979,18 @@ export default {
       { hid: 'subject', name: 'subject', content: type },
 
       { hid: 'og:title', property: 'og:title', content: title },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: description,
-      },
+      { hid: 'og:description', property: 'og:description', content: description },
       { hid: 'og:url', property: 'og:url', content: canonical },
-      // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
-      // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-      // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-      // { hid: 'og:image:width', name: 'og:image:width', content: '960' },
-      // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
-      // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
+      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image:alt', property: 'og:image:alt', content: description },
 
       { hid: 'twitter:title', name: 'twitter:title', content: title },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: description,
-      },
-
-      // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-      // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
-      // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-      // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
-      // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
+      { hid: 'twitter:description', name: 'twitter:description', content: description },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
+      { hid: 'twitter:site', name: 'twitter:site', content: ownerUrl },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
     ]
 
     const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]

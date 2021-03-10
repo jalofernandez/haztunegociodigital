@@ -20,6 +20,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'author', name: 'author', content: author },
       { hid: 'copyright', name: 'copyright', content: author },
+      { hid: 'Classification', name: 'Classification', content: 'Business' },
       { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
       { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
       { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
@@ -36,8 +37,8 @@ export default {
       // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
       { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' },
       //- (microdata) TWITTER
-      // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-      // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid' },
+      { hid: 'twitter:image', name: 'twitter:image', content: 'https://' + url + '/' + dataImage },
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: url },
       { hid: 'twitter:creator', name: 'twitter:creator', content: 'https://' + url + '/' + dataImage },

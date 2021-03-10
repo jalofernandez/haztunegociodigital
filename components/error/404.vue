@@ -80,29 +80,41 @@ export default {
     }
   },
   head() {
-    const title = '404: ' + this.pageNotFound.title + ' en'
+    const landing = this.$store.state.landing
+    const title = 'Error 404: Page Not Found'
     const description =
-      'Página de error 404 del sitio web ' + this.owner.copyright + '. Pruebe otra URL o vaya a la página de inicio para encontrar la descripción de nuestros servicios y contacto.'
-    const canonical = 'https://' + this.owner.url + this.$route.path
+      `Página de error 404 del sitio web #${landing.owner.name}. Pruebe otra URL o vaya a la página de inicio para ver la oferta de servicios y contacto`
+    const canonical = landing.owner.url + this.$route.path
+
+    const meta = [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'subject', name: 'subject', content: `${title} de #${landing.owner.name}` },
+
+      { hid: 'og:title', property: 'og:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:url', property: 'og:url', content: canonical },
+
+      { hid: 'twitter:title', name: 'twitter:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'twitter:description', name: 'twitter:description', content: description },
+    ]
+
+    const link = [
+      { rel: 'canonical', hid: 'canonical', href: canonical },
+      // { rel: 'alternate', hid: 'alternate', href: canonical+'/#!' },
+      // { rel: 'alternate', hid: 'alternate', href: canonical+'#!' }
+    ]
 
     return {
       title,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        { hid: 'Classification', name: 'Classification', content: 'Business' },
-        { hid: 'subject', name: 'subject', content: description },
-      ],
+      meta,
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
-        { innerHTML: JSON.stringify(this.owner.schema), type: 'application/ld+json' },
-      ],
-      // IMP! Better remvoe canonical metatags links in order to avoid weird URL generation 
-      // link: [
-      //   { rel: 'canonical', hid: 'canonical', href: canonical },
-      //   { rel: 'alternate', hid: 'alternate', href: canonical+'/#!' },
-      //   { rel: 'alternate', hid: 'alternate', href: canonical+'#!' },
-      // ]
+        { 
+          innerHTML: JSON.stringify(landing.owner.schema),
+          type: 'application/ld+json'
+        },
+      ]
     }
   }
 };

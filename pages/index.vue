@@ -98,99 +98,44 @@ export default {
   components: { TheNavbar, TheFooter },
   data() {
     return {
-      owner: this.$store.state.landing.owner,
-      structuredData: {
-        '@context': 'http://schema.org',
-        '@type': 'LocalBusiness',
-        'additionalType': 'jalofernández design webmaster frontend diseño gráfico',
-        '@id': 'https://haztunegociodigital.com',
-        'url': 'https://haztunegociodigital.com',
-        'sameAs': [
-          'https://www.instagram.com/jalofernandez/?ref=badge',
-          'https://twitter.com/jalofernandez',
-          'https://www.linkedin.com/in/javierlorenzofernandez/',
-          'https://github.com/jalofernandez',
-          'https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw',
-          'https://www.facebook.com/jalofernandez?ref=tn_tnmn',
-        ],
-        'logo': '',
-        'name': 'jalofernández diseño gráfico y desarrollo web en Madrid, España',
-        'description':
-          'Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.',
-        'telephone': '+34 696 682 791',
-        'email': 'jalofernandez@gmail.com',
-        'currenciesAccepted': 'EUR',
-        'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
-        'priceRange': 'Desde 10€',
-        'image': '',
-        'contactPoint': {
-          '@type': 'ContactPoint',
-          'telephone': '+34 696 682 791',
-          'contactType': 'Llamar para pedir presupuestos',
-        },
-      },
+      owner: this.$store.state.landing.owner
     }
   },
   head() {
+    const landing = this.$store.state.landing
     const title = 'Inicio'
     const description =
-      'En #HazTuNegocioDigital digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder'
-    const canonical = 'https://haztunegociodigital.com'
+      `En #${landing.owner.name} digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por ${landing.author.name}`
+    const canonical = landing.owner.url
+
+    const meta = [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'subject', name: 'subject', content: `#${landing.owner.name}: tu negocio en internet` },
+
+      { hid: 'og:title', property: 'og:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:url', property: 'og:url', content: canonical },
+
+      { hid: 'twitter:title', name: 'twitter:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'twitter:description', name: 'twitter:description', content: description },
+    ]
+
+    const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
 
     return {
       title,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        {
-          hid: 'Classification',
-          name: 'Classification',
-          content: 'Diseño gráfico y desarrollo web',
-        },
-        { hid: 'subject', name: 'subject', content: description },
-
-        { hid: 'og:title', property: 'og:title', content: title },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: description,
-        },
-        { hid: 'og:url', property: 'og:url', content: canonical },
-        // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
-        // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'og:image:width', name: 'og:image:width', content: '960' },
-        // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
-        // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
-
-        { hid: 'twitter:title', name: 'twitter:title', content: title },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description,
-        },
-        // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
-        // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-        // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
-        // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
-      ],
+      meta,
+      link,
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ['script'],
       script: [
         {
-          innerHTML: JSON.stringify(this.structuredData),
+          innerHTML: JSON.stringify(landing.owner.schema),
           type: 'application/ld+json',
         },
         // (PWA) Service worker:
-        { src: '/sw.js' },
-      ],
-      // Pre-fetch and return recipe data server-side
-      // async asyncData(context) {
-      // },
-      link: [
-        // Canonical url
-        { rel: 'canonical', hid: 'canonical', href: canonical },
-      ],
+        // { src: '/sw.js' },
+      ]
     }
   },
   // to enable "scroll to top" behaviour when page loads

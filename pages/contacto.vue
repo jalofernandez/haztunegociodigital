@@ -40,14 +40,20 @@
 </template>
 
 <script>
-import TheNavbar from "~/components/TheNavbar.vue";
-import TheFooter from "~/components/TheFooter.vue";
-import Logo from "~/components/Logo.vue";
-import Slogan from "~/components/Slogan.vue";
-import Social from "~/components/Social.vue";
+import TheNavbar from '~/components/TheNavbar.vue'
+import TheFooter from '~/components/TheFooter.vue'
+import Logo from '~/components/Logo.vue'
+import Slogan from '~/components/Slogan.vue'
+import Social from '~/components/Social.vue'
 
 export default {
-  components: { TheNavbar, TheFooter, Logo, Slogan, Social },
+  components: {
+    TheNavbar,
+    TheFooter,
+    Logo,
+    Slogan,
+    Social
+  },
   data() {
     return {
       owner: this.$store.state.landing.owner,
@@ -57,92 +63,40 @@ export default {
       links: {
         designer: [],
         coder: [],
-      },
-      structuredData: {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        additionalType:
-          "jalofernández design webmaster frontend diseño gráfico",
-        "@id": "https://haztunegociodigital.com",
-        url: "https://haztunegociodigital.com",
-        sameAs: [
-          "https://www.instagram.com/jalofernandez/?ref=badge",
-          "https://twitter.com/jalofernandez",
-          "https://www.linkedin.com/in/javierlorenzofernandez/",
-          "https://github.com/jalofernandez",
-          "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
-          "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
-        ],
-        logo: "",
-        name: "jalofernández diseño gráfico y desarrollo web en Madrid, España",
-        description:
-          "Javier Lorenzo Fernández (aka jalofernandez). Diseñador gráfico y desarrollador web frontend así como maravillosa persona.",
-        telephone: "+34 696 682 791",
-        email: "jalofernandez@gmail.com",
-        currenciesAccepted: "EUR",
-        paymentAccepted: "Efectivo, tarjeta de crédito, Cash, Credit Card",
-        priceRange: "Desde 10€",
-        image: "",
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+34 696 682 791",
-          contactType: "Llamar para pedir presupuestos",
-        },
-      },
+      }
     };
   },
   head() {
-    const title = "Contacto"
+    const landing = this.$store.state.landing
+    const title = 'Contacto'
     const description =
-      "Contactar con #HazTuNegocioDigital para digitalizar tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por @jalofernandez: designer + coder"
-    const canonical = "https://haztunegociodigital.com"
+      `Contactar con #${landing.owner.name} o ${landing.author.name} para digitalizar tu negocio o comercio ofreciendo tus productos y servicios en internet`
+    const canonical = landing.owner.url + this.$route.path
+
+    const meta = [
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'subject', name: 'subject', content: `${title} de #${landing.owner.name} y ${landing.author.name}` },
+
+      { hid: 'og:title', property: 'og:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'og:description', property: 'og:description', content: description },
+      { hid: 'og:url', property: 'og:url', content: canonical },
+
+      { hid: 'twitter:title', name: 'twitter:title', content: `${title} de #${landing.owner.name}` },
+      { hid: 'twitter:description', name: 'twitter:description', content: description },
+    ]
 
     return {
       title,
-      meta: [
-        { hid: "description", name: "description", content: description },
-        {
-          hid: "Classification",
-          name: "Classification",
-          content: "Diseño gráfico y desarrollo web",
-        },
-        { hid: "subject", name: "subject", content: description },
-
-        { hid: "og:title", property: "og:title", content: title },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: description,
-        },
-        { hid: "og:url", property: "og:url", content: canonical },
-        // { hid: 'og:site_name', name: 'og:site_name', content: 'Jalofernández design webmaster frontend diseño gráfico', },
-        // { hid: 'og:image', name: 'og:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'og:image:secure_url', name: 'og:image:secure_url', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'og:image:width', name: 'og:image:width', content: '960' },
-        // { hid: 'og:image:height', name: 'og:image:height', content: '540' },
-        // { hid: 'og:image:alt', name: 'og:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
-
-        { hid: "twitter:title", name: "twitter:title", content: title },
-        {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: description,
-        },
-        // { hid: 'twitter:image', name: 'twitter:image', content: 'https://peluqueriacanessa.com/img/microdata/peluqueria-canina-canessa-valdemoro-index.jpg', },
-        // { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Jalofernández design, webmaster, frontend y diseño gráfico en Madrid', },
-        // { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
-        // { hid: 'twitter:site', name: 'twitter:site', content: '@jalofernandez' },
-        // { hid: 'twitter:creator', name: 'twitter:creator', content: '@jalofernandez' },
-      ],
+      meta,
       // Structured Data (Schema)
       __dangerouslyDisableSanitizers: ["script"],
       script: [
         {
-          innerHTML: JSON.stringify(this.structuredData),
+          innerHTML: JSON.stringify(landing.owner.schema),
           type: "application/ld+json",
         },
         // (PWA) Service worker:
-        { src: "/sw.js" },
+        // { src: "/sw.js" },
       ],
       // Pre-fetch and return recipe data server-side
       // async asyncData(context) {
@@ -151,7 +105,9 @@ export default {
         // Canonical url
         { rel: "canonical", hid: "canonical", href: canonical },
         // Pre-fetch and return recipe data server-side
-        { rel: "dns-prefetch", href: "//twitter.com/jalofernandez" },
+        {
+          rel: "dns-prefetch",
+          href: "//twitter.com/jalofernandez" },
         {
           rel: "dns-prefetch",
           href: "//www.instagram.com/jalofernandez/?ref=badge",
