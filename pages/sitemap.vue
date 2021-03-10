@@ -74,6 +74,15 @@
                           <span>La Antigua Bodeguita</span>
                         </nuxt-link>
                       </li>
+                      <li>
+                        <nuxt-link
+                          to="/horeca/ole-veinti3"
+                          class="navbar-item ole-veinti3"
+                          :title="`Ir a la página de Taberna Olé Veinti3 en #${owner.name}`"
+                        >
+                          <span>Taberna Olé Veinti3</span>
+                        </nuxt-link>
+                      </li>
                     </ul>
                   </li>
                 </ul>

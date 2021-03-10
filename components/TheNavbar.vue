@@ -60,9 +60,16 @@
               <nuxt-link
                 to="/horeca/la-antigua-bodeguita"
                 class="navbar-item dropdown-inner la-antigua-bodeguita"
-                :title="`Ir a la página de La antigua Bodeguita en #${owner.name}`"
+                :title="`Ir a la página de La Antigua Bodeguita en #${owner.name}`"
               >
                 <span>La Antigua Bodeguita</span>
+              </nuxt-link>
+              <nuxt-link
+                to="/horeca/ole-veinti3"
+                class="navbar-item dropdown-inner ole-veinti3"
+                :title="`Ir a la página de Taberna Olé Veinti3 en #${owner.name}`"
+              >
+                <span>Taberna Olé Veinti3</span>
               </nuxt-link>
               <a
                 href="https://peluqueriacanessa.com"
