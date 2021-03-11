@@ -67,12 +67,13 @@
 
     <ul class="others" style="text-align: center">
       <li v-for="other in otherBusiness">
-        <!-- <nuxt-link :to="`/servicios/${other.id}`" :title="`Ir a la página de #${owner.name}`">{{ other.name }}</nuxt-link> -->
-        <nuxt-link
+        <!-- <NuxtLink :to="`/servicios/${other.id}`" :title="`Ir a la página de #${owner.name}`">{{ other.name }}</NuxtLink> -->
+        <NuxtLink
           :to="{ name: 'servicios-id', params: { id: other.id } }"
           :title="`Ir a la página de #${owner.name}`"
-          >{{ other.name }}</nuxt-link
         >
+          {{ other.name }}
+        </NuxtLink>
       </li>
     </ul>
 

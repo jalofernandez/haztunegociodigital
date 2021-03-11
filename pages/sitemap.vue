@@ -27,27 +27,27 @@
                   <li>
                     <ul>
                       <li>
-                        <nuxt-link to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
+                        <NuxtLink to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
                           <span>Inicio / Home</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                       <li>
-                        <nuxt-link
+                        <NuxtLink
                           to="/contacto"
                           class="navbar-item"
                           :title="`Ir a la página de contacto de #${owner.name}`"
                         >
                           <span>Contacto</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                       <li>
-                        <nuxt-link
+                        <NuxtLink
                           to="/legal"
                           class="navbar-item"
                           :title="`Ir a la página de términos legales de #${owner.name}`"
                         >
                           <span>Legal</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                     </ul>
                   </li>
@@ -57,31 +57,31 @@
                   <li>
                     <ul>
                       <li>
-                        <nuxt-link
+                        <NuxtLink
                           to="/horeca/bar-galicia"
                           class="navbar-item bar-galicia"
                           :title="`Ir a la página del Bar Galicia en #${owner.name}`"
                         >
                           <span>Bar galicia</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                       <li>
-                        <nuxt-link
+                        <NuxtLink
                           to="/horeca/la-antigua-bodeguita"
                           class="navbar-item la-antigua-bodeguita"
                           :title="`Ir a la página de La antigua Bodeguita en #${owner.name}`"
                         >
                           <span>La Antigua Bodeguita</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                       <li>
-                        <nuxt-link
+                        <NuxtLink
                           to="/horeca/ole-veinti3"
                           class="navbar-item ole-veinti3"
                           :title="`Ir a la página de Taberna Olé Veinti3 en #${owner.name}`"
                         >
                           <span>Taberna Olé Veinti3</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                     </ul>
                   </li>
@@ -92,14 +92,14 @@
                   <li>
                     <ul>
                       <li>
-                        <nuxt-link to="/servicios/canessa" class="navbar-item canessa" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`">
+                        <NuxtLink to="/servicios/canessa" class="navbar-item canessa" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`">
                           <span>Peluquería canina Canessa</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                       <li>
-                        <nuxt-link to="/servicios/jalofernandez" class="navbar-item jalofernandez" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
+                        <NuxtLink to="/servicios/jalofernandez" class="navbar-item jalofernandez" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                           <span>@jalofernandez</span>
-                        </nuxt-link>
+                        </NuxtLink>
                       </li>
                     </ul>
                   </li>
@@ -129,7 +129,7 @@ export default {
     const landing = this.$store.state.landing
     const title = 'Mapa del sitio web'
     const description =
-      `Sitio web o índice de páginas de #${landing.owner.name}: te ayudamos a la transformación digital de tu negocio. Desarrollado por ${landing.author.name}`
+      `Sitio web o índice de páginas de #${landing.owner.name}: te ayudamos a la transformación digital de tu negocio. Desarrollado por ${landing.author.alias}`
     const canonical = landing.owner.url + this.$route.path
 
     const meta = [

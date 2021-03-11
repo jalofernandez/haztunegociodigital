@@ -1,44 +1,104 @@
 <template>
-  <div class="footer">
-    <ul>
-      <li><span class="name" v-html="data"></span> en</li>
+  <footer class="footer">
+    <ul class="is-flex is-justify-content-center is-align-content-center" v-if="!isHidden">
       <li>
-        <span>#{{ owner.name }}</span>
-      </li>
-      <li>
-        por
-        <a
-          href="https://jalofernandez.com"
-          class="jalofernandez"
-          title="Sitio web de @jalofernandez: diseñador gráfico y desarrollador web"
-          target="_blank"
-          rel="noopener noreferrer"
-          >jalofernandez.com</a
+        <NuxtLink
+          to="/"
+          class="underline"
+          :title="`Ir a la página de inicio de #${landing.owner.name}`"
         >
+          <span class="has-vert-spacer">Inicio</span>
+        </NuxtLink>
       </li>
-      <li class="copyright">
-        <nuxt-link
+      <li>
+        <NuxtLink
+          to="/contacto"
+          class="underline"
+          :title="`Ir a la página de contacto de #${landing.owner.name}`"
+        >
+          <span class="has-vert-spacer">Contacto</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
           to="/legal"
-          class="underline has-text-dark has-text-weight-medium"
-          :title="`Ir a la página de términos legales de #${owner.name}`"
+          class="underline"
+          :title="`Ir a la página de términos legales de #${landing.owner.name}`"
         >
-          <span>Legal</span>
-        </nuxt-link>
-        <span>&nbsp;|&nbsp;</span>
-        <nuxt-link
+          <span class="has-vert-spacer">Legal</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
           to="/sitemap"
-          class="underline has-text-dark has-text-weight-medium"
-          :title="`Ir a la página del mapa del sitio web de #${owner.name}`"
+          class="underline"
+          :title="`Ir a la página del mapa del sitio web de #${landing.owner.name}`"
         >
           <span>Sitemap</span>
-        </nuxt-link>
-        <span>© Todos los derechos reservados</span>,
-        <b>
-          <small>{{ currentYear }}</small>
-        </b>
+        </NuxtLink>
       </li>
     </ul>
-  </div>
+    <figure class="image is-48x48 is-logo" v-if="!isHidden">
+    <!-- <picture> -->
+      <!-- <source :srcset="require('~/assets/images/logos/canessa-bone-logo.png?webp')" type="image/webp" />
+      <source :srcset="require('~/assets/images/logos/canessa-bone-logo.png')" type="image/png" /> -->
+      <img
+        src="/haztunegociodigital-icon.svg"
+        :title="`Logotipo de #${landing.owner.name}`"
+        :alt="`Logotipo de #${landing.owner.name}`"
+        width="48"
+        height="48"
+      />
+    <!-- </picture> -->
+    </figure>
+    <p>
+      <span class="name" v-html="data"></span> en
+    </p>
+    <p class="mb-0 mt-1 is-flex is-justify-content-center is-align-content-center">
+      <NuxtLink
+        to="/"
+        class="tags has-addons"
+        :title="`Ir a la página de inicio de #${landing.owner.name}`"
+      >
+        <span class="tag is-dark">#<b>{{ landing.owner.name }}</b></span>
+        <b class="tag is-success">{{ landing.owner.version }}</b>
+      </NuxtLink>
+    </p>
+    <p>
+      <small>por
+      <a
+        :href="landing.author.url"
+        :class="landing.author.name"
+        :title="`Ir al sitio web de ${landing.author.alias}: diseñador gráfico y desarrollador web`"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        {{ landing.author.name }}.com
+      </a></small>
+    </p>
+    <p class="mt-4">
+      <small>Tecnología utilizada:</small>
+    </p>
+    <ul class="has-icons-tech is-flex is-justify-content-center is-align-content-center">
+      <li v-for="(item, index) in tech" :key="index">
+        <figure class="image is-24x24px">
+          <img
+            :src="require(`~/assets/tech/${item}.svg`)"
+            :title="`Icono de ${item}`"
+            :alt="`Icono de ${item}`"
+            width="24"
+            height="24"
+          >
+        </figure>
+      </li>
+    </ul>
+    <p class="copyright is-size-7 mt-4">
+      <span>© Todos los derechos reservados</span>,
+      <b>
+        <small>{{ currentYear }}</small>
+      </b>
+    </p>
+  </footer>
 </template>
 
 <script>
@@ -50,11 +110,17 @@ export default {
       default: null,
       required: true,
     },
+    isHidden: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {
-      owner: this.$store.state.landing.owner,
+      landing: this.$store.state.landing,
       currentYear: new Date().getFullYear(),
+      tech: [ 'nodejs', 'vuejs', 'nuxt', 'language-html5', 'sass', 'firebase' ]
     }
   },
 }

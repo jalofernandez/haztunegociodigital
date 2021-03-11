@@ -74,7 +74,7 @@
       <p><b>Gracias</b> por su visita 😊</p>
     </div>
 
-    <TheFooter :data="business.name" />
+    <TheFooter :data="business.name" isHidden />
   </main>
 </template>
 
@@ -884,7 +884,7 @@ export default {
     const businessType = this.business.type
 
     const title = businessName
-    const description = `${businessName} en ${businessPlace} por ${this.$store.state.landing.author.name}`
+    const description = `${businessName} en ${businessPlace} por ${this.$store.state.landing.author.alias}`
     const type = `${businessType} en ${businessPlace}`
     const ownerUrl = this.$store.state.landing.owner.url
 

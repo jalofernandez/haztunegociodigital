@@ -2,9 +2,9 @@
   <nav :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <nuxt-link class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">
+        <NuxtLink class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">
           <img src="/haztunegociodigital-icon.svg" :title="`Logotipo de #${owner.name}`" width="40" height="40" />
-        </nuxt-link>
+        </NuxtLink>
         <div class="has-cta-btn is-flex">
           <a
             :href="`https://wa.me/${owner.whatsapp}`"
@@ -36,41 +36,41 @@
 
       <div :class="['navbar-menu', { 'is-active': active }]">
         <div class="navbar-start has-text-centered">
-          <nuxt-link to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
+          <NuxtLink to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
             <span>
               #<b>{{ owner.name }}</b>
             </span>
-          </nuxt-link>
-          <!-- <nuxt-link to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
+          </NuxtLink>
+          <!-- <NuxtLink to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
             <span>Servicios</span>
-          </nuxt-link>
-          <nuxt-link to="/nosotros" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
+          </NuxtLink>
+          <NuxtLink to="/nosotros" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
             <span>Nosotros</span>
-          </nuxt-link> -->
+          </NuxtLink> -->
           <div class="navbar-item has-dropdown is-hoverable" v-if="$route.name !== 'legal'">
             <a class="navbar-link"> Ya nos usan </a>
             <div class="navbar-dropdown">
-              <nuxt-link
+              <NuxtLink
                 to="/horeca/bar-galicia"
                 class="navbar-item dropdown-inner bar-galicia"
                 :title="`Ir a la página del Bar Galicia en #${owner.name}`"
               >
                 <span>Bar galicia</span>
-              </nuxt-link>
-              <nuxt-link
+              </NuxtLink>
+              <NuxtLink
                 to="/horeca/la-antigua-bodeguita"
                 class="navbar-item dropdown-inner la-antigua-bodeguita"
                 :title="`Ir a la página de La Antigua Bodeguita en #${owner.name}`"
               >
                 <span>La Antigua Bodeguita</span>
-              </nuxt-link>
-              <nuxt-link
+              </NuxtLink>
+              <NuxtLink
                 to="/horeca/ole-veinti3"
                 class="navbar-item dropdown-inner ole-veinti3"
                 :title="`Ir a la página de Taberna Olé Veinti3 en #${owner.name}`"
               >
                 <span>Taberna Olé Veinti3</span>
-              </nuxt-link>
+              </NuxtLink>
               <a
                 href="https://peluqueriacanessa.com"
                 class="navbar-item dropdown-inner peluqueriacanessa"
@@ -89,9 +89,9 @@
               >
                 <span>Chef Ioana en tu casa</span>
               </a>
-              <!-- <nuxt-link to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
+              <!-- <NuxtLink to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                 <span>Jalofernandez: designer + coder</span>
-              </nuxt-link> -->
+              </NuxtLink> -->
               <hr class="navbar-divider" />
               <a
                 :href="`https://wa.me/${owner.whatsapp}`"
@@ -102,12 +102,12 @@
               </a>
             </div>
           </div>
-          <nuxt-link to="/sitemap" class="navbar-item" :title="`Ir a la página de Mapa del sitio web de #${owner.name}`" v-if="$route.name === 'legal'">
+          <NuxtLink to="/sitemap" class="navbar-item" :title="`Ir a la página de Mapa del sitio web de #${owner.name}`" v-if="$route.name === 'legal'">
             <span>Sitemap</span>
-          </nuxt-link>
-          <nuxt-link to="/contacto" class="navbar-item" :title="`Ir a la página de contacto de #${owner.name}`">
+          </NuxtLink>
+          <NuxtLink to="/contacto" class="navbar-item" :title="`Ir a la página de contacto de #${owner.name}`">
             <span>Contacto</span>
-          </nuxt-link>
+          </NuxtLink>
         </div>
 
         <div class="navbar-end">

@@ -330,8 +330,8 @@
                 <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em> puedes ejercitar los derechos que se detallan
                   a continuación ante el <em class="has-text-weight-medium">Prestador</em> a través de la
-                  <nuxt-link to="/contacto" class="has-text-weight-medium pr-1" :title="`Ir a la página de contacto de #${owner.name}`">
-                    <span>página de contacto</span> </nuxt-link>
+                  <NuxtLink to="/contacto" class="has-text-weight-medium pr-1" :title="`Ir a la página de contacto de #${owner.name}`">
+                    <span>página de contacto</span> </NuxtLink>
                   o bien a la dirección de correo electrónico:
                   <a
                     href="mailto:legal@haztunegociodigital.com?subject=Solicitud%20de%20baja%20en%20listade%20%20correo"

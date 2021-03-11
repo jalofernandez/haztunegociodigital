@@ -70,12 +70,12 @@ export default {
     const landing = this.$store.state.landing
     const title = 'Contacto'
     const description =
-      `Contactar con #${landing.owner.name} o ${landing.author.name} para digitalizar tu negocio o comercio ofreciendo tus productos y servicios en internet`
+      `Contactar con #${landing.owner.name} o ${landing.author.alias} para digitalizar tu negocio o comercio ofreciendo tus productos y servicios en internet`
     const canonical = landing.owner.url + this.$route.path
 
     const meta = [
       { hid: 'description', name: 'description', content: description },
-      { hid: 'subject', name: 'subject', content: `${title} de #${landing.owner.name} y ${landing.author.name}` },
+      { hid: 'subject', name: 'subject', content: `${title} de #${landing.owner.name} y ${landing.author.alias}` },
 
       { hid: 'og:title', property: 'og:title', content: `${title} de #${landing.owner.name}` },
       { hid: 'og:description', property: 'og:description', content: description },

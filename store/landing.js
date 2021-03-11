@@ -4,11 +4,13 @@ const url = 'https://' + ownerName.toLowerCase() + '.com'
 const email = ownerName.toLowerCase() + '@gmail.com'
 const phone = '+34 696 682 791'
 const dataImage = 'haz-tu-negocio-digital-metadata-card.jpg'
+const author = 'jalofernandez'
 
 export const state = () => ({
   author: {
-    name: '@jalofernandez',
-    url: 'https://jalofernandez.com',
+    name: author,
+    url: 'https://'+author+'.com',
+    alias: '@'+author
   },
   btn: {
     backToHome: 'Volver a la <span class="has-text-weight-medium">página de inicio</span>',
@@ -19,6 +21,7 @@ export const state = () => ({
     phone: '+34 696 682 791',
     whatsapp: 34696682791,
     footer: '<span class="has-text-weight-medium">Digitaliza tu</span> <b class="has-text-success">negocio</b>',
+    version: '1.1.1',
     schema: {
       '@context': 'http://schema.org',
       '@type': 'LocalBusiness',
