@@ -79,6 +79,7 @@ export default {
   modules: [
     'vue-scrollto/nuxt',
     'nuxt-webfontloader',
+    'nuxt-mq',
     '@nuxtjs/gtm',
     [
       // All info: https://www.npmjs.com/package/nuxt-cookie-control
@@ -141,6 +142,19 @@ export default {
     google: {
       families: ['Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap'],
     },
+  },
+
+  mq: {
+    defaultBreakpoint: "desktop",
+    breakpoints: {
+      mobile: 600,
+      smartphone: 768,
+      tablet: 1024,
+      laptop: 1280,
+      desktop: 1400,
+      desktopWide: 2000,
+      desktopUltraWide: Infinity
+    }
   },
 
   pwa: {

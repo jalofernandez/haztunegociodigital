@@ -17,8 +17,9 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.14.3",
     "nuxt-cookie-control": "^1.9.5",
-    "vue-scrollto": "^2.18.2",
-    "nuxt-webfontloader": "^1.1.0"
+    "nuxt-mq": "^2.0.2",
+    "nuxt-webfontloader": "^1.1.0",
+    "vue-scrollto": "^2.18.2"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
