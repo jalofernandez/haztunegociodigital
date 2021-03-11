@@ -7,10 +7,15 @@ An experimental page layout concept with a developer/designer theme and a specia
 
 ## Credits
 
-- Images by Javier Lorenzo Fernández aka [@jalofernadez](http://www.arted.es/)
-- Code image made with [Text-Image.com](http://www.text-image.com/)
-- [anime.js](http://anime-js.com/) by Julian Garnier
-- [Charming.js](https://github.com/yuanqing/charming) by Yuan Qing
+## Credits and Dependencies
+
+- Images by Javier Lorenzo Fernández aka [@jalofernadez](https://jalofernandez.com) and [Freepik](https://www.freepik.es).
+- [Nuxt.js](https://nuxtjs.org), open source JS framework based on:
+  - [Vue.js](https://vuejs.org) by Evan You.
+  - [Node.js](https://nodejs.org) by OpenJS Foundation.
+  - [Webpack](https://webpack.js.org) by Tobias Koppers, Sean Larkin, Johannes Ewald, Juho Vepsäläinen, Kees Kluskens, and Webpack contributors.
+  - [Babel.js](https://babeljs.io) by a lot of contributors.
+- [Bulma](https://bulma.io), open source CSS framework by Jeremy Thomas.
 
 ## License
 
