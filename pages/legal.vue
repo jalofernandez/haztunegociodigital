@@ -77,7 +77,7 @@
                 <h2 class="subtitle text-shadow is-size-5-mobile">
                   Prestador y <b class="has-text-success">responsable</b>
                 </h2>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   <span>#HazTuNegocioDigital</span> se ciñe estrictamente a
                   las leyes que regulan las relaciones entre el <em class="has-text-weight-medium">Prestador</em> (nosotros) y los <em class="has-text-weight-medium">Usuarios</em> (tú) vigentes en España y en Europa que son:
                 </p>
@@ -119,7 +119,7 @@
                     </div>
                   </a>
                 </nav>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> del presente sitio
                   web, <em>haztunegociodigital.com</em>, y su servicio asociado es: <span class="has-text-weight-medium">@jalofernandez</span> (<a
                     class="has-text-link"
@@ -133,16 +133,16 @@
                   la veracidad y valided de los mismos:
                 </p>
                 <blockquote class="quote neomorph">
-                  <p class="is-size-7-mobile"><b class="pr-1">Prestador:</b> Javier Lorenzo Fernández (@jalofernandez)</p>
-                  <p class="is-size-7-mobile"><b class="pr-1">DNI:</b> 53385793X</p>
-                  <!-- <p class="is-size-7-mobile">
+                  <p><b class="pr-1">Prestador:</b> Javier Lorenzo Fernández (@jalofernandez)</p>
+                  <p><b class="pr-1">DNI:</b> 53385793X</p>
+                  <!-- <p>
                     <b>Registro mercantil:</b> ¿?
                   </p>-->
-                  <p class="is-size-7-mobile">
+                  <p>
                     <b class="pr-1">Domicilio:</b> Calle Hierro, nº6, escalera 3 2º2, 28343,
                     Valdemoro, Madrid.
                   </p>
-                  <p class="is-size-7-mobile">
+                  <p>
                     <b class="pr-1">Correo electrónico:</b>
                     <a
                       class="has-text-weight-medium"
@@ -152,11 +152,11 @@
                     >
                   </p>
                 </blockquote>
-                <p class="block is-size-7-mobile"></p>
+                <p class="block"></p>
                   Accediendo y navegando por este sitio web ya adquieres la condición de
                   <em class="has-text-weight-medium">"Usuario"</em> que así lo dice la ley.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Además nosotros, osea el <em class="has-text-weight-medium">Prestador</em> (<em>haztunegociodigital.com</em>), somos proveedores de
                   <span class="has-text-weight-medium">servicios y productos digitales</span> y ofrecemos soluciones
                   del ámbito de internet como: sitios web, landing pages, ecommerces, webapps, blogs, social media,
@@ -184,7 +184,7 @@
                 <h2 class="subtitle text-shadow is-size-5-mobile">
                   Política de <b class="has-text-success">privacidad</b>
                 </h2>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Todos los datos que tú como <em class="has-text-weight-medium">Usuario</em> nos facilites a través de las vías de contacto actualmente existentes:
                   Whatsapp, teléfono, correo electrónico o redes sociales, serán
                   <!-- incorporados a un fichero automatizado convenientemente registrado ante la
@@ -194,18 +194,18 @@
                   tratados anónimamente y sobre los cuales podrás ejercer tus derechos legales de: acceso a estos datos, su rectificación, su cancelación y la oposición a los
                   mismos tal y como te explicaremos un poco más adelante.
                 </p>
-                <p class="block is-size-7-mobile">Los <span class="has-text-weight-medium">datos recabados tienen las siguientes finalidades</span>: </p>
+                <p class="block">Los <span class="has-text-weight-medium">datos recabados tienen las siguientes finalidades</span>: </p>
                 <blockquote class="quote neomorph">
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Asegurar una gestión óptima de los <span class="has-text-weight-medium">servicios y productos</span> aquí ofertados y/o solicitados por el
                     <em class="has-text-weight-medium">Usuario</em>.
                   </p>
-                  <p class="block is-size-7-mobile"> Comunicación y resolución de <span class="has-text-weight-medium">consultas</span>. </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block"> Comunicación y resolución de <span class="has-text-weight-medium">consultas</span>. </p>
+                  <p class="block">
                     Envío de <span class="has-text-weight-medium">publicidad</span> e información comercial por medios electrónicos, acerca de los productos y servicios de
                     <em>haztunegociodigital.com</em> y/o <em>jalofernandez.com</em> así como documentación relativa a ambos.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Mejorar la <span class="has-text-weight-medium">experiencia de Usuario / UX</span> analizando cómo navegas por este sitio web mediante herramientas como 
                     <a
                       href="https://analytics.google.com/analytics/web/provision/#/provision"
@@ -226,23 +226,23 @@
                     </a>.
                   </p>
                 </blockquote>
-                <!-- <p class="block is-size-7-mobile">
+                <!-- <p class="block">
                   En la <b>recogida y el tratamiento de los datos de carácter personal</b> se han adoptado las
                   <b>medidas de seguridad</b> adecuadas para evitar la pérdida, el acceso no autorizado o la manipulación de los
                   mismos, de acuerdo con lo establecido en el <em>Real Decreto 1720/2007, de 21 de diciembre</em>.
                 </p> -->
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Prestador</em> nos comprometemos a <span class="has-text-weight-medium">proteger la información confidencial</span>
                   facilitada por el <em class="has-text-weight-medium">Usuario</em> haciendo el uso extrictamente necesario de ellos según lo expuesto en el párrafo anterior.
                   Los datos de carácter personal que nos facilites nunca serán utilizados para prestar servicios a terceros que NO estén especificados en este <em>Aviso Legal</em>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em> certificas que eres <b class="has-text-success">mayor de 14 años</b>
                   y que por lo tanto posees la capacidad legal necesaria para la prestación del consentimiento al tratamiento de tus datos de carácter personal y todo ello,
                   de conformidad con lo establecido en la presente <em>Política de Privacidad</em>. De no ser así contacta con tu tutor o un
                   adulto mayor de edad para que te valide o cierra esta pestaña del navegador y abre Netflix...
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em> puedes ejercitar los <span class="has-text-weight-medium">derechos de acceso</span>,
                   <span class="has-text-weight-medium">rectificación</span>, <span class="has-text-weight-medium">cancelación</span> y 
                   <span class="has-text-weight-medium">oposición</span> sobre <span class="has-text-weight-medium">tus datos personales</span> así como el de
@@ -256,7 +256,7 @@
                   </a>
                   indentificándote e indicando el derecho que deseas ejercitar.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Prestador</em> cumplimos la
                   <em>Ley 34/2002 de 11 de julio, de Servicios de la Sociedad de la Información y el Comercio Electrónico</em>
                   así que en caso de querer remitirte infomación comercial vía correo electrónico solicitaremos previamente tu aprobación
@@ -269,7 +269,7 @@
                     <span>legal@haztunegociodigital.com</span>
                   </a>
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em> <b>responderás de la veracidad de los datos que nos facilites</b> y nosotros, como responsables
                   de <em>haztunegociodigital.com</em>, nos reservamos el derecho a excluir de los
                   servicios prestados en este sitio web a todo <em class="has-text-weight-medium">Usuario</em> que haya facilitado datos falsos o suplantaciones indebidas.
@@ -278,14 +278,14 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Finalidades, tratamiento y conservación
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El presente sitio web, <em>haztunegociodigital.com</em>, no recaba datos de caracter personal a parte de los
                   proporcionados por el propio <em class="has-text-weight-medium">Usuario</em>. Los datos de carácter personal proporcionados por el
                   <em class="has-text-weight-medium">Usuario</em> a través de Whatsapp, teléfono, correo electrónico o redes sociales
                   serán tratados por el <em class="has-text-weight-medium">Prestador</em>, que ostentamos la condición de Responsables del tratamiento, para las
                   finalidades que se indican a continuación.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   En esta tabla desglosamos el motivo por el que tratamos tus datos y durante cuánto tiempo los
                   conservaremos :
                 </p>
@@ -339,7 +339,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Transferencias internacionales
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Te informamos que, por tu seguridad, tus datos son tratados en España y las aplicaciones son realizadas por
                   proveedores de desarrollo de software certificados y con seguridad garantizada.
                 </p>
@@ -347,7 +347,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Derechos de los usuarios
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em> puedes ejercitar los derechos que se detallan
                   a continuación ante el <em class="has-text-weight-medium">Prestador</em> a través de la
                   <nuxt-link to="/contacto" class="has-text-weight-medium pr-1" :title="`Ir a la página de contacto de #${owner.name}`">
@@ -440,7 +440,7 @@
                 <h2 class="subtitle text-shadow is-size-5-mobile">
                   Condiciones de <b class="has-text-success">uso</b>
                 </h2>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   La utilización de este sitio web,
                   <em>haztunegociodigital.com</em>, te otorga la condición de
                   <em class="has-text-weight-medium">Usuario</em>
@@ -449,15 +449,15 @@
                   de <em>aviso legal</em> así como las condiciones particulares que pudieran establecerse entre las dos partes, <em class="has-text-weight-medium">Prestador</em> (<em>nosotros</em>) y Usuario (<em>tú</em>), en relación con la prestación de los
                   servicios previamente acordados.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Si no estuvieras de acuerdo con todas y cada una de estas cláusulas y condiciones abstente de utilizar este
                   sitio web.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El acceso y navegación por este sitio web es libre y gratuito y no supone, en modo alguno, el inicio de una relación comercial con el
                   <em class="has-text-weight-medium">Prestador</em>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Como <em class="has-text-weight-medium">Usuario</em>, estás obligado y comprometido a NO utilizar cualquiera de los contenidos del
                   sitio web con fines o efectos ilícitos, prohibidos en este
                   <em>aviso legal</em> o por la legislación vigente, lesivos de los derechos e intereses de terceros, o que de
@@ -470,12 +470,12 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Responsabilidad
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> no será responsable de las opiniones vertidas por los <span class="has-text-weight-medium">Usuarios</span> o terceras personas ajenas
                   <em>#HazTuNegocioDigital</em> a través de redes sociales, blog u otras herramientas de participación, conforme a lo previsto en la normativa de
                   aplicación.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> se reserva el derecho de retirar todos aquellos comentarios o contenido fraudulento y/o
                   manipulado que vulneren la legislación vigente, lesivos de los derechos o intereses de terceros, o que, a su
                   juicio, no resulten adecuados para su publicación. En caso de que, como <em class="has-text-weight-medium">Usuario</em>, consideres que existe en el
@@ -488,11 +488,11 @@
                     <span>legal@haztunegociodigital.com</span>
                   </a>
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> se reserva el derecho a modificar, cancelar, restringir o suspender el contenido del sitio web,
                   los links y vínculos o la información obtenida a través del sitio web, sin necesidad de previo aviso.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Este sitio web, <em>haztunegociodigital.com</em>, ha sido desarrollado, revisado y testeado para que <span class="has-text-weight-medium">funcione correctamente</span>.
                   En principio, puede garantizarse el correcto funcionamiento los 365 días del año, 24 horas al día. No obstante, el
                   <em class="has-text-weight-medium">Prestador</em> no descarta la posibilidad de que acontezcan causas de fuerza mayor como: catástrofes naturales, huelgas,
@@ -502,14 +502,14 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Medidas de seguridad
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Cualquier dato personal que facilites al <em class="has-text-weight-medium">Prestador</em> puede ser almacenado en bases de datos, cuya titularidad
                   corresponde en exclusiva al <em class="has-text-weight-medium">Prestador</em> pero que se prestan a través de un tercero, siempre un proveedor de servicios
                   de intenet reputado y homologado, que asume todas las medidas de índole técnica, organizativa y de
                   seguridad que garantizan la confidencialidad, integridad y calidad de la información contenida en las
                   mismas de acuerdo con lo establecido en la normativa vigente en protección de datos.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Matizaremos que las medidas de seguridad de los sistemas informáticos en Internet
                   aunque son extremadamente fiables no son infalibles y que el <em class="has-text-weight-medium">Prestador</em> no puede garantizar al 100%
                   la inexistencia de virus u otros elementos que puedan producir alteraciones en los sistemas informáticos 
@@ -521,22 +521,22 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Enlaces de interés a otros sitios Web
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> puede proporcionarle acceso a sitios web de terceros mediante enlaces con la finalidad de
                   informar sobre la existencia de otras fuentes de información en Internet en las que podrá ampliar los datos o servicios ofrecidos en el sitio web.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Estos enlaces a otros sitios web no suponen en ningún caso una sugerencia o recomendación para que visites las
                   páginas web de destino. Estas están fuera del control del <em class="has-text-weight-medium">Prestador</em>, por lo que
                   <em class="has-text-weight-medium">Prestador</em> no es responsable del contenido de los sitios web vinculados, ni de los links o enlaces ubicados en él,
                   ni del resultado que obtenga al seguir los enlaces.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   La existencia de enlaces no implica la existencia de relaciones entre <em class="has-text-weight-medium">Prestador</em> y el
                   propietario/s del sitio en el que se establezca el enlace/s, ni la aceptación o aprobación por parte del <em class="has-text-weight-medium">Prestador</em>
                   de sus contenidos o servicios.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Si accedes a un sitio web externo desde un enlace que encuentres en <em>haztunegociodigital.com</em> deberás leer la propia
                   <em>política de privacidad</em> propia del otro sitio web que visite pudiendo ser esta muy diferente a la de este sitio web.
                 </p>
@@ -544,7 +544,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Contratación de terceros
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> podrá
                   <b>contratar y/o subcontratar con terceras entidades</b> todo lo que estime oportuno en relación con la
                   realización de cualesquiera o todas las actividades necesarias para la gestión, mantenimiento, actualización
@@ -555,7 +555,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Propiedad intelectual
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Este sitio web, <em>haztunegociodigital.com</em>, incluyendo a título enunciativo pero no limitativo su codificación, edición,
                   compilación y demás elementos necesarios para su funcionamiento, así como los diseños, logotipos, imagen corporativa, texto y gráfismos
                   son propiedad de 
@@ -572,16 +572,16 @@
                   y, en especial, los derechos de reproducción, distribución, comunicación pública y transformación, de acuerdo
                   con la legislación española y de la Unión Europea aplicable.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   NO está permitida la reproducción total o parcial, uso, explotación y distribución con fines comerciales de cualquiera de los recursos materiales, 
                   artículos o programación incluida en el presente sitio web, <em>haztunegociodigital.com</em>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> como titular de
                   <em>#HazTuNegocioDigital</em> autoriza expresamente a que terceros puedan redirigir directamente a los contenidos
                   concretos de sitio web: <em>haztunegociodigital.com</em>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Para realizar cualquier tipo de observación como posibles incumplimientos de los derechos de propiedad
                   intelectual o industrial, así como sobre cualquiera de los contenidos del sitio web, puedes hacerlo a través
                   de nuestra dirección de correo electrónico:
@@ -596,7 +596,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Derecho de exclusión
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Prestador</em> se reserva el derecho a denegar o retirar el acceso a <em>haztunegociodigital.com</em> 
                   y los servicios ofrecidos sin necesidad de preaviso, a instancia propia o de un tercero, a aquellos <em class="has-text-weight-medium">Usuarios</em> 
                   que incumplan cualquiera de las condiciones de este <em>aviso legal</em>.
@@ -605,10 +605,10 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Jurisdicción
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Este <em>aviso legal</em> se rige íntegramente por la <span class="has-text-weight-medium">legislación española</span>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Siempre que no haya una norma que obligue a otra cosa, para cuantas cuestiones se susciten sobre la
                   interpretación, aplicación y cumplimiento de este
                   <em>aviso legal</em>, así como de las reclamaciones que puedan derivarse de su uso, las partes acuerdan
@@ -620,7 +620,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Condiciones de Venta
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   En este apartado detallarás los pasos que debe realizar el <em class="has-text-weight-medium">Usuario</em> para completar una compra y las condiciones a las que ha de someterse.
                 </p>-->
 
@@ -628,17 +628,17 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Enlaces de Afiliados y anuncios patrocinados
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El sitio Web ofrece contenidos patrocinados, anuncios y/o enlaces de afiliados.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   La información que aparece en estos enlaces de afiliados o los anuncios insertados, son facilitados por los propios anunciantes, por lo que <em class="has-text-weight-medium">Prestador</em> no se hace responsable de posibles inexactitudes o errores que pudieran contener los anuncios, ni garantiza en modo alguno la experiencia, integridad o responsabilidad de los anunciantes o la calidad de sus productos y/o servicios.
                 </p>-->
 
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Contacto
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   En caso de que tengas cualquier duda o desees realizar cualquier comentario o consulta sobre sobre este sitio web, puedes enviar un mensaje de correo electrónico a la dirección:
                   <a
                     href="mailto:legal@haztunegociodigital.com"
@@ -674,7 +674,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-3">
                   ¿Por qué hay que informar sobre las cookies?
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El reglamento LSSI-CE,
                   <a
                     href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758"
@@ -692,25 +692,25 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   ¿Y las cookies qué son?
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Una cookie es un pequeño fichero que permite que el sitio web por el que está navegando recuerde información sobre su visita. Estas cookies son instaladas en su
                   navegador por cada web con la única finalidad de facilitar su próxima visita y hacer que el sitio web resulte más útil.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Las cookies <span class="has-text-weight-medium">NO almacenan información sensible sobre ti</span> como tarjetas de crédito o datos bancarios,
                   fotografías o información personal. Los datos que guardan son de carácter técnico, estadísticos,
                   personalización de contenidos, etc. La información recogida por las cookies es anónima.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Las cookies <span class="has-text-weight-medium">NO son virus</span>, ni troyanos, ni spam, ni spyware, ni abren molestas ventanas emergentes
                   (pop-ups)... Sólo contribuyen a tener una mejor experiencia de navegación para el <em class="has-text-weight-medium">Usuario</em>.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   La mayoría de los navegadores aceptan como estándar a las cookies y, con independencia de las mismas, permiten
                   o impiden en los ajustes de seguridad las cookies temporales o memorizadas. Más adelante explicaremos cómo
                   gestionarlas.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Informarte que si continuas navegando y/o pulsas el botón "aceptar" del banner de aviso de Cookies,
                   <span class="has-text-weight-medium">estarás consintiendo el empleo de estas cookies</span> (
                   <small>
@@ -723,17 +723,17 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   ¿Cuántos y qué tipos de cookies existen?
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Hay <span class="has-text-weight-medium">3 clasificaciones</span> por tipo de cookies:
                 </p>
                 <p class="is-size-6">
                   1. Según <b>quién las gestione</b>:
                 </p>
                 <blockquote class="quote neomorph">
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies <b>propias</b> o aquellas generadas y gestionadas por la propia página o dominio que está visitando.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies <b>de terceros</b> o aquellas generadas por servicios o proveedores externos como las que generará
                     un chatbot, una herramienta de analítica web o las redes sociales de turno.
                   </p>
@@ -742,11 +742,11 @@
                   2. Según <b>el tiempo que permanezcan almacenadas</b>:
                 </p>
                 <blockquote class="quote neomorph">
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies <b>sesión</b> o aquellas que se generarán y almacenarán tu información de navegación, permaneciendo
                     activas hasta que abandones la página y cierres el navegador.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies <b>persistentes</b> o aquellas cuyos datos siguen almacenados aunque abandones la página y pueden
                     ser tratados durante un periodo de tiempo que puede ir de unos minutos a varios años según haya definido
                     previamente el responsable de la cookie.
@@ -756,28 +756,28 @@
                   3. Según <b>la finalidad de los datos obtenidos</b>:
                 </p>
                 <blockquote class="quote neomorph">
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies
                     <b>técnicas</b> o aquéllas que permiten al <em class="has-text-weight-medium">Usuario</em> la utilización de las diferentes opciones o servicios que
                     existan en la web como: identificar la sesión, acceder a partes de acceso restringido, recordar los
                     elementos que integran un pedido, realizar el proceso de compra de un pedido...
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies de
                     <b>personalización</b> o aquéllas que permiten recordar las preferencias del <em class="has-text-weight-medium">Usuario</em> como: el idioma, el
                     tipo de navegador a través del cual accede al servicio, etc.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies de
                     <b>análisis</b> o aquéllas que permiten la medición y análisis estadístico de la utilización que hacen los
                     usuarios del servicio con el fin de mejorar la oferta de productos o servicios que se le ofrecen.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies
                     <b>publicitarias</b> o aquéllas que permiten gestionar de forma eficaz la oferta de los espacios
                     publicitarios para así encajar el contenido del anuncio al contenido de la página web.
                   </p>
-                  <p class="block is-size-7-mobile">
+                  <p class="block">
                     Cookies de
                     <b>publicidad comportamental</b> o aquéllas que muestran publicidad en función de tus hábitos de navegación,
                     tu país de procedencia, idioma, etc.
@@ -787,14 +787,14 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   ¿Qué cookies utilizamos aquí?
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Aquí sólo usamos cookies para analizar el tráfico y establecer estadísticas de uso. Además, compartimos información sobre el uso que haga del
                   sitio web con nuestros partners de redes sociales y análisis web, todos ellos de más que conocidos (Google,
                   LinkedIn...) quienes pueden combinarla con otra información que ellos hayan recopilado a partir del uso que tú
                   hayas hecho de sus servicios (con tu cuenta personal de LinkedIn, por ejemplo).
                 </p>
-                <p class="block is-size-7-mobile">Eso sí, en ningún caso se van a utilizar cookies que comprometan tu privacidad.</p>
-                <p class="block is-size-7-mobile">
+                <p class="block">Eso sí, en ningún caso se van a utilizar cookies que comprometan tu privacidad.</p>
+                <p class="block">
                   Esta es la <span class="has-text-weight-medium">relación de cookies</span> que usa <span>#HazTuNegocioDigital</span>:
                 </p>
                 <div class="table-container">
@@ -934,7 +934,7 @@
                     </tbody>
                   </table>
                 </div>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Aquí está la relación completa de <span class="has-text-weight-medium">cookies de terceros</span>:
                 </p>
                 <nav class="level">
@@ -991,13 +991,13 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   ¿Cómo se gestionan las cookies?
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Puedes gestionar la configuración del navegador de modo que este te notifique antes de que se descargue cookie
                   en tu equipo o también puedes adaptar la configuración de forma que el navegador rechace todas las cookies o
                   sólo las cookies de terceros. Además puedes eliminar cualquiera de las cookies que ya se encuentren en tu
                   equipo.
                 </p>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El único problema es que cada navegador lo gestiona a su manera y tendrás que adaptar por separado la
                   configuración de cada navegador y equipo que utilices pero aquí te dejamos una relación de enlaces a la
                   documentación de gestión de cookies de los navegadores más utilizados para que sepas como hacerlo:
@@ -1064,14 +1064,14 @@
                     </div>
                   </a>
                 </nav>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   Ten en cuenta que si eliges bloquear las cookies esto puede afectar al correcto funcionamiento de este sitio web.
                 </p>
 
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Cookies en los dispositivos móviles
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   En <em>#HazTuNegocioDigital</em> también usamos cookies en dispositivos móviles. En este caso los navegadores de
                   los dispositivos móviles permiten configurar las opciones o ajustes de privacidad para desactivar o eliminar las cookies.
                   Aquí te dejamos una relación de enlaces a la documentación de gestión de cookies de los navegadores móviles más utilizados:
@@ -1126,7 +1126,7 @@
                 <h3 class="subtitle is-size-5 is-size-6-mobile mt-5">
                   Aceptación de la política de cookies
                 </h3>
-                <p class="block is-size-7-mobile">
+                <p class="block">
                   El <em class="has-text-weight-medium">Usuario</em> <b class="has-text-success">acepta expresamente</b>,
                   por la utilización de este sitio web, el tratamiento de la información
                   recabada en la forma y con los fines mencionados a lo largo de esta <em>”política de cookies”</em>. Reconoce
