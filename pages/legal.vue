@@ -16,44 +16,24 @@
     </section>
     <section class="hero">
       <div class="hero-body pt-0">
-        <div class="container">
+        <div class="container is-max-desktop">
           <!-- 00 :: navigation sticky bar -->
           <div class="tabs is-centered is-sticky">
             <ul>
-              <li>
+              <li
+                :class="{ 'is-active': showLink(index) }"
+                v-for="(section, index) in sections"
+                :key="index"
+                @click="toggleClick(index)"
+              >
                 <a
-                  href="#"
+                  href=""
                   class="navbar-item"
-                  v-scroll-to="{ el: '#section-responsability', offset: -120 }"
+                  v-scroll-to="{ el: '#section-'+section.link, offset: -120 }"
                 >
-                  <span>Responsable</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="navbar-item"
-                  v-scroll-to="{ el: '#section-privacy', offset: -120 }"
-                >
-                  <span>Política de Privacidad</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="navbar-item"
-                  v-scroll-to="{ el: '#section-terms', offset: -120 }"
-                >
-                  <span>Condiciones de uso</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="navbar-item"
-                  v-scroll-to="{ el: '#section-cookies', offset: -120 }"
-                >
-                  <span>Política de Cookies</span>
+                  <span :class="$mq == 'mobile' ? 'tag is-light is-medium' : null">
+                    {{ section.name }}
+                  </span>
                 </a>
               </li>
             </ul>
@@ -290,7 +270,7 @@
                   conservaremos :
                 </p>
                 <div class="table-container">
-                  <table class="table is-bordered is-narrow is-fullwidth is-size-6 is-size-7-mobile">
+                  <table class="table is-bordered is-narrow is-fullwidth is-size-6">
                     <thead>
                       <tr>
                         <th>Finalidad</th>
@@ -366,7 +346,7 @@
                   contraprestación alguna por el ejercicio de los derechos.
                 </p>
                 <div class="table-container">
-                  <table class="table is-bordered is-narrow is-fullwidth is-size-6 is-size-7-mobile">
+                  <table class="table is-bordered is-narrow is-fullwidth is-size-6">
                     <thead>
                       <tr>
                         <th>Derecho</th>
@@ -798,7 +778,7 @@
                   Esta es la <span class="has-text-weight-medium">relación de cookies</span> que usa <span>#HazTuNegocioDigital</span>:
                 </p>
                 <div class="table-container">
-                  <table class="table is-bordered is-narrow is-fullwidth is-size-7">
+                  <table class="table is-bordered is-narrow is-fullwidth is-size-6">
                     <thead>
                       <tr>
                         <th>Nombre</th>
@@ -1152,7 +1132,13 @@ export default {
   components: { TheNavbar, TheFooter },
   data() {
     return {
-      owner: this.$store.state.landing.owner
+      owner: this.$store.state.landing.owner,
+      sections: [
+        { name: 'Responsable', link: 'responsability' },
+        { name: 'Política de Privacidad', link: 'privacy' },
+        { name: 'Condiciones de uso', link: 'terms' },
+        { name: 'Política de Cookies', link: 'cookies' }
+      ]
     };
   },
   head() {
@@ -1234,5 +1220,17 @@ export default {
   mounted() {
     window.scrollTo(0, 0)
   },
+  methods: {
+    showLink(id) {
+      return this.currentLink === id
+    },
+    toggleClick(id) {
+      if(this.currentLink !== 0) {
+        this.currentLink = 0
+        return false
+      }
+      this.currentLink = id
+    }
+  }
 };
 </script>
