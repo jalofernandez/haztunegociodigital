@@ -1117,10 +1117,12 @@
               </div>
             </div>
           </article>
+
+          <TheFooter :data="owner.footer" />
         </div>
       </div>
     </section>
-    <TheFooter :data="owner.footer" />
+    
   </main>
 </template>
 

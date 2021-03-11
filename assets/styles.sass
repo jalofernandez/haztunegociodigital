@@ -166,6 +166,11 @@ td, th
   opacity: 0
 
 // main top NAVBAR
+.navbar,
+.tabs.is-sticky
+  background-color: rgba($bg-color,.75)
+  backdrop-filter: saturate(180%) blur(8px)
+
 .navbar-item
   &.logo img
     max-height: none
@@ -254,7 +259,6 @@ td, th
     margin-right: -1.5rem
     margin-left: -1.5rem
     margin-bottom: 2rem
-    background-color: #fbf8ff // superlight Lilac
     box-shadow: $dropdown-navbar-shadow
     position: sticky
     top: 55px
@@ -270,6 +274,9 @@ td, th
         padding: .5rem .25rem
       li.is-active a span
         color: $success
+
+.tag:not(body).is-light
+  background-color: $lilac-color
 
 .underline
   text-decoration: underline
