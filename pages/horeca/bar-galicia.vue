@@ -165,7 +165,7 @@ export default {
                 show: false,
                 name: 'Patatas bravas o mixtas',
                 img: 'racion-braviolis',
-                desc: 'Ración de patatas bravas picantes.',
+                desc: 'Ración de patatas bravas picantes o mitad bravas y mitad ali oli.',
                 prices: [
                   { name: 'Ración', price: '9' },
                   { name: '1/2 ración', price: '6' },
@@ -297,7 +297,7 @@ export default {
                 show: false,
                 name: 'Oreja a la plancha',
                 img: null,
-                desc: 'La radicional oreja de cerdo a la plancha al punto que desse con un punto picante.',
+                desc: 'La tradicional oreja de cerdo a la plancha al punto que desse con un toque picante.',
                 prices: [
                   { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '8,80' },
@@ -321,7 +321,7 @@ export default {
                 show: false,
                 name: 'Pimientos de Padrón',
                 img: null,
-                desc: 'Como dirían en Galicia: Os pementos de Padrón, uns pican e outros non.',
+                desc: 'Como dirían en Galicia: "Os pementos de Padrón, uns pican e outros non".',
                 prices: [
                   { name: 'Ración', price: '10' },
                   { name: '1/2 ración', price: '6' },
