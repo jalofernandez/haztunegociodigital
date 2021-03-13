@@ -16,12 +16,14 @@
       class="btn whatsapp light"
       :href="`https://wa.me/${business.whatsapp}`"
       :title="`Llamar o escribir al Whatsapp de ${business.name}`"
+      target="_blank"
+      rel="noopener noreferrer"
       v-if="business.whatsapp"
     >
       <img
         src="/icons/whatsapp-brands.svg"
-        :title="`Whatsapp de ${business.name}`"
-        :alt="`Whatsapp de ${business.name}`"
+        alt="Icono de WhatsApp"
+        title="Icono de WhatsApp"
         width="50"
         height="50"
       />

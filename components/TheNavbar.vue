@@ -10,13 +10,15 @@
             :href="`https://wa.me/${owner.whatsapp}`"
             class="navbar-item button has-img is-dark is-rounded is-overlay is-hidden-desktop"
             :title="`Whatsapp de #${owner.name}`"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span>Pregúntanos</span>
             <figure class="image is-28x28">
               <img
                 src="/icons/whatsapp-brands.svg"
-                :title="`Whatsapp de #${owner.name}`"
-                :alt="`Whatsapp de #${owner.name}`"
+                alt="Icono de WhatsApp"
+                title="Icono de WhatsApp"
                 width="28"
                 height="28"
               />
@@ -97,6 +99,8 @@
                 :href="`https://wa.me/${owner.whatsapp}`"
                 class="navbar-item dropdown-inner has-text-weight-medium"
                 :title="`Whatsapp de #${owner.name}`"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 ¿Te <b class="has-text-success pl-1">unes</b>?
               </a>
@@ -116,13 +120,15 @@
               :href="`https://wa.me/${owner.whatsapp}`"
               class="button has-img is-dark is-rounded"
               :title="`Whatsapp de #${owner.name}`"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <b>Pregúntanos</b>
               <figure class="image is-28x28">
                 <img
                   src="/icons/whatsapp-brands.svg"
-                  :title="`Whatsapp de #${owner.name}`"
-                  :alt="`Whatsapp de #${owner.name}`"
+                  alt="Icono de WhatsApp"
+                  title="Icono de WhatsApp"
                   width="28"
                   height="28"
                 />
