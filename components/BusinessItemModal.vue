@@ -4,7 +4,7 @@
       <div v-for="(item, index) in menu.items" :key="index" :class="['modal-wrapper', { 'md-show': item.show }]">
         <div :id="`modal-${item.id}`" class="md-modal has-dish">
           <div class="md-content dish info">
-            <button class="btn js-close" type="button" @click="item.show = false">
+            <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="item.show = false">
               Cerrar
               <span>&times;</span>
             </button>

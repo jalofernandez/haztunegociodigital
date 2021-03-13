@@ -26,7 +26,8 @@
           />
         </a>
         <img
-          :src="require(`~/assets/negocios/${business.id}/${business.id}-logo.png`)"
+          :class="{ 'ml-1': !business.whatsapp }"
+          :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
           width="75"
@@ -1233,13 +1234,13 @@ export default {
 // $font-family-name: Georgia, serif
 $font-family-name: 'Brush Script MT', cursive
 $font-family-desc: Verdana, sans-serif
-$font-color: #f2e0d3 // superdark Orange
-$bg-color: #222222 // very Dark Grey
-$card-color: #181512 // almost Black
-$price-color: #eb710c // medium Orange
+$font-color: #f2e0d3  // superlight Orange almost White
+$bg-color: #222222    // very Dark Grey
+$card-color: #181512  // superdark Brown almost Black
+$price-color: #f36a50 // medium Orange
+$green-color: #15a544 // medium Green
 $border-radius: 12px
 $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
-// $shadow-color: #502e08
 
 main.business
   &.ole-veinti3
@@ -1277,13 +1278,21 @@ main.business
         .modal-wrapper .md-modal.has-dish .md-content .details
           font-family: $font-family-desc
           color: lighten($font-color, 5%)
+        .name:not(.price)
+          font-size: 2rem
         .prices .price.quantity
           color: $price-color
+        .allergens .allergen
+          opacity: .8 // cause dark card bg color
+
       &.img
         width: 120px
         height: auto
         img
           border-radius: $border-radius
+
+    .message.thankfulness
+      border-radius: 0
 
     .message,
     .section
@@ -1307,17 +1316,21 @@ main.business
     .footer
       background-color: $bg-color
       padding-bottom: 8rem
+      color: $font-color
       .name
         font-weight: 600
-      ul li
-        color: $font-color
+      .has-icons-tech
+        background-color: #eaceb9
+        max-width: 200px
+        border-radius: 12px
+        margin: 0 auto
 
     .navbar.bottom-bar
       .navbar-brand
         border-radius: $border-radius
-        border: 1px solid lighten($card-color,10%)
-        background-color: rgba($card-color,.95)
-        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.1), 0 1px 1px 1px rgba(60, 64, 67, 0.05)
+        border: 1px solid black
+        box-shadow: 0 -2px 5px -2px #eaceb9
+        background-color: rgba($card-color,.8)
       .burger-copy
         .opener
           color: darken(#48c774,8%)
@@ -1326,6 +1339,7 @@ main.business
 
     .aside-menu
       background-color: $card-color
+      border-right: 1px solid #111111
       h2
         font-family: $font-family-desc
         color: $price-color
@@ -1333,6 +1347,7 @@ main.business
         font-family: $font-family-desc
         color: $font-color
         padding: .66rem 1.5rem
+
     .modal-wrapper .md-modal.has-dish .md-content
       background-color: $card-color
       border-radius: $border-radius
@@ -1343,8 +1358,15 @@ main.business
         margin: .25rem auto 0 auto
       .details
         border-radius: $border-radius
+        .name:not(.price)
+          font-size: 2rem
         .prices .helper,
-        .schedule .day
-          font-family: $font-family-desc
-          color: $font-color
+        .schedule
+          .day
+            font-family: $font-family-desc
+            color: $font-color
+          .cerrado
+            color: $price-color
+          .abierto
+            color: $green-color
 </style>

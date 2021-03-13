@@ -181,10 +181,12 @@
           .abierto
             color: dodgerblue
       .btn
+        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
         min-width: initial
         position: absolute
-        // top: -2rem // to fit just over image container
-        // right: 0
-        top: -1rem
-        right: .5rem
-        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
+        &:not(.has-not-img)
+          top: -1rem
+          right: .5rem
+        &.has-not-img
+          top: -1.8rem
+          right: .5rem
