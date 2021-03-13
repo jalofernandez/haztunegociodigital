@@ -107,7 +107,8 @@ export default {
         address: 'Calle Miguel Hernández, 3, 28342 Valdemoro, Madrid',
         place: 'Valdemoro, Madrid',
         gmap: 'cybbnXb5z2gM1ctQ9',
-        phone: '910000000',
+        phone: '670584973',
+        // whatsapp: 670584973,
         // social: {
         //   facebook: "https://www.facebook.com/¿?/",
         //   instagram: "https://www.instagram.com/¿?/",
