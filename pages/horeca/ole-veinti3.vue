@@ -1,16 +1,57 @@
 <template>
-  <main :class="['business', business.id, { 'aside-menu-open': showAside }]">
-    <!-- Floating button to trigger Aside navbar -->
-    <button class="btn js-aside light" type="button" @click="asideBehaviour">
-      <span class="opener" v-if="!showAside">
-        Abrir
-        <b>Carta</b>
-      </span>
-      <span class="closer" v-else>
-        Cerrar
-        <b>Carta</b>
-      </span>
-    </button>
+  <main
+    :class="['business', business.id, { 'aside-menu-open': showAside }]">
+    <!-- Floatin´bottom Navbar (small screen devices only) -->
+    <nav
+      class="navbar is-fixed-bottom bottom-bar"
+      role="navigation"
+      aria-label="main navigation"
+      v-if="$mq == 'mobile' || $mq == 'smartphone' || $mq == 'tablet'"
+    >
+      <div class="navbar-brand">
+        <a
+          class="whatsapp light"
+          :href="`https://wa.me/${business.whatsapp}`"
+          :title="`Llamar o escribir al Whatsapp de ${business.name}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-if="business.whatsapp"
+        >
+          <img
+            src="/icons/whatsapp-brands.svg"
+            alt="Icono de WhatsApp"
+            title="Icono de WhatsApp"
+            width="40"
+            height="40"
+          />
+        </a>
+        <img
+          :src="require(`~/assets/negocios/${business.id}/${business.id}-logo.png`)"
+          :alt="`Logotipo de ${business.name} en ${business.place}`"
+          :title="`Logotipo de ${business.name} en ${business.place}`"
+          width="75"
+          height="44"
+        >
+        <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour">
+          <a
+            role="button"
+            :class="['navbar-burger', 'burger', { 'is-active': showAside }]"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true" v-for="item in 3"></span>
+          </a>
+          <div class="burger-copy">
+            <small class="opener" v-if="!showAside">
+              Abrir <b>Carta</b>
+            </small>
+            <small class="closer" v-else>
+              Cerrar <b>Carta</b>
+            </small>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
@@ -1183,7 +1224,7 @@ export default {
     },
     asideBehaviour() {
       this.showAside = !this.showAside
-    },
+    }
   },
 }
 </script>
@@ -1197,6 +1238,7 @@ $bg-color: #222222 // very Dark Grey
 $card-color: #181512 // almost Black
 $price-color: #eb710c // medium Orange
 $border-radius: 12px
+$bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
 // $shadow-color: #502e08
 
 main.business
@@ -1205,6 +1247,7 @@ main.business
 
     .business.data,
     .dish.item,
+    .message,
     .btn.light,
     .btn.js-close
       background-color: $card-color
@@ -1214,6 +1257,9 @@ main.business
       &:not(.js-close),
       &.js-aside .opener
         color: $price-color
+
+    .dishes
+      background: $bg-artwork
 
     .dish
       &.item
@@ -1259,13 +1305,24 @@ main.business
         color: $font-color
 
     .footer
+      background-color: $bg-color
+      padding-bottom: 8rem
       .name
         font-weight: 600
       ul li
         color: $font-color
 
-    .footer, .message
-      background-color: $bg-color
+    .navbar.bottom-bar
+      .navbar-brand
+        border-radius: $border-radius
+        border: 1px solid lighten($card-color,10%)
+        background-color: rgba($card-color,.95)
+        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.1), 0 1px 1px 1px rgba(60, 64, 67, 0.05)
+      .burger-copy
+        .opener
+          color: darken(#48c774,8%)
+        .closer
+          color: $price-color
 
     .aside-menu
       background-color: $card-color
@@ -1275,7 +1332,7 @@ main.business
       ul li a
         font-family: $font-family-desc
         color: $font-color
-        padding: .4rem 1.5rem
+        padding: .66rem 1.5rem
     .modal-wrapper .md-modal.has-dish .md-content
       background-color: $card-color
       border-radius: $border-radius

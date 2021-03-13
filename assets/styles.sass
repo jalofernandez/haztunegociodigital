@@ -165,12 +165,33 @@ td, th
   transform: translateX(10px)
   opacity: 0
 
-// main top NAVBAR
-.navbar,
+.navbar:not(.bottom-bar),
+.navbar.bottom-bar .navbar-brand,
 .tabs.is-sticky
   background-color: rgba($bg-color,.75)
   backdrop-filter: saturate(180%) blur(8px)
 
+.navbar.bottom-bar
+  background-color: transparent
+  bottom: 1rem
+  left: .5rem
+  right: .5rem
+  width: calc(100% - 1rem)
+  .navbar-brand
+    align-items: center
+    padding: .5rem
+  .is-burger-btn
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 3rem
+    min-width: 6rem // cause copies
+  .navbar-burger
+    margin: 0
+  .burger-copy
+    line-height: 1
+
+// main top NAVBAR
 .navbar-item
   &.logo img
     max-height: none
