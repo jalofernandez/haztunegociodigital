@@ -136,8 +136,8 @@ export default {
             desc: 'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -156,8 +156,8 @@ export default {
             desc: 'También <span class="semibold">para llevar</span>. Recoger en el local.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -458,8 +458,8 @@ export default {
             desc: 'Preguntar precios y disponibilidad.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: null,
           },
@@ -468,8 +468,8 @@ export default {
             desc: 'En horario de mañana.',
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -500,8 +500,8 @@ export default {
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -564,8 +564,8 @@ export default {
             desc: 'Amplia variedad de vinos.',
             imgs: {
               position: 'bottom',
-              width: 90,
-              height: 101,
+              width: 120,
+              height: 134,
             },
             items: [
               {
@@ -683,8 +683,8 @@ export default {
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -751,8 +751,8 @@ export default {
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -947,8 +947,12 @@ export default {
 <style lang="sass">
 main.business
   &.bar-galicia
-    .dish.info .name:not(.price)
-      font-weight: 600
+    .dish
+      &.info .name:not(.price)
+        font-weight: 600
+      &.img
+        width: 120px
+        height: auto
     .aside-menu h2
       font-family: cursive
     .business.data .name,
