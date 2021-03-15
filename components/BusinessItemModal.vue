@@ -19,7 +19,7 @@
             ></div>
             <div class="details">
               <h4 class="name">{{ item.name }}</h4>
-              <p class="desc" v-if="item.desc">{{ item.desc }}</p>
+              <p class="desc" v-html="item.desc" v-if="item.desc"></p>
               <div class="prices">
                 <div class="price item" v-for="(price, index) in item.prices" :key="index">
                   <small class="price name">{{ price.name }}</small>
