@@ -832,8 +832,8 @@ export default {
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
@@ -871,8 +871,8 @@ export default {
             desc: null,
             imgs: {
               position: 'top',
-              width: 90,
-              height: 90,
+              width: 120,
+              height: 120,
             },
             items: [
               {
