@@ -26,15 +26,6 @@
         <div class="container has-text-centered card-bg-img is-broken-glass">
           <h1 class="title text-shadow is-size-1 is-size-2-mobile" v-html="pageNotFound.title"></h1>
           <h2 class="subtitle is-size-5 is-size-6-mobile" v-html="pageNotFound.description"></h2>
-          <!-- <div class="artwork">
-            <img
-              src="/artworks/htnd-artwork--broken-glass.svg"
-              :title="`Creatividad de #${owner.name}: cristal roto para error 404`"
-              :alt="`Creatividad de #${owner.name}: cristal roto para error 404`"
-              width="400"
-              height="338"
-            />
-          </div> -->
         </div>
         <div class="hero-foot has-text-centered">
           <ItemButton :btn="btn" />

@@ -1,40 +1,11 @@
 <template>
   <main class="error-500">
     <TheNavbar />
-    <!-- <div class="waveWrapper waveAnimation">
-      <div class="waveWrapperInner bgTop">
-        <div
-          class="wave waveTop"
-          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"
-        ></div>
-      </div>
-      <div class="waveWrapperInner bgMiddle">
-        <div
-          class="wave waveMiddle"
-          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"
-        ></div>
-      </div>
-      <div class="waveWrapperInner bgBottom">
-        <div
-          class="wave waveBottom"
-          style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"
-        ></div>
-      </div>
-    </div> -->
     <section class="hero is-halfheight">
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title text-shadow is-size-1 is-size-2-mobile" v-html="internalServerError.title"></h1>
           <h2 class="subtitle is-size-5 is-size-6-mobile" v-html="internalServerError.description"></h2>
-          <!-- <div class="artwork">
-            <img
-              src="/artworks/htnd-artwork--broken-glass.svg"
-              :title="`Creatividad de #${owner.name}: cristal roto para error 500`"
-              :alt="`Creatividad de #${owner.name}: cristal roto para error 500`"
-              width="400"
-              height="338"
-            />
-          </div> -->
         </div>
         <div class="hero-foot has-text-centered">
           <ItemButton :btn="btn" />
