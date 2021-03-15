@@ -957,9 +957,9 @@ export default {
             title: 'Cervezas',
             desc: null,
             imgs: {
-              position: 'top',
-              width: 90,
-              height: 90,
+              position: 'bottom',
+              width: 120,
+              height: 120,
             },
             items: [
               {
