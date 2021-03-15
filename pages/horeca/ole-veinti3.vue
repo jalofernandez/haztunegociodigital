@@ -678,18 +678,17 @@ export default {
           {
             title: 'Hamburguesas',
             desc: 'Se pueden añadir o retirar ingredientes a gusto del consumidor. Consultar con el camarero.',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
             items: [
               {
                 id: 50,
                 show: false,
                 name: 'Hamburguesa veinti3',
-                // img: 'hamburguesa-veinti3',
-                img: null,
+                img: 'hamburguesa-veinti3',
                 desc:
                   'De ternera, lechuga, pepinillos, tomate, mayonesa, cebolla, queso y jamón de york.',
                 prices: [
@@ -715,18 +714,17 @@ export default {
           {
             title: 'Sándwiches',
             desc: 'Descripción de los Sándwiches',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
             items: [
               {
                 id: 55,
                 show: false,
                 name: 'Sándwich vegetal "Estoque"',
-                // img: 'sandwich-vegetal',
-                img: null,
+                img: 'sandwich-vegetal-estoque',
                 desc:
                   'Lechuga, tomate, mayonesa, huevo a la plancha y espárragos.',
                 prices: [
@@ -738,7 +736,7 @@ export default {
                 id: 56,
                 show: false,
                 name: 'Sándwich mixto "Banderillas"',
-                // img: 'sandwich-mixto',
+                // img: 'sandwich-mixto-banderillas',
                 img: null,
                 desc:
                   'Como viene siendo de ley: sándwich de queso y jamón de york a la plancha.',
@@ -751,7 +749,7 @@ export default {
                 id: 57,
                 show: false,
                 name: 'Sándwich mixto "Capote"',
-                // img: 'sandwich-capote',
+                // img: 'sandwich-mixto-capote',
                 img: null,
                 desc:
                   'Queso y jamón de york con un huevo a la plancha.',
