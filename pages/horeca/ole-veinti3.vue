@@ -1279,8 +1279,11 @@ main.business
         .name:not(.price)
           font-size: 2rem
           line-height: 1
-        .prices .price.quantity
-          color: $price-color
+        .prices
+          .price.quantity
+            color: $price-color
+          .helper
+            color: $font-color
         .allergens .allergen
           opacity: .8 // cause dark card bg color
 

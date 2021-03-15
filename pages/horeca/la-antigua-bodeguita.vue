@@ -1,33 +1,57 @@
 <template>
   <main :class="['business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
-    <button class="btn js-aside light" type="button" @click="asideBehaviour()">
-      <span class="opener" v-if="!showAside">
-        Abrir
-        <b>Carta</b>
-      </span>
-      <span class="closer" v-else>
-        Cerrar
-        <b>Carta</b>
-      </span>
-    </button>
-
-    <a
-      class="btn whatsapp light"
-      :href="`https://wa.me/${business.whatsapp}`"
-      :title="`Llamar o escribir al Whatsapp de ${business.name}`"
-      target="_blank"
-      rel="noopener noreferrer"
-      v-if="business.whatsapp"
+    <nav
+      class="navbar is-fixed-bottom bottom-bar"
+      role="navigation"
+      aria-label="main navigation"
+      v-if="$mq == 'mobile' || $mq == 'smartphone' || $mq == 'tablet'"
     >
-      <img
-        src="/icons/whatsapp-brands.svg"
-        alt="Icono de WhatsApp"
-        title="Icono de WhatsApp"
-        width="50"
-        height="50"
-      />
-    </a>
+      <div class="navbar-brand">
+        <a
+          class="whatsapp light ml-1"
+          :href="`https://wa.me/${business.whatsapp}`"
+          :title="`Llamar o escribir al Whatsapp de ${business.name}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          v-if="business.whatsapp"
+        >
+          <img
+            src="/icons/whatsapp-brands.svg"
+            alt="Icono de WhatsApp"
+            title="Icono de WhatsApp"
+            width="40"
+            height="40"
+          />
+        </a>
+        <!-- <img
+          :class="{ 'ml-1': !business.whatsapp }"
+          :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
+          :alt="`Logotipo de ${business.name} en ${business.place}`"
+          :title="`Logotipo de ${business.name} en ${business.place}`"
+          width="75"
+          height="44"
+        > -->
+        <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
+          <a
+            role="button"
+            :class="['navbar-burger', 'burger', { 'is-active': showAside }]"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true" v-for="item in 3"></span>
+          </a>
+          <div class="burger-copy">
+            <small class="opener" v-if="!showAside">
+              Abrir <b>Carta</b>
+            </small>
+            <small class="closer" v-else>
+              Cerrar <b>Carta</b>
+            </small>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
@@ -1134,6 +1158,16 @@ main.business.la-antigua-bodeguita
 
   .footer, .message
     background-color: $bg-color
+
+  .navbar.bottom-bar
+    .navbar-brand
+      border-radius: $border-radius * 3
+      border: 4px solid $bg-color
+      background-color: $card-color
+      box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
+      .burger-copy
+        .opener, .closer
+          color: $font-color
 
   .aside-menu
     background-color: coral
