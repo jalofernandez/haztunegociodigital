@@ -6,7 +6,7 @@ Just a digital business landing page template with different pages layout based 
 - Contacto (*Contact*)
 - Legal (*Legal*)
 - Sitemap (*Sitemap*)
-- Error (*404*, *500* & *200*)
+- Error (*404* & *500*)
 - Some Business pages with menu dishes list
 
 ## Credits and Dependencies
