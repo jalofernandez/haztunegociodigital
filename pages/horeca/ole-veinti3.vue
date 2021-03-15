@@ -1280,6 +1280,7 @@ main.business
           color: lighten($font-color, 5%)
         .name:not(.price)
           font-size: 2rem
+          line-height: 1
         .prices .price.quantity
           color: $price-color
         .allergens .allergen
