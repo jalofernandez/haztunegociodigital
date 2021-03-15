@@ -227,7 +227,7 @@ export default {
   },
 
   sitemap: {
-    hostname: `https://haztunegociodigital.com`,
+    hostname: `https://` + url,
     gzip: true,
     // exclude: ['/pedidos', '/blog', '/blog/', '/blog/**'],
     defaults: {
