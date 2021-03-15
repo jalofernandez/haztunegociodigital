@@ -239,7 +239,8 @@ export default {
   },
 
   generate: {
-    // subFolders: false,
+    subFolders: false,
+    fallback: '404.html'
     // dir: 'public' // to deploy in Google Firebase ('dist' by default)
   },
 
