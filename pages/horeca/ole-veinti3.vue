@@ -267,7 +267,7 @@ export default {
                 // img: 'racion-croquetas',
                 img: null,
                 desc:
-                  'Ración de riquísimas croquetas caseras.',
+                  'Ración de riquísimas croquetas caseras de jamón.',
                 prices: [
                   { name: 'Ración', price: '9,50' },
                   { name: '1/2 ración', price: '6' },
@@ -407,7 +407,7 @@ export default {
                 desc:
                   'Lacón con grelos y chorizo al estilo gallego. Bajo reserva. Precio por comensal.',
                 prices: [
-                  { name: 'Por persona', price: '11,50' }
+                  { name: 'Preguntar', price: null }
                 ],
                 allergens: null,
               },
@@ -425,6 +425,32 @@ export default {
                 ],
                 allergens: ['sulfitos'],
               },
+              {
+                id: 19,
+                show: false,
+                name: 'Berenjenas con miel',
+                // img: 'berenjenas-miel',
+                img: null,
+                desc:
+                  'Berenjenas rebozadas fritas con miel tradicionales de la cocina andaluza.',
+                prices: [
+                  { name: 'Ración', price: '12,50' }
+                ],
+                allergens: ['sulfitos'],
+              },
+              {
+                id: 20,
+                show: false,
+                name: 'Torreznos de Soria',
+                // img: 'torreznos-soria',
+                img: null,
+                desc:
+                  'Disponemos de los auténticos torreznos de Soria. Elaborados con panceta de cerdo frita crujiente por fuera y jugosos por dentro.',
+                prices: [
+                  { name: 'Unidad', price: '4,50' }
+                ],
+                allergens: ['sulfitos'],
+              },
             ]
           },
           {
@@ -437,7 +463,7 @@ export default {
             // },
             items: [
               {
-                id: 20,
+                id: 21,
                 show: false,
                 name: 'Bacalao rebozado',
                 // img: 'racion-bacalao-rebozado',
@@ -451,7 +477,7 @@ export default {
                 allergens: ['huevos', 'lacteos', 'sulfitos'],
               },
               {
-                id: 21,
+                id: 22,
                 show: false,
                 name: 'Sepia a la plancha',
                 // img: 'racion-sepia-plancha',
@@ -464,7 +490,7 @@ export default {
                 allergens: ['moluscos', 'pescado', 'huevos', 'sulfitos'],
               },
               {
-                id: 22,
+                id: 23,
                 show: false,
                 name: 'Chipirones a la plancha',
                 // img: 'racion-chipirones-plancha',
@@ -478,7 +504,7 @@ export default {
                 allergens: ['moluscos'],
               },
               {
-                id: 23,
+                id: 24,
                 show: false,
                 name: 'Gambón a la plancha',
                 // img: 'racion-gambon-plancha',
@@ -491,7 +517,7 @@ export default {
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 24,
+                id: 25,
                 show: false,
                 name: 'Gambas al ajillo',
                 // img: 'racion-gambas-ajillo',
@@ -504,7 +530,7 @@ export default {
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 25,
+                id: 26,
                 show: false,
                 name: 'Alcachofas con almejas y gambas',
                 // img: 'racion-alcachofas-almejas-gambas',
@@ -513,12 +539,12 @@ export default {
                   'Alcachofas frescas con almejas y gambas salteadas con ajo y aceite de oliva.',
                 prices: [
                   { name: 'Ración', price: '15,50' },
-                  { name: '1/2 ración', price: '9' },
+                  { name: '1/2 ración', price: '9,50' },
                 ],
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 26,
+                id: 27,
                 show: false,
                 name: 'Calamares a la romana',
                 // img: 'racion-calamares',
@@ -532,7 +558,7 @@ export default {
                 allergens: ['moluscos', 'pescado', 'sulfitos', 'gluten'],
               },
               {
-                id: 27,
+                id: 28,
                 show: false,
                 name: 'Fritura de la casa',
                 // img: 'racion-fritura',
@@ -591,7 +617,7 @@ export default {
                 // img: 'ensalada-cesar',
                 img: null,
                 desc:
-                  'Ensalada césar con pollo crujiente, lechuga romana, croûtons (pan tostado), aceite de oliva, huevo...',
+                  'Ensalada césar con pollo crujiente, lechuga romana, piña, manzana, huevo y nuestra salsa casera (preguntad por ella).',
                 prices: [
                   { name: 'Entera', price: '13,50' }
                 ],
@@ -617,7 +643,7 @@ export default {
                 desc:
                   'Chuletón madurado trinchado con patatas fritas.',
                 prices: [
-                  { name: 'Pieza', price: '17' }
+                  { name: 'Pieza', price: '17,50' }
                 ],
                 allergens: null,
               },
@@ -630,7 +656,7 @@ export default {
                 desc:
                   'Secreto de cerdo jugoso marcado a la brasa.',
                 prices: [
-                  { name: 'Ración', price: '13' }
+                  { name: 'Ración', price: '13,50' }
                 ],
                 allergens: null,
               },
@@ -643,7 +669,7 @@ export default {
                 desc:
                   'Brocheta solomillo con su guarnición de patatas fritas.',
                 prices: [
-                  { name: 'Unidad', price: '6,50' }
+                  { name: 'Unidad', price: '7' }
                 ],
                 allergens: null,
               },
@@ -656,7 +682,7 @@ export default {
                 desc:
                   'Carne a la piedra. Bajo reserva. Mínimo 2 comensales.',
                 prices: [
-                  { name: 'Unidad', price: '32' }
+                  { name: '1 kg aprox.', price: '32' }
                 ],
                 allergens: null,
               },
@@ -669,7 +695,7 @@ export default {
                 desc:
                   'Filete de pechuga de pollo con guarnición de patatas y huevos fritos.',
                 prices: [
-                  { name: 'Plato', price: '6,90' }
+                  { name: 'Plato', price: '7,90' }
                 ],
                 allergens: ['huevos'],
               },
@@ -932,7 +958,7 @@ export default {
                 desc:
                   'Parrillada de verduras frescas: tomate, calabacín, pimiento verde, cebolla...',
                 prices: [
-                  { name: 'Parrillada', price: '14' }
+                  { name: 'Parrillada', price: '15,50' }
                 ],
                 allergens: null,
               },
@@ -1092,7 +1118,167 @@ export default {
                 allergens: null,
               },
             ]
-          }
+          },
+          {
+            title: 'Vinos',
+            desc: 'Amplia variedad de vinos. Preguntad a nuestros camareros.',
+            // imgs: {
+            //   position: 'bottom',
+            //   width: 120,
+            //   height: 134,
+            // },
+            items: [
+              {
+                id: 101,
+                show: false,
+                name: 'Rivera Roble',
+                // img: 'vino-rivera-roble',
+                img: null,
+                desc: 'Ribera del Duero roble. Ideal para embutidos y quesos así como para guisos.',
+                prices: [
+                  { name: 'Copa', price: '2,50' },
+                  { name: 'Botella', price: '14' },
+                ],
+                allergens: null,
+              },
+              {
+                id: 102,
+                show: false,
+                name: 'Rioja crianza',
+                // img: 'vino-rioja-crianza',
+                img: null,
+                desc: 'Rioja crianza ideal para maridar con asados de carne.',
+                prices: [
+                  { name: 'Copa', price: '2,50' },
+                  { name: 'Botella', price: '14' },
+                ],
+                allergens: null,
+              },
+              {
+                id: 103,
+                show: false,
+                name: 'Alma',
+                // img: 'vino-alma',
+                img: null,
+                desc: 'Vino rosado semidulce con denominación de origen.',
+                prices: [
+                  { name: 'Copa', price: '2,50' },
+                  { name: 'Botella', price: '14' },
+                ],
+                allergens: null,
+              },
+              {
+                id: 104,
+                show: false,
+                name: 'Verdejo',
+                // img: 'vino-verdejo',
+                img: null,
+                desc: 'Vinos blanco verdejo con denominación de origen.',
+                prices: [
+                  { name: 'Copa', price: '2,20' },
+                  { name: 'Botella', price: '10' },
+                ],
+                allergens: null,
+              },
+            ]
+          },
+          {
+            title: 'Licores y combinados',
+            desc: null,
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
+            items: [
+              {
+                id: 110,
+                show: false,
+                name: 'Tinto de verano',
+                img: 'tinto-de-verano',
+                desc: 'Vino tinto con gaseosa o limón bien fresquito.',
+                prices: [
+                  { name: 'Vaso ancho', price: '2,50' },
+                  { name: 'Jarra', price: '3,20' }
+                ],
+                allergens: null,
+              },
+              {
+                id: 111,
+                show: false,
+                name: 'Combinados',
+                img: 'combinados',
+                desc:
+                  'Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.',
+                prices: [
+                  { name: 'Nacional', price: '4,70' },
+                  { name: 'Importación', price: '5,20' },
+                  { name: 'Barceló', price: '5,50' },
+                  { name: 'Legendario', price: '7' }
+                ],
+                allergens: null,
+              },
+              // {
+              //   id: 112,
+              //   show: false,
+              //   name: 'Chupito',
+              //   img: null,
+              //   desc: null,
+              //   prices: [{ name: 'Precio', price: '1,40' }],
+              //   allergens: null,
+              // },
+            ],
+          },
+          {
+            title: 'Bebidas',
+            desc: null,
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
+            items: [
+              {
+                id: 120,
+                show: false,
+                name: 'Café o infusión',
+                img: 'cafe-con-leche',
+                desc:
+                  'Café al gusto (cortado, sólo, con leche...) o infusión. En temporada de invierno disponemos de café irlandés y vienés.',
+                prices: [{ name: 'Precio', price: '1,30' }],
+                allergens: null,
+              },
+              {
+                id: 121,
+                show: false,
+                name: 'Botella de agua',
+                img: 'botella-agua',
+                desc: 'Disponemos de agua mineral embotellada de medio litro.',
+                prices: [
+                  { name: '1/2 litro', price: '1,50' }
+                ],
+                allergens: null,
+              },
+              {
+                id: 122,
+                show: false,
+                name: 'Refrescos',
+                img: 'refrescos',
+                desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
+                prices: [{ name: 'Precio', price: '2,50' }],
+                allergens: null,
+              },
+              {
+                id: 123,
+                show: false,
+                name: 'Zumos',
+                img: 'zumos',
+                desc: 'De piña, melocotón...',
+                prices: [{ name: 'Precio', price: '2,50' }],
+                allergens: null,
+              },
+            ]
+          }     
         ]
       },
       structuredData: {
@@ -1345,10 +1531,12 @@ main.business
       h2
         font-family: $font-family-desc
         color: $price-color
+      .aside-business-name,
+      .aside-business-logo,
       ul li a
         font-family: $font-family-desc
         color: $font-color
-        padding: .66rem 1.5rem
+        padding: .5rem 1.5rem
 
     .modal-wrapper .md-modal.has-dish .md-content
       background-color: $card-color
