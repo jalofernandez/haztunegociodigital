@@ -152,8 +152,8 @@
               <p class="image is-64x64 circle neomorph">
                 <img
                   src="/icons/htnd-icon--two.svg"
-                  :title="`Creatividad de #${owner.name}: número uno`"
-                  :alt="`Creatividad de #${owner.name}: número uno`"
+                  :title="`Creatividad de #${owner.name}: número dos`"
+                  :alt="`Creatividad de #${owner.name}: número dos`"
                   width="64"
                   height="64"
                 >
@@ -408,8 +408,8 @@
               <p class="image is-64x64 circle neomorph">
                 <img
                   src="/icons/htnd-icon--three.svg"
-                  :title="`Creatividad de #${owner.name}: número uno`"
-                  :alt="`Creatividad de #${owner.name}: número uno`"
+                  :title="`Creatividad de #${owner.name}: número tres`"
+                  :alt="`Creatividad de #${owner.name}: número tres`"
                   width="64"
                   height="64"
                 >
@@ -638,8 +638,8 @@
               <p class="image is-64x64 circle neomorph">
                 <img
                   src="/icons/htnd-icon--four.svg"
-                  :title="`Creatividad de #${owner.name}: número uno`"
-                  :alt="`Creatividad de #${owner.name}: número uno`"
+                  :title="`Creatividad de #${owner.name}: número cuatro`"
+                  :alt="`Creatividad de #${owner.name}: número cuatro`"
                   width="64"
                   height="64"
                 >

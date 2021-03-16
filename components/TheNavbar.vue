@@ -3,7 +3,13 @@
     <div class="container">
       <div class="navbar-brand">
         <NuxtLink class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">
-          <img src="/haztunegociodigital-icon.svg" :title="`Logotipo de #${owner.name}`" width="40" height="40" >
+          <img
+            src="/haztunegociodigital-icon.svg"
+            :title="`Logotipo de #${owner.name}`"
+            :alt="`Logotipo de #${owner.name}`"
+            width="40"
+            height="40"
+          >
         </NuxtLink>
         <div class="has-cta-btn is-flex">
           <a
