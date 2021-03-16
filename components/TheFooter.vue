@@ -48,7 +48,7 @@
         :alt="`Logotipo de #${landing.owner.name}`"
         width="48"
         height="48"
-      />
+      >
     <!-- </picture> -->
     </figure>
     <p>

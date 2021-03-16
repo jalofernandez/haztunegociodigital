@@ -22,7 +22,7 @@
             title="Icono de WhatsApp"
             width="40"
             height="40"
-          />
+          >
         </a>
         <!-- <img
           :class="{ 'ml-1': !business.whatsapp }"

@@ -38,7 +38,7 @@
                     :alt="`Alérgeno: ${allergen}`"
                     width="30"
                     height="30"
-                  />
+                  >
                 </div>
               </div>
             </div>
