@@ -146,6 +146,7 @@ export default {
         id: 'la-antigua-bodeguita',
         name: 'La Antigua Bodeguita',
         type: 'Restaurante, marisquería, arrocería',
+        logo: false,
         cover: 'cover',
         // desc: 'En pleno centro de Valdemoro ofrecemos alta cocina mediterránea especializándonos en arroces y mariscos. Nuestra cocinera, Ioana, se instruyó con el chef Paco Roncero.',
         address: 'Pje. de Colón, 2, 28341 Valdemoro, Madrid, España',

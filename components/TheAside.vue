@@ -1,6 +1,13 @@
 <template>
   <nav class="aside-menu with-anim">
-    <h2 class="aside-business">{{ business.name }}</h2>
+    <img
+      class="aside-business-logo"
+      :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
+      :alt="`Logotipo de ${business.name} en ${business.place}`"
+      :title="`Logotipo de ${business.name} en ${business.place}`"
+      v-if="business.logo"
+    >
+    <h2 class="aside-business-name" v-else>{{ business.name }}</h2>
     <ul>
       <li v-for="(menu, index) in business.menus" :key="index">
         <a

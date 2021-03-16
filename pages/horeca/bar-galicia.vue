@@ -154,6 +154,7 @@ export default {
         id: 'bar-galicia',
         name: 'Bar Galicia',
         type: 'Restaurante, bar, cafetería',
+        logo: true,
         cover: 'cover',
         address: 'Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid',
         place: 'Valdemoro, Madrid',
@@ -1007,8 +1008,11 @@ main.business
         width: 120px
         height: auto
 
-    .aside-menu h2
-      font-family: cursive
+    .aside-menu
+      .aside-business-name
+        font-family: cursive // if logo fails
+      .aside-business-logo
+        width: 300px
 
     .navbar.bottom-bar
       box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.1), 0 1px 1px 1px rgba(60, 64, 67, 0.05)

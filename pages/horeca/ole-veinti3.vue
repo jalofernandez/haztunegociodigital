@@ -145,6 +145,7 @@ export default {
         id: 'ole-veinti3',
         name: 'Taberna Olé Veinti3',
         type: 'Restaurante, bar, cafetería',
+        logo: true,
         cover: 'cover',
         address: 'Calle Miguel Hernández, 3, 28342 Valdemoro, Madrid',
         place: 'Valdemoro, Madrid',
