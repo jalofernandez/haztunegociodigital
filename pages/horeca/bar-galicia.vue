@@ -1015,9 +1015,10 @@ main.business
         width: 300px
 
     .navbar.bottom-bar
-      box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.1), 0 1px 1px 1px rgba(60, 64, 67, 0.05)
+      box-shadow: -3px -3px 6px -2px rgba(60, 64, 67, 0.5), 3px 3px 6px 2px rgba(60, 64, 67, 0.5)
       .navbar-brand
         border-radius: $border-radius
+        background-color: rgba(white,.8)
 
     .business.data .name,
     .footer .name
