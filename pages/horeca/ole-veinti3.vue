@@ -171,7 +171,7 @@ export default {
         messages: {
           gluten: {
             type: null,
-            copy: '<b>Celebramos todo tipo de eventos</b> bajo reserva previa. Consultános.',
+            copy: '<strong>Celebramos todo tipo de eventos</strong> bajo reserva previa. Consultános.',
           },
         },
         menus: [

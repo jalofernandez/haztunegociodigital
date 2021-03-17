@@ -46,7 +46,7 @@
         <div class="navbar-start has-text-centered">
           <NuxtLink to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
             <span>
-              #<b>{{ owner.name }}</b>
+              #<strong>{{ owner.name }}</strong>
             </span>
           </NuxtLink>
           <!-- <NuxtLink to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
