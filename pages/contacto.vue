@@ -1,42 +1,44 @@
 <template>
-  <main class="contact">
+  <div class="contact">
     <TheNavbar />
-    <section class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title text-shadow is-size-2 is-size-3-mobile">
-            Hecho por <span class="has-text-success">negocios</span> para
-            negocios
-          </h1>
-          <h4 class="subtitle is-size-5 is-size-6-mobile">
-            Con #{{ owner.name }} <span class="has-text-weight-medium">autónomos</span>,
-            <span class="has-text-weight-medium">pymes</span> y
-            <span class="has-text-weight-medium">negocios</span> en general
-            </br>
-            pueden digitalizar sus productos y servicios de manera cómoda, rápida y
-            eficaz.
-          </h4>
-          <p class="mt-5 mb-2">
-            <em>Servicio y tecnología ofrecida por:</em>
-          </p>
-          <div class="jalo old-crt-effect">
-            <div class="jalo-header">
-              <Logo />
-              <Slogan />
+    <main>
+      <section class="hero is-fullheight">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title text-shadow is-size-2 is-size-3-mobile">
+              Hecho por <span class="has-text-success">negocios</span> para
+              negocios
+            </h1>
+            <h4 class="subtitle is-size-5 is-size-6-mobile">
+              Con #{{ owner.name }} <span class="has-text-weight-medium">autónomos</span>,
+              <span class="has-text-weight-medium">pymes</span> y
+              <span class="has-text-weight-medium">negocios</span> en general
+              </br>
+              pueden digitalizar sus productos y servicios de manera cómoda, rápida y
+              eficaz.
+            </h4>
+            <p class="mt-5 mb-2">
+              <em>Servicio y tecnología ofrecida por:</em>
+            </p>
+            <div class="jalo old-crt-effect">
+              <div class="jalo-header">
+                <Logo />
+                <Slogan />
+              </div>
+              <div class="jalo-footer">
+                <a href="https://jalofernandez.com" target="_blank" title=""
+                  >Ver website</a
+                >
+                <Social />
+              </div>
+              <div class="line--anim"></div>
             </div>
-            <div class="jalo-footer">
-              <a href="https://jalofernandez.com" target="_blank" title=""
-                >Ver website</a
-              >
-              <Social />
-            </div>
-            <div class="line--anim"></div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <TheFooter :data="owner.footer" />
-  </main>
+  </div>
 </template>
 
 <script>
