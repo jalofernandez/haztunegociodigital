@@ -1,5 +1,5 @@
 <template>
-  <div class="sitemap">
+  <div :class="$route.name">
     <TheNavbar />
     <main>
       <section class="hero is-small">

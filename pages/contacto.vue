@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div :class="$route.name">
     <TheNavbar />
     <main>
       <section class="hero is-fullheight">

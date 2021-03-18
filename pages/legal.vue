@@ -1,5 +1,5 @@
 <template>
-  <div class="legal">
+  <div :class="$route.name">
     <TheNavbar />
     <main>
       <section class="hero is-small">
