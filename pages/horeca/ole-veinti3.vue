@@ -629,11 +629,11 @@ export default {
           {
             title: 'Carnes a la brasa',
             desc: 'descripción de carnes a la brasa',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
             items: [
               {
                 id: 40,
@@ -652,10 +652,9 @@ export default {
                 id: 41,
                 show: false,
                 name: 'Secreto de cerdo',
-                // img: 'secreto-cerdo',
-                img: null,
+                img: 'secreto-cerdo',
                 desc:
-                  'Secreto de cerdo jugoso marcado a la brasa.',
+                  'Secreto de cerdo jugoso marcado a la brasa con sus patatas fritas.',
                 prices: [
                   { name: 'Ración', price: '13,50' }
                 ],
@@ -700,6 +699,18 @@ export default {
                 ],
                 allergens: ['huevos'],
               },
+              {
+                id: 45,
+                show: false,
+                name: 'Chuletitas de cordero',
+                img: 'chuletitas-cordero',
+                desc:
+                  'Chuletitas de cordero de lechal con su guarnición de patatas fritas.',
+                prices: [
+                  { name: 'Plato', price: '17,00' }
+                ],
+                allergens: null,
+              }
             ]
           },
           {
@@ -943,7 +954,7 @@ export default {
           },
           {
             title: 'Parrilladas',
-            desc: 'descripción de parrilladas',
+            desc: 'Nuestras famosas parrilladas de carne o verduras a la brasa. ¡Pruébalas!',
             // imgs: {
             //   position: 'top',
             //   width: 120,
@@ -957,7 +968,7 @@ export default {
                 // img: 'parrillada-verduras',
                 img: null,
                 desc:
-                  'Parrillada de verduras frescas: tomate, calabacín, pimiento verde, cebolla...',
+                  'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacin, esparragos...',
                 prices: [
                   { name: 'Parrillada', price: '15,50' }
                 ],
@@ -970,7 +981,7 @@ export default {
                 // img: 'parrillada-carne',
                 img: null,
                 desc:
-                  'Parrillada de carnes maduradas como...',
+                  'Carnes maduradas a la brasa de costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
                 prices: [
                   { name: 'Parrillada', price: '18,50' }
                 ],
