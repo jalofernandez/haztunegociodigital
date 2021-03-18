@@ -159,13 +159,13 @@ export default {
         // },
         schedule: {
           days: [
-            { day: 'Lunes', hour: 'Cerrado' },
-            { day: 'Martes', hour: '9:00 - 1:00' },
-            { day: 'Miercoles', hour: '9:00 - 1:00' },
-            { day: 'Jueves', hour: '9:00 - 1:00' },
-            { day: 'Viernes', hour: '9:00 - 1:00' },
-            { day: 'Sábado', hour: '9:00 - 1:00' },
-            { day: 'Domingo', hour: '9:00 - 1:00' },
+            { day: 'Lunes', hour: '11:00 - 2:00' },
+            { day: 'Martes', hour: '11:00 - 2:00' },
+            { day: 'Miercoles', hour: 'Cerrado' },
+            { day: 'Jueves', hour: '11:00 - 2:00' },
+            { day: 'Viernes', hour: '11:00 - 2:00' },
+            { day: 'Sábado', hour: '11:00 - 2:00' },
+            { day: 'Domingo', hour: '11:00 - 2:00' },
           ],
         },
         messages: {
