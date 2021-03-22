@@ -1,5 +1,5 @@
 <template>
-  <div :class="$route.name">
+  <div :class="['page', $route.name]">
     <TheNavbar />
     <main>
       <section class="hero is-small">

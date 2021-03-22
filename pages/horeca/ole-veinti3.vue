@@ -1,6 +1,6 @@
 <template>
-  <main
-    :class="['business', business.id, { 'aside-menu-open': showAside }]">
+  <div
+    :class="['page', 'business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floatin´bottom Navbar (small screen devices only) -->
     <nav
       class="navbar is-fixed-bottom bottom-bar"
@@ -67,57 +67,59 @@
     <!-- Modal dialogs for each item to shown info details -->
     <BusinessItemModal :business="business" />
 
-    <div class="dishes">
-      <!-- Business info -->
-      <div
-        class="business cover"
-        :style="{
-          'background-image':
-            'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
-        }"
-        v-if="business.cover"
-      ></div>
-      <div class="business data">
-        <h1 class="data name">{{ business.name }}</h1>
-        <ul v-if="business.address || business.phone || business.schedule">
-          <li>
-            <a
-              class="data address"
-              :href="`https://goo.gl/maps/${business.gmap}`"
-              :title="`Ver dirección de ${business.name}`"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-if="business.address"
-              >{{ business.address }}</a
-            >
-          </li>
-          <li :class="business.schedule ? 'has-schedule' : null">
-            <a
-              class="data phone"
-              :href="`tel:${business.phone}`"
-              :title="`Llamar al ${business.name}: ${business.phone}`"
-              v-if="business.phone"
-              >{{ business.phone }}</a
-            >
-            <button type="button" class="btn light" @click="showModal()" v-if="business.schedule">
-              Ver horario
-            </button>
-          </li>
-        </ul>
+    <main>
+      <div class="dishes">
+        <!-- Business info -->
+        <div
+          class="business cover"
+          :style="{
+            'background-image':
+              'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
+          }"
+          v-if="business.cover"
+        ></div>
+        <div class="business data">
+          <h1 class="data name">{{ business.name }}</h1>
+          <ul v-if="business.address || business.phone || business.schedule">
+            <li>
+              <a
+                class="data address"
+                :href="`https://goo.gl/maps/${business.gmap}`"
+                :title="`Ver dirección de ${business.name}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                v-if="business.address"
+                >{{ business.address }}</a
+              >
+            </li>
+            <li :class="business.schedule ? 'has-schedule' : null">
+              <a
+                class="data phone"
+                :href="`tel:${business.phone}`"
+                :title="`Llamar al ${business.name}: ${business.phone}`"
+                v-if="business.phone"
+                >{{ business.phone }}</a
+              >
+              <button type="button" class="btn light" @click="showModal()" v-if="business.schedule">
+                Ver horario
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
+
+        <!-- Items list :: all Menu Dishes & Beverages -->
+        <BusinessItemList :business="business" />
       </div>
 
-      <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
-
-      <!-- Items list :: all Menu Dishes & Beverages -->
-      <BusinessItemList :business="business" />
-    </div>
-
-    <div class="message thankfulness">
-      <p><b>Gracias</b> por su visita 😊</p>
-    </div>
+      <div class="message thankfulness">
+        <p><b>Gracias</b> por su visita 😊</p>
+      </div>
+    </main>
 
     <TheFooter :data="business.name" isHidden />
-  </main>
+  </div>
 </template>
 
 <script>
@@ -1432,7 +1434,7 @@ $green-color: #15a544 // medium Green
 $border-radius: 12px
 $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
 
-main.business
+.business
   &.ole-veinti3
     background-color: $bg-color
 
