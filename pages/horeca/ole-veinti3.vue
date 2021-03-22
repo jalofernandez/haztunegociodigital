@@ -178,11 +178,11 @@ export default {
           {
             title: 'Raciones de la tierra',
             desc: 'Raciones también <span class="semibold">para llevar</span>. Recoger en el local.',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 1,
@@ -214,8 +214,7 @@ export default {
                 id: 3,
                 show: false,
                 name: 'Tabla de jamón y queso',
-                img: null,
-                // img: 'tabla-jamon-queso',
+                img: 'tabla-jamon-queso',
                 desc: null,
                 prices: [
                   { name: 'Ración', price: '18,50' },
@@ -239,8 +238,7 @@ export default {
                 id: 5,
                 show: false,
                 name: 'Revuelto de setas',
-                img: null,
-                // img: 'racion-revuelto-setas',
+                img: 'racion-revuelto-setas',
                 desc:
                   'Tradicional revuelto de setas de la gastornomía del norte de España.',
                 prices: [
@@ -279,8 +277,7 @@ export default {
                 id: 8,
                 show: false,
                 name: 'Patatas bravas o bravioli',
-                // img: 'racion-patatas-bravas',
-                img: null,
+                img: 'racion-patatas-bravas',
                 desc:
                   'Ración de patatas bravas picantes o con un sabrosa mezcla de salsa brava y salsa ali oli.',
                 prices: [
@@ -293,8 +290,7 @@ export default {
                 id: 9,
                 show: false,
                 name: 'Carne de pincho',
-                // img: 'racion-carne-pincho',
-                img: null,
+                img: 'racion-carne-pincho',
                 desc:
                   'Ración de carne de pincho con patatas fritas y pimientos de Padrón.',
                 prices: [
@@ -443,8 +439,7 @@ export default {
                 id: 20,
                 show: false,
                 name: 'Torreznos de Soria',
-                // img: 'torreznos-soria',
-                img: null,
+                img: 'racion-torreznos-soria',
                 desc:
                   'Disponemos de los auténticos torreznos de Soria. Elaborados con panceta de cerdo frita crujiente por fuera y jugosos por dentro.',
                 prices: [
@@ -457,11 +452,11 @@ export default {
           {
             title: 'Raciones del mar',
             desc: 'descripción de raciones del mar',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 21,
@@ -534,8 +529,7 @@ export default {
                 id: 26,
                 show: false,
                 name: 'Alcachofas con almejas y gambas',
-                // img: 'racion-alcachofas-almejas-gambas',
-                img: null,
+                img: 'racion-alcachofas-almejas-gambas',
                 desc:
                   'Alcachofas frescas con almejas y gambas salteadas con ajo y aceite de oliva.',
                 prices: [
@@ -548,8 +542,7 @@ export default {
                 id: 27,
                 show: false,
                 name: 'Calamares a la romana',
-                // img: 'racion-calamares',
-                img: null,
+                img: 'racion-calamares-romana',
                 desc:
                   'Calamares rebozados sólo con harina fritos con su toque de limón.',
                 prices: [
@@ -562,8 +555,7 @@ export default {
                 id: 28,
                 show: false,
                 name: 'Fritura de la casa',
-                // img: 'racion-fritura',
-                img: null,
+                img: 'racion-fritura',
                 desc:
                   'Clásica fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...',
                 prices: [
@@ -577,11 +569,11 @@ export default {
           {
             title: 'Ensaladas',
             desc: 'Descripción de ensaladas',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 30,
@@ -615,8 +607,7 @@ export default {
                 id: 32,
                 show: false,
                 name: 'Ensalada césar',
-                // img: 'ensalada-cesar',
-                img: null,
+                img: 'ensalada-cesar',
                 desc:
                   'Ensalada césar con pollo crujiente, lechuga romana, piña, manzana, huevo y nuestra salsa casera (preguntad por ella).',
                 prices: [
@@ -718,8 +709,8 @@ export default {
             desc: 'Se pueden añadir o retirar ingredientes a gusto del consumidor. Consultar con el camarero.',
             imgs: {
               position: 'top',
-              width: 120,
-              height: 120,
+              width: 96,
+              height: 122,
             },
             items: [
               {
@@ -738,8 +729,7 @@ export default {
                 id: 51,
                 show: false,
                 name: 'Hamburguesa Olé',
-                // img: 'hamburguesa-ole',
-                img: null,
+                img: 'hamburguesa-ole',
                 desc:
                   'De ternera, lechuga, pepinillos, tomate, mayonesa, cebolla, queso, jamón de york, bacón y huevo a la plancha.',
                 prices: [
@@ -753,9 +743,9 @@ export default {
             title: 'Sándwiches',
             desc: 'Descripción de los Sándwiches',
             imgs: {
-              position: 'top',
-              width: 120,
-              height: 120,
+              position: 'center',
+              width: 96,
+              height: 122,
             },
             items: [
               {
@@ -774,8 +764,7 @@ export default {
                 id: 56,
                 show: false,
                 name: 'Sándwich mixto "Banderillas"',
-                // img: 'sandwich-mixto-banderillas',
-                img: null,
+                img: 'sandwich-mixto-banderillas',
                 desc:
                   'Como viene siendo de ley: sándwich de queso y jamón de york a la plancha.',
                 prices: [
@@ -814,18 +803,17 @@ export default {
           {
             title: 'Tostas',
             desc: 'Descripción de las tostas',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 60,
                 show: false,
-                name: 'Tosta tumaca y jamón',
-                // img: 'tosta-jamon',
-                img: null,
+                name: 'Tosta jamón y tortilla',
+                img: 'tosta-jamon',
                 desc:
                   'Pan tumaca con jamón y tortilla francesa. El clásico "paleto", vamos.',
                 prices: [
@@ -928,8 +916,7 @@ export default {
                 id: 68,
                 show: false,
                 name: 'Tosta de gulas',
-                // img: 'tosta-gulas',
-                img: null,
+                img: 'tosta-gulas',
                 desc:
                   'Pan tostado con gulas.',
                 prices: [
@@ -955,18 +942,17 @@ export default {
           {
             title: 'Parrilladas',
             desc: 'Nuestras famosas parrilladas de carne o verduras a la brasa. ¡Pruébalas!',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 70,
                 show: false,
                 name: 'Parrillada de verduras',
-                // img: 'parrillada-verduras',
-                img: null,
+                img: 'parrillada-verduras',
                 desc:
                   'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacin, esparragos...',
                 prices: [
@@ -984,6 +970,18 @@ export default {
                   'Carnes maduradas a la brasa de costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
                 prices: [
                   { name: 'Parrillada', price: '18,50' }
+                ],
+                allergens: null,
+              },
+              {
+                id: 72,
+                show: false,
+                name: 'Parrillada de marisco',
+                img: 'parrillada-marisco',
+                desc:
+                  'Langostinos, zamburiñas, navajas, gambas, mejillones...',
+                prices: [
+                  { name: 'Parrillada', price: '45' }
                 ],
                 allergens: null,
               },
@@ -1134,18 +1132,17 @@ export default {
           {
             title: 'Vinos',
             desc: 'Amplia variedad de vinos. Preguntad a nuestros camareros.',
-            // imgs: {
-            //   position: 'bottom',
-            //   width: 120,
-            //   height: 134,
-            // },
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
             items: [
               {
                 id: 101,
                 show: false,
                 name: 'Rivera Roble',
-                // img: 'vino-rivera-roble',
-                img: null,
+                img: 'vino-rivera-roble',
                 desc: 'Ribera del Duero roble. Ideal para embutidos y quesos así como para guisos.',
                 prices: [
                   { name: 'Copa', price: '2,50' },
@@ -1157,8 +1154,7 @@ export default {
                 id: 102,
                 show: false,
                 name: 'Rioja crianza',
-                // img: 'vino-rioja-crianza',
-                img: null,
+                img: 'vino-rioja-crianza',
                 desc: 'Rioja crianza ideal para maridar con asados de carne.',
                 prices: [
                   { name: 'Copa', price: '2,50' },
@@ -1170,8 +1166,7 @@ export default {
                 id: 103,
                 show: false,
                 name: 'Alma',
-                // img: 'vino-alma',
-                img: null,
+                img: 'vino-alma',
                 desc: 'Vino rosado semidulce con denominación de origen.',
                 prices: [
                   { name: 'Copa', price: '2,50' },
@@ -1183,8 +1178,7 @@ export default {
                 id: 104,
                 show: false,
                 name: 'Verdejo',
-                // img: 'vino-verdejo',
-                img: null,
+                img: 'vino-verdejo',
                 desc: 'Vinos blanco verdejo con denominación de origen.',
                 prices: [
                   { name: 'Copa', price: '2,20' },
@@ -1486,7 +1480,7 @@ main.business
           opacity: .8 // cause dark card bg color
 
       &.img
-        width: 120px
+        width: 135px
         height: auto
         img
           border-radius: $border-radius
