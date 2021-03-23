@@ -190,8 +190,7 @@ export default {
                 id: 1,
                 show: false,
                 name: 'Jamón ibérico',
-                img: null,
-                // img: 'racion-jamon-iberico',
+                img: 'racion-jamon-iberico',
                 desc: null,
                 prices: [
                   { name: 'Ración', price: '16,50' },
@@ -330,11 +329,11 @@ export default {
               {
                 id: 12,
                 show: false,
-                name: 'Pollo, huevos y patatas',
+                name: 'Delicias de pollo',
                 // img: 'racion-pollo-huevos',
                 img: null,
                 desc:
-                  'Delicias de pollo, patatas fritas con pimientos de padrón y huevos fritos.',
+                  'Piezas de pollo, patatas fritas con pimientos de padrón y huevos fritos.',
                 prices: [
                   { name: 'Ración', price: '16,50' },
                   { name: '1/2 ración', price: '9,50' },
@@ -345,10 +344,9 @@ export default {
                 id: 13,
                 show: false,
                 name: 'Taquitos de pollo',
-                // img: 'racion-taquitos-pollo',
-                img: null,
+                img: 'racion-taquitos-pollo',
                 desc:
-                  'Taquitos de pollo, patatas fritas y pimientos de padrón con salsa ali oli.',
+                  'Piezas de pollo con rebozado suave, patatas fritas y pimientos de padrón con salsa ali oli.',
                 prices: [
                   { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '9' },
@@ -390,7 +388,7 @@ export default {
                 // img: 'racion-lacon-gallega',
                 img: null,
                 desc:
-                  'Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.',
+                  'Lacón de cerdo cocido con patatas y su toque de pimentón de la Vera con aceite de oliva virgen.',
                 prices: [
                   { name: 'Ración', price: '11,50' },
                   { name: '1/2 ración', price: '8' },
@@ -406,7 +404,7 @@ export default {
                 desc:
                   'Lacón con grelos y chorizo al estilo gallego. Bajo reserva. Precio por comensal.',
                 prices: [
-                  { name: 'Preguntar', price: null }
+                  { name: 'Preguntar', price: '11,50' }
                 ],
                 allergens: null,
               },
@@ -417,7 +415,7 @@ export default {
                 // img: 'racion-pimientos-padron',
                 img: null,
                 desc:
-                  'Ya lo dicen los gallegos: "Os pementos de Padrón, uns pican e outros non".',
+                  'Ya lo dicen los gallegos: <em>"Os pementos de Padrón, uns pican e outros non"</em>.',
                 prices: [
                   { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '9' },
@@ -449,6 +447,20 @@ export default {
                 ],
                 allergens: ['sulfitos'],
               },
+              {
+                id: 21,
+                show: false,
+                name: 'Tortilla de patatas',
+                // img: 'racion-tortilla-patatas',
+                img: null,
+                desc:
+                  'Tortilla de patatas casera con <strong>huevos de corral</strong> y cebolla. ¡Un clásico español!',
+                prices: [
+                  { name: 'Pincho', price: '3,50' },
+                  { name: 'Entera', price: '10' }
+                ],
+                allergens: ['huevos', 'sulfitos'],
+              },
             ]
           },
           {
@@ -461,7 +473,7 @@ export default {
             },
             items: [
               {
-                id: 21,
+                id: 22,
                 show: false,
                 name: 'Bacalao rebozado',
                 // img: 'racion-bacalao-rebozado',
@@ -475,7 +487,7 @@ export default {
                 allergens: ['huevos', 'lacteos', 'sulfitos'],
               },
               {
-                id: 22,
+                id: 23,
                 show: false,
                 name: 'Sepia a la plancha',
                 // img: 'racion-sepia-plancha',
@@ -488,13 +500,13 @@ export default {
                 allergens: ['moluscos', 'pescado', 'huevos', 'sulfitos'],
               },
               {
-                id: 23,
+                id: 24,
                 show: false,
                 name: 'Chipirones a la plancha',
                 // img: 'racion-chipirones-plancha',
                 img: null,
                 desc:
-                  'Clásica ración de chipirones a la plancha con su aceite de oliva, ajo y perejil.',
+                  'Clásica ración de chipirones a la plancha con cebolla y su aceite de oliva, ajo y perejil.',
                 prices: [
                   { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '9' },
@@ -502,7 +514,7 @@ export default {
                 allergens: ['moluscos'],
               },
               {
-                id: 24,
+                id: 25,
                 show: false,
                 name: 'Gambón a la plancha',
                 // img: 'racion-gambon-plancha',
@@ -515,20 +527,20 @@ export default {
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 25,
+                id: 26,
                 show: false,
                 name: 'Gambas al ajillo',
                 // img: 'racion-gambas-ajillo',
                 img: null,
                 desc:
-                  'La popular ración de la cocina española: gambas, ajo y aceite de oliva.',
+                  'La popular ración de la cocina española: gambas, ajo y aceite de oliva con un toque picante.',
                 prices: [
                   { name: 'Ración', price: '15,50' }
                 ],
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 26,
+                id: 27,
                 show: false,
                 name: 'Alcachofas con almejas y gambas',
                 img: 'racion-alcachofas-almejas-gambas',
@@ -541,7 +553,7 @@ export default {
                 allergens: ['crustaceos', 'pescado', 'sulfitos'],
               },
               {
-                id: 27,
+                id: 28,
                 show: false,
                 name: 'Calamares a la romana',
                 img: 'racion-calamares-romana',
@@ -554,12 +566,12 @@ export default {
                 allergens: ['moluscos', 'pescado', 'sulfitos', 'gluten'],
               },
               {
-                id: 28,
+                id: 29,
                 show: false,
                 name: 'Fritura de la casa',
                 img: 'racion-fritura',
                 desc:
-                  'Clásica fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...',
+                  'Clásica fritura variada de pescado rebozado: calamares, chopitos, patas de calamar, gambas, merluza...',
                 prices: [
                   { name: 'Ración', price: '16,50' },
                   { name: '1/2 ración', price: '9,50' },
@@ -584,7 +596,7 @@ export default {
                 // img: 'ensalada-mixta',
                 img: null,
                 desc:
-                  'Ensalada de mezclun de lechugas, tomate, espáragos, atún, maiz...',
+                  'Ensalada de mezclun de lechugas, tomate, espáragos, atún, cebolla...',
                 prices: [
                   { name: 'Entera', price: '9,50' },
                   { name: '1/2 media', price: '6,50' },
@@ -598,7 +610,7 @@ export default {
                 // img: 'ensalada-ventresca',
                 img: null,
                 desc:
-                  'Ensalada de ventresca de atún, patata cocina, pimientos del piquillo, brotes verdes...',
+                  'Ensalada de ventresca de atún, cogollos, tomate, anchoas, pimientos de piquillo...',
                 prices: [
                   { name: 'Entera', price: '13,50' },
                   { name: '1/2 media', price: '9' },
@@ -635,7 +647,7 @@ export default {
                 // img: 'chuleton-trinchado',
                 img: null,
                 desc:
-                  'Chuletón madurado trinchado con patatas fritas.',
+                  'Chuletón trinchado con su guarnición de patatas fritas.',
                 prices: [
                   { name: 'Pieza', price: '17,50' }
                 ],
@@ -656,19 +668,6 @@ export default {
               {
                 id: 42,
                 show: false,
-                name: 'Brocheta solomillo',
-                // img: 'brocheta-solomillo',
-                img: null,
-                desc:
-                  'Brocheta solomillo con su guarnición de patatas fritas.',
-                prices: [
-                  { name: 'Unidad', price: '7' }
-                ],
-                allergens: null,
-              },
-              {
-                id: 43,
-                show: false,
                 name: 'Carne a la piedra',
                 // img: 'carne-piedra',
                 img: null,
@@ -680,20 +679,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 44,
-                show: false,
-                name: 'Pollo con patatas y huevo',
-                // img: 'carne-piedra',
-                img: null,
-                desc:
-                  'Filete de pechuga de pollo con guarnición de patatas y huevos fritos.',
-                prices: [
-                  { name: 'Plato', price: '7,90' }
-                ],
-                allergens: ['huevos'],
-              },
-              {
-                id: 45,
+                id: 43,
                 show: false,
                 name: 'Chuletitas de cordero',
                 img: 'chuletitas-cordero',
@@ -703,6 +689,56 @@ export default {
                   { name: 'Plato', price: '17,00' }
                 ],
                 allergens: null,
+              }
+            ]
+          },
+          {
+            title: 'Platos combinados',
+            desc: 'descripción de carnes a la brasa',
+            // imgs: {
+            //   position: 'top',
+            //   width: 120,
+            //   height: 120,
+            // },
+            items: [
+              {
+                id: 46,
+                show: false,
+                name: 'Brocheta solomillo',
+                // img: 'combo-brocheta-solomillo',
+                img: null,
+                desc:
+                  'Brocheta de solomillo con su guarnición de patatas fritas.',
+                prices: [
+                  { name: 'Unidad', price: '7' }
+                ],
+                allergens: ['sulfitos'],
+              },
+              {
+                id: 47,
+                show: false,
+                name: 'Pollo con patatas y huevo',
+                // img: 'combo-pollo-huevo',
+                img: null,
+                desc:
+                  'Filete de pechuga de pollo con guarnición de patatas y huevos fritos.',
+                prices: [
+                  { name: 'Plato', price: '7,90' }
+                ],
+                allergens: ['huevos', 'sulfitos'],
+              },
+              {
+                id: 48,
+                show: false,
+                name: 'Chuleta con patatas y huevo',
+                // img: 'combo-chuleta-huevo',
+                img: null,
+                desc:
+                  'Chuleta de cerdo con guarnición de patatas y huevos fritos.',
+                prices: [
+                  { name: 'Plato', price: '7,90' }
+                ],
+                allergens: ['huevos', 'sulfitos'],
               }
             ]
           },
@@ -827,8 +863,7 @@ export default {
                 id: 61,
                 show: false,
                 name: 'Tosta tumaca y bacon queso',
-                // img: 'tosta-bacon',
-                img: null,
+                img: 'tosta-bacon',
                 desc:
                   'Pan tumaca con bacon a la plancha y queso fundido.',
                 prices: [
@@ -882,7 +917,7 @@ export default {
                 // img: 'tosta-salmon',
                 img: null,
                 desc:
-                  'Pan tostado con salmón y queso roquefort.',
+                  'Pan tostado con salmón y salsa de queso roquefort.',
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
@@ -908,7 +943,7 @@ export default {
                 // img: 'tosta-solomillo',
                 img: null,
                 desc:
-                  'Pan tostado con solomillo y queso fundido.',
+                  'Pan tostado con solomillo y salsa de queso roquefort.',
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
@@ -920,7 +955,7 @@ export default {
                 name: 'Tosta de gulas',
                 img: 'tosta-gulas',
                 desc:
-                  'Pan tostado con gulas.',
+                  'Pan tostado con gulas y salsa de queso suave tipo Philadelphia.',
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
@@ -933,7 +968,7 @@ export default {
                 // img: 'tosta-vegetal',
                 img: null,
                 desc:
-                  'Pan tostado con pulpo a la gallega con su toque de pimentón de la vera, sal gorda y aceite cruda.',
+                  'Pan tostado con pulpo a la gallega sobre cama de puré de patatas. Todo con su toque de pimentón de la vera, sal gorda y aceite cruda.',
                 prices: [
                   { name: 'Unidad', price: '9' }
                 ],
@@ -956,7 +991,7 @@ export default {
                 name: 'Parrillada de verduras',
                 img: 'parrillada-verduras',
                 desc:
-                  'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacin, esparragos...',
+                  'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacín, champiñones, espárragos con sal de escamos y aceite cruda.',
                 prices: [
                   { name: 'Parrillada', price: '15,50' }
                 ],
@@ -969,7 +1004,7 @@ export default {
                 // img: 'parrillada-carne',
                 img: null,
                 desc:
-                  'Carnes maduradas a la brasa de costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
+                  'Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
                 prices: [
                   { name: 'Parrillada', price: '18,50' }
                 ],
@@ -981,7 +1016,7 @@ export default {
                 name: 'Parrillada de marisco',
                 img: 'parrillada-marisco',
                 desc:
-                  'Langostinos, zamburiñas, navajas, gambas, mejillones...',
+                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar...',
                 prices: [
                   { name: 'Parrillada', price: '45' }
                 ],
@@ -1272,8 +1307,13 @@ export default {
                 show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
-                desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
-                prices: [{ name: 'Precio', price: '2,50' }],
+                desc: 'Coca-Cola <small>Nomal y Zero</small>, Nestea, Fanta y Acuarius (<small>naranja y limón</small>)...',
+                prices: [
+                  { name: 'Coca-Cola', price: '2,50' },
+                  { name: 'Fanta', price: '2,50' },
+                  { name: 'Nestea', price: '2,60' },
+                  { name: 'Acuarius', price: '2,60' }
+                ],
                 allergens: null,
               },
               {
@@ -1438,6 +1478,9 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
   &.ole-veinti3
     background-color: $bg-color
 
+    strong
+      color: $font-color
+
     .business.data,
     .dish.item,
     .message,
@@ -1545,6 +1588,9 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
         font-family: $font-family-desc
         color: $font-color
         padding: .5rem 1.5rem
+      .aside-business-logo
+        width: 100px
+        height: 59px
 
     .modal-wrapper .md-modal.has-dish .md-content
       background-color: $card-color
