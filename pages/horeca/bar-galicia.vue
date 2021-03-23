@@ -39,8 +39,8 @@
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          width="88"
-          height="40"
+          width="105"
+          height="47"
         >
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
@@ -1015,6 +1015,7 @@ $border-radius: 3px
         font-family: cursive // if logo fails
       .aside-business-logo
         width: 300px
+        padding-bottom: 0
 
     .navbar.bottom-bar
       box-shadow: -3px -3px 6px -2px rgba(60, 64, 67, 0.5), 3px 3px 6px 2px rgba(60, 64, 67, 0.5)
