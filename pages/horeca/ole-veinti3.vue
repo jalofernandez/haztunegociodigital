@@ -874,9 +874,8 @@ export default {
               {
                 id: 62,
                 show: false,
-                name: 'Tosta tumaca y lomo',
-                // img: 'tosta-lomo',
-                img: null,
+                name: 'Tosta lomo y queso',
+                img: 'tosta-lomo',
                 desc:
                   'Pan tumaca y lomo a la plancha.',
                 prices: [
@@ -887,22 +886,20 @@ export default {
               {
                 id: 63,
                 show: false,
-                name: 'Tosta de ventresca y pimientos',
-                // img: 'tosta-ventresca',
-                img: null,
+                name: 'Tosta de solomillo',
+                img: 'tosta-solomillo',
                 desc:
-                  'Pan tostado con ventresca y pimientos de piquillo.',
+                  'Pan tostado con solomillo y salsa de queso roquefort.',
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['pescado'],
+                allergens: ['lacteos'],
               },
               {
                 id: 64,
                 show: false,
                 name: 'Tosta de jamón ibérico',
-                // img: 'tosta-jamon-iberico',
-                img: null,
+                img: 'tosta-jamon-iberico',
                 desc:
                   'Pan tumaca con jamón ibérico.',
                 prices: [
@@ -913,9 +910,20 @@ export default {
               {
                 id: 65,
                 show: false,
+                name: 'Tosta de ventresca y pimientos',
+                img: 'tosta-ventresca',
+                desc:
+                  'Pan tostado con ventresca y pimientos de piquillo.',
+                prices: [
+                  { name: 'Unidad', price: '7,50' }
+                ],
+                allergens: ['pescado'],
+              },
+              {
+                id: 66,
+                show: false,
                 name: 'Tosta de salmón',
-                // img: 'tosta-salmon',
-                img: null,
+                img: 'tosta-salmon',
                 desc:
                   'Pan tostado con salmón y salsa de queso roquefort.',
                 prices: [
@@ -924,7 +932,7 @@ export default {
                 allergens: ['pescado','lacteos'],
               },
               {
-                id: 66,
+                id: 67,
                 show: false,
                 name: 'Tosta de anchoas con tomate',
                 // img: 'tosta-anchoas',
@@ -935,19 +943,6 @@ export default {
                   { name: 'Unidad', price: '7,50' }
                 ],
                 allergens: ['pescado'],
-              },
-              {
-                id: 67,
-                show: false,
-                name: 'Tosta de solomillo',
-                // img: 'tosta-solomillo',
-                img: null,
-                desc:
-                  'Pan tostado con solomillo y salsa de queso roquefort.',
-                prices: [
-                  { name: 'Unidad', price: '7,50' }
-                ],
-                allergens: ['lacteos'],
               },
               {
                 id: 68,
@@ -965,8 +960,7 @@ export default {
                 id: 69,
                 show: false,
                 name: 'Tosta de pulpo',
-                // img: 'tosta-vegetal',
-                img: null,
+                img: 'tosta-pulpo',
                 desc:
                   'Pan tostado con pulpo a la gallega sobre cama de puré de patatas. Todo con su toque de pimentón de la vera, sal gorda y aceite cruda.',
                 prices: [
