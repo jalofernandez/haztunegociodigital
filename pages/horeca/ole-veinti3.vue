@@ -1285,6 +1285,16 @@ export default {
               {
                 id: 121,
                 show: false,
+                name: 'Café irlandés o vienés',
+                img: 'cafe-irlandes',
+                desc:
+                  '<small>En temporada de invierno disponemos de:</small> <br><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br><strong>café vienés</strong>: café y nata montada.',
+                prices: [{ name: 'Precio', price: '1,50' }],
+                allergens: null,
+              },
+              {
+                id: 122,
+                show: false,
                 name: 'Botella de agua',
                 img: 'botella-agua',
                 desc: 'Disponemos de agua mineral embotellada de medio litro.',
@@ -1294,7 +1304,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 122,
+                id: 123,
                 show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
@@ -1308,7 +1318,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 123,
+                id: 124,
                 show: false,
                 name: 'Zumos',
                 img: 'zumos',
