@@ -264,8 +264,7 @@ export default {
                 id: 7,
                 show: false,
                 name: 'Croquetas caseras',
-                // img: 'racion-croquetas',
-                img: null,
+                img: 'racion-croquetas',
                 desc:
                   'Ración de riquísimas croquetas caseras de jamón.',
                 prices: [
@@ -357,8 +356,7 @@ export default {
                 id: 14,
                 show: false,
                 name: 'Oreja a la plancha',
-                // img: 'racion-oreja-plancha',
-                img: null,
+                img: 'racion-oreja-plancha',
                 desc:
                   'Tradicional ración de oreja de cerdo a la plancha al punto que desse con un toque picante.',
                 prices: [
@@ -371,8 +369,7 @@ export default {
                 id: 15,
                 show: false,
                 name: 'Oreja a la gallega',
-                // img: 'racion-oreja-gallega',
-                img: null,
+                img: 'racion-oreja-gallega',
                 desc:
                   'Oreja a la gallega cocida con aceite de oliva, sal y pimientón picante espolvoreado.',
                 prices: [
@@ -385,8 +382,7 @@ export default {
                 id: 16,
                 show: false,
                 name: 'Lacón a la gallega',
-                // img: 'racion-lacon-gallega',
-                img: null,
+                img: 'racion-lacon-gallega',
                 desc:
                   'Lacón de cerdo cocido con patatas y su toque de pimentón de la Vera con aceite de oliva virgen.',
                 prices: [
@@ -412,8 +408,7 @@ export default {
                 id: 18,
                 show: false,
                 name: 'Pimientos de padrón',
-                // img: 'racion-pimientos-padron',
-                img: null,
+                img: 'racion-pimientos-padron',
                 desc:
                   'Ya lo dicen los gallegos: <em>"Os pementos de Padrón, uns pican e outros non"</em>.',
                 prices: [
@@ -451,8 +446,7 @@ export default {
                 id: 21,
                 show: false,
                 name: 'Tortilla de patatas',
-                // img: 'racion-tortilla-patatas',
-                img: null,
+                img: 'racion-tortilla-patatas',
                 desc:
                   'Tortilla de patatas casera con <strong>huevos de corral</strong> y cebolla. ¡Un clásico español!',
                 prices: [
