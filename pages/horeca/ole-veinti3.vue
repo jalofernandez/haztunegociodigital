@@ -633,8 +633,7 @@ export default {
                 id: 40,
                 show: false,
                 name: 'Chuletón trinchado',
-                // img: 'chuleton-trinchado',
-                img: null,
+                img: 'chuleton-trinchado',
                 desc:
                   'Chuletón trinchado con su guarnición de patatas fritas.',
                 prices: [
@@ -684,18 +683,17 @@ export default {
           {
             title: 'Platos combinados',
             desc: 'descripción de carnes a la brasa',
-            // imgs: {
-            //   position: 'top',
-            //   width: 120,
-            //   height: 120,
-            // },
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
             items: [
               {
                 id: 46,
                 show: false,
                 name: 'Brocheta solomillo',
-                // img: 'combo-brocheta-solomillo',
-                img: null,
+                img: 'combo-brocheta-solomillo',
                 desc:
                   'Brocheta de solomillo con su guarnición de patatas fritas.',
                 prices: [
@@ -707,8 +705,7 @@ export default {
                 id: 47,
                 show: false,
                 name: 'Pollo con patatas y huevo',
-                // img: 'combo-pollo-huevo',
-                img: null,
+                img: 'combo-pollo-huevo',
                 desc:
                   'Filete de pechuga de pollo con guarnición de patatas y huevos fritos.',
                 prices: [
@@ -984,8 +981,7 @@ export default {
                 id: 71,
                 show: false,
                 name: 'Parrillada de carne',
-                // img: 'parrillada-carne',
-                img: null,
+                img: 'parrillada-carne',
                 desc:
                   'Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
                 prices: [
