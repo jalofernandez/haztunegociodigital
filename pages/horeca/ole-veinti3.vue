@@ -490,8 +490,7 @@ export default {
                 id: 23,
                 show: false,
                 name: 'Sepia a la plancha',
-                // img: 'racion-sepia-plancha',
-                img: null,
+                img: 'racion-sepia-plancha',
                 desc:
                   'Sepia fresca a la plancha con salsa alioli y guarnición de ensalada.',
                 prices: [
@@ -503,8 +502,7 @@ export default {
                 id: 24,
                 show: false,
                 name: 'Chipirones a la plancha',
-                // img: 'racion-chipirones-plancha',
-                img: null,
+                img: 'racion-chipirones-plancha',
                 desc:
                   'Clásica ración de chipirones a la plancha con cebolla y su aceite de oliva, ajo y perejil.',
                 prices: [
@@ -517,8 +515,7 @@ export default {
                 id: 25,
                 show: false,
                 name: 'Gambón a la plancha',
-                // img: 'racion-gambon-plancha',
-                img: null,
+                img: 'racion-gambon-plancha',
                 desc: null,
                 prices: [
                   { name: 'Ración', price: '15,50' },
