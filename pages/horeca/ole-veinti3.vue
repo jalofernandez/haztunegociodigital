@@ -584,8 +584,7 @@ export default {
                 id: 30,
                 show: false,
                 name: 'Ensalada mixta',
-                // img: 'ensalada-mixta',
-                img: null,
+                img: 'ensalada-mixta',
                 desc:
                   'Ensalada de mezclun de lechugas, tomate, espáragos, atún, cebolla...',
                 prices: [
@@ -598,8 +597,7 @@ export default {
                 id: 31,
                 show: false,
                 name: 'Ensalada de ventresca',
-                // img: 'ensalada-ventresca',
-                img: null,
+                img: 'ensalada-ventresca',
                 desc:
                   'Ensalada de ventresca de atún, cogollos, tomate, anchoas, pimientos de piquillo...',
                 prices: [
