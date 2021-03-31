@@ -182,13 +182,13 @@ export default {
         messages: {
           gluten: {
             type: null,
-            copy: '<strong>Celebramos todo tipo de eventos</strong> bajo reserva previa. Consultános.',
+            copy: '<strong>Celebramos todo tipo de eventos</strong> bajo reserva previa. Consultános. <br>Toda nuestra carta también <strong>para llevar</strong>. Recoger en el local.',
           },
         },
         menus: [
           {
             title: 'Raciones de la tierra',
-            desc: 'Raciones también <span class="semibold">para llevar</span>. Recoger en el local.',
+            desc: '"Gran variedad de entrantes típicos de la gastronomía medirterránea."',
             imgs: {
               position: 'center',
               width: 96,
@@ -465,7 +465,7 @@ export default {
           },
           {
             title: 'Raciones del mar',
-            desc: 'descripción de raciones del mar',
+            desc: '"Raciones de pescado fresco: robozados, mariscos, frituras..."',
             imgs: {
               position: 'center',
               width: 96,
@@ -579,7 +579,7 @@ export default {
           },
           {
             title: 'Ensaladas',
-            desc: 'Descripción de ensaladas',
+            desc: '"Fresquitas y saludables. Prueba nuestras ensaladas."',
             imgs: {
               position: 'center',
               width: 96,
@@ -628,7 +628,7 @@ export default {
           },
           {
             title: 'Carnes a la brasa',
-            desc: 'descripción de carnes a la brasa',
+            desc: '"Carnes jugosas a la parrilla para que se te haga la boca agua."',
             imgs: {
               position: 'top',
               width: 120,
@@ -688,7 +688,7 @@ export default {
           },
           {
             title: 'Platos combinados',
-            desc: 'descripción de carnes a la brasa',
+            desc: '"¿Qué hay más típico que los platos combinados?"',
             imgs: {
               position: 'center',
               width: 96,
@@ -736,7 +736,7 @@ export default {
           },
           {
             title: 'Hamburguesas',
-            desc: 'Se pueden añadir o retirar ingredientes a gusto del consumidor. Consultar con el camarero.',
+            desc: '"Se pueden <b>añadir o retirar ingredientes</b> a gusto del consumidor. Consultar con el camarero."',
             imgs: {
               position: 'top',
               width: 96,
@@ -771,7 +771,7 @@ export default {
           },
           {
             title: 'Sándwiches',
-            desc: 'Descripción de los Sándwiches',
+            desc: '"Nuestros sándwiches están elaborados con rebanadas de pan rústico."',
             imgs: {
               position: 'center',
               width: 96,
@@ -832,7 +832,7 @@ export default {
           },
           {
             title: 'Tostas',
-            desc: 'Descripción de las tostas',
+            desc: '"Todas nuestras tostas están elaborados con rebanadas de pan rústico."',
             imgs: {
               position: 'center',
               width: 96,
@@ -964,7 +964,7 @@ export default {
           },
           {
             title: 'Parrilladas',
-            desc: 'Nuestras famosas parrilladas de carne o verduras a la brasa. ¡Pruébalas!',
+            desc: '"Nuestras famosas parrilladas de carne, verduras o marisco a la brasa. Bajo <b>reserva previa</b>."',
             imgs: {
               position: 'center',
               width: 96,
@@ -1153,7 +1153,7 @@ export default {
           },
           {
             title: 'Vinos',
-            desc: 'Amplia variedad de vinos. Preguntad a nuestros camareros.',
+            desc: '"Amplia variedad de vinos. Preguntad a nuestros camareros."',
             imgs: {
               position: 'top',
               width: 120,
