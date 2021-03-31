@@ -701,7 +701,7 @@ export default {
                 name: 'Brocheta solomillo',
                 img: 'combo-brocheta-solomillo',
                 desc:
-                  'Brocheta de solomillo con su guarnición de patatas fritas.',
+                  'Brocheta de solomillo de cerdo con su guarnición de patatas fritas.',
                 prices: [
                   { name: 'Unidad', price: '7' }
                 ],

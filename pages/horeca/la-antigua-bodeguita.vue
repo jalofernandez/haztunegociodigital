@@ -1110,108 +1110,109 @@ $card-color: lighten($bg-color, 5%)
 $border-radius: 12px
 // $shadow-color: #502e08
 
-.business.la-antigua-bodeguita
-  background-color: $bg-color
-
-  .business.data,
-  .dish.item,
-  .btn.light,
-  .btn.js-close
-    background-color: $card-color
-  .btn
-    border-color: $bg-color
-    border-width: 2px
-    &:not(.js-close),
-    &.js-aside .opener
-      color: $font-color
-
-  @media (min-width: 1024px)
-    .business.cover
-      border-bottom-left-radius: $border-radius
-      border-bottom-right-radius: $border-radius
-
-  .dish
-    &.item
-      border-radius: $border-radius
-      box-shadow: none
-    &.info
-      .name:not(.price)
-        font-family: $font-family-name
-        color: $font-color
-        font-weight: 600
-        line-height: 1.25
-      .desc,
-      .prices .price.name,
-      .modal-wrapper .md-modal.has-dish .md-content .details
-        font-family: $font-family-desc
-        color: lighten($font-color, 5%)
-      .prices .price.quantity
-        color: coral
-    &.img
-      width: 120px
-      height: auto
-      img
-        border-radius: $border-radius
-
-  .message,
-  .section
-    color: $font-color
-  .section.name
-    background-color: rgba($bg-color, .85)
-    font-size: 120%
-    font-weight: 600
-
-  .business.data .name,
-  .footer .name
-    font-family: $font-family-desc
-    color: coral
-
-  .business.data
-    .name
-      padding: .5rem 0
-      font-size: 1.5rem
-    ul li a
-      color: $font-color
-
-  .footer
-    .name
-      font-weight: 600
-    ul li
-      color: $font-color
-
-  .footer, .message
+.business
+  &.la-antigua-bodeguita
     background-color: $bg-color
 
-  .navbar.bottom-bar
-    .navbar-brand
-      border-radius: $border-radius * 3
-      border: 4px solid $bg-color
+    .business.data,
+    .dish.item,
+    .btn.light,
+    .btn.js-close
       background-color: $card-color
-      box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
-      .burger-copy
-        .opener, .closer
-          color: $font-color
+    .btn
+      border-color: $bg-color
+      border-width: 2px
+      &:not(.js-close),
+      &.js-aside .opener
+        color: $font-color
 
-  .aside-menu
-    background-color: coral
-    h2
-      font-family: $font-family-desc
-    ul li a
-      font-family: $font-family-desc
+    @media (min-width: 1024px)
+      .business.cover
+        border-bottom-left-radius: $border-radius
+        border-bottom-right-radius: $border-radius
+
+    .dish
+      &.item
+        border-radius: $border-radius
+        box-shadow: none
+      &.info
+        .name:not(.price)
+          font-family: $font-family-name
+          color: $font-color
+          font-weight: 600
+          line-height: 1.25
+        .desc,
+        .prices .price.name,
+        .modal-wrapper .md-modal.has-dish .md-content .details
+          font-family: $font-family-desc
+          color: lighten($font-color, 5%)
+        .prices .price.quantity
+          color: coral
+      &.img
+        width: 120px
+        height: auto
+        img
+          border-radius: $border-radius
+
+    .message,
+    .section
       color: $font-color
-      padding: .4rem 1.5rem
-  .modal-wrapper .md-modal.has-dish .md-content
-    background-color: $card-color
-    border-radius: $border-radius
-    .img
-      border-color: $card-color
-      border-radius: $border-radius
-      width: calc(100% - .5rem)
-      margin: .25rem auto 0 auto
-    .details
-      border-radius: $border-radius
-      .prices .helper,
-      .schedule .day
+    .section.name
+      background-color: rgba($bg-color, .85)
+      font-size: 120%
+      font-weight: 600
+
+    .business.data .name,
+    .footer .name
+      font-family: $font-family-desc
+      color: coral
+
+    .business.data
+      .name
+        padding: .5rem 0
+        font-size: 1.5rem
+      ul li a
+        color: $font-color
+
+    .footer
+      .name
+        font-weight: 600
+      ul li
+        color: $font-color
+
+    .footer, .message
+      background-color: $bg-color
+
+    .navbar.bottom-bar
+      .navbar-brand
+        border-radius: $border-radius * 3
+        border: 4px solid $bg-color
+        background-color: $card-color
+        box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
+        .burger-copy
+          .opener, .closer
+            color: $font-color
+
+    .aside-menu
+      background-color: coral
+      h2
+        font-family: $font-family-desc
+      ul li a
         font-family: $font-family-desc
         color: $font-color
+        padding: .4rem 1.5rem
+    .modal-wrapper .md-modal.has-dish .md-content
+      background-color: $card-color
+      border-radius: $border-radius
+      .img
+        border-color: $card-color
+        border-radius: $border-radius
+        width: calc(100% - .5rem)
+        margin: .25rem auto 0 auto
+      .details
+        border-radius: $border-radius
+        .prices .helper,
+        .schedule .day
+          font-family: $font-family-desc
+          color: $font-color
 </style>

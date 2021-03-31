@@ -183,7 +183,7 @@ export default {
         },
         menus: [
           {
-            title: 'Menú del día',
+            title: 'Menú del día 🍲',
             desc: 'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
             imgs: {
               position: 'top',
@@ -203,7 +203,7 @@ export default {
             ],
           },
           {
-            title: 'Raciones',
+            title: 'Raciones 🧆',
             desc: 'También <span class="semibold">para llevar</span>. Recoger en el local.',
             imgs: {
               position: 'top',
@@ -505,7 +505,7 @@ export default {
             ],
           },
           {
-            title: 'Bocadillos y Montados',
+            title: 'Bocadillos y Montados 🥪',
             desc: 'Preguntar precios y disponibilidad.',
             imgs: {
               position: 'top',
@@ -515,7 +515,7 @@ export default {
             items: null,
           },
           {
-            title: 'Desayunos',
+            title: 'Desayunos ☕️',
             desc: 'En horario de mañana.',
             imgs: {
               position: 'top',
@@ -547,7 +547,7 @@ export default {
             ],
           },
           {
-            title: 'Cervezas',
+            title: 'Cervezas 🍺',
             desc: null,
             imgs: {
               position: 'top',
@@ -611,7 +611,7 @@ export default {
             ],
           },
           {
-            title: 'Vinos',
+            title: 'Vinos 🍷',
             desc: 'Amplia variedad de vinos.',
             imgs: {
               position: 'bottom',
@@ -730,7 +730,7 @@ export default {
             ],
           },
           {
-            title: 'Bebidas',
+            title: 'Bebidas 🥤',
             desc: null,
             imgs: {
               position: 'top',
@@ -798,7 +798,7 @@ export default {
             ],
           },
           {
-            title: 'Licores y combinados',
+            title: 'Licores y combinados 🍸',
             desc: null,
             imgs: {
               position: 'top',
@@ -1007,6 +1007,11 @@ $border-radius: 3px
 
 .business
   &.bar-galicia
+    .section.name
+      font-size: 1.1rem
+      font-weight: bolder
+      letter-spacing: .02rem
+
     .dish
       &.info .name:not(.price)
         font-weight: 600
