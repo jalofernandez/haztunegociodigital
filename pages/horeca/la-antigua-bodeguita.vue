@@ -24,14 +24,13 @@
             height="40"
           >
         </a>
-        <!-- <img
+        <img
           :class="{ 'ml-1': !business.whatsapp }"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          width="75"
-          height="44"
-        > -->
+          v-if="business.logo"
+        >
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
@@ -53,63 +52,71 @@
       </div>
     </nav>
 
+    <!-- Modal dialogs... -->
+    <!-- ...for Schedule details -->
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
       @close="closeModal()"
       :data="business.schedule"
       v-if="business.schedule"
     />
+    <!-- ...for each item to shown info details -->
+    <BusinessItemModal :business="business" />
 
     <!-- <a href="https://www.facebook.com/laantiguabodeguitavaldemoro/" target="_blank" rel="noopener noreferrer" title="Facebook de La antigua bodeguita" class="facebook"><span class="brand icon"><i class="mdi mdi-24px mdi-facebook"></i></span></a> -->
 
     <!-- Aside to navigate across dishes sections -->
-    <TheAside :business="business" @aside="asideBehaviour()" />
+    <TheAside :business="business" @aside="asideBehaviour()" />    
 
-    <!-- Modal dialogs for each item to shown info details -->
-    <BusinessItemModal :business="business" />
-
-    <main>
+    <main class="wrapper-menu">
       <div class="dishes">
         <!-- Business info -->
-        <div
-          class="business cover"
-          :style="{
-            'background-image':
-              'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
-          }"
-          v-if="business.cover"
-        ></div>
-        <div class="business data">
-          <h1 class="data name">{{ business.name }}</h1>
-          <ul v-if="business.address || business.phone || business.schedule">
-            <li>
-              <a
-                class="data address"
-                :href="`https://goo.gl/maps/${business.gmap}`"
-                :title="`Ver dirección de ${business.name}`"
-                target="_blank"
-                rel="noopener noreferrer"
-                v-if="business.address"
-                >{{ business.address }}</a
-              >
-            </li>
-            <li :class="business.schedule ? 'has-schedule' : null">
-              <a
-                class="data phone"
-                :href="`tel:${business.phone}`"
-                :title="`Llamar al ${business.name}: ${business.phone}`"
-                v-if="business.phone"
-                >{{ business.phone }}</a
-              >
-              <button type="button" class="btn light" @click="showModal()" v-if="business.schedule">
-                Ver horario
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <BaseMessage :data="business.messages" v-if="business.messages" />
-
+        <header class="business-header">
+          <div
+            class="business cover"
+            :style="{
+              'background-image':
+                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
+            }"
+            v-if="business.cover"
+          ></div>
+          <div class="business data">
+            <h1 class="data name">{{ business.name }}</h1>
+            <ul v-if="business.address || business.phone || business.schedule">
+              <li>
+                <a
+                  class="data address"
+                  :href="`https://goo.gl/maps/${business.gmap}`"
+                  :title="`Ver dirección de ${business.name}`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  v-if="business.address"
+                >
+                  {{ business.address }}
+                </a>
+              </li>
+              <li :class="business.schedule ? 'has-schedule' : null">
+                <a
+                  class="data phone"
+                  :href="`tel:${business.phone}`"
+                  :title="`Llamar al ${business.name}: ${business.phone}`"
+                  v-if="business.phone"
+                >
+                  {{ business.phone }}
+                </a>
+                <button
+                  type="button"
+                  class="btn light"
+                  @click="showModal()"
+                  v-if="business.schedule"
+                >
+                  Ver horario
+                </button>
+              </li>
+            </ul>
+          </div>
+          <BaseMessage :data="business.messages" v-if="business.messages" />
+        </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
         <BusinessItemList :business="business" />
       </div>
@@ -1110,6 +1117,11 @@ $border-radius: 12px
     &:not(.js-close),
     &.js-aside .opener
       color: $font-color
+
+  @media (min-width: 1024px)
+    .business.cover
+      border-bottom-left-radius: $border-radius
+      border-bottom-right-radius: $border-radius
 
   .dish
     &.item

@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     asideBehaviour() {
-      this.$emit("aside");
+      this.$emit("aside")
     },
   },
 };

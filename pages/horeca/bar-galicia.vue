@@ -1,16 +1,6 @@
 <template>
   <div :class="['page', 'business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
-    <!-- <button class="btn js-aside light" type="button" @click="asideBehaviour">
-      <span class="opener" v-if="!showAside">
-        Abrir
-        <b>Carta</b>
-      </span>
-      <span class="closer" v-else>
-        Cerrar
-        <b>Carta</b>
-      </span>
-    </button> -->
     <nav
       class="navbar is-fixed-bottom bottom-bar"
       role="navigation"
@@ -18,7 +8,7 @@
       v-if="$mq == 'mobile' || $mq == 'smartphone' || $mq == 'tablet'"
     >
       <div class="navbar-brand">
-        <!-- <a
+        <a
           class="whatsapp light ml-1"
           :href="`https://wa.me/${business.whatsapp}`"
           :title="`Llamar o escribir al Whatsapp de ${business.name}`"
@@ -33,14 +23,13 @@
             width="40"
             height="40"
           >
-        </a> -->
+        </a>
         <img
-          :class="{ 'ml-1': !business.whatsapp }"
+          :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          width="105"
-          height="47"
+          v-if="business.logo"
         >
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
@@ -63,61 +52,68 @@
       </div>
     </nav>
 
+    <!-- Modal dialogs... -->
+    <!-- ...for Schedule details -->
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
       @close="closeModal()"
       :data="business.schedule"
       v-if="business.schedule"
     />
+    <!-- ...for each item to shown info details -->
+    <BusinessItemModal :business="business" />
 
     <!-- Aside to navigate across dishes sections -->
     <TheAside :business="business" @aside="asideBehaviour()" />
 
-    <!-- Modal dialogs for each item to shown info details -->
-    <BusinessItemModal :business="business" />
-
-    <main>
+    <main class="wrapper-menu">
       <div class="dishes">
         <!-- Business info -->
-        <div
-          class="business cover"
-          :style="{
-            'background-image':
-              'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
-          }"
-          v-if="business.cover"
-        ></div>
-        <div class="business data">
-          <h1 class="data name">{{ business.name }}</h1>
-          <ul v-if="business.address || business.phone || business.schedule">
-            <li>
-              <a
-                class="data address"
-                :href="`https://goo.gl/maps/${business.gmap}`"
-                :title="`Ver dirección de ${business.name}`"
-                target="_blank"
-                rel="noopener noreferrer"
-                v-if="business.address"
-                >{{ business.address }}</a
-              >
-            </li>
-            <li :class="business.schedule ? 'has-schedule' : null">
-              <a
-                class="data phone"
-                :href="`tel:${business.phone}`"
-                :title="`Llamar al ${business.name}: ${business.phone}`"
-                v-if="business.phone"
-                >{{ business.phone }}</a
-              >
-              <button type="button" class="btn light" @click="showModal()" v-if="business.schedule">
-                Ver horario
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
-
+        <header class="business-header">
+          <div
+            class="business cover"
+            :style="{
+              'background-image':
+                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
+            }"
+            v-if="business.cover"
+          ></div>
+          <div class="business data">
+            <h1 class="data name">{{ business.name }}</h1>
+            <ul v-if="business.address || business.phone || business.schedule">
+              <li>
+                <a
+                  class="data address"
+                  :href="`https://goo.gl/maps/${business.gmap}`"
+                  :title="`Ver dirección de ${business.name}`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  v-if="business.address"
+                >
+                  {{ business.address }}
+                </a>
+              </li>
+              <li :class="business.schedule ? 'has-schedule' : null">
+                <a
+                  class="data phone"
+                  :href="`tel:${business.phone}`"
+                  :title="`Llamar al ${business.name}: ${business.phone}`"
+                  v-if="business.phone"
+                  >
+                  {{ business.phone }}
+                </a>
+                <button
+                  type="button"
+                  class="btn light"
+                  @click="showModal()" v-if="business.schedule"
+                >
+                  Ver horario
+                </button>
+              </li>
+            </ul>
+          </div>
+          <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
+        </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
         <BusinessItemList :business="business" />
       </div>
@@ -162,6 +158,7 @@ export default {
         place: 'Valdemoro, Madrid',
         gmap: 'TGCdSV6Y9rZ1gxQU6',
         phone: '918955364',
+        whatsapp: null,
         // social: {
         //   facebook: "https://www.facebook.com/¿?/",
         //   instagram: "https://www.instagram.com/¿?/",
@@ -1022,6 +1019,9 @@ $border-radius: 3px
       .navbar-brand
         border-radius: $border-radius
         background-color: rgba(white,.8)
+        .navbar-brand-logo
+          width: 105px
+          height: 47px
 
     .business.data .name,
     .footer .name

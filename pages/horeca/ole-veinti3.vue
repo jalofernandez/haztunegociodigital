@@ -10,7 +10,7 @@
     >
       <div class="navbar-brand">
         <a
-          class="whatsapp light"
+          class="whatsapp light ml-1"
           :href="`https://wa.me/${business.whatsapp}`"
           :title="`Llamar o escribir al Whatsapp de ${business.name}`"
           target="_blank"
@@ -26,14 +26,13 @@
           >
         </a>
         <img
-          :class="{ 'ml-1': !business.whatsapp }"
+          :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          width="75"
-          height="44"
+          v-if="business.logo"
         >
-        <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour">
+        <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
             :class="['navbar-burger', 'burger', { 'is-active': showAside }]"
@@ -53,62 +52,71 @@
         </div>
       </div>
     </nav>
+    <!-- <BusinessNavbar :business="business" @aside="asideBehaviour()" /> -->
 
+    <!-- Modal dialogs... -->
+    <!-- ...for Schedule details -->
     <BaseModal
       :class="{ 'md-show': isModalVisible }"
       @close="closeModal()"
       :data="business.schedule"
       v-if="business.schedule"
     />
+    <!-- ...for each item to shown info details -->
+    <BusinessItemModal :business="business" />
 
     <!-- Aside to navigate across dishes sections -->
     <TheAside :business="business" @aside="asideBehaviour()" />
 
-    <!-- Modal dialogs for each item to shown info details -->
-    <BusinessItemModal :business="business" />
-
-    <main>
+    <main class="wrapper-menu">
       <div class="dishes">
         <!-- Business info -->
-        <div
-          class="business cover"
-          :style="{
-            'background-image':
-              'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
-          }"
-          v-if="business.cover"
-        ></div>
-        <div class="business data">
-          <h1 class="data name">{{ business.name }}</h1>
-          <ul v-if="business.address || business.phone || business.schedule">
-            <li>
-              <a
-                class="data address"
-                :href="`https://goo.gl/maps/${business.gmap}`"
-                :title="`Ver dirección de ${business.name}`"
-                target="_blank"
-                rel="noopener noreferrer"
-                v-if="business.address"
-                >{{ business.address }}</a
-              >
-            </li>
-            <li :class="business.schedule ? 'has-schedule' : null">
-              <a
-                class="data phone"
-                :href="`tel:${business.phone}`"
-                :title="`Llamar al ${business.name}: ${business.phone}`"
-                v-if="business.phone"
-                >{{ business.phone }}</a
-              >
-              <button type="button" class="btn light" @click="showModal()" v-if="business.schedule">
-                Ver horario
-              </button>
-            </li>
-          </ul>
-        </div>
-
-        <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
-
+        <header class="business-header">
+          <div
+            class="business cover"
+            :style="{
+              'background-image':
+                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
+            }"
+            v-if="business.cover"
+          ></div>
+          <div class="business data">
+            <h1 class="data name">{{ business.name }}</h1>
+            <ul v-if="business.address || business.phone || business.schedule">
+              <li>
+                <a
+                  class="data address"
+                  :href="`https://goo.gl/maps/${business.gmap}`"
+                  :title="`Ver dirección de ${business.name}`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  v-if="business.address"
+                >
+                  {{ business.address }}
+                </a>
+              </li>
+              <li :class="business.schedule ? 'has-schedule' : null">
+                <a
+                  class="data phone"
+                  :href="`tel:${business.phone}`"
+                  :title="`Llamar al ${business.name}: ${business.phone}`"
+                  v-if="business.phone"
+                >
+                  {{ business.phone }}
+                </a>
+                <button
+                  type="button"
+                  class="btn light"
+                  @click="showModal()"
+                  v-if="business.schedule"
+                >
+                  Ver horario
+                </button>
+              </li>
+            </ul>
+          </div>
+          <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
+        </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
         <BusinessItemList :business="business" />
       </div>
@@ -153,6 +161,7 @@ export default {
         place: 'Valdemoro, Madrid',
         gmap: 'cybbnXb5z2gM1ctQ9',
         phone: '670584973',
+        whatsapp: null,
         // whatsapp: 670584973,
         // social: {
         //   facebook: "https://www.facebook.com/¿?/",
@@ -1462,7 +1471,7 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
 
 .business
   &.ole-veinti3
-    background-color: $bg-color
+    background-color: $card-color
 
     strong
       color: $font-color
@@ -1479,6 +1488,10 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
       &:not(.js-close),
       &.js-aside .opener
         color: $price-color
+
+    .business.cover
+      border-bottom-left-radius: $border-radius
+      border-bottom-right-radius: $border-radius
 
     .dishes
       background: $bg-artwork
@@ -1556,6 +1569,9 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
         border: 1px solid black
         box-shadow: 0 -2px 5px -2px #eaceb9
         background-color: rgba($card-color,.8)
+        .navbar-brand-logo
+          width: 75px
+          height: 44px
       .burger-copy
         .opener
           color: darken(#48c774,8%)
@@ -1599,4 +1615,13 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
             color: $price-color
           .abierto
             color: $green-color
+
+.page.business
+  &.ole-veinti3
+    @media (min-width: 1024px)
+      .business.cover
+        border-radius: $border-radius
+      .footer
+        background-color: $card-color
+
 </style>

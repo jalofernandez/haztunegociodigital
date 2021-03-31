@@ -57,7 +57,8 @@ ul, ol
     width: calc(100% + 1rem)
     height: 230px
     background-position: top
-    border-radius: 0
+    border-bottom-left-radius: $border-radius
+    border-bottom-right-radius: $border-radius
   &.data
     width: 100%
     background-color: lighten($color-bg, 3%)
@@ -89,7 +90,7 @@ ul, ol
         &.has-schedule
           display: flex
           justify-content: space-between
-          align-items: center
+          align-items: center   
 
 .section
   margin: 0
@@ -103,6 +104,13 @@ ul, ol
     padding: .25rem .5rem 1rem
     color: $color-primary
     font-size: .9rem
+
+.dishes section
+  position: relative
+  .section.name
+    position: sticky
+    top: 0
+    z-index: 2
 
 .dishes
   height: initial
@@ -233,7 +241,7 @@ ul, ol
   left: 0
   z-index: 100
   visibility: hidden
-  width: 260px
+  width: $width-aside
   height: 100%
   background-color: $color-secondary
   transition: all 0.5s
@@ -337,4 +345,5 @@ ul, ol
   &.chefioana
     color: #fc363a
     
+@import "_desktop"
 @import "_services"

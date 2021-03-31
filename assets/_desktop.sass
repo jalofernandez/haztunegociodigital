@@ -1,0 +1,50 @@
+// Desktop layout version:
+.page.business
+  @media (min-width: 1024px)
+    .aside-menu + .wrapper-menu,
+    .footer
+      margin-left: $width-aside
+    .footer,
+    .dishes
+      max-width: 100%
+    .business-header,
+    .sections-list
+      max-width: $width-phones * 2.5
+      margin: 0 auto
+    .dishes
+      padding: 0 2rem 5rem 2rem
+    .dishes header,
+    .dishes header + div
+      width: 100%
+
+    .btn,
+    .dish.item
+      cursor: pointer
+      transition: all .2s ease
+
+    .btn
+      &:hover, &:focus
+        transform: scale(0.95)
+
+    .dish.item
+      width: calc(50% - 1rem)
+      margin: .5rem .5rem
+      &:hover, &:focus
+        position: relative
+        transform: scale(1.05)
+
+    .dish-area
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+
+    .message
+      max-width: none
+      .copy br
+        display: none
+
+    .aside-menu ul li a
+      transition: all .2s ease
+      &:hover, &:focus
+        padding-left: 2rem
+        text-decoration: underline
