@@ -1,7 +1,7 @@
 <template>
   <div class="sections-list">
     <section v-for="(menu, index) in business.menus" :key="index">
-      <h2 :id="`section-${index}`" :class="['section', 'name', { 'with-desc': menu.desc }]">
+      <h2 :id="`section-${index}`" class="section name">
         {{ menu.title }}
       </h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>

@@ -1150,6 +1150,7 @@ $border-radius: 12px
   .section
     color: $font-color
   .section.name
+    background-color: rgba($bg-color, .85)
     font-size: 120%
     font-weight: 600
 

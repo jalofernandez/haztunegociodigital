@@ -1535,9 +1535,15 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
     .message,
     .section
       color: $font-color
-    .section.name
-      font-size: 120%
-      font-weight: 600
+    .section
+      &.name
+        top: .25rem
+        background-color: rgba($card-color, .85)
+        border-radius: $border-radius
+        font-size: 120%
+        font-weight: 600
+      &.desc
+        text-shadow: 1px 1px 2px black
 
     .business.data .name,
     .footer .name
