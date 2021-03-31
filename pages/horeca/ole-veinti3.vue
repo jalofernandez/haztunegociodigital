@@ -251,8 +251,7 @@ export default {
                 id: 6,
                 show: false,
                 name: 'Morcilla de Burgos',
-                // img: 'racion-morcilla-burgos',
-                img: null,
+                img: 'racion-morcilla-burgos',
                 desc:
                   'Morcilla de cebolla y arroz típica de la gastronomía burgalesa.',
                 prices: [
@@ -303,8 +302,7 @@ export default {
                 id: 10,
                 show: false,
                 name: 'Huevos rotos con jamón',
-                img: null,
-                // img: 'racion-huevos-rotos-jamon',
+                img: 'racion-huevos-rotos-jamon',
                 desc:
                   'Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico nacional.',
                 prices: [
@@ -316,8 +314,7 @@ export default {
                 id: 11,
                 show: false,
                 name: 'Alitas de pollo',
-                // img: 'racion-alitas-pollo',
-                img: null,
+                img: 'racion-alitas-pollo',
                 desc:
                   'Alitas de pollo (8 uds) con patatas fritas y pimientos al punto de sal.',
                 prices: [
