@@ -21,7 +21,7 @@ export const state = () => ({
     phone: '+34 696 682 791',
     whatsapp: 34696682791,
     footer: '<span class="has-text-weight-medium">Digitaliza tu</span> <b class="has-text-success">negocio</b>',
-    version: '1.1.6',
+    version: '1.1.7',
     schema: {
       '@context': 'http://schema.org',
       '@type': 'LocalBusiness',
