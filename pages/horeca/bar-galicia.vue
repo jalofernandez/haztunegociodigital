@@ -183,7 +183,7 @@ export default {
         },
         menus: [
           {
-            title: 'Menú del día 🍲',
+            title: 'Menú del día <span>🍲</span>',
             desc: 'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
             imgs: {
               position: 'top',
@@ -203,7 +203,7 @@ export default {
             ],
           },
           {
-            title: 'Raciones 🧆',
+            title: 'Raciones <span>🧆</span>',
             desc: 'También <span class="semibold">para llevar</span>. Recoger en el local.',
             imgs: {
               position: 'top',
@@ -505,7 +505,7 @@ export default {
             ],
           },
           {
-            title: 'Bocadillos y Montados 🥪',
+            title: 'Bocadillos y Montados <span>🥪</span>',
             desc: 'Preguntar precios y disponibilidad.',
             imgs: {
               position: 'top',
@@ -515,7 +515,7 @@ export default {
             items: null,
           },
           {
-            title: 'Desayunos ☕️',
+            title: 'Desayunos <span>☕️</span>',
             desc: 'En horario de mañana.',
             imgs: {
               position: 'top',
@@ -547,7 +547,7 @@ export default {
             ],
           },
           {
-            title: 'Cervezas 🍺',
+            title: 'Cervezas <span>🍺</span>',
             desc: null,
             imgs: {
               position: 'top',
@@ -611,7 +611,7 @@ export default {
             ],
           },
           {
-            title: 'Vinos 🍷',
+            title: 'Vinos <span>🍷</span>',
             desc: 'Amplia variedad de vinos.',
             imgs: {
               position: 'bottom',
@@ -730,7 +730,7 @@ export default {
             ],
           },
           {
-            title: 'Bebidas 🥤',
+            title: 'Bebidas <span>🥤</span>',
             desc: null,
             imgs: {
               position: 'top',
@@ -798,7 +798,7 @@ export default {
             ],
           },
           {
-            title: 'Licores y combinados 🍸',
+            title: 'Licores y combinados <span>🍸</span>',
             desc: null,
             imgs: {
               position: 'top',
@@ -1025,6 +1025,8 @@ $border-radius: 3px
       .aside-business-logo
         width: 300px
         padding-bottom: 0
+      .aside-menu-link span
+        display: none
 
     .navbar.bottom-bar
       box-shadow: -3px -3px 6px -2px rgba(60, 64, 67, 0.5), 3px 3px 6px 2px rgba(60, 64, 67, 0.5)
