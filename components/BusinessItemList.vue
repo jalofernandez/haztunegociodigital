@@ -1,9 +1,11 @@
 <template>
   <div class="sections-list">
-    <section v-for="(menu, index) in business.menus" :key="index">
-      <h2 :id="`section-${index}`" class="section name">
-        {{ menu.title }}
-      </h2>
+    <section 
+      :id="`section-${index}`"
+      v-for="(menu, index) in business.menus"
+      :key="index"
+    >
+      <h2 class="section name" v-html="menu.title"></h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
       <div class="dish-area">
         <article
