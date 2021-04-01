@@ -107,7 +107,7 @@ export default {
     const landing = this.$store.state.landing
     const title = 'Inicio'
     const description =
-      `En #${landing.owner.name} digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, por ${landing.author.alias}`
+      `Digitalizamos tu negocio o comercio ofreciendo tus productos y servicios online, en internet, en #${landing.owner.name} por ${landing.author.alias}`
     const canonical = landing.owner.url
 
     const meta = [
