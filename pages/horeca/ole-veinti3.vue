@@ -196,7 +196,7 @@ export default {
             },
             items: [
               {
-                id: 00,
+                id: 0,
                 show: false,
                 name: 'Menú diario',
                 img: null,
