@@ -264,7 +264,8 @@ export default {
                 desc:
                   'Morcilla de cebolla y arroz típica de la gastronomía burgalesa.',
                 prices: [
-                  { name: 'Ración', price: '13,50' }
+                  { name: 'Ración', price: '13,50' },
+                  { name: 'Ración', price: '9' }
                 ],
                 allergens: ['lacteos'],
               },
@@ -325,7 +326,7 @@ export default {
                 name: 'Alitas de pollo',
                 img: 'racion-alitas-pollo',
                 desc:
-                  'Alitas de pollo (8 uds) con patatas fritas y pimientos al punto de sal.',
+                  'Alitas de pollo (8 unidades) al punto de sal.',
                 prices: [
                   { name: 'Ración', price: '13,50' }
                 ],
@@ -377,7 +378,7 @@ export default {
                 name: 'Oreja a la gallega',
                 img: 'racion-oreja-gallega',
                 desc:
-                  'Oreja a la gallega cocida con aceite de oliva, sal y pimientón picante espolvoreado.',
+                  'Oreja a la gallega cocida con aceite de oliva, sal y pimientón de la Vera espolvoreado.',
                 prices: [
                   { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '9' },
@@ -390,7 +391,7 @@ export default {
                 name: 'Lacón a la gallega',
                 img: 'racion-lacon-gallega',
                 desc:
-                  'Lacón de cerdo cocido con patatas y su toque de pimentón de la Vera con aceite de oliva virgen.',
+                  'Lacón de cerdo cocido con su toque de pimentón de la Vera con aceite de oliva virgen.',
                 prices: [
                   { name: 'Ración', price: '11,50' },
                   { name: '1/2 ración', price: '8' },
@@ -418,8 +419,8 @@ export default {
                 desc:
                   'Ya lo dicen los gallegos: <em>"Os pementos de Padrón, uns pican e outros non"</em>.',
                 prices: [
-                  { name: 'Ración', price: '13,50' },
-                  { name: '1/2 ración', price: '9' },
+                  { name: 'Ración', price: '11,50' },
+                  { name: '1/2 ración', price: '7,50' },
                 ],
                 allergens: ['sulfitos'],
               },
@@ -456,7 +457,7 @@ export default {
                 desc:
                   'Tortilla de patatas casera con <strong>huevos de corral</strong> y cebolla. ¡Un clásico español!',
                 prices: [
-                  { name: 'Pincho', price: '3,50' },
+                  { name: 'Pincho', price: '3' },
                   { name: 'Entera', price: '10' }
                 ],
                 allergens: ['huevos', 'sulfitos'],
@@ -557,7 +558,7 @@ export default {
                 desc:
                   'Calamares rebozados sólo con harina fritos con su toque de limón.',
                 prices: [
-                  { name: 'Ración', price: '12,50' },
+                  { name: 'Ración', price: '13,50' },
                   { name: '1/2 ración', price: '9' },
                 ],
                 allergens: ['moluscos', 'pescado', 'sulfitos', 'gluten'],
@@ -822,7 +823,7 @@ export default {
                 // img: 'sandwich-ole',
                 img: null,
                 desc:
-                  'Queso y bacon con un huevo a la plancha.',
+                  'Queso, jamón de york y bacon con un huevo a la plancha.',
                 prices: [
                   { name: 'Unidad', price: '5,50' }
                 ],
@@ -1001,7 +1002,7 @@ export default {
                 name: 'Parrillada de marisco',
                 img: 'parrillada-marisco',
                 desc:
-                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar...',
+                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br>Bajo <b>reserva previa</b>.',
                 prices: [
                   { name: 'Parrillada', price: '45' }
                 ],
@@ -1039,7 +1040,7 @@ export default {
                 prices: [
                   { name: 'Caña', price: '1,60' },
                   { name: 'Doble', price: '2,50' },
-                  { name: 'Tercio', price: '2,20' },
+                  { name: 'Tercio', price: '2,50' },
                   { name: 'Jarra', price: '3,20' },
                 ],
                 allergens: ['gluten'],
@@ -1053,7 +1054,7 @@ export default {
                 prices: [
                   { name: 'Caña', price: '1,60' },
                   { name: 'Doble', price: '2,50' },
-                  { name: 'Tercio', price: '2,20' },
+                  { name: 'Tercio', price: '2,70' },
                   { name: 'Jarra', price: '3,20' },
                 ],
                 allergens: ['gluten'],
@@ -1227,7 +1228,7 @@ export default {
                 desc: 'Vino tinto con gaseosa o limón bien fresquito.',
                 prices: [
                   { name: 'Vaso ancho', price: '2,50' },
-                  { name: 'Jarra', price: '3,20' }
+                  { name: 'Jarra', price: '3,30' }
                 ],
                 allergens: null,
               },
@@ -1272,8 +1273,12 @@ export default {
                 name: 'Café o infusión',
                 img: 'cafe-con-leche',
                 desc:
-                  'Café al gusto (cortado, sólo, con leche...) o infusión. En temporada de invierno disponemos de café irlandés y vienés.',
-                prices: [{ name: 'Precio', price: '1,30' }],
+                  'Café al gusto (cortado, sólo, con leche...) o infusión.',
+                prices: [
+                  { name: 'Café', price: '1,30' },
+                  { name: 'Infusión', price: '1,30' },
+                  { name: 'Carajillo', price: '3,50' }
+                ],
                 allergens: null,
               },
               {
@@ -1283,7 +1288,10 @@ export default {
                 img: 'cafe-irlandes',
                 desc:
                   '<small>En temporada de invierno disponemos de:</small> <br><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br><strong>café vienés</strong>: café y nata montada.',
-                prices: [{ name: 'Precio', price: '1,50' }],
+                prices: [
+                  { name: 'Irlandés', price: '5,50' },
+                  { name: 'Vienés', price: '3,50' }
+                ],
                 allergens: null,
               },
               {
