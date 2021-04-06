@@ -187,6 +187,26 @@ export default {
         },
         menus: [
           {
+            title: 'Menú del día <span>🍽️</span>',
+            desc: 'Disponible de <b>Lunes</b> a <b>Viernes</b>.',
+            imgs: {
+              position: 'top',
+              width: 120,
+              height: 120,
+            },
+            items: [
+              {
+                id: 00,
+                show: false,
+                name: 'Menú diario',
+                img: null,
+                desc: 'Preguntar los platos ofrecidos cada día. <br>Incluye pan, bebida, postre o café.',
+                prices: [{ name: 'Precio', price: '10' }],
+                allergens: null,
+              },
+            ],
+          },
+          {
             title: 'Raciones de la tierra',
             desc: '"Gran variedad de entrantes típicos de la gastronomía medirterránea."',
             imgs: {
