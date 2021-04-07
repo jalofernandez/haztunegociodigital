@@ -908,7 +908,7 @@ export default {
           'ratingValue': '4.5',
           'bestRating': '5',
           'worstRating': '1',
-          'ratingCount': '1628'
+          'ratingCount': '1656'
         },
         'openingHoursSpecification': [
           {
