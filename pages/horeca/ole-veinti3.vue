@@ -187,8 +187,8 @@ export default {
         },
         menus: [
           {
-            title: 'Menú del día <span>🍽️</span>',
-            desc: 'Disponible de <b>Lunes</b> a <b>Viernes</b>.',
+            title: 'Menús <span>🍽️</span>',
+            desc: 'Preguntar al camarero por los platos ofrecidos y la disponibilidad.',
             imgs: {
               position: 'top',
               width: 120,
@@ -196,12 +196,21 @@ export default {
             },
             items: [
               {
-                id: 0,
+                id: 120,
                 show: false,
-                name: 'Menú diario',
+                name: 'Menú del día',
                 img: null,
-                desc: 'Preguntar los platos ofrecidos cada día. <br>Incluye pan, bebida, postre o café.',
+                desc: 'Preguntar los platos ofrecidos cada día. <br>Incluye pan, bebida, postre o café. <br><small>Disponibles de <b>Lunes</b> a <b>Viernes</b>.</small>',
                 prices: [{ name: 'Precio', price: '10' }],
+                allergens: null,
+              },
+              {
+                id: 121,
+                show: false,
+                name: 'Menú especial',
+                img: null,
+                desc: 'Preguntar los platos ofrecidos y su disponibilidad.',
+                prices: [{ name: 'A partir de', price: '22' }],
                 allergens: null,
               },
             ],
@@ -413,8 +422,8 @@ export default {
                 desc:
                   'Lacón de cerdo cocido con su toque de pimentón de la Vera con aceite de oliva virgen.',
                 prices: [
-                  { name: 'Ración', price: '11,50' },
-                  { name: '1/2 ración', price: '8' },
+                  { name: 'Ración', price: '13,50' },
+                  { name: '1/2 ración', price: '9' },
                 ],
                 allergens: null,
               },
