@@ -1414,14 +1414,13 @@ export default {
             'dayOfWeek': [
               'Lunes',
               'Martes',
-              'Miércoles',
               'Jueves',
               'Viernes',
               'Sábado',
               'Domingo'
             ],
-            'opens': '11:30',
-            'closes': '01:00'
+            'opens': '11:00',
+            'closes': '02:00'
           }
         ]
       },

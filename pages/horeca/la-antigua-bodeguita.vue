@@ -1110,8 +1110,8 @@ export default {
               'Sábado',
               'Domingo'
             ],
-            'opens': '09:00',
-            'closes': '23:00'
+            'opens': '11:00',
+            'closes': '01:00'
           }
         ]
       },
