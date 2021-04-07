@@ -1,7 +1,7 @@
 const author = 'HazTuNegocioDigital'
 const description = 'Únete a la transformación digital: aumenta tus ventas con tu negocio en internet'
 const url = author.toLowerCase() + '.com'
-const dataImage = 'haz-tu-negocio-digital-metadata-card.jpg'
+const dataImage = 'haz-tu-negocio-digital-metadata-logo.jpg'
 
 export default {
   mode: 'universal',

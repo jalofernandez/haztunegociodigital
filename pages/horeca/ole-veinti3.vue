@@ -1374,7 +1374,7 @@ export default {
         //   "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
         //   "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
         // ],
-        'logo': 'https://haztunegociodigital.com/assets/negocios/ole-veinti3/ole-veinti3-logo.png',
+        'logo': 'https://haztunegociodigital.com/negocios/ole-veinti3/ole-veinti3-metadata-logo.jpg',
         'name': 'Taberna Olé Veinti3',
         'description': 'Taberna Olé Veinti3 de Valdemoro especializado en raciones y carnes a la brasa',
         'telephone': '+34 91 000 00 00',
@@ -1382,7 +1382,7 @@ export default {
         'currenciesAccepted': 'EUR',
         'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
         'priceRange': 'Desde 2€',
-        'image': 'https://haztunegociodigital.com/assets/negocios/ole-veinti3/ole-veinti3-metadata-cover.jpg',
+        'image': 'https://haztunegociodigital.com/negocios/ole-veinti3/ole-veinti3-metadata-cover.jpg',
         'contactPoint': {
           '@type': 'ContactPoint',
           'telephone': '+34 91 000 00 00',
@@ -1447,16 +1447,16 @@ export default {
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:description', property: 'og:description', content: description },
       { hid: 'og:url', property: 'og:url', content: canonical },
-      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
       { hid: 'og:image:alt', property: 'og:image:alt', content: description },
 
       { hid: 'twitter:title', name: 'twitter:title', content: title },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
-      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
       { hid: 'twitter:site', name: 'twitter:site', content: ownerUrl },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
     ]
 
     const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]

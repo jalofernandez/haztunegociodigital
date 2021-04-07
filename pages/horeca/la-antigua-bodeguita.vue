@@ -1065,7 +1065,7 @@ export default {
         //   "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
         //   "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
         // ],
-        'logo': 'https://haztunegociodigital.com/assets/negocios/la-antigua-bodeguita/la-antigua-bodeguita-logo.png',
+        'logo': 'https://haztunegociodigital.com/negocios/la-antigua-bodeguita/la-antigua-bodeguita-metadata-logo.jpg',
         'name': 'La Antigua Bodeguita',
         'description': 'Restaurante especializado en mariscos, carnes maduradas y arroces',
         'telephone': '+34 644 09 34 70',
@@ -1073,7 +1073,7 @@ export default {
         'currenciesAccepted': 'EUR',
         'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
         'priceRange': 'Desde 2€',
-        'image': '',
+        'image': 'https://haztunegociodigital.com/negocios/la-antigua-bodeguita/la-antigua-bodeguita-metadata-cover.jpg',
         'contactPoint': {
           '@type': 'ContactPoint',
           'telephone': '+34 644 09 34 70',
@@ -1138,16 +1138,16 @@ export default {
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:description', property: 'og:description', content: description },
       { hid: 'og:url', property: 'og:url', content: canonical },
-      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
       { hid: 'og:image:alt', property: 'og:image:alt', content: description },
 
       { hid: 'twitter:title', name: 'twitter:title', content: title },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
-      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
       { hid: 'twitter:site', name: 'twitter:site', content: ownerUrl },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/assets/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
     ]
 
     const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
