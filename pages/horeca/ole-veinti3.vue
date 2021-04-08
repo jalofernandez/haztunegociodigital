@@ -1585,6 +1585,7 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
         border-radius: $border-radius
         font-size: 120%
         font-weight: 600
+        margin-bottom: .5rem
       &.desc
         text-shadow: 1px 1px 2px black
 
