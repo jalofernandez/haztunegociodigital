@@ -1,7 +1,6 @@
 const author = 'HazTuNegocioDigital'
 const description = 'Únete a la transformación digital: aumenta tus ventas con tu negocio en internet'
 const url = author.toLowerCase() + '.com'
-const dataImage = 'haz-tu-negocio-digital-metadata-logo.jpg'
 
 export default {
   mode: 'universal',
@@ -37,21 +36,15 @@ export default {
       // { hid: 'msapplication-TileImage', name: 'msapplication-TileImage', content: '/src/images/icons/app-icon-144x144.png' },
       { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#232323' },
       //- (microdata) TWITTER
-      { hid: 'twitter:image', name: 'twitter:image', content: 'https://' + url + '/' + dataImage },
-      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: url },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: 'https://' + url + '/' + dataImage },
       //- (open-graph) FACEBOOK
       { hid: 'og:locale', property: 'og:locale', content: 'es-ES' },
       { hid: 'og:site_name', property: 'og:site_name', content: url },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:image', property: 'og:image', content: 'https://' + url + '/' + dataImage },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://' + url + '/' + dataImage },
       { hid: 'og:image:type', property: 'og:image:type', content: 'image/jpeg' },
       { hid: 'og:image:width', property: 'og:image:width', content: '960' },
       { hid: 'og:image:height', property: 'og:image:height', content: '540' },
-      { hid: 'og:image:alt', property: 'og:image:alt', content: description },
     ],
     //- (metas) common global ones
     link: [

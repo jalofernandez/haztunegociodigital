@@ -961,16 +961,16 @@ export default {
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:description', property: 'og:description', content: description },
       { hid: 'og:url', property: 'og:url', content: canonical },
-      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
       { hid: 'og:image:alt', property: 'og:image:alt', content: description },
 
       { hid: 'twitter:title', name: 'twitter:title', content: title },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
-      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
       { hid: 'twitter:site', name: 'twitter:site', content: ownerUrl },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-cover.jpg` },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
     ]
 
     const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]

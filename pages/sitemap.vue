@@ -132,6 +132,7 @@ export default {
     const title = 'Mapa del sitio web'
     const description =
       `Sitio web o índice de páginas de #${landing.owner.name}: te ayudamos a la transformación digital de tu negocio. Desarrollado por ${landing.author.alias}`
+    const dataImage = landing.owner.dataImage
     const canonical = landing.owner.url + this.$route.path
 
     const meta = [
@@ -141,9 +142,15 @@ export default {
       { hid: 'og:title', property: 'og:title', content: `Sitemap de #${landing.owner.name}` },
       { hid: 'og:description', property: 'og:description', content: description },
       { hid: 'og:url', property: 'og:url', content: canonical },
+      { hid: 'og:image', property: 'og:image', content: `${canonical}/${dataImage}` },
+      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${canonical}/${dataImage}` },
+      { hid: 'og:image:alt', property: 'og:image:alt', content: description },
 
       { hid: 'twitter:title', name: 'twitter:title', content: `Sitemap de #${landing.owner.name}` },
       { hid: 'twitter:description', name: 'twitter:description', content: description },
+      { hid: 'twitter:image', name: 'twitter:image', content: `${canonical}/${dataImage}` },
+      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: `${canonical}/${dataImage}` },
     ]
 
     const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
