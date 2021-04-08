@@ -1070,7 +1070,7 @@ export default {
                   { name: 'Caña', price: '1,60' },
                   { name: 'Doble', price: '2,50' },
                   { name: 'Tercio', price: '2,50' },
-                  { name: 'Jarra', price: '3,20' },
+                  { name: 'Jarra', price: '3,30' },
                 ],
                 allergens: ['gluten'],
               },
@@ -1084,7 +1084,7 @@ export default {
                   { name: 'Caña', price: '1,60' },
                   { name: 'Doble', price: '2,50' },
                   { name: 'Tercio', price: '2,70' },
-                  { name: 'Jarra', price: '3,20' },
+                  { name: 'Jarra', price: '3,30' },
                 ],
                 allergens: ['gluten'],
               },
@@ -1106,7 +1106,7 @@ export default {
                 img: 'cerveza-amstel-oro-sin',
                 desc: 'Cerveza lager especial tostada pero sin nada de alcohol.',
                 prices: [
-                  { name: 'Tercio', price: '2,50' }
+                  { name: 'Tercio', price: '2,70' }
                 ],
                 allergens: ['gluten'],
               },
@@ -1120,7 +1120,7 @@ export default {
                   { name: 'Caña', price: '1,60' },
                   { name: 'Doble', price: '2,50' },
                   { name: 'Copa', price: '2,50' },
-                  { name: 'Jarra', price: '3,20' },
+                  { name: 'Jarra', price: '3,30' },
                 ],
                 allergens: ['gluten'],
               },
@@ -1175,7 +1175,7 @@ export default {
                 img: 'sidra-ladron-manzanas',
                 desc: '<b>Sidra</b> elaborada con 7 tipos de manzanas dulces y ácidas, sin gluten, con bajo contenido alcohólico y un toque de gas.',
                 prices: [
-                  { name: 'Tercio', price: '2,50' }
+                  { name: 'Tercio', price: '2,70' }
                 ],
                 allergens: null,
               },
