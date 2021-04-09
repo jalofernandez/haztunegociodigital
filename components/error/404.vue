@@ -56,7 +56,7 @@ export default {
       pageNotFound: {
         title: '<span class="has-text-danger">Error</span> 404',
         description:
-          'La página que estás buscando <span class="has-text-weight-medium">no está aquí</span> 🥵 <br />¡Lo sentimos! Podría ser por alguna de estas causas como:',
+          'La página que estás buscando <span class="has-text-weight-medium">no está aquí</span> 🥵 <br>¡Lo sentimos! Podría ser por alguna de estas causas como:',
         list: [
           '<b>1.</b> Que haya tecleado incorrectamente la dirección URL.',
           '<b>2.</b> Que haya perdido su conexión a internet.',

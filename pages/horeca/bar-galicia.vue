@@ -178,7 +178,7 @@ export default {
         messages: {
           gluten: {
             type: 'alert',
-            copy: 'Disponemos de productos <b>sin gluten</b>. <br />Consultar con el camarero.',
+            copy: 'Disponemos de productos <b>sin gluten</b>. <br>Consultar con el camarero.',
           },
         },
         menus: [
