@@ -506,8 +506,7 @@ export default {
                 id: 22,
                 show: false,
                 name: 'Bacalao rebozado',
-                // img: 'racion-bacalao-rebozado',
-                img: null,
+                img: 'racion-bacalao-rebozado',
                 desc:
                   'Bacalao rebozado como se debe hacer: frito tras pasarlo por harina y empaparlo en huevo batido.',
                 prices: [
@@ -714,6 +713,53 @@ export default {
                 ],
                 allergens: null,
               }
+            ]
+          },
+          {
+            title: 'Parrilladas',
+            desc: '"Nuestras famosas parrilladas de carne, verduras o marisco a la brasa. Bajo <b>reserva previa</b>."',
+            imgs: {
+              position: 'center',
+              width: 96,
+              height: 122,
+            },
+            items: [
+              {
+                id: 71,
+                show: false,
+                name: 'Parrillada de carne',
+                img: 'parrillada-carne',
+                desc:
+                  'Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
+                prices: [
+                  { name: 'Parrillada', price: '18,50' }
+                ],
+                allergens: null,
+              },
+              {
+                id: 70,
+                show: false,
+                name: 'Parrillada de verduras',
+                img: 'parrillada-verduras',
+                desc:
+                  'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacín, champiñones, espárragos con sal de escamos y aceite cruda.',
+                prices: [
+                  { name: 'Parrillada', price: '15,50' }
+                ],
+                allergens: null,
+              },
+              {
+                id: 72,
+                show: false,
+                name: 'Parrillada de marisco',
+                img: 'parrillada-marisco',
+                desc:
+                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br>Bajo <b>reserva previa</b>.',
+                prices: [
+                  { name: 'Parrillada', price: '45' }
+                ],
+                allergens: null,
+              },
             ]
           },
           {
@@ -990,53 +1036,6 @@ export default {
                 ],
                 allergens: ['moluscos', 'pescado'],
               }
-            ]
-          },
-          {
-            title: 'Parrilladas',
-            desc: '"Nuestras famosas parrilladas de carne, verduras o marisco a la brasa. Bajo <b>reserva previa</b>."',
-            imgs: {
-              position: 'center',
-              width: 96,
-              height: 122,
-            },
-            items: [
-              {
-                id: 70,
-                show: false,
-                name: 'Parrillada de verduras',
-                img: 'parrillada-verduras',
-                desc:
-                  'Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacín, champiñones, espárragos con sal de escamos y aceite cruda.',
-                prices: [
-                  { name: 'Parrillada', price: '15,50' }
-                ],
-                allergens: null,
-              },
-              {
-                id: 71,
-                show: false,
-                name: 'Parrillada de carne',
-                img: 'parrillada-carne',
-                desc:
-                  'Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.',
-                prices: [
-                  { name: 'Parrillada', price: '18,50' }
-                ],
-                allergens: null,
-              },
-              {
-                id: 72,
-                show: false,
-                name: 'Parrillada de marisco',
-                img: 'parrillada-marisco',
-                desc:
-                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br>Bajo <b>reserva previa</b>.',
-                prices: [
-                  { name: 'Parrillada', price: '45' }
-                ],
-                allergens: null,
-              },
             ]
           },
           {
