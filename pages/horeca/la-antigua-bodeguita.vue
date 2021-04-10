@@ -82,6 +82,7 @@
           ></div>
           <div class="business data">
             <h1 class="data name">{{ business.name }}</h1>
+            <h4 class="data desc" v-html="business.desc" v-if="business.desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
@@ -154,11 +155,11 @@ export default {
       business: {
         id: 'la-antigua-bodeguita',
         name: 'La Antigua Bodeguita',
-        type: 'Restaurante, marisquería, arrocería',
+        desc: 'Marisquería, arrocería, carnes a la brasa...',
         logo: false,
         cover: 'cover',
         // desc: 'En pleno centro de Valdemoro ofrecemos alta cocina mediterránea especializándonos en arroces y mariscos. Nuestra cocinera, Ioana, se instruyó con el chef Paco Roncero.',
-        address: 'Pje. de Colón, 2, 28341 Valdemoro, Madrid, España',
+        address: 'Pje. de Colón, 2, 28341 Valdemoro, Madrid.',
         place: 'Valdemoro, Madrid',
         gmap: 'fGcJ3LA1DA4ETxTd8',
         phone: '644093470',
@@ -1201,6 +1202,8 @@ $font-family-desc: 'Arial', sans-serif
 $font-color: #412406 // superdark Orange
 $bg-color: #f9e0c4 // superlight Orange
 $card-color: lighten($bg-color, 5%)
+$prices-color: coral
+$alternative-color: #ff9872
 $border-radius: 12px
 // $shadow-color: #502e08
 
@@ -1241,7 +1244,7 @@ $border-radius: 12px
           font-family: $font-family-desc
           color: lighten($font-color, 5%)
         .prices .price.quantity
-          color: coral
+          color: $prices-color
       &.img
         width: 120px
         height: auto
@@ -1255,22 +1258,29 @@ $border-radius: 12px
       background-color: rgba($bg-color, .85)
       font-size: 120%
       font-weight: 600
+    #section-0
+      margin-top: 0
 
     .business.data .name,
     .footer .name
       font-family: $font-family-desc
-      color: coral
+      color: $prices-color
+      font-weight: 600
 
     .business.data
       .name
         padding: .5rem 0
         font-size: 1.5rem
+      .desc
+        font-size: 1rem
+        color: $alternative-color
+        font-style: italic
+        position: relative
+        bottom: .33rem
       ul li a
         color: $font-color
 
     .footer
-      .name
-        font-weight: 600
       ul li
         color: $font-color
 
@@ -1288,7 +1298,7 @@ $border-radius: 12px
             color: $font-color
 
     .aside-menu
-      background-color: coral
+      background-color: $prices-color
       h2
         font-family: $font-family-desc
       ul li a

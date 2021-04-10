@@ -82,6 +82,7 @@
           ></div>
           <div class="business data">
             <h1 class="data name">{{ business.name }}</h1>
+            <h4 class="data desc" v-html="business.desc" v-if="business.desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
@@ -154,10 +155,10 @@ export default {
       business: {
         id: 'ole-veinti3',
         name: 'Taberna Olé Veinti3',
-        type: 'Restaurante, bar, cafetería',
+        desc: 'Restaurante parrilla bar',
         logo: true,
         cover: 'cover',
-        address: 'Calle Miguel Hernández, 3, 28342 Valdemoro, Madrid',
+        address: 'Calle Miguel Hernández, 3, 28342 Valdemoro.',
         place: 'Valdemoro, Madrid',
         gmap: 'cybbnXb5z2gM1ctQ9',
         phone: '670584973',
@@ -1597,8 +1598,16 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
       .name
         padding: .5rem 0
         font-size: 1.5rem
-      ul li a
-        color: $font-color
+        font-weight: 600
+      .desc
+        position: relative
+        bottom: .5rem
+        left: .25rem
+      ul li
+        &:first-child
+          font-size: 15px
+        a
+          color: $font-color
 
     .footer
       background-color: $bg-color

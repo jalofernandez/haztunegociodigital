@@ -80,6 +80,7 @@
           ></div>
           <div class="business data">
             <h1 class="data name">{{ business.name }}</h1>
+            <h4 class="data desc" v-html="business.desc" v-if="business.desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
@@ -151,10 +152,10 @@ export default {
       business: {
         id: 'bar-galicia',
         name: 'Bar Galicia',
-        type: 'Restaurante, bar, cafetería',
+        type: null,
         logo: true,
         cover: 'cover',
-        address: 'Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid',
+        address: 'Calle Miguel Hernández, 5, 28342 Valdemoro, Madrid.',
         place: 'Valdemoro, Madrid',
         gmap: 'TGCdSV6Y9rZ1gxQU6',
         phone: '918955364',
