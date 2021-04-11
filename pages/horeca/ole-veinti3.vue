@@ -458,8 +458,7 @@ export default {
                 id: 19,
                 show: false,
                 name: 'Berenjenas con miel',
-                // img: 'berenjenas-miel',
-                img: null,
+                img: 'racion-berenjenas-miel',
                 desc:
                   'Berenjenas rebozadas fritas con miel tradicionales de la cocina andaluza.',
                 prices: [
