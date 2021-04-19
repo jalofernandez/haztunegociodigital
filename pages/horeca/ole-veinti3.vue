@@ -366,8 +366,7 @@ export default {
                 id: 12,
                 show: false,
                 name: 'Delicias de pollo',
-                // img: 'racion-pollo-huevos',
-                img: null,
+                img: 'racion-pollo-huevos',
                 desc:
                   'Piezas de pollo, patatas fritas con pimientos de padrón y huevos fritos.',
                 prices: [
