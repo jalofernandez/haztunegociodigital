@@ -1,3 +1,4 @@
+const lang = 'es-ES'
 const author = 'HazTuNegocioDigital'
 const description = 'Únete a la transformación digital: aumenta tus ventas con tu negocio en internet'
 const url = author.toLowerCase() + '.com'
@@ -6,7 +7,7 @@ export default {
   mode: 'universal',
   head: {
     htmlAttrs: {
-      lang: 'es',
+      lang: lang,
       // class: ['has-navbar-fixed-top', 'has-navbar-fixed-bottom']
     },
     bodyAttrs: {
@@ -23,7 +24,7 @@ export default {
       { hid: 'robots', name: 'robots', content: 'index, follow, archive' },
       { hid: 'generator', name: 'generator', content: 'HTML5, CSS3, Vuejs, Nuxtjs, JavaScript, SASS, PWA, SEO' },
       { hid: 'google', name: 'google', content: 'nositelinkssearchbox' },
-      { hid: 'lang', name: 'lang', content: 'es-ES' },
+      { hid: 'lang', name: 'lang', content: lang },
       { hid: 'rating', name: 'rating', content: 'General' },
       { hid: 'coverage', name: 'coverage', content: 'Worldwide' },
       //- (metas) to customize (all browsers) top navbar
@@ -39,7 +40,7 @@ export default {
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: url },
       //- (open-graph) FACEBOOK
-      { hid: 'og:locale', property: 'og:locale', content: 'es-ES' },
+      { hid: 'og:locale', property: 'og:locale', content: lang },
       { hid: 'og:site_name', property: 'og:site_name', content: url },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:image:type', property: 'og:image:type', content: 'image/jpeg' },
@@ -156,11 +157,10 @@ export default {
       short_name: '#' + author,
       description: description,
       // start_url: 'index.html?launcher=true', // value by default ("/?standalone=true")
-      lang: 'es',
       // display: 'standalone', // value by default
       background_color: '#fbf8ff',
       theme_color: '#363636',
-      lang: 'es-ES',
+      lang: lang,
       // dir: 'ltr', // value by default
       useWebmanifestExtension: false, // value by default. With true the file extension will be ".webmanifest" instead ".json"
     },
