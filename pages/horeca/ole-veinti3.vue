@@ -197,7 +197,7 @@ export default {
             },
             items: [
               {
-                id: 120,
+                id: 99,
                 show: false,
                 name: 'Menú del día',
                 img: null,
@@ -206,7 +206,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 121,
+                id: 100,
                 show: false,
                 name: 'Menú especial',
                 img: null,
@@ -638,7 +638,7 @@ export default {
                   { name: 'Entera', price: '13,50' },
                   { name: '1/2 media', price: '9' },
                 ],
-                allergens: null,
+                allergens: ['pescado'],
               },
               {
                 id: 32,
@@ -650,7 +650,7 @@ export default {
                 prices: [
                   { name: 'Entera', price: '13,50' }
                 ],
-                allergens: ['huevos'],
+                allergens: ['gluten', 'huevos'],
               },
             ]
           },
@@ -724,7 +724,7 @@ export default {
             },
             items: [
               {
-                id: 71,
+                id: 76,
                 show: false,
                 name: 'Parrillada de carne',
                 img: 'parrillada-carne',
@@ -736,7 +736,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 70,
+                id: 77,
                 show: false,
                 name: 'Parrillada de verduras',
                 img: 'parrillada-verduras',
@@ -748,7 +748,7 @@ export default {
                 allergens: null,
               },
               {
-                id: 72,
+                id: 78,
                 show: false,
                 name: 'Parrillada de marisco',
                 img: 'parrillada-marisco',
@@ -828,7 +828,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '5,50' }
                 ],
-                allergens: ['lacteos'],
+                allergens: ['gluten', 'lacteos'],
               },
               {
                 id: 51,
@@ -840,7 +840,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '6,50' }
                 ],
-                allergens: ['huevos'],
+                allergens: ['gluten', 'huevos'],
               },
             ]
           },
@@ -863,7 +863,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '6' }
                 ],
-                allergens: ['huevos', 'lacteos'],
+                allergens: ['gluten', 'huevos', 'lacteos'],
               },
               {
                 id: 56,
@@ -875,7 +875,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '3,50' }
                 ],
-                allergens: ['lacteos'],
+                allergens: ['gluten', 'lacteos'],
               },
               {
                 id: 57,
@@ -888,7 +888,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '4,50' }
                 ],
-                allergens: ['huevos', 'lacteos'],
+                allergens: ['gluten', 'huevos', 'lacteos'],
               },
               {
                 id: 58,
@@ -901,7 +901,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '5,50' }
                 ],
-                allergens: ['huevos', 'lacteos'],
+                allergens: ['gluten', 'huevos', 'lacteos'],
               },
             ]
           },
@@ -924,7 +924,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['huevos'],
+                allergens: ['gluten', 'huevos'],
               },
               {
                 id: 61,
@@ -936,7 +936,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7' }
                 ],
-                allergens: ['lacteos'],
+                allergens: ['gluten', 'lacteos'],
               },
               {
                 id: 62,
@@ -948,7 +948,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: null,
+                allergens: ['gluten', 'lacteos'],
               },
               {
                 id: 63,
@@ -960,7 +960,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['lacteos'],
+                allergens: ['gluten', 'lacteos'],
               },
               {
                 id: 64,
@@ -972,7 +972,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7' }
                 ],
-                allergens: null,
+                allergens: ['gluten'],
               },
               {
                 id: 65,
@@ -984,7 +984,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['pescado'],
+                allergens: ['gluten', 'pescado'],
               },
               {
                 id: 66,
@@ -996,7 +996,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['pescado','lacteos'],
+                allergens: ['gluten', 'pescado','lacteos'],
               },
               {
                 id: 67,
@@ -1009,7 +1009,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['pescado'],
+                allergens: ['gluten', 'pescado'],
               },
               {
                 id: 68,
@@ -1021,7 +1021,7 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '7,50' }
                 ],
-                allergens: ['pescado'],
+                allergens: ['gluten', 'pescado'],
               },
               {
                 id: 69,
@@ -1033,8 +1033,32 @@ export default {
                 prices: [
                   { name: 'Unidad', price: '9' }
                 ],
-                allergens: ['moluscos', 'pescado'],
-              }
+                allergens: ['gluten', 'moluscos', 'pescado'],
+              },
+              {
+                id: 70,
+                show: false,
+                name: 'Tosta Olé',
+                img: 'tosta-ole',
+                desc:
+                  'Pan tostado sobre lecho de manzana vaporizada (ligeramente hervida) con paté y queso de cabra y miel.',
+                prices: [
+                  { name: 'Unidad', price: '8,50' }
+                ],
+                allergens: ['gluten', 'lacteos'],
+              },
+              {
+                id: 71,
+                show: false,
+                name: 'Tosta Veinti3',
+                img: 'tosta-veinti3',
+                desc:
+                  'Pan tostado con jamón de york, espárragos trigueros con queso y caramelo sobre lecho de cebolla pochada.',
+                prices: [
+                  { name: 'Unidad', price: '8,00' }
+                ],
+                allergens: ['gluten', 'lacteos'],
+              },
             ]
           },
           {
