@@ -528,7 +528,7 @@ export default {
                 id: 41,
                 show: false,
                 name: 'Café y tostada',
-                img: null,
+                img: 'desayuno-tostada-tomate',
                 desc: 'Café al gusto (cortado, sólo, con leche...) con tostada de mantequilla y mermelada o tomate.',
                 prices: [
                   { name: 'Entera', price: '2,50' },
