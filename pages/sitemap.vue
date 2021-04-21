@@ -87,24 +87,28 @@
                       </ul>
                     </li>
                   </ul>
-                  <!-- TODO: enabled the following links when service/business are ready to use -->
-                  <!-- <p class="menu-label"> Negocios / <span class="has-text-weight-medium">Servicios</span>: </p>
+                  <p class="menu-label"> Negocios / <span class="has-text-weight-medium">Servicios</span>: </p>
                   <ul class="menu-list">
                     <li>
                       <ul>
                         <li>
-                          <NuxtLink to="/servicios/canessa" class="navbar-item canessa" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`">
+                          <a href="https://peluqueriacanessa.com" class="navbar-item canessa" :title="`Ir a la página de peluquería canina Canessa en #${owner.name}`" target="_blank">
                             <span>Peluquería canina Canessa</span>
-                          </NuxtLink>
+                          </a>
                         </li>
                         <li>
-                          <NuxtLink to="/servicios/jalofernandez" class="navbar-item jalofernandez" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
+                          <a href="http://chefioana.firebaseapp.com" class="navbar-item chefioana" :title="`Ir a la página de chef Ioana en tu casa, cocinero a domicilio, en #${owner.name}`" target="_blank">
+                            <span>Ioana Chef en tu casa</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://jalofernandez.com" class="navbar-item jalofernandez" :title="`Ir a la página de @jalofernandez, servicios digitales, en #${owner.name}`" target="_blank">
                             <span>@jalofernandez</span>
-                          </NuxtLink>
+                          </a>
                         </li>
                       </ul>
                     </li>
-                  </ul> -->
+                  </ul>
                 </div>
               </div>
             </div>
