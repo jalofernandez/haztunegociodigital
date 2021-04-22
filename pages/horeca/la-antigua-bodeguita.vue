@@ -25,7 +25,7 @@
           >
         </a>
         <img
-          :class="{ 'ml-1': !business.whatsapp }"
+          :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
