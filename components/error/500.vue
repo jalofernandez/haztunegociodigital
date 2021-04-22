@@ -1,5 +1,5 @@
 <template>
-  <main class="error-500">
+  <main class="page error-500">
     <TheNavbar />
     <section class="hero is-halfheight">
       <div class="hero-body">

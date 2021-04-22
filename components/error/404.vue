@@ -1,5 +1,5 @@
 <template>
-  <main class="error-404">
+  <main class="page error-404">
     <TheNavbar />
     <!-- <div class="waveWrapper waveAnimation">
       <div class="waveWrapperInner bgTop">
