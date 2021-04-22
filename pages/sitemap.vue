@@ -34,6 +34,15 @@
                         </li>
                         <li>
                           <NuxtLink
+                            to="/negocios-en-internet"
+                            class="navbar-item"
+                            :title="`Ir a la página de negocios digitalizados por #${owner.name}`"
+                          >
+                            <span>Showcase</span>
+                          </NuxtLink>
+                        </li>
+                        <li>
+                          <NuxtLink
                             to="/contacto"
                             class="navbar-item"
                             :title="`Ir a la página de contacto de #${owner.name}`"

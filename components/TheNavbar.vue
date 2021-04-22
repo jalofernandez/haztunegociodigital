@@ -50,8 +50,14 @@
                 #<strong>{{ owner.name }}</strong>
               </span>
             </NuxtLink>
+            <NuxtLink to="/negocios-en-internet" class="navbar-item" :title="`Ir a la página de negocios digitalizados por #${owner.name}`">
+              <span>Showcase</span>
+            </NuxtLink>
             <!-- <NuxtLink to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
               <span>Servicios</span>
+            </NuxtLink>
+            <NuxtLink to="/precios" class="navbar-item" :title="`Ir a la página de precios de los servicios de #${owner.name}`">
+              <span>Precios</span>
             </NuxtLink>
             <NuxtLink to="/nosotros" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
               <span>Nosotros</span>

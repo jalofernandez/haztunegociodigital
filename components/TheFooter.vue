@@ -12,6 +12,15 @@
       </li>
       <li>
         <NuxtLink
+          to="/negocios-en-internet"
+          class="underline"
+          :title="`Ir a la página de inicio de negocios digitalizados por #${landing.owner.name}`"
+        >
+          <span class="has-vert-spacer">Showcase</span>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
           to="/contacto"
           class="underline"
           :title="`Ir a la página de contacto de #${landing.owner.name}`"

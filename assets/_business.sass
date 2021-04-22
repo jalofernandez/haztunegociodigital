@@ -316,6 +316,11 @@ ul, ol
 .page
   &:not(.business) .footer
     width: 100%
+    @media (max-width: 600px)
+      ul:not(.has-icons-tech)
+        flex-direction: column
+        li
+          margin-bottom: .75rem
   &.business .footer
     max-width: $width-phones
 
