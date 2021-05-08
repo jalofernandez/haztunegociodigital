@@ -74,6 +74,7 @@ export default {
     'vue-scrollto/nuxt',
     'nuxt-webfontloader',
     'nuxt-mq',
+    'nuxt-lazy-load',
     '@nuxtjs/gtm',
     [
       // All info: https://www.npmjs.com/package/nuxt-cookie-control
