@@ -2,7 +2,7 @@
   <div :class="['page', $route.name]">
     <TheNavbar />
     <main>
-      <section class="hero is-fullheight-with-navbar">
+      <section class="hero is-fullheight-with-navbar has-video">
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title text-shadow is-size-1 is-size-3-mobile">
@@ -87,6 +87,8 @@
         </div>
       </section>
       <CookieControl locale="es" />
+      <SectionTitle :header="header.features" :id="'0'" />
+      <SectionChessBoard :items="features" :page="$route.name" />
     </main>
     <TheFooter :data="owner.footer" />
   </div>
@@ -95,12 +97,79 @@
 <script>
 import TheNavbar from '~/components/TheNavbar.vue'
 import TheFooter from '~/components/TheFooter.vue'
+import SectionTitle from '~/components/SectionTitle.vue'
+import SectionChessBoard from '~/components/SectionChessBoard.vue'
 
 export default {
-  components: { TheNavbar, TheFooter },
+  components: {
+    TheNavbar,
+    TheFooter,
+    SectionTitle,
+    SectionChessBoard,
+  },
   data() {
     return {
-      owner: this.$store.state.landing.owner
+      owner: this.$store.state.landing.owner,
+      header: {
+        features: 'Clientes como estos ya confían en nosotros:',
+      },
+      features: [
+        {
+          title: '...Cocino en tu casa',
+          description:
+            'Llegaré a tu casa con tiempo suficiente para cocinar el menú acordado previamente. Si eres fan de los fogones aprovecha para quedarte durante la preparación de los platos y así <b>aprender de una cocinera profesional</b>.',
+          link: 'Reservar en el',
+          href: 'tel:644093470',
+          asset: {
+            video: true,
+            // src: 'chefioana-video-cocinando.mp4',
+            src: 'M3j8HmSZn6E',
+            alt: 'Ioana Chef cocinando en tu casa'
+          },
+          reflected: false
+        },
+        {
+          title: '...Realizo el servicio a tu ritmo',
+          description:
+            'Yo en persona me encargaré del <b>servicio de mesa</b>, explicándote los detalles de cada plato si así lo deseáis y al ritmo que cada comensal prefiera, sin prisas o con ellas. El servicio será discreto y profesional, para <b>garantizar una velada cómoda y discreta</b>.',
+          link: 'Reservar en el',
+          href: 'tel:644093470',
+          asset: {
+            video: true,
+            // src: 'chefioana-video-servicio-de-mesa.mp4',
+            src: 'vLIveAzZmaw',
+            alt: 'Ioana Chef realizando un servicio de mesa'
+          },
+          reflected: true
+        },
+        {
+          title: '...Recojo y limpio la cocina',
+          description:
+            'Y antes de irme <b>limpiaré la cocina</b>, la <b>vajilla</b> y los utensilios utilizados tanto en la elaboración como en la degustación del menú. Podrás disfrutar de una sobremesa sin prisas, sabiendo que <b>limpian por ti</b>.',
+          link: 'Reservar en el',
+          href: 'tel:644093470',
+          asset: {
+            video: true,
+            // src: 'chefioana-video-menu-limpieza.mp4',
+            src: '3tgk7-sPj8E',
+            alt: 'Ioana Chef realizando la limpieza posterior a un servicio'
+          },
+          reflected: false
+        },
+        {
+          title: '...No te costará más',
+          description:
+            '<b>Sin tener que pagar extras</b> de envío, incremento por terraza ni costes adicionales... El precio no variará respecto al menú pactado previa cita. Además disponemos de <b>ofertas especiales</b> para determinados gremios.',
+          link: 'Reservar en el',
+          href: 'tel:644093470',
+          asset: {
+            video: false,
+            src: '640x360.png',
+            alt: 'Ioana Botis'
+          },
+          reflected: true
+        }
+      ],
     }
   },
   head() {

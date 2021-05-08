@@ -284,6 +284,56 @@ td, th
     height: 450px
     width: auto
 
+// SectionChessBoard
+@media (min-width: 980px)
+  .reflected .columns .column:first-child
+    order: 2
+
+.container
+  .content figure img:not(.is-rounded),
+  .content video
+    border-radius: 5px
+  .content
+    figure, video
+      margin: 0
+  @media (min-width: 980px)
+    &.reflected .column.has-custom-margin
+      margin-left: 1rem
+    &:not(.reflected) .column.has-custom-margin
+      margin-right: 1rem
+
+.has-frame
+  position: relative
+  picture
+    position: absolute
+    &:not(.is-frame)
+      z-index: 1
+      width: 100%
+      height: 100%
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+    &.is-frame
+      z-index: 2
+      width: calc(100% + 4px)
+      height: calc(100% + 4px)
+      top: -2px
+      bottom: -2px
+      right: -2px
+      left: -2px
+
+.reflected .has-frame picture.is-frame img
+  transform: rotate(180deg)
+
+.th-margin
+  margin-bottom: 3rem
+  @media (max-width: 768px) and (min-width: 600px)
+    margin-bottom: 1.5rem
+  @media (max-width: 599px)
+    margin-bottom: 0
+
+//
 .tabs
   &.is-sticky
     margin-right: -1.5rem
