@@ -1,49 +1,14 @@
 <template>
   <footer class="footer">
-    <ul class="is-flex is-justify-content-center is-align-content-center" v-if="!isHidden">
-      <li>
+    <ul v-if="!isHidden" class="is-flex is-justify-content-center is-align-content-center">
+      <li v-for="(link, index) in links" :key="index">
         <NuxtLink
-          to="/"
-          class="underline"
-          :title="`Ir a la página de inicio de #${landing.owner.name}`"
+          :to="`/${link.url}`"
+          :title="`Ir a la página ${link.title} de #${landing.owner.name}`"
         >
-          <span class="has-vert-spacer">Inicio</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/negocios-en-internet"
-          class="underline"
-          :title="`Ir a la página de inicio de negocios digitalizados por #${landing.owner.name}`"
-        >
-          <span class="has-vert-spacer">Showcase</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/contacto"
-          class="underline"
-          :title="`Ir a la página de contacto de #${landing.owner.name}`"
-        >
-          <span class="has-vert-spacer">Contacto</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/legal"
-          class="underline"
-          :title="`Ir a la página de términos legales de #${landing.owner.name}`"
-        >
-          <span class="has-vert-spacer">Legal</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/sitemap"
-          class="underline"
-          :title="`Ir a la página del mapa del sitio web de #${landing.owner.name}`"
-        >
-          <span>Sitemap</span>
+          <span class="has-vert-spacer">
+            {{ link.name }}
+          </span>
         </NuxtLink>
       </li>
     </ul>
@@ -129,7 +94,39 @@ export default {
     return {
       landing: this.$store.state.landing,
       currentYear: new Date().getFullYear(),
-      tech: [ 'nodejs', 'vuejs', 'nuxt', 'language-html5', 'sass', 'firebase' ]
+      tech: [ 'nodejs', 'vuejs', 'nuxt', 'language-html5', 'sass', 'firebase' ],
+      links: [
+        {
+          url: '',
+          name: 'Inicio',
+          title: 'de inicio',
+        },
+        {
+          url: 'negocios-en-internet',
+          name: 'Showcase',
+          title: 'de negocios digitalizados',
+        },
+        {
+          url: 'equipo',
+          name: 'Equipo',
+          title: 'de equipo y responsables',
+        },
+        {
+          url: 'contacto',
+          name: 'Contacto',
+          title: 'de contacto',
+        },
+        {
+          url: 'legal',
+          name: 'Legal',
+          title: 'de términos legales',
+        },
+        {
+          url: 'sitemap',
+          name: 'Sitemap',
+          title: 'del mapa del sitio web',
+        },
+      ],
     }
   },
 }
