@@ -1,38 +1,94 @@
 <template>
   <div :class="['page', $route.name]">
     <TheNavbar />
-    <main>
-      <section class="hero is-fullheight">
+    <main class="mt-6">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13324641.58162493!2d-15.918533047838157!3d35.37831492355589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4187990fc30f33%3A0x41c5287f41992efd!2sHazTuNegocioDigital!5e0!3m2!1ses!2ses!4v1620467148613!5m2!1ses!2ses"
+        width="100%"
+        height="350"
+        frameborder="0"
+        style="border:0;" 
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+      <section class="hero is-small">
         <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title text-shadow is-size-2 is-size-3-mobile">
-              Hecho por <span class="has-text-success">negocios</span> para
-              negocios
-            </h1>
-            <h4 class="subtitle is-size-5 is-size-6-mobile">
-              Con #{{ owner.name }} <span class="has-text-weight-medium">autónomos</span>,
-              <span class="has-text-weight-medium">pymes</span> y
-              <span class="has-text-weight-medium">negocios</span> en general
-              </br>
-              pueden digitalizar sus productos y servicios de manera cómoda, rápida y
-              eficaz.
-            </h4>
-            <p class="mt-5 mb-2">
-              <em>Servicio y tecnología ofrecida por:</em>
-            </p>
-            <div class="jalo old-crt-effect">
-              <div class="jalo-header">
-                <Logo />
-                <Slogan />
+          <div class="container">
+            <nav class="level">
+              <div class="level-item has-text-centered mb-5">
+                <div>
+                  <p class="heading">Contactar por <b>teléfono</b>:</p>
+                  <a
+                    class="button is-medium is-dark is-rounded"
+                    :href="`tel:${owner.phone}`"
+                    :title="`Llamar a #${owner.name}`"
+                  >
+                    <figure class="image is-24x24px mr-3">
+                      <img
+                        src="~/assets/icons/phone-in-talk.svg"
+                        title="Icono de llamada por teléfono"
+                        alt="Icono de llamada por teléfono"
+                        width="24"
+                        height="24"
+                      >
+                    </figure>
+                    <span class="has-text-weight-medium">
+                      {{ owner.phone.slice(4, owner.phone.length) }}
+                    </span>
+                  </a>
+                </div>
               </div>
-              <div class="jalo-footer">
-                <a href="https://jalofernandez.com" target="_blank" title=""
-                  >Ver website</a
-                >
-                <Social />
+              <div class="level-item has-text-centered mb-5">
+                <div>
+                  <p class="heading">Escribir por <b>chat</b>:</p>
+                  <a
+                    class="button is-medium is-dark is-rounded"
+                    :href="`https://wa.me/${owner.whatsapp}`"
+                    :title="`Llamar o escribir al WhatsApp ${owner.whatsapp} de #${owner.name}`"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <figure class="image is-24x24px mr-3">
+                      <img
+                        src="~/assets/icons/whatsapp.svg"
+                        title="Icono de WhatsApp"
+                        alt="Icono de WhatsApp"
+                        width="24"
+                        height="24"
+                      >
+                    </figure>
+                    <span class="has-text-weight-medium">
+                      WhatsApp
+                    </span>
+                  </a>
+                </div>
               </div>
-              <div class="line--anim"></div>
-            </div>
+              <div class="level-item has-text-centered mb-5">
+                <div>
+                  <p class="heading">Ver <b>mapa</b> completo:</p>
+                  <a
+                    class="button is-medium is-dark is-rounded"
+                    href="https://goo.gl/maps/Aegzf2qZF4x"
+                    :title="`Dirección de #${owner.name} en Google Maps`"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <figure class="image is-24x24px mr-3">
+                      <img
+                        src="~/assets/icons/map-marker-outline.svg"
+                        title="Icono de WhatsApp"
+                        alt="Icono de WhatsApp"
+                        width="24"
+                        height="24"
+                      >
+                    </figure>
+                    <span>
+                      Google <span class="has-text-weight-medium">Maps</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
       </section>
@@ -72,7 +128,7 @@ export default {
     const landing = this.$store.state.landing
     const title = 'Contacto'
     const description =
-      `Contactar con #${landing.owner.name} o ${landing.author.alias} para digitalizar tu negocio o comercio ofreciendo tus productos y servicios en internet`
+      `Contactar con #${landing.owner.name} o ${landing.author.alias} para digitalizar tu negocio o comercio y poder ofrecer tus productos y servicios en internet`
     const dataImage = landing.owner.dataImage
     const canonical = landing.owner.url + this.$route.path
 
