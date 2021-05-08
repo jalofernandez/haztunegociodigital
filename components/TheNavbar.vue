@@ -58,9 +58,6 @@
             </NuxtLink>
             <NuxtLink to="/precios" class="navbar-item" :title="`Ir a la página de precios de los servicios de #${owner.name}`">
               <span>Precios</span>
-            </NuxtLink>
-            <NuxtLink to="/nosotros" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
-              <span>Nosotros</span>
             </NuxtLink> -->
             <div class="navbar-item has-dropdown is-hoverable" v-if="$route.name !== 'legal'">
               <a class="navbar-link"> Ya nos usan </a>
@@ -121,6 +118,9 @@
             </div>
             <NuxtLink to="/sitemap" class="navbar-item" :title="`Ir a la página de Mapa del sitio web de #${owner.name}`" v-if="$route.name === 'legal'">
               <span>Sitemap</span>
+            </NuxtLink>
+            <NuxtLink to="/equipo" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
+              <span>Equipo</span>
             </NuxtLink>
             <NuxtLink to="/contacto" class="navbar-item" :title="`Ir a la página de contacto de #${owner.name}`">
               <span>Contacto</span>

@@ -43,6 +43,15 @@
                         </li>
                         <li>
                           <NuxtLink
+                            to="/equipo"
+                            class="navbar-item"
+                            :title="`Ir a la página de equipo de #${owner.name}`"
+                          >
+                            <span>Equipo</span>
+                          </NuxtLink>
+                        </li>
+                        <li>
+                          <NuxtLink
                             to="/contacto"
                             class="navbar-item"
                             :title="`Ir a la página de contacto de #${owner.name}`"
