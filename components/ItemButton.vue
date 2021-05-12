@@ -2,7 +2,7 @@
   <NuxtLink
     :to="`/${btn.to}`"
     class="button is-link is-rounded"
-    :title="`${btn.copy} de ${owner.copyright}`"
+    :title="`${btn.copy} de ${owner.name}`"
   >
     <span v-html="btn.copy"></span>
   </NuxtLink>

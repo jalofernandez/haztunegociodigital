@@ -86,9 +86,14 @@
           </div>
         </div>
       </section>
+      
       <CookieControl locale="es" />
+
       <SectionTitle :header="header.features" :id="'0'" />
       <SectionChessBoard :items="features" :page="$route.name" />
+
+      <SectionTitle :header="header.advantages" :id="'1'" />
+      <SectionMediaObject :media="advantages" />
     </main>
     <TheFooter :data="owner.footer" />
   </div>
@@ -99,6 +104,7 @@ import TheNavbar from '~/components/TheNavbar.vue'
 import TheFooter from '~/components/TheFooter.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 import SectionChessBoard from '~/components/SectionChessBoard.vue'
+import SectionMediaObject from '~/components/SectionMediaObject.vue'
 
 export default {
   components: {
@@ -106,6 +112,7 @@ export default {
     TheFooter,
     SectionTitle,
     SectionChessBoard,
+    SectionMediaObject,
   },
   data() {
     return {
@@ -169,6 +176,43 @@ export default {
           },
           reflected: true
         }
+      ],
+      advantages: [
+        {
+          title: '¡Es comodísimo!',
+          description:
+            '<span class="has-text-weight-semibold">No necesitas salir de casa</span> ni coger el coche, aguantar el tráfico, tener que dar vueltas para aparcar o pagar parking, la pereza de que haga mal tiempo...',
+          img: 'icons/chefioana-icon--en-casa.svg',
+          alt: '¡Es comodísimo!'
+        },
+        {
+          title: '¡Es exclusivo!',
+          description:
+            'Tienes al <span class="has-text-weight-semibold">cocinero y camarero en exclusiva</span> para ti y tus comensales sin tiempos de espera, ni guardar cola y al ritmo que tú marques.',
+          img: 'icons/chefioana-icon--exclusivo.svg',
+          alt: '¡Es exclusivo!'
+        },
+        {
+          title: '¡Sin molestias!',
+          description:
+            '<span class="has-text-weight-semibold">Nada de</span> tener que <span class="has-text-weight-semibold">hacer la compra</span> antes, <span class="has-text-weight-semibold">cocinar</span>, <span class="has-text-weight-semibold">servir</span> mientras los demas disfrutan ya de la cena, <span class="has-text-weight-semibold">fregar</span> o poner lavavajillas y retirar tras la velada...',
+          img: 'icons/chefioana-icon--cocinar.svg',
+          alt: '¡Es molestias!'
+        },
+        {
+          title: '¡El mismo precio!',
+          description:
+            '<span class="has-text-weight-semibold">sin costes adicionales</span> de trasporte, incremento por terraza...',
+          img: 'icons/chefioana-icon--precio.svg',
+          alt: '¡Es mismo precio!'
+        },
+        {
+          title: '¡Con quien tú quieras!',
+          description:
+            '<span class="has-text-weight-semibold">Niños y mascotas permitidas</span>. Como es tu casa el derecho de admisión lo pones tú 😁',
+          img: 'icons/chefioana-icon--mascotas.svg',
+          alt: '¡Con quien tú quieras!'
+        },
       ],
     }
   },
