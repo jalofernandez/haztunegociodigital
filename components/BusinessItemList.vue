@@ -2,7 +2,7 @@
   <div class="sections-list">
     <section 
       :id="`section-${index}`"
-      v-for="(menu, index) in business.menus"
+      v-for="(menu, index) in menus"
       :key="index"
     >
       <h2 class="section name" v-html="menu.title"></h2>
@@ -49,9 +49,9 @@
           </div>
           <figure class="dish img" v-if="item.img">
             <img
-              :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
-              :title="`${business.name}: ${item.desc}`"
-              :alt="`${business.name}: ${item.desc}`"
+              :src="require(`~/assets/negocios/${businessId}/${businessId}-${item.img}.jpg`)"
+              :title="`${businessName}: ${item.desc}`"
+              :alt="`${businessName}: ${item.desc}`"
               :width="menu.imgs.width"
               :height="menu.imgs.height"
             />
@@ -66,8 +66,18 @@
 export default {
   name: 'BusinessItemList',
   props: {
-    business: {
-      type: Object,
+    businessId: {
+      type: String,
+      default: null,
+      required: true,
+    },
+    businessName: {
+      type: String,
+      default: null,
+      required: true,
+    },
+    menus: {
+      type: Array,
       default: null,
       required: true,
     },

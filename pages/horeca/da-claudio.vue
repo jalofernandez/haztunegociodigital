@@ -61,7 +61,7 @@
       v-if="business.schedule"
     />
     <!-- ...for each item to shown info details -->
-    <BusinessItemModal :business="business" />
+    <BusinessItemModal :businessId="business.id" :menus="business.menus" />
 
     <!-- Aside to navigate across dishes sections -->
     <TheAside :business="business" @aside="asideBehaviour()" />
@@ -116,7 +116,7 @@
           <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
         </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
-        <BusinessItemList :business="business" />
+        <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" />
       </div>
 
       <div class="message thankfulness">

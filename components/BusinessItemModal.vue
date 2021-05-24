@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(menu, index) in business.menus" :key="index">
+    <div v-for="(menu, index) in menus" :key="index">
       <div v-for="(item, index) in menu.items" :key="index" :class="['modal-wrapper', { 'md-show': item.show }]">
         <div :id="`modal-${item.id}`" class="md-modal has-dish">
           <div class="md-content dish info">
@@ -12,7 +12,7 @@
               class="img cover"
               :style="{
                 'background-image':
-                  'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
+                  'url(' + require(`@/assets/negocios/${businessId}/${businessId}-${item.img}.jpg`) + ')',
                 'background-position': menu.imgs.position,
               }"
               v-if="item.img"
@@ -54,38 +54,16 @@
 export default {
   name: 'BusinessItemModal',
   props: {
-    business: {
-      type: Object,
+    businessId: {
+      type: String,
       default: null,
       required: true,
     },
-  },
-  // methods: {
-  //   renderAllergens(item) {
-  //     switch (item) {
-  //       case (item = "crustaceos"):
-  //         allergen = "crustáceos";
-  //         break;
-  //       case (item = "lacteos"):
-  //         allergen = "lácteos";
-  //         break;
-  //       case (item = "sesamo"):
-  //         allergen = "sésamo";
-  //     }
-  //     console.log(typeof item + " : " + item);
-  //     item.forEach(function (allergen) {
-  //       if ((allergen = "crustaceos")) {
-  //         return (allergen = "crustáceos");
-  //       } else if ((allergen = "lacteos")) {
-  //         return (allergen = "lácteos");
-  //       } else if ((allergen = "sesamo")) {
-  //         return (allergen = "sésamo");
-  //       } else {
-  //         return allergen;
-  //       }
-  //     });
-  //     console.log(item);
-  //   },
-  // },
+    menus: {
+      type: Array,
+      default: null,
+      required: true,
+    },
+  }
 }
 </script>

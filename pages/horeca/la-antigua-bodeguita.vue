@@ -61,7 +61,7 @@
       v-if="business.schedule"
     />
     <!-- ...for each item to shown info details -->
-    <BusinessItemModal :business="business" />
+    <BusinessItemModal :businessId="business.id" :menus="business.menus" />
 
     <!-- <a href="https://www.facebook.com/laantiguabodeguitavaldemoro/" target="_blank" rel="noopener noreferrer" title="Facebook de La antigua bodeguita" class="facebook"><span class="brand icon"><i class="mdi mdi-24px mdi-facebook"></i></span></a> -->
 
@@ -116,10 +116,10 @@
               </li>
             </ul>
           </div>
-          <BaseMessage :data="business.messages" v-if="business.messages" />
+          <BaseMessage v-if="business.messages" :data="business.messages" />
         </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
-        <BusinessItemList :business="business" />
+        <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" />
       </div>
 
       <div class="message thankfulness">
