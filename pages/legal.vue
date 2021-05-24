@@ -50,7 +50,7 @@
                     :alt="`Creatividad de #${owner.name}: número uno`"
                     width="64"
                     height="64"
-                  >
+                  />
                 </p>
               </figure>
               <div class="media-content">
@@ -156,7 +156,7 @@
                     :alt="`Creatividad de #${owner.name}: número dos`"
                     width="64"
                     height="64"
-                  >
+                  />
                 </p>
               </figure>
               <div class="media-content">
@@ -412,7 +412,7 @@
                     :alt="`Creatividad de #${owner.name}: número tres`"
                     width="64"
                     height="64"
-                  >
+                  />
                 </p>
               </figure>
               <div class="media-content">
@@ -642,7 +642,7 @@
                     :alt="`Creatividad de #${owner.name}: número cuatro`"
                     width="64"
                     height="64"
-                  >
+                  />
                 </p>
               </figure>
               <div class="media-content">

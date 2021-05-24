@@ -22,7 +22,7 @@
             title="Icono de WhatsApp"
             width="40"
             height="40"
-          >
+          />
         </a>
         <img
           :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
@@ -30,7 +30,7 @@
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
           v-if="business.logo"
-        >
+        />
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
@@ -179,7 +179,7 @@ export default {
         messages: {
           gluten: {
             type: 'alert',
-            copy: 'Disponemos de productos <b>sin gluten</b>. <br>Consultar con el camarero.',
+            copy: 'Disponemos de productos <b>sin gluten</b>. <br/>Consultar con el camarero.',
           },
         },
         menus: [

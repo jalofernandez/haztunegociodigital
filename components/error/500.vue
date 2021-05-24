@@ -37,7 +37,7 @@ export default {
         {
           title: '<span class="has-text-danger">Error</span> 500',
           description:
-          'Parece que ha sucedido un <span class="has-text-weight-bold">error al intentar acceder al servidor</span>. <br>¡Lo sentimos! Prueba alguna de estas formas para solucionar este error:',
+          'Parece que ha sucedido un <span class="has-text-weight-bold">error al intentar acceder al servidor</span>. <br/>¡Lo sentimos! Prueba alguna de estas formas para solucionar este error:',
           list: [
             '<b>1.</b> Recargar la página con F5 o cntrl + R.',
             '<b>2.</b> Dejar un margen de tiempo para volver intentar entrar a la página ya que es posible que haya alguna tarea del servidor que impida entrar a la web por el momento.',

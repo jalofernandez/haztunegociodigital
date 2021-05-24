@@ -7,7 +7,7 @@
         :alt="`Logotipo de ${business.name} en ${business.place}`"
         :title="`Logotipo de ${business.name} en ${business.place}`"
         v-if="business.logo"
-      >
+      />
       <h2 class="aside-business-name" v-else>{{ business.name }}</h2>
     </div>
     <ul class="aside-sections">

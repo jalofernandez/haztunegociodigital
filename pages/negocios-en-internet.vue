@@ -74,7 +74,6 @@ export default {
         barGalicia: [ 'Bar Galicia', 'https://haztunegociodigital.com/horeca/bar-galicia' ],
         laAntiguaBodeguita: [ 'La Antigua Bodeguita', 'https://haztunegociodigital.com/horeca/la-antigua-bodeguita' ],
         oleVeinti3: [ 'Taberna Olé Veinti3', 'https://haztunegociodigital.com/horeca/ole-veinti3' ],
-        daClaudio: [ 'Da Claudio Pizza & Pasta', 'https://haztunegociodigital.com/horeca/ole-veinti3' ],
         chefIoana: [ 'Chef Ioana en tu casa', 'http://chefioana.firebaseapp.com' ],
         canessa: [ 'Peluquería canina Canessa', 'https://peluqueriacanessa.com' ],
         jalofernandez: [ '@jalofernandez portfolio', 'https://jalofernandez.com' ],

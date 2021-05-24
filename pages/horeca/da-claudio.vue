@@ -22,7 +22,7 @@
             title="Icono de WhatsApp"
             width="40"
             height="40"
-          >
+          />
         </a>
         <img
           :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
@@ -30,7 +30,7 @@
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
           v-if="business.logo"
-        >
+        />
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
@@ -179,7 +179,7 @@ export default {
         messages: {
           gluten: {
             type: null,
-            copy: 'Elaboración diaria con ingredientes italianos. <br><strong>Recoger en local</strong> y <strong>a domicilio</strong>.',
+            copy: 'Elaboración diaria con ingredientes italianos. <br/><strong>Recoger en local</strong> y <strong>a domicilio</strong>.',
           },
         },
         menus: [
@@ -262,7 +262,7 @@ export default {
                 name: 'Spaghetti, Penne, Paccheri',
                 img: null,
                 desc:
-                  '- <em>Elige una salsa</em> - <br><strong>Pesto:</strong> albahaca, ajo y piñones. <br><strong>Pommodoro:</strong> salsa de tomate. <br><strong>Bolognesa:</strong> carne de ternera y tomate. <br><strong>Arrabiata:</strong> tomate picante. <br><strong>Carbonara:</strong> bacon, huevo y parmiggiano.',
+                  '- <em>Elige una salsa</em> - <br/><strong>Pesto:</strong> albahaca, ajo y piñones. <br/><strong>Pommodoro:</strong> salsa de tomate. <br/><strong>Bolognesa:</strong> carne de ternera y tomate. <br/><strong>Arrabiata:</strong> tomate picante. <br/><strong>Carbonara:</strong> bacon, huevo y parmiggiano.',
                 prices: [
                   { name: 'Plato', price: '8,50' },
                 ],

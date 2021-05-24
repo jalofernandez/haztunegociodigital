@@ -30,7 +30,7 @@
                         alt="Icono de llamada por teléfono"
                         width="24"
                         height="24"
-                      >
+                      />
                     </figure>
                     <span class="has-text-weight-medium">
                       {{ owner.phone.slice(4, owner.phone.length) }}
@@ -55,7 +55,7 @@
                         alt="Icono de WhatsApp"
                         width="24"
                         height="24"
-                      >
+                      />
                     </figure>
                     <span class="has-text-weight-medium">
                       WhatsApp
@@ -80,7 +80,7 @@
                         alt="Icono de WhatsApp"
                         width="24"
                         height="24"
-                      >
+                      />
                     </figure>
                     <span>
                       Google <span class="has-text-weight-medium">Maps</span>

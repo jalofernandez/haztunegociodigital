@@ -174,7 +174,7 @@ export default {
           gluten: {
             type: null,
             copy:
-              '<strong>Celebramos todo tipo de eventos</strong> bajo reserva previa. Consultános. <br>Toda nuestra carta también <strong>para llevar</strong>. Recoger en el local.',
+              '<strong>Celebramos todo tipo de eventos</strong> bajo reserva previa. Consultános. <br/>Toda nuestra carta también <strong>para llevar</strong>. Recoger en el local.',
           },
         },
         menus: [
@@ -193,7 +193,7 @@ export default {
                 name: 'Menú del día',
                 img: null,
                 desc:
-                  'Preguntar los platos ofrecidos cada día. <br>Incluye pan, bebida, postre o café. <br><small>Disponibles de <b>Lunes</b> a <b>Viernes</b>.</small>',
+                  'Preguntar los platos ofrecidos cada día. <br/>Incluye pan, bebida, postre o café. <br/><small>Disponibles de <b>Lunes</b> a <b>Viernes</b>.</small>',
                 prices: [{ name: 'Precio', price: '10' }],
                 allergens: null,
               },
@@ -685,7 +685,7 @@ export default {
                 name: 'Parrillada de marisco',
                 img: 'parrillada-marisco',
                 desc:
-                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br>Bajo <b>reserva previa</b>.',
+                  'Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br/>Bajo <b>reserva previa</b>.',
                 prices: [{ name: 'Parrillada', price: '45' }],
                 allergens: null,
               },
@@ -1194,7 +1194,7 @@ export default {
                 name: 'Café irlandés o vienés',
                 img: 'cafe-irlandes',
                 desc:
-                  '<small>En temporada de invierno disponemos de:</small> <br><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br><strong>café vienés</strong>: café y nata montada.',
+                  '<small>En temporada de invierno disponemos de:</small> <br/><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br/><strong>café vienés</strong>: café y nata montada.',
                 prices: [
                   { name: 'Irlandés', price: '5,50' },
                   { name: 'Vienés', price: '3,50' },

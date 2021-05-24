@@ -44,7 +44,7 @@
                 :alt="`Alérgeno: ${allergen}`"
                 width="20"
                 height="20"
-              >
+              />
             </div>
           </div>
           <figure class="dish img" v-if="item.img">
@@ -54,7 +54,7 @@
               :alt="`${business.name}: ${item.desc}`"
               :width="menu.imgs.width"
               :height="menu.imgs.height"
-            >
+            />
           </figure>
         </article>
       </div>

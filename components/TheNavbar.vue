@@ -10,7 +10,7 @@
               :alt="`Logotipo de #${owner.name}`"
               width="40"
               height="40"
-            >
+            />
           </NuxtLink>
           <div class="has-cta-btn is-flex">
             <a
@@ -28,7 +28,7 @@
                   title="Icono de WhatsApp"
                   width="28"
                   height="28"
-                >
+                />
               </figure>
             </a>
             <a
@@ -104,7 +104,7 @@
                 <!-- <NuxtLink to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                   <span>Jalofernandez: designer + coder</span>
                 </NuxtLink> -->
-                <hr class="navbar-divider" />
+                <hr class="navbar-divider"/>
                 <a
                   :href="`https://wa.me/${owner.whatsapp}`"
                   class="navbar-item dropdown-inner has-text-weight-medium"
@@ -144,7 +144,7 @@
                     title="Icono de WhatsApp"
                     width="28"
                     height="28"
-                  >
+                  />
                 </figure>
               </a>
             </div>

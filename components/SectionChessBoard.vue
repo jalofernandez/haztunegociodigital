@@ -36,7 +36,7 @@
                 class="artwork"
                 src="~/static/frame-to-assets--regular.svg"
                 :alt="`Marco decorativo para imágenes de ${owner.business}`"
-              >
+              />
             </picture>
             <picture>
               <source :srcset="require(`~/assets/images/${item.asset.src}?webp`)" type="image/webp" />
@@ -47,7 +47,7 @@
                 :src="require(`~/assets/images/${item.asset.src}`)"
                 :title="item.asset.alt"
                 :alt="item.asset.alt"
-              >
+              />
             </picture>
           </figure>
           <!-- WITH local VIDEO -->
@@ -57,7 +57,7 @@
                 class="artwork"
                 src="~/static/frame-to-assets--regular.svg"
                 :alt="`Marco decorativo para vídeos de ${owner.business}`"
-              >
+              />
             </picture>
             <video
               class="has-aspect-ratio is-16by9"

@@ -13,7 +13,7 @@
                     :alt="media.alt"
                     :width="getImgSize()"
                     :height="getImgSize()"
-                  >
+                  />
                 </p>
               </figure>
               <div class="media-content">

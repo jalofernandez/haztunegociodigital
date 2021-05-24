@@ -22,7 +22,7 @@
         :alt="`Logotipo de #${landing.owner.name}`"
         width="48"
         height="48"
-      >
+      />
     <!-- </picture> -->
     </figure>
     <p>
@@ -62,7 +62,7 @@
             :alt="`Icono de ${item}`"
             width="24"
             height="24"
-          >
+          />
         </figure>
       </li>
     </ul>
