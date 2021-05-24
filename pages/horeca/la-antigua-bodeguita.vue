@@ -180,6 +180,10 @@ export default {
             { day: 'Domingo', hour: '11:00 - 1:00' },
           ],
         },
+        reviews: {
+          ratingValue: '4.2',
+          totalReviewCount: 291
+        },
         messages: null,
         menus: [
           {

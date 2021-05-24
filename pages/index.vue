@@ -86,7 +86,7 @@
           </div>
         </div>
       </section>
-      
+
       <CookieControl locale="es" />
 
       <SectionTitle :header="header.features" :id="'0'" />

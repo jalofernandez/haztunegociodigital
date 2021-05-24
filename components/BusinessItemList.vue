@@ -72,24 +72,5 @@ export default {
       required: true,
     },
   },
-  // methods: {
-  //   // TODO: to use Vuex with global data & mutations
-  //   showItemDetail(id) {
-  //     console.log(this.$store.state.business.services + " : " + id);
-  //     this.$store.commit("business/modalBehaviour", id);
-  //   },
-  //   // TODO: description slice trial
-  //   setDescription(str) {
-  //     let count = str.length;
-  //     let slc = str.slice(0, 75).trim();
-  //     let dsc = slc.concat("...");
-
-  //     if (count <= 50) {
-  //       return str;
-  //     } else {
-  //       return dsc;
-  //     }
-  //   },
-  // },
 }
 </script>
