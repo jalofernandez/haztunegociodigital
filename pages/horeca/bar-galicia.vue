@@ -125,7 +125,7 @@
       </div>
     </main>
 
-    <TheFooter :data="business.name" isHidden />
+    <TheFooter :data="business.name" is-hidden />
   </div>
 </template>
 
