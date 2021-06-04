@@ -4,7 +4,9 @@ const description = 'Únete a la transformación digital: aumenta tus ventas con
 const url = author.toLowerCase() + '.com'
 
 export default {
-  mode: 'universal',
+  mode: 'universal', // deprecated
+  ssr: 'true', // use it instead "mode"
+  target: 'static',
   head: {
     htmlAttrs: {
       lang: lang,
@@ -68,7 +70,9 @@ export default {
   
   plugins: [],
   
-  buildModules: ['@nuxtjs/pwa'],
+  buildModules: [
+    '@nuxtjs/pwa',
+  ],
   
   modules: [
     'vue-scrollto/nuxt',
