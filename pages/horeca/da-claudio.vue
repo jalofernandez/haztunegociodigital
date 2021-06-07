@@ -55,7 +55,7 @@
     <!-- Modal dialogs... -->
     <!-- ...for Schedule details -->
     <BaseModal
-      :class="{ 'md-show': isModalVisible }"
+      :class="{ 'md-show': openScheduleModal }"
       @close="closeModal()"
       :data="business.schedule"
       v-if="business.schedule"
@@ -251,7 +251,7 @@ export default {
   data() {
     return {
       currentModal: 0,
-      isModalVisible: false,
+      openScheduleModal: false,
       showAside: false,
       business: {
         id: 'da-claudio',
@@ -647,10 +647,10 @@ export default {
   // },
   methods: {
     showModal() {
-      this.isModalVisible = true
+      this.openScheduleModal = true
     },
     closeModal() {
-      this.isModalVisible = false
+      this.openScheduleModal = false
     },
     asideBehaviour() {
       this.showAside = !this.showAside
