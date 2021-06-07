@@ -8,20 +8,20 @@
       <h2 class="section name" v-html="menu.title"></h2>
       <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
       <div class="dish-area">
-        <article
+        <!-- <article
           class="dish item"
           v-for="(item, index) in menu.items"
           :key="index"
           :data-modal="`modal-${item.id}`"
           @click="item.show = !item.show"
-        >
-          <!-- <div
+        > -->
+        <article
           class="dish item"
           v-for="(item, index) in menu.items"
           :key="index"
           :data-modal="`modal-${item.id}`"
           @click="showItemDetail(item.id)"
-        > -->
+        >
           <div class="dish info">
             <h3 class="name">{{ item.name }}</h3>
             <p class="desc" v-html="item.desc" v-if="item.desc"></p>
@@ -82,5 +82,11 @@ export default {
       required: true,
     },
   },
+  methods: {
+    showItemDetail(id) {
+      this.$emit('modal', id)
+      console.log('openItemModal: ' + id)
+    }
+  }
 }
 </script>

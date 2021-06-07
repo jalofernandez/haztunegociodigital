@@ -61,7 +61,55 @@
       v-if="business.schedule"
     />
     <!-- ...for each item to shown info details -->
-    <BusinessItemModal :businessId="business.id" :menus="business.menus" />
+    <!-- COMPONENT -->
+    <!-- <BusinessItemModal :businessId="business.id" :menus="business.menus"/> -->
+
+    <transition name="slide-fade" appear>
+      <div v-for="item in filterItemModal" :key="item.id" :class="['modal-wrapper', { 'md-show': showDishItemModal(item.id) }]">
+        <div :id="`modal-${item.id}`" class="md-modal has-dish">
+          <div class="md-content dish info">
+            <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeDishItemModal()">
+              Cerrar
+              <span>&times;</span>
+            </button>
+            <div
+              class="img cover"
+              :style="{
+                'background-image':
+                  'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
+              }"
+              v-if="item.img"
+            ></div>
+            <div class="details">
+              <h4 class="name">{{ item.name }}</h4>
+              <p class="desc" v-html="item.desc" v-if="item.desc"></p>
+              <div class="prices">
+                <div class="price item" v-for="(price, index) in item.prices" :key="index">
+                  <small class="price name">{{ price.name }}</small>
+                  <span class="price quantity" v-if="price.price">
+                    <b>{{ price.price }}</b> €
+                  </span>
+                </div>
+              </div>
+              <div class="allergens prices" v-if="item.allergens">
+                <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
+                  <small class="helper">{{ allergen }}</small>
+                  <img
+                    class="allergen"
+                    :src="require(`~/assets/allergens/${allergen}.svg`)"
+                    :title="`Alérgeno: ${allergen}`"
+                    :alt="`Alérgeno: ${allergen}`"
+                    width="30"
+                    height="30"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="['modal-overlay', { 'md-show': showDishItemModal(item.id) }]" @click="closeDishItemModal()"></div>
+      </div>
+    </transition>
 
     <!-- Aside to navigate across dishes sections -->
     <TheAside :business="business" @aside="asideBehaviour()" />
@@ -116,7 +164,62 @@
           <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
         </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
-        <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" />
+        <!-- COMPONENT -->
+        <!-- <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" /> -->
+        <div class="sections-list">
+          <section 
+            :id="`section-${index}`"
+            v-for="(menu, index) in business.menus"
+            :key="index"
+          >
+            <h2 class="section name" v-html="menu.title"></h2>
+            <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
+            <div class="dish-area">
+              <article
+                class="dish item"
+                v-for="(item, index) in menu.items"
+                :key="index"
+                :data-modal="`modal-${item.id}`"
+                @click="showItemDetail(item.id)"
+              >
+                <div class="dish info">
+                  <h3 class="name">{{ item.name }}</h3>
+                  <p class="desc" v-html="item.desc" v-if="item.desc"></p>
+                  <!-- <p class="desc" v-if="item.desc">{{ setDescription(item.desc) }}</p> -->
+                  <div class="prices">
+                    <div class="price item" v-for="(price, index) in item.prices" :key="index" v-if="item.prices">
+                      <small class="price name" v-if="price.name">{{ price.name }}</small>
+                      <span class="price quantity" v-if="price.price">
+                        <b>{{ price.price }}</b> €
+                      </span>
+                    </div>
+                  </div>
+                  <div class="allergens" v-if="item.allergens">
+                    <img
+                      class="allergen"
+                      v-for="(allergen, index) in item.allergens"
+                      :key="index"
+                      :src="require(`~/assets/allergens/${allergen}.svg`)"
+                      :title="`Alérgeno: ${allergen}`"
+                      :alt="`Alérgeno: ${allergen}`"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <figure class="dish img" v-if="item.img">
+                  <img
+                    :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
+                    :title="`${business.name}: ${item.desc}`"
+                    :alt="`${business.name}: ${item.desc}`"
+                    :width="menu.imgs.width"
+                    :height="menu.imgs.height"
+                  />
+                </figure>
+              </article>
+            </div>
+          </section>
+        </div>
       </div>
 
       <div class="message thankfulness">
@@ -147,6 +250,7 @@ export default {
   },
   data() {
     return {
+      currentModal: 0,
       isModalVisible: false,
       showAside: false,
       business: {
@@ -525,6 +629,15 @@ export default {
       ],
     }
   },
+  computed: {
+    filterItemModal() {
+      var modal = this.currentModal
+      const menus = this.business.menus
+      var dishes = []
+      dishes = menus.flatMap(menu => menu.items)
+      return dishes.filter(dish => dish.id === modal)
+    }
+  },
   // created() {
   //   const mq = this.$mq
   //   console.log(mq)
@@ -541,6 +654,18 @@ export default {
     },
     asideBehaviour() {
       this.showAside = !this.showAside
+    },
+    showItemDetail(id) {
+      this.currentModal = id
+      // TODO: Make me as a component!
+      // this.$emit('modal', id)
+      // console.log('showItemDetail: ' + id)
+    },
+    showDishItemModal(id) {
+      return this.currentModal === id
+    },
+    closeDishItemModal() {
+      this.currentModal = 0
     },
   },
 }
