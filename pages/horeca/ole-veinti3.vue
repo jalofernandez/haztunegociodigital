@@ -5,7 +5,7 @@
       class="navbar is-fixed-bottom bottom-bar"
       role="navigation"
       aria-label="main navigation"
-      v-if="$mq == 'mobile' || $mq == 'smartphone' || $mq == 'tablet'"
+      v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
     >
       <div class="navbar-brand">
         <a
