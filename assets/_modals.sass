@@ -12,10 +12,10 @@
     z-index: 2000
     backface-visibility: hidden
     transform: translateX(-50%) translateY(-50%)
-    visibility: hidden
-  &.md-show
-    .md-modal
-      visibility: visible
+  //   visibility: hidden
+  // &.md-show
+  //   .md-modal
+  //     visibility: visible
 
   .modal-overlay
     position: fixed
@@ -26,12 +26,12 @@
     z-index: 1000
     background: $bg-overlay
     transition: all 0.3s
-    opacity: 0
-    visibility: hidden
-  &.md-show
-    .modal-overlay
-      opacity: 1
-      visibility: visible
+  //   opacity: 0
+  //   visibility: hidden
+  // &.md-show
+  //   .modal-overlay
+  //     opacity: 1
+  //     visibility: visible
 
 // Content inner modals
 .md-content
@@ -50,49 +50,6 @@
 
   > img
     max-height: 65vh
-  // remove following media queries code asap because "max-width" works nicely
-  // @media (max-width: 419px)
-  //   max-width: 300px
-  
-  // @media (min-width: 420px) and (max-width: 519px)
-  //   max-width: 400px
-  
-  // @media (min-width: 520px) and (max-width: 629px)
-  //   max-width: 500px
-  
-  // @media (min-width: 630px) and (max-width: 749px)
-  //   max-width: 600px
-  
-  // @media (min-width: 750px) and (max-width: 859px)
-  //   max-width: 700px
-  
-  // @media (min-width: 860px) and (max-width: 979px)
-  //   max-width: 800px
-  
-  // @media (min-width: 980px) and (max-width: 1049px)
-  //   max-width: 900px
-    
-  // // HEIGHT control by mediaqueries
-  // @media (max-height: 359px)
-  //   max-height: 200px
-  
-  // @media (min-height: 360px) and (max-height: 479px)
-  //   max-height: 250px
-  
-  // @media (min-height: 480px) and (max-height: 579px)
-  //   max-height: 350px
-  
-  // @media (min-height: 580px) and (max-height: 650px)
-  //   max-height: 450px
-  
-  // @media (min-height: 651px) and (max-height: 767px)
-  //   max-height: 500px
-
-  // @media (min-height: 768px) and (max-height: 900px)
-  //   max-height: 600px
-
-  // @media (min-height: 901px)
-  //   max-height: 700px
 
   > p
     padding: 0
@@ -105,12 +62,12 @@
     text-transform: inherit
     border: none
 
-  button
-    font-size: 1em
-    // to overwrite "glitch" effect values by default
-    min-width: 150px
-  button::after, button::before
-    background: transparent!important
+  // button
+  //   font-size: 1em
+  //   // to overwrite "glitch" effect values by default
+  //   min-width: 150px
+  // button::after, button::before
+  //   background: transparent!important
 
 // Blur effect in layout elements below
 // .md-show ~ .content,
@@ -119,16 +76,16 @@
   transition: all 0.3s
 
 // Show & Hide modal animation
-.modal-wrapper
-  .md-content
-    transition: all 0.3s
-    // transform: translateY(-5%) // to enable down effect
-    transform: scale(2)
-    opacity: 0
-  &.md-show
-    .md-content
-      transform: scale(1)
-      opacity: 1
+// .modal-wrapper
+//   .md-content
+//     transition: all 0.3s
+//     // transform: translateY(-5%) // to enable down effect
+//     transform: scale(2)
+//     opacity: 0
+//   &.md-show
+//     .md-content
+//       transform: scale(1)
+//       opacity: 1
 
 // Modal in Product or Service pages
 .modal-wrapper
@@ -167,20 +124,20 @@
             font-size: .8rem
             text-transform: capitalize
             margin-bottom: .25rem
-        .schedule-list
-          max-width: 250px
-          margin: 0 auto
-        .schedule
-          margin-top: .5rem
-          .day
-            min-width: 95px
-            display: inline-block
-            text-align: right
-            padding-right: .5rem
-          .cerrado
-            color: orangered
-          .abierto
-            color: dodgerblue
+        // .schedule-list
+        //   max-width: 250px
+        //   margin: 0 auto
+        // .schedule
+        //   margin-top: .5rem
+        //   .day
+        //     min-width: 95px
+        //     display: inline-block
+        //     text-align: right
+        //     padding-right: .5rem
+        //   .cerrado
+        //     color: orangered
+        //   .abierto
+        //     color: dodgerblue
       .btn
         box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
         min-width: initial
@@ -191,3 +148,127 @@
         &.has-not-img
           top: -1.8rem
           right: .5rem
+
+/* ---------------------------------- */
+.md
+  position: absolute
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  height: fit-content
+  width: 100%
+  max-width: 420px
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+  background: transparent
+  z-index: 999
+  transform: none
+  @media (max-width: 440px)
+    max-width: 95vw
+
+.md-overlay
+  content: ''
+  position: absolute
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 998
+  background: $bg-overlay
+  cursor: pointer
+
+.md ~ .wrapper-menu,
+.md ~ .aside-menu,
+.md ~ .footer
+  filter: blur(2px)
+  transition: all 0.3s
+
+.md .md-inner
+  width: 100%
+  max-width: $width-phones // same as Dish list (responsive)
+  margin: 0
+  border-radius: 3px
+  padding: 0
+  background-color: #f6f7f9 // $color-bg
+  .img
+    background-size: cover
+    background-position: center top
+    width: 100%
+    height: 250px
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    &.is-bottom
+      background-position: bottom
+
+.md .details
+  width: 100%
+  padding: .75rem 1rem
+  color: #1b3a57 // $color-primary
+
+.md .dish.info
+  .quantity
+    font-size: 1.5rem
+  .name:not(.price)
+    font-size: 1.25rem
+  .desc
+    font-size: 1.1rem
+  .name.price
+    font-size: 1rem
+  .prices
+    margin: 1rem 0 0 0
+    &.allergens .price.item
+      align-items: center
+    .helper
+      font-size: .8rem
+      text-transform: capitalize
+      margin-bottom: .25rem
+
+// workdays & schedule modal type
+.schedule-list
+  max-width: 250px
+  margin: 0 auto
+
+.md .schedule
+  margin-top: .5rem
+  .day
+    min-width: 95px
+    display: inline-block
+    text-align: right
+    padding-right: .5rem
+  .cerrado
+    color: orangered
+  .abierto
+    color: dodgerblue
+
+// close BTN
+.md .btn
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
+  min-width: initial
+  position: absolute
+  &:not(.has-not-img)
+    top: -1rem
+    right: .5rem
+  &.has-not-img
+    top: -1.8rem
+    right: .5rem
+
+// animations
+.fd-enter-active,
+.fd-leave-active
+  transition: opacity .25s linear
+
+.fd-enter,
+.fd-leave-to
+  opacity: 0
+
+.pop-enter-active,
+.pop-leave-active
+  transition: transform 0.25s cubic-bezier(0.5, 0, 0.5, 1), opacity 0.4s linear
+
+.pop-enter,
+.pop-leave-to
+  opacity: 0
+  transform: scale(0.3) translateY(-50%)

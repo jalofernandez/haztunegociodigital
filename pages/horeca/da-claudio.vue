@@ -52,66 +52,97 @@
       </div>
     </nav>
 
-    <!-- Modal dialogs... -->
+    <!-- MODAL dialogs... -->
     <!-- ...for Schedule details -->
-    <BaseModal
+    <transition name="fd" appear>
+      <div v-if="openScheduleModal" class="md-overlay" @click="closeModal()"></div>
+    </transition>
+    <transition name="pop" appear>
+      <div v-if="openScheduleModal" class="md" role="dialog">
+        <button class="btn js-close" type="button" @click="closeModal()">
+          Cerrar
+          <span>&times;</span>
+        </button>
+        <div class="md-inner dish info">
+          <div class="details">
+            <div class="notification is-warning is-size-6">
+              Debido a las medidas especiales por la crisis del covid-19, el
+              <span class="has-text-weight-medium">horario de apertura podría variar</span>.
+            </div>
+            <h4 class="name has-text-centered">Horario de apertura</h4>
+            <ul class="schedule-list">
+              <li class="schedule" v-for="workday in business.schedule.days" :key="workday.day">
+                <small class="day">{{ workday.day }}:</small>
+                <span :class="setSchedule(workday.hour)">{{ workday.hour }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <!-- <BaseModal
       :class="{ 'md-show': openScheduleModal }"
       @close="closeModal()"
       :data="business.schedule"
       v-if="business.schedule"
-    />
-    <!-- ...for each item to shown info details -->
-    <!-- COMPONENT -->
-    <!-- <BusinessItemModal :businessId="business.id" :menus="business.menus"/> -->
+    /> -->
 
-    <transition name="slide-fade" appear>
-      <div v-for="item in filterItemModal" :key="item.id" :class="['modal-wrapper', { 'md-show': showDishItemModal(item.id) }]">
-        <div :id="`modal-${item.id}`" class="md-modal has-dish">
-          <div class="md-content dish info">
-            <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeDishItemModal()">
-              Cerrar
-              <span>&times;</span>
-            </button>
-            <div
-              class="img cover"
-              :style="{
-                'background-image':
-                  'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
-              }"
-              v-if="item.img"
-            ></div>
-            <div class="details">
-              <h4 class="name">{{ item.name }}</h4>
-              <p class="desc" v-html="item.desc" v-if="item.desc"></p>
-              <div class="prices">
-                <div class="price item" v-for="(price, index) in item.prices" :key="index">
-                  <small class="price name">{{ price.name }}</small>
-                  <span class="price quantity" v-if="price.price">
-                    <b>{{ price.price }}</b> €
-                  </span>
-                </div>
+    <!-- ...for each item to shown info details -->
+    <transition name="fd" appear>
+      <div v-if="openDishItem" class="md-overlay" @click="closeModal()"></div>
+    </transition>
+    <transition name="pop" appear>
+      <div
+        v-if="openDishItem"
+        v-for="item in filterItemModal"
+        :key="item.id"
+        class="md"
+        role="dialog"
+      >
+        <div class="md-inner dish info">
+          <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeDishItemModal()">
+            Cerrar
+            <span>&times;</span>
+          </button>
+          <div
+            class="img cover"
+            :style="{
+              'background-image':
+                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
+            }"
+            v-if="item.img"
+          ></div>
+          <div class="details">
+            <h4 class="name">{{ item.name }}</h4>
+            <p class="desc" v-html="item.desc" v-if="item.desc"></p>
+            <div class="prices">
+              <div class="price item" v-for="(price, index) in item.prices" :key="index">
+                <small class="price name">{{ price.name }}</small>
+                <span class="price quantity" v-if="price.price">
+                  <b>{{ price.price }}</b> €
+                </span>
               </div>
-              <div class="allergens prices" v-if="item.allergens">
-                <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
-                  <small class="helper">{{ allergen }}</small>
-                  <img
-                    class="allergen"
-                    :src="require(`~/assets/allergens/${allergen}.svg`)"
-                    :title="`Alérgeno: ${allergen}`"
-                    :alt="`Alérgeno: ${allergen}`"
-                    width="30"
-                    height="30"
-                  />
-                </div>
+            </div>
+            <div class="allergens prices" v-if="item.allergens">
+              <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
+                <small class="helper">{{ allergen }}</small>
+                <img
+                  class="allergen"
+                  :src="require(`~/assets/allergens/${allergen}.svg`)"
+                  :title="`Alérgeno: ${allergen}`"
+                  :alt="`Alérgeno: ${allergen}`"
+                  width="30"
+                  height="30"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div :class="['modal-overlay', { 'md-show': showDishItemModal(item.id) }]" @click="closeDishItemModal()"></div>
       </div>
     </transition>
+    <!-- <BusinessItemModal :businessId="business.id" :menus="business.menus"/> -->
 
-    <!-- Aside to navigate across dishes sections -->
+    <!-- ASIDE to navigate across dishes sections -->
     <TheAside :business="business" @aside="asideBehaviour()" />
 
     <main class="wrapper-menu">
@@ -152,9 +183,10 @@
                   {{ business.phone }}
                 </a>
                 <button
+                  v-if="business.schedule"
                   type="button"
                   class="btn light"
-                  @click="showModal()" v-if="business.schedule"
+                  @click="showModal()"
                 >
                   Ver horario
                 </button>
@@ -252,6 +284,7 @@ export default {
     return {
       currentModal: 0,
       openScheduleModal: false,
+      openDishItem: false,
       showAside: false,
       business: {
         id: 'da-claudio',
@@ -298,7 +331,6 @@ export default {
             items: [
               {
                 id: 99,
-                show: false,
                 name: 'Menú diario',
                 img: null,
                 desc: 'Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.',
@@ -318,7 +350,6 @@ export default {
             items: [
               {
                 id: 1,
-                show: false,
                 name: 'Margaritta',
                 img: 'pizza-margaritta',
                 desc: 'Tomate y mozzarella.',
@@ -329,7 +360,6 @@ export default {
               },
               {
                 id: 2,
-                show: false,
                 name: 'Diavola',
                 img: 'pizza-diavola',
                 desc: 'Tomate, mozzarella, chorizo picante, pimiento rojo y aceitunas.',
@@ -340,7 +370,6 @@ export default {
               },
               {
                 id: 3,
-                show: false,
                 name: 'Sfiziosa',
                 img: 'pizza-sfiziosa',
                 desc: 'Tomate, mozzarella, jamón, bacon y cebolla.',
@@ -362,7 +391,6 @@ export default {
             items: [
               {
                 id: 50,
-                show: false,
                 name: 'Spaghetti, Penne, Paccheri',
                 img: null,
                 desc:
@@ -374,7 +402,6 @@ export default {
               },
               {
                 id: 51,
-                show: false,
                 name: 'Spaghetti Nero Mare',
                 img: 'pasta-spaghetti-nero-mare',
                 desc: 'Spaghetti con tinta de sepia y mix de mariscos.',
@@ -396,7 +423,6 @@ export default {
             items: [
               {
                 id: 41,
-                show: false,
                 name: 'Café italiano',
                 img: 'capuccino',
                 desc: 'Café al gusto: cortado, sólo, con leche, capuccino...',
@@ -407,7 +433,6 @@ export default {
               },
               {
                 id: 42,
-                show: false,
                 name: 'Tostada',
                 img: 'tostada',
                 desc: 'Tostada de tomate o con mantequilla y mermelada.',
@@ -429,7 +454,6 @@ export default {
             items: [
               {
                 id: 70,
-                show: false,
                 name: 'Tiramisú',
                 img: 'postre-tiramisu',
                 desc: 'Pastel frío en capas de nata y bizcocho de café y espolboreado con cacao.',
@@ -451,7 +475,6 @@ export default {
             items: [
               // {
               //   id: 60,
-              //   show: false,
               //   name: 'Café o infusión',
               //   img: 'cafe-con-leche',
               //   desc: 'Café al gusto (cortado, sólo, con leche, capuccino...) o infusión.',
@@ -460,7 +483,6 @@ export default {
               // },
               // {
               //   id: 62,
-              //   show: false,
               //   name: 'Colacao',
               //   img: null,
               //   desc: null,
@@ -469,7 +491,6 @@ export default {
               // },
               {
                 id: 63,
-                show: false,
                 name: 'Botella de agua',
                 img: 'botella-agua',
                 desc: 'Agua mineral bien fresquita.',
@@ -480,7 +501,6 @@ export default {
               },
               {
                 id: 64,
-                show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
                 desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
@@ -489,7 +509,6 @@ export default {
               },
               // {
               //   id: 65,
-              //   show: false,
               //   name: 'Zumos',
               //   img: 'zumos',
               //   desc: 'De piña, melocotón...',
@@ -498,7 +517,6 @@ export default {
               // },
               {
                 id: 66,
-                show: false,
                 name: 'Cerveza',
                 img: 'cerveza',
                 desc: 'Disponemos de: Mahou y Heineken.',
@@ -632,9 +650,7 @@ export default {
   computed: {
     filterItemModal() {
       var modal = this.currentModal
-      const menus = this.business.menus
-      var dishes = []
-      dishes = menus.flatMap(menu => menu.items)
+      var dishes = this.business.menus.flatMap(menu => menu.items)
       return dishes.filter(dish => dish.id === modal)
     }
   },
@@ -652,11 +668,17 @@ export default {
     closeModal() {
       this.openScheduleModal = false
     },
+    setSchedule(info) {
+      var sch = info.replace(/\s/g, '').toLowerCase()
+      if (sch !== 'cerrado') return 'abierto'
+      else return sch
+    },
     asideBehaviour() {
       this.showAside = !this.showAside
     },
     showItemDetail(id) {
       this.currentModal = id
+      this.openDishItem = true
       // TODO: Make me as a component!
       // this.$emit('modal', id)
       // console.log('showItemDetail: ' + id)
@@ -666,6 +688,7 @@ export default {
     },
     closeDishItemModal() {
       this.currentModal = 0
+      this.openDishItem = false
     },
   },
 }
@@ -718,13 +741,16 @@ $border-radius: 8px
         span
           margin-right: .5rem
 
-    .modal-wrapper .md-modal.has-dish .md-content
+    .md
+      .md-inner
+        border-radius: $border-radius
+        background-color: #f5f6f8
       .btn
         color: $color-red
       .details
         color: $font-color
-        .schedule .day
-          font-family: $font-family-desc
+      .schedule .day
+        font-family: $font-family-desc
 
     .message
       border-radius: 0
