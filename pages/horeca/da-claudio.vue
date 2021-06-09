@@ -2,19 +2,19 @@
   <div :class="['page', 'business', business.id, { 'aside-menu-open': showAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <nav
+      v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
       class="navbar is-fixed-bottom bottom-bar"
       role="navigation"
       aria-label="main navigation"
-      v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
     >
       <div class="navbar-brand">
         <a
+          v-if="business.whatsapp"
           class="whatsapp light ml-1"
           :href="`https://wa.me/${business.whatsapp}`"
           :title="`Llamar o escribir al Whatsapp de ${business.name}`"
           target="_blank"
           rel="noopener noreferrer"
-          v-if="business.whatsapp"
         >
           <img
             src="/icons/whatsapp-brands.svg"
@@ -25,11 +25,11 @@
           />
         </a>
         <img
+          v-if="business.logo"
           :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          v-if="business.logo"
         />
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
@@ -38,13 +38,13 @@
             aria-label="menu"
             aria-expanded="false"
           >
-            <span aria-hidden="true" v-for="item in 3"></span>
+            <span v-for="item in 3" aria-hidden="true"></span>
           </a>
           <div class="burger-copy">
-            <small class="opener" v-if="!showAside">
+            <small v-if="!showAside" class="opener">
               Abrir <b>Carta</b>
             </small>
-            <small class="closer" v-else>
+            <small v-else class="closer">
               Cerrar <b>Carta</b>
             </small>
           </div>
@@ -81,10 +81,10 @@
       </div>
     </transition>
     <!-- <BaseModal
+      v-if="business.schedule"
       :class="{ 'md-show': openScheduleModal }"
       @close="closeModal()"
       :data="business.schedule"
-      v-if="business.schedule"
     /> -->
 
     <!-- ...for each item to shown info details -->
@@ -105,25 +105,25 @@
             <span>&times;</span>
           </button>
           <div
+            v-if="item.img"
             class="img cover"
             :style="{
               'background-image':
                 'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
             }"
-            v-if="item.img"
           ></div>
           <div class="details">
             <h4 class="name">{{ item.name }}</h4>
-            <p class="desc" v-html="item.desc" v-if="item.desc"></p>
+            <p v-if="item.desc" v-html="item.desc" class="desc"></p>
             <div class="prices">
               <div class="price item" v-for="(price, index) in item.prices" :key="index">
                 <small class="price name">{{ price.name }}</small>
-                <span class="price quantity" v-if="price.price">
+                <span v-if="price.price" class="price quantity">
                   <b>{{ price.price }}</b> €
                 </span>
               </div>
             </div>
-            <div class="allergens prices" v-if="item.allergens">
+            <div v-if="item.allergens" class="allergens prices">
               <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
                 <small class="helper">{{ allergen }}</small>
                 <img
@@ -150,35 +150,35 @@
         <!-- Business info -->
         <header class="business-header">
           <div
+            v-if="business.cover"
             class="business cover"
             :style="{
               'background-image':
                 'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
             }"
-            v-if="business.cover"
           ></div>
           <div class="business data">
             <h1 class="data name">{{ business.name }}</h1>
-            <h4 class="data desc" v-html="business.desc" v-if="business.desc"></h4>
+            <h4 v-if="business.desc" v-html="business.desc" class="data desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
+                  v-if="business.address"
                   class="data address"
                   :href="`https://goo.gl/maps/${business.gmap}`"
                   :title="`Ver dirección de ${business.name}`"
                   target="_blank"
                   rel="noopener noreferrer"
-                  v-if="business.address"
                 >
                   {{ business.address }}
                 </a>
               </li>
               <li :class="business.schedule ? 'has-schedule' : null">
                 <a
+                  v-if="business.phone"
                   class="data phone"
                   :href="`tel:${business.phone}`"
                   :title="`Llamar al ${business.name}: ${business.phone}`"
-                  v-if="business.phone"
                   >
                   {{ business.phone }}
                 </a>
@@ -193,7 +193,7 @@
               </li>
             </ul>
           </div>
-          <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
+          <BaseMessage v-if="business.messages" :data="business.messages.gluten"/>
         </header>
         <!-- Items list :: all Menu Dishes & Beverages -->
         <!-- COMPONENT -->
@@ -204,29 +204,28 @@
             v-for="(menu, index) in business.menus"
             :key="index"
           >
-            <h2 class="section name" v-html="menu.title"></h2>
-            <p class="section desc" v-if="menu.desc" v-html="menu.desc"></p>
+            <h2 v-html="menu.title" class="section name"></h2>
+            <p v-if="menu.desc" v-html="menu.desc" class="section desc"></p>
             <div class="dish-area">
               <article
-                class="dish item"
-                v-for="(item, index) in menu.items"
-                :key="index"
-                :data-modal="`modal-${item.id}`"
+                v-for="item in menu.items"
+                :key="item.id"
                 @click="showItemDetail(item.id)"
+                class="dish item"
               >
                 <div class="dish info">
                   <h3 class="name">{{ item.name }}</h3>
-                  <p class="desc" v-html="item.desc" v-if="item.desc"></p>
-                  <!-- <p class="desc" v-if="item.desc">{{ setDescription(item.desc) }}</p> -->
+                  <p v-if="item.desc" v-html="item.desc" class="desc"></p>
+                  <!-- <p v-if="item.desc" class="desc">{{ setDescription(item.desc) }}</p> -->
                   <div class="prices">
-                    <div class="price item" v-for="(price, index) in item.prices" :key="index" v-if="item.prices">
-                      <small class="price name" v-if="price.name">{{ price.name }}</small>
-                      <span class="price quantity" v-if="price.price">
+                    <div v-if="item.prices" class="price item" v-for="(price, index) in item.prices" :key="index">
+                      <small v-if="price.name" class="price name">{{ price.name }}</small>
+                      <span v-if="price.price" class="price quantity">
                         <b>{{ price.price }}</b> €
                       </span>
                     </div>
                   </div>
-                  <div class="allergens" v-if="item.allergens">
+                  <div v-if="item.allergens" class="allergens">
                     <img
                       class="allergen"
                       v-for="(allergen, index) in item.allergens"
@@ -239,7 +238,7 @@
                     />
                   </div>
                 </div>
-                <figure class="dish img" v-if="item.img">
+                <figure v-if="item.img" class="dish img">
                   <img
                     :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
                     :title="`${business.name}: ${item.desc}`"
