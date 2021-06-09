@@ -1,20 +1,20 @@
 <template>
-  <div :class="['page', 'business', business.id, { 'aside-menu-open': showAside }]">
+  <div :class="['page', 'business', business.id, { 'aside-menu-open': openedAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <nav
+      v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
       class="navbar is-fixed-bottom bottom-bar"
       role="navigation"
       aria-label="main navigation"
-      v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
     >
       <div class="navbar-brand">
         <a
+          v-if="business.whatsapp"
           class="whatsapp light ml-1"
           :href="`https://wa.me/${business.whatsapp}`"
           :title="`Llamar o escribir al Whatsapp de ${business.name}`"
           target="_blank"
           rel="noopener noreferrer"
-          v-if="business.whatsapp"
         >
           <img
             src="/icons/whatsapp-brands.svg"
@@ -25,26 +25,26 @@
           />
         </a>
         <img
+          v-if="business.logo"
           :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
           :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
-          v-if="business.logo"
         />
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
-            :class="['navbar-burger', 'burger', { 'is-active': showAside }]"
+            :class="['navbar-burger', 'burger', { 'is-active': openedAside }]"
             aria-label="menu"
             aria-expanded="false"
           >
-            <span aria-hidden="true" v-for="item in 3"></span>
+            <span v-for="item in 3" aria-hidden="true"></span>
           </a>
           <div class="burger-copy">
-            <small class="opener" v-if="!showAside">
+            <small v-if="!openedAside" class="opener">
               Abrir <b>Carta</b>
             </small>
-            <small class="closer" v-else>
+            <small v-else class="closer">
               Cerrar <b>Carta</b>
             </small>
           </div>
@@ -54,14 +54,93 @@
 
     <!-- Modal dialogs... -->
     <!-- ...for Schedule details -->
-    <BaseModal
-      :class="{ 'md-show': isModalVisible }"
+    <transition name="fd" appear>
+      <div v-if="openedSchedule" class="md-overlay" @click="closeModal()"></div>
+    </transition>
+    <transition name="pop" appear>
+      <div v-if="openedSchedule" class="md" role="dialog">
+        <button class="btn js-close" type="button" @click="closeModal()">
+          Cerrar
+          <span>&times;</span>
+        </button>
+        <div class="md-inner dish info">
+          <div class="details">
+            <div class="notification is-warning is-size-6">
+              Debido a las medidas especiales por la crisis del covid-19, el
+              <span class="has-text-weight-medium">horario de apertura podría variar</span>.
+            </div>
+            <h4 class="name has-text-centered">Horario de apertura</h4>
+            <ul class="schedule-list">
+              <li class="schedule" v-for="workday in business.schedule.days" :key="workday.day">
+                <small class="day">{{ workday.day }}:</small>
+                <span :class="setSchedule(workday.hour)">{{ workday.hour }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <!-- <BaseModal
+      v-if="business.schedule"
+      :class="{ 'md-show': openedSchedule }"
       @close="closeModal()"
       :data="business.schedule"
-      v-if="business.schedule"
-    />
+    /> -->
+
     <!-- ...for each item to shown info details -->
-    <BusinessItemModal :business-id="business.id" :menus="business.menus" />
+    <transition name="fd" appear>
+      <div v-if="openedItemDetail" class="md-overlay" @click="closeModal()"></div>
+    </transition>
+    <transition name="pop" appear>
+      <div
+        v-if="openedItemDetail"
+        v-for="item in filterItemModal"
+        :key="item.id"
+        class="md"
+        role="dialog"
+      >
+        <div class="md-inner dish info">
+          <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeItemDetail()">
+            Cerrar
+            <span>&times;</span>
+          </button>
+          <div
+            v-if="item.img"
+            class="img cover"
+            :style="{
+              'background-image':
+                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
+            }"
+          ></div>
+          <div class="details">
+            <h4 class="name">{{ item.name }}</h4>
+            <p v-if="item.desc" v-html="item.desc" class="desc"></p>
+            <div class="prices">
+              <div class="price item" v-for="(price, index) in item.prices" :key="index">
+                <small class="price name">{{ price.name }}</small>
+                <span v-if="price.price" class="price quantity">
+                  <b>{{ price.price }}</b> €
+                </span>
+              </div>
+            </div>
+            <div v-if="item.allergens" class="allergens prices">
+              <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
+                <small class="helper">{{ allergen }}</small>
+                <img
+                  class="allergen"
+                  :src="require(`~/assets/allergens/${allergen}.svg`)"
+                  :title="`Alérgeno: ${allergen}`"
+                  :alt="`Alérgeno: ${allergen}`"
+                  width="30"
+                  height="30"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <!-- <BusinessItemModal :business-id="business.id" :menus="business.menus" /> -->
 
     <!-- <a href="https://www.facebook.com/laantiguabodeguitavaldemoro/" target="_blank" rel="noopener noreferrer" title="Facebook de La antigua bodeguita" class="facebook"><span class="brand icon"><i class="mdi mdi-24px mdi-facebook"></i></span></a> -->
 
@@ -73,43 +152,43 @@
         <!-- Business info -->
         <header class="business-header">
           <div
+            v-if="business.cover"
             class="business cover"
             :style="{
               'background-image':
                 'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
             }"
-            v-if="business.cover"
           ></div>
           <div class="business data">
             <h1 class="data name">{{ business.name }}</h1>
-            <h4 class="data desc" v-html="business.desc" v-if="business.desc"></h4>
+            <h4 v-if="business.desc" v-html="business.desc" class="data desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
+                  v-if="business.address"
                   class="data address"
                   :href="`https://goo.gl/maps/${business.gmap}`"
                   :title="`Ver dirección de ${business.name}`"
                   target="_blank"
                   rel="noopener noreferrer"
-                  v-if="business.address"
                 >
                   {{ business.address }}
                 </a>
               </li>
               <li :class="business.schedule ? 'has-schedule' : null">
                 <a
+                  v-if="business.phone"
                   class="data phone"
                   :href="`tel:${business.phone}`"
                   :title="`Llamar al ${business.name}: ${business.phone}`"
-                  v-if="business.phone"
                 >
                   {{ business.phone }}
                 </a>
                 <button
+                  v-if="business.schedule"
                   type="button"
                   class="btn light"
                   @click="showModal()"
-                  v-if="business.schedule"
                 >
                   Ver horario
                 </button>
@@ -118,8 +197,62 @@
           </div>
           <BaseMessage v-if="business.messages" :data="business.messages" />
         </header>
+
         <!-- Items list :: all Menu Dishes & Beverages -->
-        <BusinessItemList :menus="business.menus" :business-id="business.id" :business-name="business.name" />
+        <div class="sections-list">
+          <section
+            :id="`section-${index}`"
+            v-for="(menu, index) in business.menus"
+            :key="index"
+          >
+            <h2 v-html="menu.title" class="section name"></h2>
+            <p v-if="menu.desc" v-html="menu.desc" class="section desc"></p>
+            <div class="dish-area">
+              <article
+                v-for="item in menu.items"
+                :key="item.id"
+                @click="showItemDetail(item.id)"
+                class="dish item"
+              >
+                <div class="dish info">
+                  <h3 class="name">{{ item.name }}</h3>
+                  <p v-if="item.desc" v-html="item.desc" class="desc"></p>
+                  <!-- <p v-if="item.desc" class="desc">{{ setDescription(item.desc) }}</p> -->
+                  <div class="prices">
+                    <div v-if="item.prices" class="price item" v-for="(price, index) in item.prices" :key="index">
+                      <small v-if="price.name" class="price name">{{ price.name }}</small>
+                      <span v-if="price.price" class="price quantity">
+                        <b>{{ price.price }}</b> €
+                      </span>
+                    </div>
+                  </div>
+                  <div v-if="item.allergens" class="allergens">
+                    <img
+                      class="allergen"
+                      v-for="(allergen, index) in item.allergens"
+                      :key="index"
+                      :src="require(`~/assets/allergens/${allergen}.svg`)"
+                      :title="`Alérgeno: ${allergen}`"
+                      :alt="`Alérgeno: ${allergen}`"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <figure v-if="item.img" class="dish img">
+                  <img
+                    :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
+                    :title="`${business.name}: ${item.desc}`"
+                    :alt="`${business.name}: ${item.desc}`"
+                    :width="menu.imgs.width"
+                    :height="menu.imgs.height"
+                  />
+                </figure>
+              </article>
+            </div>
+          </section>
+        </div>
+        <!-- <BusinessItemList :menus="business.menus" :business-id="business.id" :business-name="business.name" /> -->
       </div>
 
       <div class="message thankfulness">
@@ -132,29 +265,32 @@
 </template>
 
 <script>
-import BaseModal from '~/components/BaseModal.vue'
+// import BaseModal from '~/components/BaseModal.vue'
+// import BusinessItemModal from '~/components/BusinessItemModal.vue'
+// import BusinessItemList from '~/components/BusinessItemList.vue'
 import BaseMessage from '~/components/BaseMessage.vue'
-import BusinessItemModal from '~/components/BusinessItemModal.vue'
-import BusinessItemList from '~/components/BusinessItemList.vue'
 import TheAside from '~/components/TheAside.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 export default {
   components: {
-    BaseModal,
+    // BaseModal,
+    // BusinessItemModal,
+    // BusinessItemList,
     BaseMessage,
-    BusinessItemModal,
-    BusinessItemList,
     TheAside,
     TheFooter,
   },
   data() {
     return {
-      isModalVisible: false,
-      showAside: false,
+      currentModal: 0,
+      openedSchedule: false,
+      openedItemDetail: false,
+      openedAside: false,
       business: {
         id: 'la-antigua-bodeguita',
         name: 'La Antigua Bodeguita',
+        type: null,
         desc: 'Marisquería, arrocería, carnes a la brasa...',
         logo: false,
         cover: 'cover',
@@ -1175,22 +1311,45 @@ export default {
       ],
     }
   },
+  computed: {
+    filterItemModal() {
+      var modal = this.currentModal
+      var dishes = this.business.menus.flatMap(menu => menu.items)
+      return dishes.filter(dish => dish.id === modal)
+    }
+  },
   // created() {
   //   const mq = this.$mq
   //   console.log(mq)
-  //   mq === 'mobile' ? this.showAside = false 
-  //   : mq === 'smartphone' ? this.showAside = false
-  //   : this.showAside = true
+  //   mq === 'mobile' ? this.openedAside = false 
+  //   : mq === 'smartphone' ? this.openedAside = false
+  //   : this.openedAside = true
   // },
   methods: {
     showModal() {
-      this.isModalVisible = true
+      this.openedSchedule = true
     },
     closeModal() {
-      this.isModalVisible = false
+      this.openedSchedule = false
+    },
+    setSchedule(info) {
+      var sch = info.replace(/\s/g, '').toLowerCase()
+      if (sch !== 'cerrado') return 'abierto'
+      else return sch
     },
     asideBehaviour() {
-      this.showAside = !this.showAside
+      this.openedAside = !this.openedAside
+    },
+    showItemDetail(id) {
+      this.currentModal = id
+      this.openedItemDetail = true
+      // TODO: Make me as a component!
+      // this.$emit('modal', id)
+      // console.log('showItemDetail: ' + id)
+    },
+    closeItemDetail() {
+      this.currentModal = 0
+      this.openedItemDetail = false
     },
     // modalsBlockTitle(info) {
     //   let strClean = info.replace(/[^èéòàùì\w\s]/gi, '')
@@ -1236,6 +1395,7 @@ $border-radius: 12px
       &.item
         border-radius: $border-radius
         box-shadow: none
+
       &.info
         .name:not(.price)
           font-family: $font-family-name
@@ -1244,11 +1404,12 @@ $border-radius: 12px
           line-height: 1.25
         .desc,
         .prices .price.name,
-        .modal-wrapper .md-modal.has-dish .md-content .details
+        .md .details
           font-family: $font-family-desc
           color: lighten($font-color, 5%)
         .prices .price.quantity
           color: $prices-color
+
       &.img
         width: 120px
         height: auto
@@ -1309,18 +1470,20 @@ $border-radius: 12px
         font-family: $font-family-desc
         color: $font-color
         padding: .4rem 1.5rem
-    .modal-wrapper .md-modal.has-dish .md-content
-      background-color: $card-color
-      border-radius: $border-radius
-      .img
-        border-color: $card-color
+
+    .md-overlay
+      background-color: rgba($font-color,.6)
+    .md
+      .md-inner
+        background-color: $card-color
+      .md-inner,
+      .md-inner .img
         border-radius: $border-radius
+      .md-inner .img
         width: calc(100% - .5rem)
-        margin: .25rem auto 0 auto
-      .details
-        border-radius: $border-radius
-        .prices .helper,
-        .schedule .day
-          font-family: $font-family-desc
-          color: $font-color
+        margin: .25rem auto 0
+      .schedule .day,
+      .dish.info .prices .helper
+        font-family: $font-family-desc
+        color: $font-color
 </style>

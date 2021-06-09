@@ -1,5 +1,5 @@
 <template>
-  <div :class="['page', 'business', business.id, { 'aside-menu-open': showAside }]">
+  <div :class="['page', 'business', business.id, { 'aside-menu-open': openedAside }]">
     <!-- Floating button to trigger Aside navbar -->
     <nav
       v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
@@ -34,14 +34,14 @@
         <div class="is-flex is-burger-btn" @click.prevent="asideBehaviour()">
           <a
             role="button"
-            :class="['navbar-burger', 'burger', { 'is-active': showAside }]"
+            :class="['navbar-burger', 'burger', { 'is-active': openedAside }]"
             aria-label="menu"
             aria-expanded="false"
           >
             <span v-for="item in 3" aria-hidden="true"></span>
           </a>
           <div class="burger-copy">
-            <small v-if="!showAside" class="opener">
+            <small v-if="!openedAside" class="opener">
               Abrir <b>Carta</b>
             </small>
             <small v-else class="closer">
@@ -55,10 +55,10 @@
     <!-- MODAL dialogs... -->
     <!-- ...for Schedule details -->
     <transition name="fd" appear>
-      <div v-if="openScheduleModal" class="md-overlay" @click="closeModal()"></div>
+      <div v-if="openedSchedule" class="md-overlay" @click="closeModal()"></div>
     </transition>
     <transition name="pop" appear>
-      <div v-if="openScheduleModal" class="md" role="dialog">
+      <div v-if="openedSchedule" class="md" role="dialog">
         <button class="btn js-close" type="button" @click="closeModal()">
           Cerrar
           <span>&times;</span>
@@ -82,25 +82,25 @@
     </transition>
     <!-- <BaseModal
       v-if="business.schedule"
-      :class="{ 'md-show': openScheduleModal }"
+      :class="{ 'md-show': openedSchedule }"
       @close="closeModal()"
       :data="business.schedule"
     /> -->
 
     <!-- ...for each item to shown info details -->
     <transition name="fd" appear>
-      <div v-if="openDishItem" class="md-overlay" @click="closeModal()"></div>
+      <div v-if="openedItemDetail" class="md-overlay" @click="closeModal()"></div>
     </transition>
     <transition name="pop" appear>
       <div
-        v-if="openDishItem"
+        v-if="openedItemDetail"
         v-for="item in filterItemModal"
         :key="item.id"
         class="md"
         role="dialog"
       >
         <div class="md-inner dish info">
-          <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeDishItemModal()">
+          <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeItemDetail()">
             Cerrar
             <span>&times;</span>
           </button>
@@ -179,7 +179,7 @@
                   class="data phone"
                   :href="`tel:${business.phone}`"
                   :title="`Llamar al ${business.name}: ${business.phone}`"
-                  >
+                >
                   {{ business.phone }}
                 </a>
                 <button
@@ -195,9 +195,8 @@
           </div>
           <BaseMessage v-if="business.messages" :data="business.messages.gluten"/>
         </header>
+
         <!-- Items list :: all Menu Dishes & Beverages -->
-        <!-- COMPONENT -->
-        <!-- <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" /> -->
         <div class="sections-list">
           <section 
             :id="`section-${index}`"
@@ -251,6 +250,7 @@
             </div>
           </section>
         </div>
+        <!-- <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" /> -->
       </div>
 
       <div class="message thankfulness">
@@ -258,33 +258,33 @@
       </div>
     </main>
 
-    <TheFooter :data="business.name" is-hidden />
+    <TheFooter :data="business.name" is-hidden/>
   </div>
 </template>
 
 <script>
-import BaseModal from '~/components/BaseModal.vue'
+// import BaseModal from '~/components/BaseModal.vue'
+// import BusinessItemModal from '~/components/BusinessItemModal.vue'
+// import BusinessItemList from '~/components/BusinessItemList.vue'
 import BaseMessage from '~/components/BaseMessage.vue'
-import BusinessItemModal from '~/components/BusinessItemModal.vue'
-import BusinessItemList from '~/components/BusinessItemList.vue'
 import TheAside from '~/components/TheAside.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 export default {
   components: {
-    BaseModal,
+    // BaseModal,
+    // BusinessItemModal,
+    // BusinessItemList,
     BaseMessage,
-    BusinessItemModal,
-    BusinessItemList,
     TheAside,
     TheFooter,
   },
   data() {
     return {
       currentModal: 0,
-      openScheduleModal: false,
-      openDishItem: false,
-      showAside: false,
+      openedSchedule: false,
+      openedItemDetail: false,
+      openedAside: false,
       business: {
         id: 'da-claudio',
         name: 'Da Claudio Pizza & Pasta',
@@ -323,7 +323,6 @@ export default {
             title: '<span>🍽️</span> Menú del día',
             desc: 'Disponible <em>Lunes</em>, <em>Miércoles</em>, <em>Jueves</em> y <em>Viernes</em>.',
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -342,7 +341,6 @@ export default {
             title: '<span>🍕</span> Pizzas',
             desc: '30 cm de deliciosa <strong>masa fina</strong> y <strong>crujiente</strong>. Base de tomate y mozzarella.',
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -383,7 +381,6 @@ export default {
             title: '<span>🍝</span> Pasta',
             desc: 'Nuestras auténticas pastas italianas.',
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -415,7 +412,6 @@ export default {
             title: '<span>☕️</span> Desayunos',
             desc: 'En horario de mañana de 9:00 a 12:00 h.',
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -446,7 +442,6 @@ export default {
             title: '<span>🍰</span> Postres',
             desc: '...Y para terminar un poco de dulce.',
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -467,7 +462,6 @@ export default {
             title: '<span>🥤</span> Bebidas',
             desc: null,
             imgs: {
-              position: 'top',
               width: 145,
               height: 145,
             },
@@ -656,16 +650,16 @@ export default {
   // created() {
   //   const mq = this.$mq
   //   console.log(mq)
-  //   mq === 'mobile' ? this.showAside = false 
-  //   : mq === 'smartphone' ? this.showAside = false
-  //   : this.showAside = true
+  //   mq === 'mobile' ? this.openedAside = false 
+  //   : mq === 'smartphone' ? this.openedAside = false
+  //   : this.openedAside = true
   // },
   methods: {
     showModal() {
-      this.openScheduleModal = true
+      this.openedSchedule = true
     },
     closeModal() {
-      this.openScheduleModal = false
+      this.openedSchedule = false
     },
     setSchedule(info) {
       var sch = info.replace(/\s/g, '').toLowerCase()
@@ -673,21 +667,18 @@ export default {
       else return sch
     },
     asideBehaviour() {
-      this.showAside = !this.showAside
+      this.openedAside = !this.openedAside
     },
     showItemDetail(id) {
       this.currentModal = id
-      this.openDishItem = true
+      this.openedItemDetail = true
       // TODO: Make me as a component!
       // this.$emit('modal', id)
       // console.log('showItemDetail: ' + id)
     },
-    showDishItemModal(id) {
-      return this.currentModal === id
-    },
-    closeDishItemModal() {
+    closeItemDetail() {
       this.currentModal = 0
-      this.openDishItem = false
+      this.openedItemDetail = false
     },
   },
 }
