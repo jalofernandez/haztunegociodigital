@@ -326,14 +326,12 @@ export default {
             title: 'Para empezar',
             desc: 'Una exquisita selección de <span class="semibold">productos frescos</span> y de la huerta.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 1,
-                show: false,
                 name: 'Tomates con arbequina y sal Maldon',
                 img: 'tomates-arbequina',
                 desc:
@@ -343,7 +341,6 @@ export default {
               },
               {
                 id: 2,
-                show: false,
                 name: 'Tomates con escabeche y piparras',
                 img: 'tomates-escabeche',
                 desc: 'Tomates naturales de la granja con escabeche y piparras picantes del cantábrico.',
@@ -352,7 +349,6 @@ export default {
               },
               {
                 id: 3,
-                show: false,
                 name: 'Tomates con anchoa del Cantábrico',
                 img: 'tomates-anchoas',
                 desc: 'Tomates naturales de la granja con anchoas del cantábrico.',
@@ -361,7 +357,6 @@ export default {
               },
               {
                 id: 4,
-                show: false,
                 name: 'Tomates con ventresca',
                 img: 'tomates-ventresca',
                 desc: 'Tomates frescos y naturales de la granja con ventresca de atún.',
@@ -370,7 +365,6 @@ export default {
               },
               {
                 id: 5,
-                show: false,
                 name: 'Pimientos de Lodosa con escabeche y piparras',
                 img: null,
                 desc: 'Pimientos de piquillo de Lodosa, DO Navarra, con escabeche y piparras cántabras.',
@@ -379,7 +373,6 @@ export default {
               },
               {
                 id: 6,
-                show: false,
                 name: 'Foie con canónigos al caramelo de naranja',
                 img: 'foie-canonigos',
                 desc:
@@ -389,7 +382,6 @@ export default {
               },
               {
                 id: 7,
-                show: false,
                 name: 'Setas gratinadas con ali oli',
                 img: 'setas-espuma-alioli',
                 desc: 'Setas gratinadas con espuma de ali oli a la miel.',
@@ -398,7 +390,6 @@ export default {
               },
               {
                 id: 8,
-                show: false,
                 name: 'Ensalada del Bierzo',
                 img: null,
                 desc: 'Ensalada de brotes frescos con cecina del Bierzo y tomates de la huerta.',
@@ -407,7 +398,6 @@ export default {
               },
               {
                 id: 9,
-                show: false,
                 name: 'Anchoas de Castro Urdiales con base de tomate',
                 img: null,
                 desc: 'Anchoas de Castro Urdiales con base de tomates naturales de la huerta.',
@@ -416,7 +406,6 @@ export default {
               },
               {
                 id: 10,
-                show: false,
                 name: 'Alcachofitas salteadas con foie',
                 img: 'alcachofitas-foie',
                 desc: 'Corazones de alcachofas baby ligeramente salteadas con foie gras de pato.',
@@ -425,7 +414,6 @@ export default {
               },
               {
                 id: 11,
-                show: false,
                 name: 'Revuelto de grelos con gambas',
                 img: null,
                 desc: null,
@@ -434,7 +422,6 @@ export default {
               },
               {
                 id: 12,
-                show: false,
                 name: 'Jamón ibérico con sus tostas',
                 img: null,
                 desc: null,
@@ -443,7 +430,6 @@ export default {
               },
               {
                 id: 13,
-                show: false,
                 name: 'Alcachofa confitada con foie',
                 img: 'alcachofa-foie',
                 desc: 'Alcachofa confitada a baja temperatura con foie gras de pato y aceite cruda.',
@@ -452,7 +438,6 @@ export default {
               },
               {
                 id: 14,
-                show: false,
                 name: 'Carpacho de boletus',
                 img: 'carpacho-boletus',
                 desc: 'Carpacho de boletus confitados con foie y cecina de León.',
@@ -461,7 +446,6 @@ export default {
               },
               {
                 id: 15,
-                show: false,
                 name: 'Pimientos del padrón',
                 img: null,
                 desc: 'Sin acompañamiento.',
@@ -474,14 +458,12 @@ export default {
             title: 'Del Mar',
             desc: 'Selección de <span class="semibold">productos mediterráneos</span> del mar del norte.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 20,
-                show: false,
                 name: 'Mejillones a la Trattoria',
                 img: 'mejillones-trattoria',
                 desc: 'Mejillones al vapor al estilo italiano con su vino blanco, pimienta negra, ajito y perejil.',
@@ -490,7 +472,6 @@ export default {
               },
               {
                 id: 21,
-                show: false,
                 name: 'Pulpo a feira con cachelos',
                 img: 'pulpo-cachelos',
                 desc: 'Pulpo cocido al estilo tradicional gallego con acéite cruda, pimentón de la Vera y sal gruesa con cachelos, la auténtica patata norteña cocida.',
@@ -499,7 +480,6 @@ export default {
               },
               {
                 id: 22,
-                show: false,
                 name: 'Pulpo a la parrilla con patata asada',
                 img: 'pulpo-parrilla',
                 desc:
@@ -509,7 +489,6 @@ export default {
               },
               {
                 id: 23,
-                show: false,
                 name: 'Almejas de Arousa a la marinera',
                 img: 'almejas-marinera',
                 desc: 'Almejas de Arousa a la marinera.',
@@ -519,7 +498,6 @@ export default {
               // TODO: descarted by the moment...
               // {
               //   id: 24,
-              //   show: false,
               //   name: 'Bacalao rebozado',
               //   img: null,
               //   desc: null,
@@ -528,7 +506,6 @@ export default {
               // },
               {
                 id: 25,
-                show: false,
                 name: 'Zamburiñas a la plancha',
                 img: null,
                 desc: null,
@@ -537,7 +514,6 @@ export default {
               },
               {
                 id: 26,
-                show: false,
                 name: 'Boquerones fritos de Cádiz',
                 img: 'boquerones-fritos',
                 desc: 'Boquerones fritos enharinados y salpimentados con su toque de limón.',
@@ -546,7 +522,6 @@ export default {
               },
               {
                 id: 27,
-                show: false,
                 name: 'Tartar de salmón',
                 img: null,
                 desc: 'Tartar de salmón con cama de tomate fresco y aguacate acompañado de pan tostado.',
@@ -555,7 +530,6 @@ export default {
               },
               {
                 id: 28,
-                show: false,
                 name: 'Tartar de atún',
                 img: 'tartar-atun',
                 desc: 'Atún con sésamo en cama de tomate fresco, cebolla morada y aguacate acompañado de pan tostado.',
@@ -564,7 +538,6 @@ export default {
               },
               {
                 id: 29,
-                show: false,
                 name: 'Gambas blancas a la plancha 🍤',
                 img: 'gambas-plancha',  
                 desc: 'Ración de gambas blancas frescas a la plancha con un toque de sal.',
@@ -573,7 +546,6 @@ export default {
               },
               {
                 id: 30,
-                show: false,
                 name: 'Tataki de atún con sésamo',
                 img: null,
                 desc: null,
@@ -586,14 +558,12 @@ export default {
             title: 'De la Tierra',
             desc: 'Selección de <span class="semibold">productos mediterráneos</span> de las tierras altas norteñas.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 40,
-                show: false,
                 name: 'Secreto ibérico a la parrilla',
                 img: null,
                 desc: null,
@@ -602,7 +572,7 @@ export default {
               },
               {
                 id: 41,
-                show: false,
+                
                 name: 'Foie plancha con reducción de mermelada de rosa mosqueta',
                 img: null,
                 desc: null,
@@ -611,7 +581,6 @@ export default {
               },
               {
                 id: 42,
-                show: false,
                 name: 'Cecina de vacuno con virutas de manchego',
                 img: null,
                 desc: null,
@@ -620,7 +589,6 @@ export default {
               },
               {
                 id: 43,
-                show: false,
                 name: 'Huevos con jamón ibérico y patatas roja',
                 img: null,
                 desc: null,
@@ -629,7 +597,6 @@ export default {
               },
               {
                 id: 44,
-                show: false,
                 name: 'Entrecot a la parrilla',
                 img: 'entrecot-parrilla',
                 desc:
@@ -639,7 +606,6 @@ export default {
               },
               {
                 id: 45,
-                show: false,
                 name: 'Chuletón a la parrilla',
                 img: 'chuleton-parrilla',
                 desc:
@@ -649,7 +615,6 @@ export default {
               },
               {
                 id: 46,
-                show: false,
                 name: 'Steak tartar',
                 img: null,
                 desc: 'Steak tartar de carne madurada acompañado de pan tostado.',
@@ -658,7 +623,6 @@ export default {
               },
               {
                 id: 47,
-                show: false,
                 name: 'Lacón a la gallega',
                 img: null,
                 desc: 'Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.',
@@ -667,7 +631,6 @@ export default {
               },
               {
                 id: 48,
-                show: false,
                 name: 'Espárragos blancos a la parrilla con cecina y trufa',
                 img: null,
                 desc: '3 unidades.',
@@ -677,7 +640,6 @@ export default {
               // TDO: descarted by the moment...
               // {
               //   id: 49,
-              //   show: false,
               //   name: 'Solomillo de cerdo a la parrilla',
               //   img: null,
               //   desc: null,
@@ -686,7 +648,6 @@ export default {
               // },
               {
                 id: 49,
-                show: false,
                 name: 'Solomillo de ternera a la parrilla',
                 img: null,
                 desc: "Solomillo de ternera a la parrilla de piedra volcánica al punto de sal.",
@@ -695,7 +656,6 @@ export default {
               },
               {
                 id: 101,
-                show: false,
                 name: 'Carrillera de cerdo',
                 img: null,
                 desc: 'Carrillera de cerdo <span class="semibold">en salsa o a la parrilla</span> a elección del comensal.',
@@ -709,14 +669,12 @@ export default {
             desc:
               'Selección de arroces caldosos o melosos de marisco. <span class="semibold">40 minutos</span> de tiempo de elaboración. <span class="semibold">Pedido mínimo</span> para 2 comensales.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 60,
-                show: false,
                 name: 'Arroz con bogavante',
                 img: 'arroz-bogavante',
                 desc: 'Clásico arroz con bogavante caldoso o suelto, según preferencia del comensal.',
@@ -725,7 +683,7 @@ export default {
               },
               {
                 id: 61,
-                show: false,
+                
                 name: 'Arroz con zamburiñas',
                 img: 'arroz-zamburinas',
                 desc: 'Arroz con zamburiñas al gusto: caldoso o suelto.',
@@ -734,7 +692,6 @@ export default {
               },
               {
                 id: 62,
-                show: false,
                 name: 'Paella de marisco',
                 img: 'arroz-paella-marisco',
                 desc: 'Paella española de marisco con langostinos rojos, mejillones, almejas...',
@@ -743,7 +700,6 @@ export default {
               },
               {
                 id: 63,
-                show: false,
                 name: 'Paella de pulpo y gambas 🍤',
                 img: 'arroz-pulpo-gambas',
                 desc: 'Paella especial de pulpo y gambas al gusto, meloso o suelto.',
@@ -752,7 +708,6 @@ export default {
               },
               {
                 id: 64,
-                show: false,
                 name: 'Arroz negro al gusto',
                 img: 'arroz-al-gusto',
                 desc: 'Arroz con tinta de calamar (negro) al gusto: gambas, pulpo, almejas, mejillones, zamburiñas...',
@@ -761,7 +716,6 @@ export default {
               },
               {
                 id: 65,
-                show: false,
                 name: 'Arroz a banda',
                 img: 'arroz-a-banda',
                 desc: 'El típico arroz alicantino elaborado con caldo de morralla y servido con ali oli.',
@@ -770,7 +724,6 @@ export default {
               },
               {
                 id: 66,
-                show: false,
                 name: 'Arroz con alcachofas',
                 // img: 'arroz-alcachofas',
                 img: null,
@@ -780,7 +733,6 @@ export default {
               },
               {
                 id: 67,
-                show: false,
                 name: 'Arroz con rabo de toro.',
                 // img: 'arroz-rabo-toro',
                 img: null,
@@ -794,14 +746,12 @@ export default {
             title: 'De cuchara',
             desc: 'Pedido mínimo para <span class="semibold">2 comensales</span>.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 80,
-                show: false,
                 name: 'Botillo del Bierzo',
                 img: 'botillo-bierzo',
                 desc: 'Botillo del Bierzo con su patata, zanahoria, berzas... Al pimentón de la Vera.',
@@ -810,7 +760,6 @@ export default {
               },
               {
                 id: 81,
-                show: false,
                 name: 'Codillo asado',
                 img: 'codillo-asado',
                 desc: 'Codillo asado con verduras.',
@@ -819,7 +768,6 @@ export default {
               },
               {
                 id: 82,
-                show: false,
                 name: 'Pochas con almejas',
                 img: null,
                 desc: 'Pochas con almejas típicas asturianas con su faba asturiana y almejas.',
@@ -828,7 +776,6 @@ export default {
               },
               {
                 id: 83,
-                show: false,
                 name: 'Callos con garbanzos',
                 img: null,
                 desc: 'Cocinamos el famoso guiso de legumbres y casquería norteño que entra perfecto en días de frío.',
@@ -837,7 +784,6 @@ export default {
               },
               {
                 id: 84,
-                show: false,
                 name: 'Cocido madrileño',
                 img: null,
                 desc:
@@ -847,7 +793,6 @@ export default {
               },
               {
                 id: 85,
-                show: false,
                 name: 'Sopa de ajo',
                 img: null,
                 desc:
@@ -861,14 +806,12 @@ export default {
             title: 'Para terminar',
             desc: 'Postres caseros para dejar un toque dulce en el paladar.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 70,
-                show: false,
                 name: 'Arroz con leche con azúcar tostada',
                 img: null,
                 desc: 'Arroz con leche casero con azúcar tostada.',
@@ -877,7 +820,6 @@ export default {
               },
               {
                 id: 71,
-                show: false,
                 name: 'Flan de orujo',
                 img: null,
                 desc: 'Flan casero de orujo de licor café de Galicia.',
@@ -886,7 +828,6 @@ export default {
               },
               {
                 id: 72,
-                show: false,
                 name: 'Tarta Tatin de manzana',
                 img: null,
                 desc: 'Tarta de manzana casera con dulce hojaldre crujiente.',
@@ -899,14 +840,12 @@ export default {
             title: 'Fuera de carta',
             desc: 'Otras sugerencias culinarias de temporada. Preguntar disponibilidad.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 138,
             },
             items: [
               {
                 id: 96,
-                show: false,
                 name: 'Pierna de cordero asada',
                 img: 'pierna-cordero-asada',
                 desc: 'Pierna de cordero asada a fuego lento con patatas asadas.',
@@ -919,14 +858,12 @@ export default {
             title: 'Vinos',
             desc: 'Amplia variedad de vinos.',
             imgs: {
-              position: 'bottom',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 90,
-                show: false,
                 name: 'Condado de Oriza',
                 img: 'vino-condado-oriza',
                 desc: 'Crianza rivera del Duero envejecido 14 meses en barricas de roble americano.',
@@ -938,7 +875,6 @@ export default {
               },
               {
                 id: 91,
-                show: false,
                 name: 'Pulpo albariño',
                 img: 'vino-pulpo-albarino',
                 desc: 'Albariño de Pagos del Rey. Vino blanco de denominación de origen Rías Baixas.',
@@ -950,7 +886,6 @@ export default {
               },
               {
                 id: 92,
-                show: false,
                 name: 'Arnegui',
                 img: 'vino-arnegui-rioja',
                 desc: 'Crianza Rioja tinto con aromas afrutados, con un toque de herbáceo y de roble bien integrado.',
@@ -962,7 +897,6 @@ export default {
               },
               {
                 id: 93,
-                show: false,
                 name: 'Protos',
                 img: 'vino-protos-rivera',
                 desc: 'Clásico rivera del Duero de aromas tostados y un final ligeramente ahumado y complejo.',
@@ -974,7 +908,6 @@ export default {
               },
               {
                 id: 94,
-                show: false,
                 name: 'Matarromera',
                 img: 'vino-matarromera-rivera',
                 desc: 'Crianza rivera del Duero potente que combina aroma a frutos negros muy maduros con los tonos de madera limpia.',
@@ -986,7 +919,6 @@ export default {
               },
               {
                 id: 95,
-                show: false,
                 name: 'Mar de frades',
                 img: 'vino-mar-frades',
                 desc: 'Vino blanco de uva 100% Albariño de las Rías Baixas. Fresco con presencia de frutas exóticas y aromas marítimos.',
@@ -1002,14 +934,12 @@ export default {
             title: 'Cervezas',
             desc: null,
             imgs: {
-              position: 'bottom',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 50,
-                show: false,
                 name: 'Cerveza de grifo',
                 img: 'cerveza-grifo',
                 desc: 'Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.',
@@ -1018,7 +948,6 @@ export default {
               },
               {
                 id: 51,
-                show: false,
                 name: 'Cerveza en botella',
                 img: 'cerveza-tercio',
                 desc: 'Disponemos de: Estrella de Galicia, Mahou y Heineken.',
@@ -1030,7 +959,6 @@ export default {
               },
               {
                 id: 52,
-                show: false,
                 name: 'Cerveza sin gluten',
                 img: 'cerveza-tercio-sin-gluten',
                 desc: 'Tercio de Mahou sin gluten.',
@@ -1039,7 +967,6 @@ export default {
               },
               {
                 id: 53,
-                show: false,
                 name: 'Cerveza 1906',
                 img: 'cerveza-1906',
                 desc: 'Tercio de cerveza especial reserva 1906 de Estrella de Galicia.',
@@ -1048,7 +975,6 @@ export default {
               },
               {
                 id: 54,
-                show: false,
                 name: 'Cerveza 1906 Red',
                 img: 'cerveza-1906-red',
                 desc: 'Tercio de cerveza tostada (roja) especial reserva 1906 de Estrella de Galicia.',
@@ -1057,7 +983,6 @@ export default {
               },
               {
                 id: 55,
-                show: false,
                 name: 'Cerveza 1906 Black',
                 img: 'cerveza-1906-black',
                 desc: 'Tercio de cerveza especial reserva 1906 Black Coupage (negra) de Estrella de Galicia.',
@@ -1066,7 +991,6 @@ export default {
               },
               // {
               //   id: 54,
-              //   show: false,
               //   name: 'Cerveza tostada 0,0',
               //   img: 'cerveza-tostada-00',
               //   desc: 'Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.',
@@ -1080,14 +1004,12 @@ export default {
             desc:
               'Yria es una pequeña <span class="semibold">cervecera nacional</span> con una marcada tendencia a la innovación.',
             imgs: {
-              position: 'bottom',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 56,
-                show: false,
                 name: 'Bohemia lager',
                 img: 'cerveza-yria-bohemia',
                 desc: 'Cerveza rubia refrescante estilo lager de 4.7%',
@@ -1096,7 +1018,6 @@ export default {
               },
               {
                 id: 57,
-                show: false,
                 name: 'Golden Ale',
                 img: 'cerveza-yria-golden',
                 desc: 'Cerveza dorada estilo ale donde predomina la malta. 5.5%',
@@ -1105,7 +1026,6 @@ export default {
               },
               {
                 id: 58,
-                show: false,
                 name: 'Brutalism IPA',
                 img: 'cerveza-yria-brutalism',
                 desc: 'Cerveza brut Indian Pale Ale refrescante y muy aromática. 7%',
@@ -1114,7 +1034,6 @@ export default {
               },
               {
                 id: 59,
-                show: false,
                 name: 'U.F.O. IPA',
                 img: 'cerveza-yria-ufo',
                 desc: 'Cerveza de estilo American India Pale Ale. Seca, amarga sin excesos y de trago muy largo. 6%',
@@ -1127,14 +1046,12 @@ export default {
             title: 'Licores y combinados',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 35,
-                show: false,
                 name: 'Tinto de verano',
                 img: 'tinto-de-verano',
                 desc: 'Vino tinto con gaseosa o limón bien fresquito.',
@@ -1143,7 +1060,6 @@ export default {
               },
               {
                 id: 36,
-                show: false,
                 name: 'Chupito',
                 img: null,
                 desc: null,
@@ -1152,7 +1068,6 @@ export default {
               },
               {
                 id: 37,
-                show: false,
                 name: 'Combinados',
                 img: 'combinados',
                 desc:
@@ -1166,14 +1081,12 @@ export default {
             title: 'Otras bebidas',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 30,
-                show: false,
                 name: 'Café o infusión',
                 img: 'cafe-con-leche',
                 desc: 'Café al gusto (cortado, sólo, con leche...) o infusión.',
@@ -1182,7 +1095,6 @@ export default {
               },
               {
                 id: 31,
-                show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
                 desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',

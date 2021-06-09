@@ -323,14 +323,12 @@ export default {
             title: 'Menú del día <span>🍲</span>',
             desc: 'Disponible de <span class="semibold">Martes</span> a <span class="semibold">Viernes</span>.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 99,
-                show: false,
                 name: 'Menú diario',
                 img: null,
                 desc: 'Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.',
@@ -343,14 +341,12 @@ export default {
             title: 'Raciones <span>🧆</span>',
             desc: 'También <span class="semibold">para llevar</span>. Recoger en el local.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 1,
-                show: false,
                 name: 'Patatas bravas o mixtas',
                 img: 'racion-braviolis',
                 desc: 'Ración de patatas bravas picantes o mitad bravas y mitad ali oli.',
@@ -362,7 +358,6 @@ export default {
               },
               {
                 id: 2,
-                show: false,
                 name: 'Carne de pincho',
                 img: 'racion-carnepincho',
                 desc: 'Ración de carne de pincho con patatas fritas y pimientos de Padrón.',
@@ -374,7 +369,6 @@ export default {
               },
               {
                 id: 3,
-                show: false,
                 name: 'Croquetas de jamón',
                 img: 'racion-croquetas',
                 desc: 'Ración de croquetas caseras de jamón serrano.',
@@ -386,7 +380,6 @@ export default {
               },
               {
                 id: 4,
-                show: false,
                 name: 'Ensalada mixta',
                 img: 'racion-ensalada-mixta',
                 desc: 'Ensalada de mezclun de lechugas, tomate, espáragos, atún, maiz...',
@@ -398,7 +391,6 @@ export default {
               },
               {
                 id: 5,
-                show: false,
                 name: 'Jamón ibérico',
                 img: null,
                 desc: null,
@@ -410,7 +402,6 @@ export default {
               },
               {
                 id: 6,
-                show: false,
                 name: 'Queso curado',
                 img: null,
                 desc: null,
@@ -422,7 +413,6 @@ export default {
               },
               {
                 id: 7,
-                show: false,
                 name: 'Lacón a la gallega',
                 img: null,
                 desc: 'Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.',
@@ -434,7 +424,6 @@ export default {
               },
               {
                 id: 8,
-                show: false,
                 name: 'Tabla de salchipapas',
                 img: null,
                 desc: 'Patatas fritas con salchichas acompañado de salsa brava, kepchup, mostaza, alioli...',
@@ -446,7 +435,6 @@ export default {
               },
               {
                 id: 9,
-                show: false,
                 name: 'Tortilla de patatas',
                 img: 'racion-tortilla',
                 desc: 'Básico de la comida española. Con o sin cebolla. Al punto, jugosilla.',
@@ -458,7 +446,6 @@ export default {
               },
               {
                 id: 10,
-                show: false,
                 name: 'Alitas de pollo',
                 img: null,
                 desc: 'Alitas de pollo con patatas fritas y pimientos al punto de sal.',
@@ -470,7 +457,6 @@ export default {
               },
               {
                 id: 11,
-                show: false,
                 name: 'Nuggets de pollo',
                 img: null,
                 desc: 'Pequeñas piezas de pechuga de pollo rebozadas y fritas.',
@@ -482,7 +468,6 @@ export default {
               },
               {
                 id: 12,
-                show: false,
                 name: 'Oreja a la plancha',
                 img: null,
                 desc: 'La tradicional oreja de cerdo a la plancha al punto que desse con un toque picante.',
@@ -494,7 +479,6 @@ export default {
               },
               {
                 id: 13,
-                show: false,
                 name: 'Huevos rotos con jamón',
                 img: null,
                 desc: 'Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico.',
@@ -506,7 +490,6 @@ export default {
               },
               {
                 id: 14,
-                show: false,
                 name: 'Pimientos de Padrón',
                 img: null,
                 desc: 'Como dirían en Galicia: "Os pementos de Padrón, uns pican e outros non".',
@@ -518,7 +501,6 @@ export default {
               },
               {
                 id: 15,
-                show: false,
                 name: 'Pulpo a la gallega',
                 img: 'racion-pulpo',
                 desc: 'Pulpo cocido con cachelos y su toque de sal, aceite de oliva y pimentón.',
@@ -527,7 +509,6 @@ export default {
               },
               {
                 id: 16,
-                show: false,
                 name: 'Chopitos',
                 img: null,
                 desc: null,
@@ -539,7 +520,6 @@ export default {
               },
               {
                 id: 17,
-                show: false,
                 name: 'Calamares a la romana',
                 img: null,
                 desc: 'Calamares rebozados fritos con su toque de limón.',
@@ -551,7 +531,6 @@ export default {
               },
               {
                 id: 18,
-                show: false,
                 name: 'Boquerones fritos',
                 img: 'racion-boquerones-fritos',
                 desc: 'Al estilo andaluz, con su toque de vinagre, pimentón y limón.',
@@ -563,7 +542,6 @@ export default {
               },
               {
                 id: 19,
-                show: false,
                 name: 'Patas de calamar',
                 img: 'racion-rabas',
                 desc: 'Patas de calamar rebozadas fritas con su toque de limón.',
@@ -575,7 +553,6 @@ export default {
               },
               {
                 id: 20,
-                show: false,
                 name: 'Fritura de pescado',
                 img: 'racion-fritura',
                 desc: 'Fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...',
@@ -587,7 +564,6 @@ export default {
               },
               {
                 id: 21,
-                show: false,
                 name: 'Sepia a la plancha',
                 img: 'racion-sepia',
                 desc: 'Sepia con salsa alioli y guarnición de ensalada.',
@@ -596,7 +572,6 @@ export default {
               },
               {
                 id: 22,
-                show: false,
                 name: 'Gambón a la plancha',
                 img: null,
                 desc: null,
@@ -605,7 +580,6 @@ export default {
               },
               {
                 id: 23,
-                show: false,
                 name: 'Boquerones en vinagre',
                 img: 'racion-boquerones-vinagre',
                 desc: 'Boquerones en vinagre con su toque de ajo y perejil.',
@@ -617,7 +591,6 @@ export default {
               },
               {
                 id: 24,
-                show: false,
                 name: 'Anchoas',
                 img: null,
                 desc: 'Anchoas en aceite de oliva virgen.',
@@ -629,7 +602,6 @@ export default {
               },
               {
                 id: 25,
-                show: false,
                 name: 'Matrimonio',
                 img: null,
                 desc: 'Clásico combinado de anchoas en aceite y boquerones en vinagre.',
@@ -645,7 +617,6 @@ export default {
             title: 'Bocadillos y Montados <span>🥪</span>',
             desc: 'Preguntar precios y disponibilidad.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
@@ -655,14 +626,12 @@ export default {
             title: 'Desayunos <span>☕️</span>',
             desc: 'En horario de mañana.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 41,
-                show: false,
                 name: 'Café y tostada',
                 img: 'desayuno-tostada-tomate',
                 desc: 'Café al gusto (cortado, sólo, con leche...) con tostada de mantequilla y mermelada o tomate.',
@@ -674,7 +643,6 @@ export default {
               },
               {
                 id: 42,
-                show: false,
                 name: 'Café y tostada con jamón',
                 img: null,
                 desc: 'Café al gusto (cortado, sólo, con leche...) con tostada de tomate y jamón.',
@@ -687,14 +655,12 @@ export default {
             title: 'Cervezas <span>🍺</span>',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 50,
-                show: false,
                 name: 'Cerveza de grifo',
                 img: 'cerveza-grifo',
                 desc: 'Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.',
@@ -708,7 +674,6 @@ export default {
               },
               {
                 id: 51,
-                show: false,
                 name: 'Cerveza en botella',
                 img: 'cerveza-tercio',
                 desc: 'Disponemos de: Estrella de Galicia, Mahou y Heineken.',
@@ -720,7 +685,6 @@ export default {
               },
               {
                 id: 52,
-                show: false,
                 name: 'Cerveza sin gluten',
                 img: 'cerveza-tercio-sin-gluten',
                 desc: 'Tercio de Mahou sin gluten.',
@@ -729,7 +693,6 @@ export default {
               },
               {
                 id: 53,
-                show: false,
                 name: 'Cerveza 1906',
                 img: 'cerveza-1906',
                 desc: 'Tercio de cerveza especial reserva 1906 de Estrella de Galicia.',
@@ -738,7 +701,7 @@ export default {
               },
               {
                 id: 54,
-                show: false,
+                
                 name: 'Cerveza tostada 0,0',
                 img: 'cerveza-tostada-00',
                 desc: 'Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.',
@@ -751,14 +714,12 @@ export default {
             title: 'Vinos <span>🍷</span>',
             desc: 'Amplia variedad de vinos.',
             imgs: {
-              position: 'bottom',
               width: 120,
               height: 134,
             },
             items: [
               {
-                id: '80',
-                show: false,
+                id: 80,
                 name: 'Condado de Haza',
                 img: 'vino-condado-haza',
                 desc: 'Crianza 2017 es un vino limpio y brillante, ideal para maridar con asados de carne.',
@@ -769,8 +730,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '81',
-                show: false,
+                id: 81,
                 name: 'La Planta',
                 img: 'vino-la-planta',
                 desc: 'Ribera del Duero 2018. Ideal para embutidos y quesos así como para guisos.',
@@ -781,8 +741,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '82',
-                show: false,
+                id: 82,
                 name: 'Albariño Altos de Torona',
                 img: 'vino-altos-de-torona',
                 desc: 'Vino blanco de uva Albariño, recogida en las laderas del río Miño.',
@@ -793,8 +752,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '83',
-                show: false,
+                id: 83,
                 name: 'Manzanilla Solear',
                 img: 'vino-manzanilla-solear',
                 desc: 'Manzanilla fina y vieja, de carácter alegre que funcionará de maravilla con ibéricos.',
@@ -805,8 +763,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '84',
-                show: false,
+                id: 84,
                 name: 'Portocelo Roble',
                 img: 'vino-portocelo-rivera',
                 desc: 'Vino tinto tempranillo con denominación de origen Ribera del Duero.',
@@ -817,8 +774,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '85',
-                show: false,
+                id: 85,
                 name: 'Lan Crianza',
                 img: 'vino-lan-crianza',
                 desc: 'Vino crianza de la Rioja Alta y Rioja Alavesa perfecto para acompañar tapas y entremeses.',
@@ -829,8 +785,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '86',
-                show: false,
+                id: 86,
                 name: 'Rueda Heredad de Peñalosa',
                 img: 'vino-rueda-penalosa',
                 desc: 'Vino blanco 100% Verdejo con denominación de origen Rueda.',
@@ -841,8 +796,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '87',
-                show: false,
+                id: 87,
                 name: 'Alma de Valdeguerra',
                 img: 'vino-alma-valdeguerra',
                 desc: 'Vino rosado semidulce con denominación de origen Madrid.',
@@ -853,8 +807,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '88',
-                show: false,
+                id: 88,
                 name: 'Viñaredo Godello',
                 img: 'vino-vinaredo-godello',
                 desc: 'Vino blanco fresco y afrutado procedente de viñedos de Valdeorras.',
@@ -865,8 +818,7 @@ export default {
                 allergens: null,
               },
               {
-                id: '89',
-                show: false,
+                id: 89,
                 name: 'El Vínculo',
                 img: 'vino-el-vinculo',
                 desc: 'Vino tinto tempranillo de gran frescura y crianza en barrica de roble americano. D.O. La Mancha.',
@@ -882,14 +834,12 @@ export default {
             title: 'Bebidas <span>🥤</span>',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 60,
-                show: false,
                 name: 'Café o infusión',
                 img: 'cafe-con-leche',
                 desc: 'Café al gusto (cortado, sólo, con leche...) o infusión.',
@@ -898,7 +848,6 @@ export default {
               },
               {
                 id: 61,
-                show: false,
                 name: 'Carajillo',
                 img: null,
                 desc: null,
@@ -907,7 +856,6 @@ export default {
               },
               {
                 id: 62,
-                show: false,
                 name: 'Colacao',
                 img: null,
                 desc: null,
@@ -916,7 +864,7 @@ export default {
               },
               {
                 id: 63,
-                show: false,
+                
                 name: 'Botella de agua',
                 img: 'botella-agua',
                 desc: 'El agua de Cabreiroá destaca por sus propiedades minero-medicinales.',
@@ -928,7 +876,6 @@ export default {
               },
               {
                 id: 64,
-                show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
                 desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
@@ -937,7 +884,6 @@ export default {
               },
               {
                 id: 65,
-                show: false,
                 name: 'Zumos',
                 img: 'zumos',
                 desc: 'De piña, melocotón...',
@@ -950,14 +896,12 @@ export default {
             title: 'Licores y combinados <span>🍸</span>',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 70,
-                show: false,
                 name: 'Tinto de verano',
                 img: 'tinto-de-verano',
                 desc: 'Vino tinto con gaseosa o limón bien fresquito.',
@@ -969,7 +913,6 @@ export default {
               },
               {
                 id: 71,
-                show: false,
                 name: 'Chupito',
                 img: null,
                 desc: null,
@@ -978,7 +921,6 @@ export default {
               },
               {
                 id: 72,
-                show: false,
                 name: 'Copa de licor',
                 img: null,
                 desc: null,
@@ -987,7 +929,6 @@ export default {
               },
               {
                 id: 73,
-                show: false,
                 name: 'Copa de Baileys',
                 img: null,
                 desc: null,
@@ -996,7 +937,6 @@ export default {
               },
               {
                 id: 74,
-                show: false,
                 name: 'Combinados',
                 img: 'combinados',
                 desc: 'Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores.',

@@ -327,14 +327,13 @@ export default {
             title: 'Menús <span>🍽️</span>',
             desc: 'Preguntar al camarero por los platos ofrecidos y la disponibilidad.',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 99,
-                show: false,
+
                 name: 'Menú del día',
                 img: null,
                 desc:
@@ -344,7 +343,7 @@ export default {
               },
               {
                 id: 100,
-                show: false,
+
                 name: 'Menú especial',
                 img: null,
                 desc: 'Preguntar los platos ofrecidos y su disponibilidad.',
@@ -357,14 +356,12 @@ export default {
             title: 'Raciones de la tierra',
             desc: '"Gran variedad de entrantes típicos de la gastronomía medirterránea."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 1,
-                show: false,
                 name: 'Jamón ibérico',
                 img: 'racion-jamon-iberico',
                 desc: null,
@@ -376,7 +373,6 @@ export default {
               },
               {
                 id: 2,
-                show: false,
                 name: 'Queso manchego',
                 img: null,
                 // img: 'racion-queso-manchego',
@@ -389,7 +385,6 @@ export default {
               },
               {
                 id: 3,
-                show: false,
                 name: 'Tabla de jamón y queso',
                 img: 'tabla-jamon-queso',
                 desc: null,
@@ -401,7 +396,6 @@ export default {
               },
               {
                 id: 4,
-                show: false,
                 name: 'Tabla de pates y quesos',
                 img: null,
                 // img: 'tabla-pates-quesos',
@@ -411,7 +405,6 @@ export default {
               },
               {
                 id: 5,
-                show: false,
                 name: 'Revuelto de setas',
                 img: 'racion-revuelto-setas',
                 desc: 'Tradicional revuelto de setas de la gastornomía del norte de España.',
@@ -420,7 +413,6 @@ export default {
               },
               {
                 id: 6,
-                show: false,
                 name: 'Morcilla de Burgos',
                 img: 'racion-morcilla-burgos',
                 desc: 'Morcilla de cebolla y arroz típica de la gastronomía burgalesa.',
@@ -432,7 +424,6 @@ export default {
               },
               {
                 id: 7,
-                show: false,
                 name: 'Croquetas caseras',
                 img: 'racion-croquetas',
                 desc: 'Ración de riquísimas croquetas caseras de jamón.',
@@ -444,7 +435,6 @@ export default {
               },
               {
                 id: 8,
-                show: false,
                 name: 'Patatas bravas o bravioli',
                 img: 'racion-patatas-bravas',
                 desc: 'Ración de patatas bravas picantes o con un sabrosa mezcla de salsa brava y salsa ali oli.',
@@ -456,7 +446,6 @@ export default {
               },
               {
                 id: 9,
-                show: false,
                 name: 'Carne de pincho',
                 img: 'racion-carne-pincho',
                 desc: 'Ración de carne de pincho con patatas fritas y pimientos de Padrón.',
@@ -468,7 +457,6 @@ export default {
               },
               {
                 id: 10,
-                show: false,
                 name: 'Huevos rotos con jamón',
                 img: 'racion-huevos-rotos-jamon',
                 desc: 'Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico nacional.',
@@ -477,7 +465,6 @@ export default {
               },
               {
                 id: 11,
-                show: false,
                 name: 'Alitas de pollo',
                 img: 'racion-alitas-pollo',
                 desc: 'Alitas de pollo (8 unidades) al punto de sal.',
@@ -486,7 +473,6 @@ export default {
               },
               {
                 id: 12,
-                show: false,
                 name: 'Delicias de pollo',
                 img: 'racion-pollo-huevos',
                 desc: 'Piezas de pollo, patatas fritas con pimientos de padrón y huevos fritos.',
@@ -498,7 +484,6 @@ export default {
               },
               {
                 id: 13,
-                show: false,
                 name: 'Taquitos de pollo',
                 img: 'racion-taquitos-pollo',
                 desc: 'Piezas de pollo con rebozado suave, patatas fritas y pimientos de padrón con salsa ali oli.',
@@ -510,7 +495,6 @@ export default {
               },
               {
                 id: 14,
-                show: false,
                 name: 'Oreja a la plancha',
                 img: 'racion-oreja-plancha',
                 desc: 'Tradicional ración de oreja de cerdo a la plancha al punto que desse con un toque picante.',
@@ -522,7 +506,6 @@ export default {
               },
               {
                 id: 15,
-                show: false,
                 name: 'Oreja a la gallega',
                 img: 'racion-oreja-gallega',
                 desc: 'Oreja a la gallega cocida con aceite de oliva, sal y pimientón de la Vera espolvoreado.',
@@ -534,7 +517,6 @@ export default {
               },
               {
                 id: 16,
-                show: false,
                 name: 'Lacón a la gallega',
                 img: 'racion-lacon-gallega',
                 desc: 'Lacón de cerdo cocido con su toque de pimentón de la Vera con aceite de oliva virgen.',
@@ -546,7 +528,6 @@ export default {
               },
               {
                 id: 17,
-                show: false,
                 name: 'Lacón con grelos',
                 // img: 'racion-lacon-grelos',
                 img: null,
@@ -556,7 +537,6 @@ export default {
               },
               {
                 id: 18,
-                show: false,
                 name: 'Pimientos de padrón',
                 img: 'racion-pimientos-padron',
                 desc: 'Ya lo dicen los gallegos: <em>"Os pementos de Padrón, uns pican e outros non"</em>.',
@@ -568,7 +548,6 @@ export default {
               },
               {
                 id: 19,
-                show: false,
                 name: 'Berenjenas con miel',
                 img: 'racion-berenjenas-miel',
                 desc: 'Berenjenas rebozadas fritas con miel tradicionales de la cocina andaluza.',
@@ -577,7 +556,6 @@ export default {
               },
               {
                 id: 20,
-                show: false,
                 name: 'Torreznos de Soria',
                 img: 'racion-torreznos-soria',
                 desc:
@@ -587,7 +565,6 @@ export default {
               },
               {
                 id: 21,
-                show: false,
                 name: 'Tortilla de patatas',
                 img: 'racion-tortilla-patatas',
                 desc:
@@ -604,14 +581,12 @@ export default {
             title: 'Raciones del mar',
             desc: '"Raciones de pescado fresco: robozados, mariscos, frituras..."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 22,
-                show: false,
                 name: 'Bacalao rebozado',
                 img: 'racion-bacalao-rebozado',
                 desc: 'Bacalao rebozado como se debe hacer: frito tras pasarlo por harina y empaparlo en huevo batido.',
@@ -623,7 +598,6 @@ export default {
               },
               {
                 id: 23,
-                show: false,
                 name: 'Sepia a la plancha',
                 img: 'racion-sepia-plancha',
                 desc: 'Sepia fresca a la plancha con salsa alioli y guarnición de ensalada.',
@@ -632,7 +606,6 @@ export default {
               },
               {
                 id: 24,
-                show: false,
                 name: 'Chipirones a la plancha',
                 img: 'racion-chipirones-plancha',
                 desc: 'Clásica ración de chipirones a la plancha con cebolla y su aceite de oliva, ajo y perejil.',
@@ -644,7 +617,6 @@ export default {
               },
               {
                 id: 25,
-                show: false,
                 name: 'Gambón a la plancha',
                 img: 'racion-gambon-plancha',
                 desc: null,
@@ -656,7 +628,6 @@ export default {
               },
               {
                 id: 26,
-                show: false,
                 name: 'Gambas al ajillo',
                 img: 'racion-gambas-ajillo',
                 desc: 'La popular ración de la cocina española: gambas, ajo y aceite de oliva con un toque picante.',
@@ -665,7 +636,6 @@ export default {
               },
               {
                 id: 27,
-                show: false,
                 name: 'Alcachofas con almejas y gambas',
                 img: 'racion-alcachofas-almejas-gambas',
                 desc: 'Alcachofas frescas con almejas y gambas salteadas con ajo y aceite de oliva.',
@@ -677,7 +647,6 @@ export default {
               },
               {
                 id: 28,
-                show: false,
                 name: 'Calamares a la romana',
                 img: 'racion-calamares-romana',
                 desc: 'Calamares rebozados sólo con harina fritos con su toque de limón.',
@@ -689,7 +658,6 @@ export default {
               },
               {
                 id: 29,
-                show: false,
                 name: 'Fritura de la casa',
                 img: 'racion-fritura',
                 desc:
@@ -706,14 +674,12 @@ export default {
             title: 'Ensaladas',
             desc: '"Fresquitas y saludables. Prueba nuestras ensaladas."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 30,
-                show: false,
                 name: 'Ensalada mixta',
                 img: 'ensalada-mixta',
                 desc: 'Ensalada de mezclun de lechugas, tomate, espáragos, atún, cebolla...',
@@ -725,7 +691,6 @@ export default {
               },
               {
                 id: 31,
-                show: false,
                 name: 'Ensalada de ventresca',
                 img: 'ensalada-ventresca',
                 desc: 'Ensalada de ventresca de atún, cogollos, tomate, anchoas, pimientos de piquillo...',
@@ -737,7 +702,6 @@ export default {
               },
               {
                 id: 32,
-                show: false,
                 name: 'Ensalada césar',
                 img: 'ensalada-cesar',
                 desc:
@@ -751,14 +715,12 @@ export default {
             title: 'Carnes a la brasa',
             desc: '"Carnes jugosas a la parrilla para que se te haga la boca agua."',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 40,
-                show: false,
                 name: 'Chuletón trinchado',
                 img: 'chuleton-trinchado',
                 desc: 'Chuletón trinchado con su guarnición de patatas fritas.',
@@ -767,7 +729,6 @@ export default {
               },
               {
                 id: 41,
-                show: false,
                 name: 'Secreto de cerdo',
                 img: 'secreto-cerdo',
                 desc: 'Secreto de cerdo jugoso marcado a la brasa con sus patatas fritas.',
@@ -776,7 +737,6 @@ export default {
               },
               {
                 id: 42,
-                show: false,
                 name: 'Carne a la piedra',
                 // img: 'carne-piedra',
                 img: null,
@@ -786,7 +746,6 @@ export default {
               },
               {
                 id: 43,
-                show: false,
                 name: 'Chuletitas de cordero',
                 img: 'chuletitas-cordero',
                 desc: 'Chuletitas de cordero de lechal con su guarnición de patatas fritas.',
@@ -799,14 +758,12 @@ export default {
             title: 'Parrilladas',
             desc: '"Nuestras famosas parrilladas de carne, verduras o marisco a la brasa. Bajo <b>reserva previa</b>."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 76,
-                show: false,
                 name: 'Parrillada de carne',
                 img: 'parrillada-carne',
                 desc:
@@ -816,7 +773,6 @@ export default {
               },
               {
                 id: 77,
-                show: false,
                 name: 'Parrillada de verduras',
                 img: 'parrillada-verduras',
                 desc:
@@ -826,7 +782,7 @@ export default {
               },
               {
                 id: 78,
-                show: false,
+
                 name: 'Parrillada de marisco',
                 img: 'parrillada-marisco',
                 desc:
@@ -840,14 +796,12 @@ export default {
             title: 'Platos combinados',
             desc: '"¿Qué hay más típico que los platos combinados?"',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 46,
-                show: false,
                 name: 'Brocheta solomillo',
                 img: 'combo-brocheta-solomillo',
                 desc: 'Brocheta de solomillo de cerdo con su guarnición de patatas fritas.',
@@ -856,7 +810,6 @@ export default {
               },
               {
                 id: 47,
-                show: false,
                 name: 'Pollo con patatas y huevo',
                 img: 'combo-pollo-huevo',
                 desc: 'Filete de pechuga de pollo con guarnición de patatas y huevos fritos.',
@@ -865,7 +818,6 @@ export default {
               },
               {
                 id: 48,
-                show: false,
                 name: 'Chuleta con patatas y huevo',
                 // img: 'combo-chuleta-huevo',
                 img: null,
@@ -879,14 +831,12 @@ export default {
             title: 'Hamburguesas',
             desc: '"Se pueden <b>añadir o retirar ingredientes</b> a gusto del consumidor. Consultar con el camarero."',
             imgs: {
-              position: 'top',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 50,
-                show: false,
                 name: 'Hamburguesa veinti3',
                 img: 'hamburguesa-veinti3',
                 desc: 'De ternera, lechuga, pepinillos, tomate, mayonesa, cebolla, queso y jamón de york.',
@@ -895,7 +845,6 @@ export default {
               },
               {
                 id: 51,
-                show: false,
                 name: 'Hamburguesa Olé',
                 img: 'hamburguesa-ole',
                 desc:
@@ -909,14 +858,12 @@ export default {
             title: 'Sándwiches',
             desc: '"Nuestros sándwiches están elaborados con rebanadas de pan rústico."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 55,
-                show: false,
                 name: 'Sándwich vegetal "Estoque"',
                 img: 'sandwich-vegetal-estoque',
                 desc: 'Lechuga, tomate, mayonesa, huevo a la plancha y espárragos.',
@@ -925,7 +872,6 @@ export default {
               },
               {
                 id: 56,
-                show: false,
                 name: 'Sándwich mixto "Banderillas"',
                 img: 'sandwich-mixto-banderillas',
                 desc: 'Como viene siendo de ley: sándwich de queso y jamón de york a la plancha.',
@@ -934,7 +880,6 @@ export default {
               },
               {
                 id: 57,
-                show: false,
                 name: 'Sándwich mixto "Capote"',
                 // img: 'sandwich-mixto-capote',
                 img: null,
@@ -944,7 +889,6 @@ export default {
               },
               {
                 id: 58,
-                show: false,
                 name: 'Sándwich "Olé"',
                 // img: 'sandwich-ole',
                 img: null,
@@ -958,14 +902,12 @@ export default {
             title: 'Tostas',
             desc: '"Todas nuestras tostas están elaborados con rebanadas de pan rústico."',
             imgs: {
-              position: 'center',
               width: 96,
               height: 122,
             },
             items: [
               {
                 id: 60,
-                show: false,
                 name: 'Tosta jamón y tortilla',
                 img: 'tosta-jamon',
                 desc: 'Pan tumaca con jamón y tortilla francesa. El clásico "paleto", vamos.',
@@ -974,7 +916,6 @@ export default {
               },
               {
                 id: 61,
-                show: false,
                 name: 'Tosta tumaca y bacon queso',
                 img: 'tosta-bacon',
                 desc: 'Pan tumaca con bacon a la plancha y queso fundido.',
@@ -983,7 +924,6 @@ export default {
               },
               {
                 id: 62,
-                show: false,
                 name: 'Tosta lomo y queso',
                 img: 'tosta-lomo',
                 desc: 'Pan tumaca y lomo a la plancha.',
@@ -992,7 +932,6 @@ export default {
               },
               {
                 id: 63,
-                show: false,
                 name: 'Tosta de solomillo',
                 img: 'tosta-solomillo',
                 desc: 'Pan tostado con solomillo y salsa de queso roquefort.',
@@ -1001,7 +940,6 @@ export default {
               },
               {
                 id: 64,
-                show: false,
                 name: 'Tosta de jamón ibérico',
                 img: 'tosta-jamon-iberico',
                 desc: 'Pan tumaca con jamón ibérico.',
@@ -1010,7 +948,6 @@ export default {
               },
               {
                 id: 65,
-                show: false,
                 name: 'Tosta de ventresca y pimientos',
                 img: 'tosta-ventresca',
                 desc: 'Pan tostado con ventresca y pimientos de piquillo.',
@@ -1019,7 +956,6 @@ export default {
               },
               {
                 id: 66,
-                show: false,
                 name: 'Tosta de salmón',
                 img: 'tosta-salmon',
                 desc: 'Pan tostado con salmón y salsa de queso roquefort.',
@@ -1028,7 +964,6 @@ export default {
               },
               {
                 id: 67,
-                show: false,
                 name: 'Tosta de anchoas con tomate',
                 img: 'tosta-anchoas',
                 desc: 'Pan tostado con anchoas y tomate fresco.',
@@ -1037,7 +972,6 @@ export default {
               },
               {
                 id: 68,
-                show: false,
                 name: 'Tosta de gulas',
                 img: 'tosta-gulas',
                 desc: 'Pan tostado con gulas y salsa de queso suave tipo Philadelphia.',
@@ -1046,7 +980,6 @@ export default {
               },
               {
                 id: 69,
-                show: false,
                 name: 'Tosta de pulpo',
                 img: 'tosta-pulpo',
                 desc:
@@ -1056,7 +989,6 @@ export default {
               },
               {
                 id: 70,
-                show: false,
                 name: 'Tosta Olé',
                 img: 'tosta-ole',
                 desc:
@@ -1066,7 +998,6 @@ export default {
               },
               {
                 id: 71,
-                show: false,
                 name: 'Tosta Veinti3',
                 img: 'tosta-veinti3',
                 desc:
@@ -1080,14 +1011,12 @@ export default {
             title: 'Cervezas',
             desc: null,
             imgs: {
-              position: 'bottom',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 80,
-                show: false,
                 name: 'El Álguila',
                 img: 'cerveza-aguila',
                 desc: 'Disponemos de la cerveza madrileña El Águila lager especial y sin filtrar.',
@@ -1099,7 +1028,6 @@ export default {
               },
               {
                 id: 81,
-                show: false,
                 name: 'Amstel Original',
                 img: 'cerveza-amstel',
                 desc: 'Disponemos de la cerveza valenciana Amstel original 100% malta.',
@@ -1113,7 +1041,6 @@ export default {
               },
               {
                 id: 82,
-                show: false,
                 name: 'Amstel Radler',
                 img: 'cerveza-radler',
                 desc: 'La cerveza Amstel Original de siempre con el zumo de limón ofreciendo el doble de frescor.',
@@ -1127,7 +1054,6 @@ export default {
               },
               {
                 id: 83,
-                show: false,
                 name: 'Amstel Oro',
                 img: 'cerveza-amstel-oro',
                 desc: 'Cerveza lager especial tostada, mezcla de maltas de cebadas claras y tostadas.',
@@ -1136,7 +1062,6 @@ export default {
               },
               {
                 id: 84,
-                show: false,
                 name: 'Amstel Oro 0,0',
                 img: 'cerveza-amstel-oro-sin',
                 desc: 'Cerveza lager especial tostada pero sin nada de alcohol.',
@@ -1145,7 +1070,6 @@ export default {
               },
               {
                 id: 85,
-                show: false,
                 name: 'Buckler 0,0',
                 img: 'cerveza-buckler',
                 desc: 'Cerveza sin alcohol 100% malta. Dorada, única y ligera.',
@@ -1159,7 +1083,6 @@ export default {
               },
               {
                 id: 86,
-                show: false,
                 name: 'El Alcázar',
                 img: 'cerveza-alcazar',
                 desc: 'Cerveza especial, con cuerpo, sabor intenso y fuertes notas aromáticas.',
@@ -1168,7 +1091,6 @@ export default {
               },
               {
                 id: 87,
-                show: false,
                 name: '18/70 La Rubia',
                 img: 'cerveza-1870-la-rubia',
                 desc: 'Cerveza rubia de estilo lager con más cuerpo y fácil de beber, nacida en Donosti.',
@@ -1177,7 +1099,6 @@ export default {
               },
               {
                 id: 88,
-                show: false,
                 name: 'Heineken',
                 img: 'cerveza-heineken',
                 desc: 'Disponemos de la cerveza holandesa Heineken Pilsener.',
@@ -1186,7 +1107,6 @@ export default {
               },
               {
                 id: 89,
-                show: false,
                 name: 'Desperados',
                 img: 'cerveza-desperados',
                 desc: 'Cerveza alsaciana aromatizada con tequila.',
@@ -1195,7 +1115,6 @@ export default {
               },
               {
                 id: 90,
-                show: false,
                 name: 'Ladrón de Manzanas',
                 img: 'sidra-ladron-manzanas',
                 desc:
@@ -1209,14 +1128,12 @@ export default {
             title: 'Vinos',
             desc: '"Amplia variedad de vinos. Preguntad a nuestros camareros."',
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 101,
-                show: false,
                 name: 'Rivera Roble',
                 img: 'vino-rivera-roble',
                 desc: 'Ribera del Duero roble. Ideal para embutidos y quesos así como para guisos.',
@@ -1228,7 +1145,6 @@ export default {
               },
               {
                 id: 102,
-                show: false,
                 name: 'Rioja crianza',
                 img: 'vino-rioja-crianza',
                 desc: 'Rioja crianza ideal para maridar con asados de carne.',
@@ -1240,7 +1156,6 @@ export default {
               },
               {
                 id: 103,
-                show: false,
                 name: 'Alma',
                 img: 'vino-alma',
                 desc: 'Vino rosado semidulce con denominación de origen.',
@@ -1252,7 +1167,6 @@ export default {
               },
               {
                 id: 104,
-                show: false,
                 name: 'Verdejo',
                 img: 'vino-verdejo',
                 desc: 'Vinos blanco verdejo con denominación de origen.',
@@ -1268,14 +1182,12 @@ export default {
             title: 'Licores y combinados',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 110,
-                show: false,
                 name: 'Tinto de verano',
                 img: 'tinto-de-verano',
                 desc: 'Vino tinto con gaseosa o limón bien fresquito.',
@@ -1287,7 +1199,6 @@ export default {
               },
               {
                 id: 111,
-                show: false,
                 name: 'Combinados',
                 img: 'combinados',
                 desc:
@@ -1302,7 +1213,6 @@ export default {
               },
               // {
               //   id: 112,
-              //   show: false,
               //   name: 'Chupito',
               //   img: null,
               //   desc: null,
@@ -1315,14 +1225,12 @@ export default {
             title: 'Bebidas',
             desc: null,
             imgs: {
-              position: 'top',
               width: 120,
               height: 120,
             },
             items: [
               {
                 id: 120,
-                show: false,
                 name: 'Café o infusión',
                 img: 'cafe-con-leche',
                 desc: 'Café al gusto (cortado, sólo, con leche...) o infusión.',
@@ -1335,7 +1243,6 @@ export default {
               },
               {
                 id: 121,
-                show: false,
                 name: 'Café irlandés o vienés',
                 img: 'cafe-irlandes',
                 desc:
@@ -1348,7 +1255,6 @@ export default {
               },
               {
                 id: 122,
-                show: false,
                 name: 'Botella de agua',
                 img: 'botella-agua',
                 desc: 'Disponemos de agua mineral embotellada de medio litro.',
@@ -1357,7 +1263,6 @@ export default {
               },
               {
                 id: 123,
-                show: false,
                 name: 'Refrescos',
                 img: 'refrescos',
                 desc:
@@ -1372,7 +1277,6 @@ export default {
               },
               {
                 id: 124,
-                show: false,
                 name: 'Zumos',
                 img: 'zumos',
                 desc: 'De piña, melocotón...',
