@@ -37,11 +37,6 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      showAside: false,
-    };
-  },
   methods: {
     asideBehaviour() {
       this.$emit("aside")
