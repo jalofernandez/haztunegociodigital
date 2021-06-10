@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]" role="navigation" aria-label="main navigation">
+    <nav :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]" role="navigation" aria-label="Site main navigation">
       <div class="container">
         <div class="navbar-brand">
           <NuxtLink class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">

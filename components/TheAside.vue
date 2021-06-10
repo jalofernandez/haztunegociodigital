@@ -1,12 +1,12 @@
 <template>
-  <nav class="aside-menu with-anim">
+  <nav class="aside-menu with-anim" role="navigation" :aria-label="`${business.name} Menu page`">
     <div class="aside-header">
       <img
+        v-if="business.logo"
         class="aside-business-logo"
         :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
         :alt="`Logotipo de ${business.name} en ${business.place}`"
         :title="`Logotipo de ${business.name} en ${business.place}`"
-        v-if="business.logo"
       />
       <h2 class="aside-business-name" v-else>{{ business.name }}</h2>
     </div>
@@ -21,6 +21,7 @@
           class="aside-menu-link"
           v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }"
           v-html="menu.title"
+          role="button"
         ></a>
       </li>
     </ul>

@@ -19,7 +19,7 @@
         <div class="hero-body pt-0">
           <div class="container is-max-desktop">
             <!-- 00 :: navigation sticky bar -->
-            <div class="tabs is-centered is-sticky">
+            <nav class="tabs is-centered is-sticky" role="navigation" aria-label="Términos legales">
               <ul>
                 <li
                   :class="{ 'is-active': showLink(index) }"
@@ -38,10 +38,10 @@
                   </a>
                 </li>
               </ul>
-            </div>
+            </nav>
 
             <!-- 01 :: PRESTADOR Y RESPONSABILIDAD -->
-            <article id="section-responsability" class="media responsability mb-6">
+            <article id="section-responsability" class="media responsability mb-6" aria-label="Prestador y responsable">
               <figure class="media-left is-hidden-mobile">
                 <p class="image is-64x64 circle neomorph">
                   <img
@@ -147,7 +147,7 @@
             </article>
 
             <!-- 02 :: POLÍTICA DE PRIVACIDAD -->
-            <article id="section-privacy" class="media privacy mb-6">
+            <article id="section-privacy" class="media privacy mb-6" aria-label="Política de privacidad">
               <figure class="media-left is-hidden-mobile">
                 <p class="image is-64x64 circle neomorph">
                   <img
@@ -403,7 +403,7 @@
             </article>
 
             <!-- 03 :: CONDICIONES DE USO -->
-            <article id="section-terms" class="media terms mb-6">
+            <article id="section-terms" class="media terms mb-6" aria-label="Condiciones de uso">
               <figure class="media-left is-hidden-mobile">
                 <p class="image is-64x64 circle neomorph">
                   <img
@@ -633,7 +633,7 @@
             </article>
 
             <!-- 04 :: POLÍTICA DE COOKIES -->
-            <article id="section-cookies" class="media cookies mb-6">
+            <article id="section-cookies" class="media cookies mb-6" aria-label="Política de cookies">
               <figure class="media-left is-hidden-mobile">
                 <p class="image is-64x64 circle neomorph">
                   <img

@@ -11,7 +11,7 @@
         allowfullscreen
         loading="lazy"
       ></iframe>
-      <section class="hero is-small">
+      <section class="hero is-small" aria-label="Contacto">
         <div class="hero-body">
           <div class="container">
             <nav class="level">

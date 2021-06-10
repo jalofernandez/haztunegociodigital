@@ -15,7 +15,7 @@
           </div>
         </div>
       </section>
-      <section class="hero">
+      <section class="hero" aria-label="Mapa del sitio web">
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">

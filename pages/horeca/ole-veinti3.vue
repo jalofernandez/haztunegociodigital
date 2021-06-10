@@ -36,7 +36,7 @@
             role="button"
             :class="['navbar-burger', 'burger', { 'is-active': openedAside }]"
             aria-label="menu"
-            aria-expanded="false"
+            :aria-pressed="openedAside ? 'true' : 'false'"
           >
             <span v-for="item in 3" aria-hidden="true"></span>
           </a>
@@ -60,8 +60,14 @@
       <div v-if="openedSchedule" class="md-overlay" @click="closeModal()"></div>
     </transition>
     <transition name="pop" appear>
-      <div v-if="openedSchedule" class="md" role="dialog">
-        <button class="btn js-close" type="button" @click="closeModal()">
+      <div
+        v-if="openedSchedule"
+        class="md"
+        role="dialog"
+        aria-labelledby="name"
+        aria-describedby="schedule"
+      >
+        <button class="btn js-close" type="button" @click="closeModal()" aria-labelledby="cerrar">
           Cerrar
           <span>&times;</span>
         </button>
@@ -100,9 +106,16 @@
         :key="item.id"
         class="md"
         role="dialog"
+        aria-labelledby="name"
+        aria-describedby="desc"
       >
         <div class="md-inner dish info">
-          <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="closeItemDetail()">
+          <button
+            :class="['btn', 'js-close', { 'has-not-img': !item.img }]"
+            type="button"
+            @click="closeItemDetail()"
+            aria-labelledby="cerrar"
+          >
             Cerrar
             <span>&times;</span>
           </button>
@@ -145,7 +158,7 @@
     <!-- <BusinessItemModal :businessId="business.id" :menus="business.menus" /> -->
 
     <!-- Aside to navigate across dishes sections -->
-    <TheAside :business="business" @aside="asideBehaviour()" />
+    <TheAside :business="business" @aside="asideBehaviour()" :aria-expanded="openedAside ? 'true' : 'false'"/>
 
     <main class="wrapper-menu">
       <div class="dishes">
@@ -189,6 +202,7 @@
                   type="button"
                   class="btn light"
                   @click="showModal()"
+                  aria-labelledby="Ver horario"
                 >
                   Ver horario
                 </button>

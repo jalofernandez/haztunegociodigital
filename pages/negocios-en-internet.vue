@@ -14,7 +14,7 @@
           </div>
         </div>
       </section>
-      <section class="hero">
+      <section class="hero" aria-label="Ejemplos de negocios digitalizados con nosotros">
         <div class="hero-body">
           <div class="container">
             <div class="sectionIframe withFlexbox">

@@ -2,7 +2,7 @@
   <div :class="['page', $route.name]">
     <TheNavbar />
     <main>
-      <section class="hero is-fullheight">
+      <section class="hero is-fullheight" aria-label="Autor">
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title text-shadow is-size-2 is-size-3-mobile">
@@ -26,9 +26,9 @@
                 <Slogan />
               </div>
               <div class="jalo-footer">
-                <a href="https://jalofernandez.com" target="_blank" title=""
-                  >Ver website</a
-                >
+                <a href="https://jalofernandez.com" target="_blank" title="Ir al portfolio online de @jalofernandez">
+                  Ver website
+                </a>
                 <Social />
               </div>
               <div class="line--anim"></div>

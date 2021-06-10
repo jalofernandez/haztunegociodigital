@@ -90,9 +90,9 @@
       <CookieControl locale="es" />
 
       <SectionTitle :header="header.features" :id="'0'" />
-      <SectionChessBoard :items="features" :page="$route.name" />
+      <SectionChessBoard :items="features" :page="$route.name" aria-label="Negocios digitalizados"/>
 
-      <SectionTitle :header="header.advantages" :id="'1'" />
+      <SectionTitle :header="header.advantages" :id="'1'" aria-label="Ventajas de digitalizar tu negocio"/>
       <SectionMediaObject :media="advantages" />
     </main>
     <TheFooter :data="owner.footer" />
