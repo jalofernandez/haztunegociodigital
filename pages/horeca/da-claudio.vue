@@ -264,7 +264,7 @@
             </div>
           </section>
         </div>
-        <!-- <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name" /> -->
+        <!-- <BusinessItemList :menus="business.menus" :businessId="business.id" :businessName="business.name"/> -->
       </div>
 
       <div class="message thankfulness">
@@ -284,6 +284,8 @@ import BaseMessage from '~/components/BaseMessage.vue'
 import TheAside from '~/components/TheAside.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
+import businesses from '~/data/businesses'
+
 export default {
   components: {
     // BaseModal,
@@ -299,243 +301,7 @@ export default {
       openedSchedule: false,
       openedItemDetail: false,
       openedAside: false,
-      business: {
-        id: 'da-claudio',
-        name: 'Da Claudio Pizza & Pasta',
-        desc: '<span>Cocina</span> tradicional <span>italiana</span>',
-        logo: true,
-        cover: 'cover',
-        address: 'Calle Estrella de Elola, 11B (local), Valdemoro.',
-        place: 'Valdemoro, Madrid',
-        gmap: '3TtCfgnWdUwjL78u9',
-        phone: '910392366',
-        whatsapp: null,
-        // social: {
-        //   facebook: "https://www.facebook.com/¿?/",
-        //   instagram: "https://www.instagram.com/¿?/",
-        //   tripadvisor: "https://www.tripadvisor.es/¿?.html",
-        // },
-        schedule: {
-          days: [
-            { day: 'Lunes', hour: '9:00 - 14:00' },
-            { day: 'Martes', hour: 'Cerrado' },
-            { day: 'Miercoles', hour: '9:00 - 12:00' },
-            { day: 'Jueves', hour: '9:00 - 12:00' },
-            { day: 'Viernes', hour: '9:00 - 12:00' },
-            { day: 'Sábado', hour: '9:00 - 12:00' },
-            { day: 'Domingo', hour: '9:00 - 12:00' },
-          ],
-        },
-        messages: {
-          gluten: {
-            type: null,
-            copy: 'Elaboración diaria con ingredientes italianos. <br/><strong>Recoger en local</strong> y <strong>a domicilio</strong>.',
-          },
-        },
-        menus: [
-          {
-            title: '<span>🍽️</span> Menú del día',
-            desc: 'Disponible <em>Lunes</em>, <em>Miércoles</em>, <em>Jueves</em> y <em>Viernes</em>.',
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              {
-                id: 99,
-                name: 'Menú diario',
-                img: null,
-                desc: 'Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.',
-                prices: [{ name: 'Precio', price: '9,50' }],
-                allergens: null,
-              },
-            ],
-          },
-          {
-            title: '<span>🍕</span> Pizzas',
-            desc: '30 cm de deliciosa <strong>masa fina</strong> y <strong>crujiente</strong>. Base de tomate y mozzarella.',
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              {
-                id: 1,
-                name: 'Margaritta',
-                img: 'pizza-margaritta',
-                desc: 'Tomate y mozzarella.',
-                prices: [
-                  { name: 'Entera', price: '8' },
-                ],
-                allergens: ['gluten'],
-              },
-              {
-                id: 2,
-                name: 'Diavola',
-                img: 'pizza-diavola',
-                desc: 'Tomate, mozzarella, chorizo picante, pimiento rojo y aceitunas.',
-                prices: [
-                  { name: 'Entera', price: '9,50' },
-                ],
-                allergens: ['gluten'],
-              },
-              {
-                id: 3,
-                name: 'Sfiziosa',
-                img: 'pizza-sfiziosa',
-                desc: 'Tomate, mozzarella, jamón, bacon y cebolla.',
-                prices: [
-                  { name: 'Entera', price: '10' },
-                ],
-                allergens: ['gluten', 'soja'],
-              },
-            ],
-          },
-          {
-            title: '<span>🍝</span> Pasta',
-            desc: 'Nuestras auténticas pastas italianas.',
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              {
-                id: 50,
-                name: 'Spaghetti, Penne, Paccheri',
-                img: null,
-                desc:
-                  '- <em>Elige una salsa</em> - <br/><strong>Pesto:</strong> albahaca, ajo y piñones. <br/><strong>Pommodoro:</strong> salsa de tomate. <br/><strong>Bolognesa:</strong> carne de ternera y tomate. <br/><strong>Arrabiata:</strong> tomate picante. <br/><strong>Carbonara:</strong> bacon, huevo y parmiggiano.',
-                prices: [
-                  { name: 'Plato', price: '8,50' },
-                ],
-                allergens: ['gluten', 'huevos'],
-              },
-              {
-                id: 51,
-                name: 'Spaghetti Nero Mare',
-                img: 'pasta-spaghetti-nero-mare',
-                desc: 'Spaghetti con tinta de sepia y mix de mariscos.',
-                prices: [
-                  { name: 'Tostada', price: '11,00' },
-                ],
-                allergens: ['gluten', 'huevos', 'crustaceos', 'moluscos', 'pescado'],
-              },
-            ],
-          },
-          {
-            title: '<span>☕️</span> Desayunos',
-            desc: 'En horario de mañana de 9:00 a 12:00 h.',
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              {
-                id: 41,
-                name: 'Café italiano',
-                img: 'capuccino',
-                desc: 'Café al gusto: cortado, sólo, con leche, capuccino...',
-                prices: [
-                  { name: 'Precio', price: '1,20' },
-                ],
-                allergens: null,
-              },
-              {
-                id: 42,
-                name: 'Tostada',
-                img: 'tostada',
-                desc: 'Tostada de tomate o con mantequilla y mermelada.',
-                prices: [
-                  { name: 'Precio', price: '1,80' },
-                ],
-                allergens: null,
-              },
-            ],
-          },
-          {
-            title: '<span>🍰</span> Postres',
-            desc: '...Y para terminar un poco de dulce.',
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              {
-                id: 70,
-                name: 'Tiramisú',
-                img: 'postre-tiramisu',
-                desc: 'Pastel frío en capas de nata y bizcocho de café y espolboreado con cacao.',
-                prices: [
-                  { name: 'Unidad', price: '4,00' }
-                ],
-                allergens: ['gluten', 'huevos', 'lacteos', 'sulfitos'],
-              },
-            ],
-          },
-          {
-            title: '<span>🥤</span> Bebidas',
-            desc: null,
-            imgs: {
-              width: 145,
-              height: 145,
-            },
-            items: [
-              // {
-              //   id: 60,
-              //   name: 'Café o infusión',
-              //   img: 'cafe-con-leche',
-              //   desc: 'Café al gusto (cortado, sólo, con leche, capuccino...) o infusión.',
-              //   prices: [{ name: 'Precio', price: '1,20' }],
-              //   allergens: null,
-              // },
-              // {
-              //   id: 62,
-              //   name: 'Colacao',
-              //   img: null,
-              //   desc: null,
-              //   prices: [{ name: 'Precio', price: '1,40' }],
-              //   allergens: null,
-              // },
-              {
-                id: 63,
-                name: 'Botella de agua',
-                img: 'botella-agua',
-                desc: 'Agua mineral bien fresquita.',
-                prices: [
-                  { name: '1/2 litro', price: '0,70' },
-                ],
-                allergens: null,
-              },
-              {
-                id: 64,
-                name: 'Refrescos',
-                img: 'refrescos',
-                desc: 'Coca-Cola, Coca-Cola Zero, Fanta de naranja y limón...',
-                prices: [{ name: 'Precio', price: '2,50' }],
-                allergens: null,
-              },
-              // {
-              //   id: 65,
-              //   name: 'Zumos',
-              //   img: 'zumos',
-              //   desc: 'De piña, melocotón...',
-              //   prices: [{ name: 'Precio', price: '2,40' }],
-              //   allergens: null,
-              // },
-              {
-                id: 66,
-                name: 'Cerveza',
-                img: 'cerveza',
-                desc: 'Disponemos de: Mahou y Heineken.',
-                prices: [
-                  { name: 'Lata', price: '1,00' },
-                ],
-                allergens: ['gluten'],
-              },
-            ],
-          },
-        ],
-      },
+      business: businesses.find(business => business.id == 'da-claudio'),
       structuredData: {
         '@context': 'http://schema.org',
         '@type': 'LocalBusiness',
@@ -661,6 +427,7 @@ export default {
       return dishes.filter(dish => dish.id === modal)
     }
   },
+  // TODO: aside navbar is hidden in desktop: fix it asap!
   // created() {
   //   const mq = this.$mq
   //   console.log(mq)
