@@ -89,11 +89,11 @@
 
       <CookieControl locale="es" />
 
-      <SectionTitle :header="header.features" :id="'0'" />
+      <!-- <SectionTitle :header="header.features" :id="'0'" />
       <SectionChessBoard :items="features" :page="$route.name" aria-label="Negocios digitalizados"/>
 
       <SectionTitle :header="header.advantages" :id="'1'" aria-label="Ventajas de digitalizar tu negocio"/>
-      <SectionMediaObject :media="advantages" />
+      <SectionMediaObject :media="advantages" /> -->
     </main>
     <TheFooter :data="owner.footer" />
   </div>
@@ -102,17 +102,17 @@
 <script>
 import TheNavbar from '~/components/TheNavbar.vue'
 import TheFooter from '~/components/TheFooter.vue'
-import SectionTitle from '~/components/SectionTitle.vue'
-import SectionChessBoard from '~/components/SectionChessBoard.vue'
-import SectionMediaObject from '~/components/SectionMediaObject.vue'
+// import SectionTitle from '~/components/SectionTitle.vue'
+// import SectionChessBoard from '~/components/SectionChessBoard.vue'
+// import SectionMediaObject from '~/components/SectionMediaObject.vue'
 
 export default {
   components: {
     TheNavbar,
     TheFooter,
-    SectionTitle,
-    SectionChessBoard,
-    SectionMediaObject,
+    // SectionTitle,
+    // SectionChessBoard,
+    // SectionMediaObject,
   },
   data() {
     return {
@@ -120,100 +120,100 @@ export default {
       header: {
         features: 'Clientes como estos ya confían en nosotros:',
       },
-      features: [
-        {
-          title: '...Cocino en tu casa',
-          description:
-            'Llegaré a tu casa con tiempo suficiente para cocinar el menú acordado previamente. Si eres fan de los fogones aprovecha para quedarte durante la preparación de los platos y así <b>aprender de una cocinera profesional</b>.',
-          link: 'Reservar en el',
-          href: 'tel:644093470',
-          asset: {
-            video: true,
-            // src: 'chefioana-video-cocinando.mp4',
-            src: 'M3j8HmSZn6E',
-            alt: 'Ioana Chef cocinando en tu casa'
-          },
-          reflected: false
-        },
-        {
-          title: '...Realizo el servicio a tu ritmo',
-          description:
-            'Yo en persona me encargaré del <b>servicio de mesa</b>, explicándote los detalles de cada plato si así lo deseáis y al ritmo que cada comensal prefiera, sin prisas o con ellas. El servicio será discreto y profesional, para <b>garantizar una velada cómoda y discreta</b>.',
-          link: 'Reservar en el',
-          href: 'tel:644093470',
-          asset: {
-            video: true,
-            // src: 'chefioana-video-servicio-de-mesa.mp4',
-            src: 'vLIveAzZmaw',
-            alt: 'Ioana Chef realizando un servicio de mesa'
-          },
-          reflected: true
-        },
-        {
-          title: '...Recojo y limpio la cocina',
-          description:
-            'Y antes de irme <b>limpiaré la cocina</b>, la <b>vajilla</b> y los utensilios utilizados tanto en la elaboración como en la degustación del menú. Podrás disfrutar de una sobremesa sin prisas, sabiendo que <b>limpian por ti</b>.',
-          link: 'Reservar en el',
-          href: 'tel:644093470',
-          asset: {
-            video: true,
-            // src: 'chefioana-video-menu-limpieza.mp4',
-            src: '3tgk7-sPj8E',
-            alt: 'Ioana Chef realizando la limpieza posterior a un servicio'
-          },
-          reflected: false
-        },
-        {
-          title: '...No te costará más',
-          description:
-            '<b>Sin tener que pagar extras</b> de envío, incremento por terraza ni costes adicionales... El precio no variará respecto al menú pactado previa cita. Además disponemos de <b>ofertas especiales</b> para determinados gremios.',
-          link: 'Reservar en el',
-          href: 'tel:644093470',
-          asset: {
-            video: false,
-            src: '640x360.png',
-            alt: 'Ioana Botis'
-          },
-          reflected: true
-        }
-      ],
-      advantages: [
-        {
-          title: '¡Es comodísimo!',
-          description:
-            '<span class="has-text-weight-semibold">No necesitas salir de casa</span> ni coger el coche, aguantar el tráfico, tener que dar vueltas para aparcar o pagar parking, la pereza de que haga mal tiempo...',
-          img: 'icons/chefioana-icon--en-casa.svg',
-          alt: '¡Es comodísimo!'
-        },
-        {
-          title: '¡Es exclusivo!',
-          description:
-            'Tienes al <span class="has-text-weight-semibold">cocinero y camarero en exclusiva</span> para ti y tus comensales sin tiempos de espera, ni guardar cola y al ritmo que tú marques.',
-          img: 'icons/chefioana-icon--exclusivo.svg',
-          alt: '¡Es exclusivo!'
-        },
-        {
-          title: '¡Sin molestias!',
-          description:
-            '<span class="has-text-weight-semibold">Nada de</span> tener que <span class="has-text-weight-semibold">hacer la compra</span> antes, <span class="has-text-weight-semibold">cocinar</span>, <span class="has-text-weight-semibold">servir</span> mientras los demas disfrutan ya de la cena, <span class="has-text-weight-semibold">fregar</span> o poner lavavajillas y retirar tras la velada...',
-          img: 'icons/chefioana-icon--cocinar.svg',
-          alt: '¡Es molestias!'
-        },
-        {
-          title: '¡El mismo precio!',
-          description:
-            '<span class="has-text-weight-semibold">sin costes adicionales</span> de trasporte, incremento por terraza...',
-          img: 'icons/chefioana-icon--precio.svg',
-          alt: '¡Es mismo precio!'
-        },
-        {
-          title: '¡Con quien tú quieras!',
-          description:
-            '<span class="has-text-weight-semibold">Niños y mascotas permitidas</span>. Como es tu casa el derecho de admisión lo pones tú 😁',
-          img: 'icons/chefioana-icon--mascotas.svg',
-          alt: '¡Con quien tú quieras!'
-        },
-      ],
+      // features: [
+      //   {
+      //     title: '...Cocino en tu casa',
+      //     description:
+      //       'Llegaré a tu casa con tiempo suficiente para cocinar el menú acordado previamente. Si eres fan de los fogones aprovecha para quedarte durante la preparación de los platos y así <b>aprender de una cocinera profesional</b>.',
+      //     link: 'Reservar en el',
+      //     href: 'tel:644093470',
+      //     asset: {
+      //       video: true,
+      //       // src: 'chefioana-video-cocinando.mp4',
+      //       src: 'M3j8HmSZn6E',
+      //       alt: 'Ioana Chef cocinando en tu casa'
+      //     },
+      //     reflected: false
+      //   },
+      //   {
+      //     title: '...Realizo el servicio a tu ritmo',
+      //     description:
+      //       'Yo en persona me encargaré del <b>servicio de mesa</b>, explicándote los detalles de cada plato si así lo deseáis y al ritmo que cada comensal prefiera, sin prisas o con ellas. El servicio será discreto y profesional, para <b>garantizar una velada cómoda y discreta</b>.',
+      //     link: 'Reservar en el',
+      //     href: 'tel:644093470',
+      //     asset: {
+      //       video: true,
+      //       // src: 'chefioana-video-servicio-de-mesa.mp4',
+      //       src: 'vLIveAzZmaw',
+      //       alt: 'Ioana Chef realizando un servicio de mesa'
+      //     },
+      //     reflected: true
+      //   },
+      //   {
+      //     title: '...Recojo y limpio la cocina',
+      //     description:
+      //       'Y antes de irme <b>limpiaré la cocina</b>, la <b>vajilla</b> y los utensilios utilizados tanto en la elaboración como en la degustación del menú. Podrás disfrutar de una sobremesa sin prisas, sabiendo que <b>limpian por ti</b>.',
+      //     link: 'Reservar en el',
+      //     href: 'tel:644093470',
+      //     asset: {
+      //       video: true,
+      //       // src: 'chefioana-video-menu-limpieza.mp4',
+      //       src: '3tgk7-sPj8E',
+      //       alt: 'Ioana Chef realizando la limpieza posterior a un servicio'
+      //     },
+      //     reflected: false
+      //   },
+      //   {
+      //     title: '...No te costará más',
+      //     description:
+      //       '<b>Sin tener que pagar extras</b> de envío, incremento por terraza ni costes adicionales... El precio no variará respecto al menú pactado previa cita. Además disponemos de <b>ofertas especiales</b> para determinados gremios.',
+      //     link: 'Reservar en el',
+      //     href: 'tel:644093470',
+      //     asset: {
+      //       video: false,
+      //       src: '640x360.png',
+      //       alt: 'Ioana Botis'
+      //     },
+      //     reflected: true
+      //   }
+      // ],
+      // advantages: [
+      //   {
+      //     title: '¡Es comodísimo!',
+      //     description:
+      //       '<span class="has-text-weight-semibold">No necesitas salir de casa</span> ni coger el coche, aguantar el tráfico, tener que dar vueltas para aparcar o pagar parking, la pereza de que haga mal tiempo...',
+      //     img: 'icons/chefioana-icon--en-casa.svg',
+      //     alt: '¡Es comodísimo!'
+      //   },
+      //   {
+      //     title: '¡Es exclusivo!',
+      //     description:
+      //       'Tienes al <span class="has-text-weight-semibold">cocinero y camarero en exclusiva</span> para ti y tus comensales sin tiempos de espera, ni guardar cola y al ritmo que tú marques.',
+      //     img: 'icons/chefioana-icon--exclusivo.svg',
+      //     alt: '¡Es exclusivo!'
+      //   },
+      //   {
+      //     title: '¡Sin molestias!',
+      //     description:
+      //       '<span class="has-text-weight-semibold">Nada de</span> tener que <span class="has-text-weight-semibold">hacer la compra</span> antes, <span class="has-text-weight-semibold">cocinar</span>, <span class="has-text-weight-semibold">servir</span> mientras los demas disfrutan ya de la cena, <span class="has-text-weight-semibold">fregar</span> o poner lavavajillas y retirar tras la velada...',
+      //     img: 'icons/chefioana-icon--cocinar.svg',
+      //     alt: '¡Es molestias!'
+      //   },
+      //   {
+      //     title: '¡El mismo precio!',
+      //     description:
+      //       '<span class="has-text-weight-semibold">sin costes adicionales</span> de trasporte, incremento por terraza...',
+      //     img: 'icons/chefioana-icon--precio.svg',
+      //     alt: '¡Es mismo precio!'
+      //   },
+      //   {
+      //     title: '¡Con quien tú quieras!',
+      //     description:
+      //       '<span class="has-text-weight-semibold">Niños y mascotas permitidas</span>. Como es tu casa el derecho de admisión lo pones tú 😁',
+      //     img: 'icons/chefioana-icon--mascotas.svg',
+      //     alt: '¡Con quien tú quieras!'
+      //   },
+      // ],
     }
   },
   head() {
