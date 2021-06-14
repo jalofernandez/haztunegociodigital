@@ -17,10 +17,11 @@
         :key="index"
       >
         <a
-          href="#"
-          class="aside-menu-link"
+          :id="`#longdesc-${index}`"
           v-scroll-to="{ el: '#section-' + index, onDone: asideBehaviour }"
           v-html="menu.title"
+          href="#"
+          class="aside-menu-link"
           role="button"
         ></a>
       </li>

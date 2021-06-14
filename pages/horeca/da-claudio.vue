@@ -217,7 +217,7 @@
             v-for="(menu, index) in business.menus"
             :key="index"
           >
-            <h2 v-html="menu.title" class="section name"></h2>
+            <h2 v-html="menu.title" :id="`longdesc-${index}`" class="section name"></h2>
             <p v-if="menu.desc" v-html="menu.desc" class="section desc"></p>
             <div class="dish-area">
               <article
@@ -228,7 +228,7 @@
               >
                 <div class="dish info">
                   <h3 class="name">{{ item.name }}</h3>
-                  <p v-if="item.desc" v-html="item.desc" class="desc"></p>
+                  <p v-if="item.desc" v-html="item.desc" :id="`longdesc-${item.id}`" class="desc"></p>
                   <!-- <p v-if="item.desc" class="desc">{{ setDescription(item.desc) }}</p> -->
                   <div class="prices">
                     <div v-if="item.prices" class="price item" v-for="(price, index) in item.prices" :key="index">
@@ -254,8 +254,9 @@
                 <figure v-if="item.img" class="dish img">
                   <img
                     :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
-                    :title="`${business.name}: ${item.desc}`"
-                    :alt="`${business.name}: ${item.desc}`"
+                    :title="`${business.name}: ${item.name}`"
+                    :alt="`${business.name}: ${item.name}`"
+                    :longdesc="`#longdesc-${item.id}`"
                     :width="menu.imgs.width"
                     :height="menu.imgs.height"
                   />
