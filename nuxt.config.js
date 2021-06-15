@@ -170,7 +170,10 @@ export default {
       useWebmanifestExtension: false, // value by default. With true the file extension will be ".webmanifest" instead ".json"
     },
     workbox: {
-      // enabled: true, // check it asap!
+      // check it asap cause in "true" fails!
+      // https://www.notion.so/HTTP-404-HazTuNegocioDigital-297f6a4e55204799b1b2c24856625af9
+      enabled: false,
+      autoRegister: false
     },
   },
 
