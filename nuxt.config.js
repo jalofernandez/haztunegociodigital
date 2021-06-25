@@ -248,5 +248,10 @@ export default {
   //- Webpack config here
   build: {
     extend(config, ctx) {},
-  },
+    babel:{
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
+    }
+  }
 }
