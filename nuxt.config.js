@@ -2,11 +2,18 @@ const lang = 'es-ES'
 const author = 'HazTuNegocioDigital'
 const description = 'Únete a la transformación digital: aumenta tus ventas con tu negocio en internet'
 const url = author.toLowerCase() + '.com'
+// const production = process.env.BASE_URL === url // when we need it more than once
+
 
 export default {
   mode: 'universal', // deprecated
   ssr: 'true', // use it instead "mode"
   target: 'static',
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+
   head: {
     htmlAttrs: {
       lang: lang,
@@ -184,12 +191,11 @@ export default {
     pageTracking: true,
   },
 
-  // TODO: install me asap!
-  // robots: {
-  //   UserAgent: '*',
-  //   Allow: '/',
-  //   Sitemap: `https://` + url + `/sitemap.xml`,
-  // },
+  robots: {
+    UserAgent: '*',
+    [process.env.BASE_URL === url ? 'Allow' : 'Disallow']: '/',
+    Sitemap: `https://${url}/sitemap.xml`,
+  },
 
   cookies: {
     necessary: [
