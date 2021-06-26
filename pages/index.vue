@@ -197,14 +197,14 @@ export default {
       //     description:
       //       '<span class="has-text-weight-semibold">Nada de</span> tener que <span class="has-text-weight-semibold">hacer la compra</span> antes, <span class="has-text-weight-semibold">cocinar</span>, <span class="has-text-weight-semibold">servir</span> mientras los demas disfrutan ya de la cena, <span class="has-text-weight-semibold">fregar</span> o poner lavavajillas y retirar tras la velada...',
       //     img: 'icons/chefioana-icon--cocinar.svg',
-      //     alt: '¡Es molestias!'
+      //     alt: '¡Sin molestias!'
       //   },
       //   {
       //     title: '¡El mismo precio!',
       //     description:
       //       '<span class="has-text-weight-semibold">sin costes adicionales</span> de trasporte, incremento por terraza...',
       //     img: 'icons/chefioana-icon--precio.svg',
-      //     alt: '¡Es mismo precio!'
+      //     alt: '¡El mismo precio!'
       //   },
       //   {
       //     title: '¡Con quien tú quieras!',
