@@ -519,6 +519,8 @@ $border-radius: 8px
         background-color: #f5f6f8
       .btn
         color: $color-red
+        &.js-close
+          border-color: $color-red
       .details
         color: $font-color
       .schedule .day

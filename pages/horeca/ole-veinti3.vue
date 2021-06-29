@@ -506,6 +506,8 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
       &:not(.js-close),
       &.js-aside .opener
         color: $price-color
+      &.light
+        border-color: $price-color
 
     .business.cover
       border-bottom-left-radius: $border-radius
