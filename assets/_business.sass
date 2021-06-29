@@ -75,6 +75,7 @@ ul, ol
     position: relative
     bottom: 2rem
     z-index: 10
+    font-style: initial // to overwrite <address> styles by default
     .name, .desc
       text-align: left
       line-height: 1
@@ -97,8 +98,9 @@ ul, ol
             &:hover, &:focus
               color: darken($color-secondary, 5%)
               text-decoration: underline
+          &.address strong
+            font-weight: 400
           &.phone
-            font-weight: 600
             letter-spacing: .05rem
         &.has-schedule
           display: flex
@@ -193,7 +195,8 @@ ul, ol
             margin-right: 0
         &.name
           margin-bottom: .25rem
-        &.quantity
+        &.quantity,
+        &.quantity strong
           color: dodgerblue
     .allergens .allergen
       margin-right: .25rem

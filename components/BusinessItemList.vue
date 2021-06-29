@@ -30,7 +30,7 @@
               <div class="price item" v-for="(price, index) in item.prices" :key="index" v-if="item.prices">
                 <small class="price name" v-if="price.name">{{ price.name }}</small>
                 <span class="price quantity" v-if="price.price">
-                  <b>{{ price.price }}</b> €
+                  <strong>{{ price.price }}</strong> €
                 </span>
               </div>
             </div>

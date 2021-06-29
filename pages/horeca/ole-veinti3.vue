@@ -172,7 +172,7 @@
                 'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
             }"
           ></div>
-          <div class="business data">
+          <address class="business data">
             <h1 class="data name">{{ business.name }}</h1>
             <h4 v-if="business.desc" v-html="business.desc" class="data desc"></h4>
             <ul v-if="business.address || business.phone || business.schedule">
@@ -185,7 +185,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {{ business.address }}
+                  <strong>{{ business.address }}</strong>
                 </a>
               </li>
               <li :class="business.schedule ? 'has-schedule' : null">
@@ -195,7 +195,7 @@
                   :href="`tel:${business.phone}`"
                   :title="`Llamar al ${business.name}: ${business.phone}`"
                 >
-                  {{ business.phone }}
+                  <strong>{{ business.phone }}</strong>
                 </a>
                 <button
                   v-if="business.schedule"
@@ -208,7 +208,7 @@
                 </button>
               </li>
             </ul>
-          </div>
+          </address>
           <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
         </header>
 
@@ -236,7 +236,7 @@
                     <div v-if="item.prices" class="price item" v-for="(price, index) in item.prices" :key="index">
                       <small v-if="price.name" class="price name">{{ price.name }}</small>
                       <span v-if="price.price" class="price quantity">
-                        <b>{{ price.price }}</b> €
+                        <strong>{{ price.price }}</strong> €
                       </span>
                     </div>
                   </div>
@@ -529,7 +529,8 @@ $bg-artwork: url(~assets/artworks/wood-pattern.png) center repeat
           font-size: 2rem
           line-height: 1
         .prices
-          .price.quantity
+          .price.quantity,
+          .price.quantity strong
             color: $price-color
           .helper
             color: $font-color

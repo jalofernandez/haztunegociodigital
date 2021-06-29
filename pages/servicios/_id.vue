@@ -31,7 +31,7 @@
         }"
         v-if="item.cover"
       ></div>
-      <div class="business data">
+      <address class="business data">
         <h1 class="data name">{{ item.name }}</h1>
         <ul v-if="item.address || item.phone || item.schedule">
           <li>
@@ -58,7 +58,7 @@
             </button>
           </li>
         </ul>
-      </div>
+      </address>
 
       <BaseMessage :data="item.messages.gluten" v-if="item.messages" />
 
