@@ -67,7 +67,7 @@
         aria-describedby="schedule"
       >
         <button class="btn js-close" type="button" @click="closeModal()" aria-labelledby="cerrar">
-          Cerrar
+          <small>Cerrar</small>
           <span>&times;</span>
         </button>
         <div class="md-inner dish info">
@@ -115,7 +115,7 @@
             @click="closeItemDetail()"
             aria-labelledby="cerrar"
           >
-            Cerrar
+            <small>Cerrar</small>
             <span>&times;</span>
           </button>
           <div
@@ -494,8 +494,6 @@ $border-radius: 12px
     .btn.js-close
       background-color: $card-color
     .btn
-      border-color: $bg-color
-      border-width: 2px
       &:not(.js-close),
       &.js-aside .opener
         color: $font-color

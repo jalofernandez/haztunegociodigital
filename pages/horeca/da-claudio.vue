@@ -66,7 +66,7 @@
         aria-describedby="schedule"
       >
         <button class="btn js-close" type="button" @click="closeModal()" aria-labelledby="cerrar">
-          Cerrar
+          <small>Cerrar</small>
           <span>&times;</span>
         </button>
         <div class="md-inner dish info">
@@ -114,7 +114,7 @@
             @click="closeItemDetail()"
             aria-labelledby="cerrar"
           >
-            Cerrar
+            <small>Cerrar</small>
             <span>&times;</span>
           </button>
           <div

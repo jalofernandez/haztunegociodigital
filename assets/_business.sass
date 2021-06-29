@@ -204,31 +204,40 @@ ul, ol
     img
       border-radius: 3px
 
+// BTNs!
 .btn
   border: 1px solid white
   border-radius: 25px
   padding: .25rem .5rem
   &:focus
     outline: none
+
   &.light
     box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.15), 0 1px 1px 1px rgba(60, 64, 67, 0.1)
     background-color: $color-bg
     color: $color-primary
     font-size: 1rem
+
   &.js-close
+    background-color: $color-bg
+    border: 2px solid $designer-color
+    z-index: 2
     color: $designer-color
     font-weight: 600
-    background-color: $color-bg
-    z-index: 2
+    span, small
+      font-weight: 400
+    small
+      font-size: 1.25rem
     span
       font-size: 2rem
-      font-weight: 400
       line-height: .5
       position: relative
       top: 4px
+
   &.js-aside, &.whatsapp
     position: fixed
     z-index: 101 // more than Aside
+
   &.js-aside
     right: 1rem
     bottom: 1.25rem
@@ -238,6 +247,7 @@ ul, ol
       color: darken($color-secondary, 5%)
     .closer
       color: $designer-color
+
   &.whatsapp
     left: 1rem
     bottom: .75rem

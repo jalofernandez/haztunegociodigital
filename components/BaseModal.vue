@@ -3,7 +3,7 @@
     <div class="md-modal has-dish" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
       <div class="md-content dish info">
         <button class="btn js-close" type="button" @click="close()">
-          Cerrar
+          <small>Cerrar</small>
           <span>&times;</span>
         </button>
         <div class="details">

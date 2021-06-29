@@ -5,7 +5,7 @@
         <div :id="`modal-${item.id}`" class="md-modal has-dish">
           <div class="md-content dish info">
             <button :class="['btn', 'js-close', { 'has-not-img': !item.img }]" type="button" @click="item.show = false">
-              Cerrar
+              <small>Cerrar</small>
               <span>&times;</span>
             </button>
             <div
