@@ -2,6 +2,7 @@
 @import '_vars'
 
 .page.business
+  overflow: initial
   @media (min-width: 1024px)
     .aside-menu + .wrapper-menu,
     .footer
@@ -45,8 +46,16 @@
       .copy br
         display: none
 
-    .aside-menu ul li a
-      transition: all .2s ease
-      &:hover, &:focus
-        padding-left: 2rem
-        text-decoration: underline
+    .aside-menu
+      background-color: darken($color-bg, 5%)
+      visibility: visible
+      transform: translate3d(0, 0, 0) // to avoid mobile´s behaviour
+      .aside-business-name
+        font-size: 1.25em
+      ul li a
+        transition: all .2s ease
+        box-shadow: none
+        color: $color-secondary
+        &:hover, &:focus
+          padding-left: 2rem
+          text-decoration: underline

@@ -431,14 +431,6 @@ export default {
       return dishes.filter(dish => dish.id === modal)
     }
   },
-  // TODO: aside navbar is hidden in desktop: fix it asap!
-  // created() {
-  //   const mq = this.$mq
-  //   console.log(mq)
-  //   mq === 'mobile' ? this.openedAside = false 
-  //   : mq === 'smartphone' ? this.openedAside = false
-  //   : this.openedAside = true
-  // },
   methods: {
     showModal() {
       this.openedSchedule = true
@@ -576,12 +568,16 @@ $border-radius: 12px
 
     .aside-menu
       background-color: $prices-color
-      h2
+      .aside-business-name
         font-family: $font-family-desc
       ul li a
         font-family: $font-family-desc
         color: $font-color
         padding: .4rem 1.5rem
+      @media (min-width: 1024px)
+        background-color: darken($bg-color, 5%)
+        .aside-business-name
+          color: $prices-color
 
     .md-overlay
       background-color: rgba($font-color,.6)

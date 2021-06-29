@@ -29,7 +29,7 @@
     },
     "menus": [
       {
-        "title": "<span>🍽️</span> Menú del día",
+        "title": "<span>🍽️</span> <span>Menú del día</span>",
         "desc": "Disponible <em>Lunes</em>, <em>Miércoles</em>, <em>Jueves</em> y <em>Viernes</em>.",
         "imgs": {
           "width": 145,
@@ -47,7 +47,7 @@
         ]
       },
       {
-        "title": "<span>🍕</span> Pizzas",
+        "title": "<span>🍕</span> <span>Pizzas</span>",
         "desc": "30 cm de deliciosa <strong>masa fina</strong> y <strong>crujiente</strong>. Base de tomate y mozzarella.",
         "imgs": {
           "width": 145,
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "<span>🍝</span> Pasta",
+        "title": "<span>🍝</span> <span>Pasta</span>",
         "desc": "Nuestras auténticas pastas italianas.",
         "imgs": {
           "width": 145,
@@ -118,7 +118,7 @@
         ]
       },
       {
-        "title": "<span>☕️</span> Desayunos",
+        "title": "<span>☕️</span> <span>Desayunos</span>",
         "desc": "En horario de mañana de 9:00 a 12:00 h.",
         "imgs": {
           "width": 145,
@@ -148,7 +148,7 @@
         ]
       },
       {
-        "title": "<span>🍰</span> Postres",
+        "title": "<span>🍰</span> <span>Postres</span>",
         "desc": "...Y para terminar un poco de dulce.",
         "imgs": {
           "width": 145,
@@ -168,7 +168,7 @@
         ]
       },
       {
-        "title": "<span>🥤</span> Bebidas",
+        "title": "<span>🥤</span> <span>Bebidas</span>",
         "desc": null,
         "imgs": {
           "width": 145,
