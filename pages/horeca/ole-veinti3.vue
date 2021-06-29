@@ -97,7 +97,7 @@
 
     <!-- ...for each item to shown info details -->
     <transition name="fd" appear>
-      <div v-if="openedItemDetail" class="md-overlay" @click="closeModal()"></div>
+      <div v-if="openedItemDetail" class="md-overlay" @click="closeItemDetail()"></div>
     </transition>
     <transition name="pop" appear>
       <div
