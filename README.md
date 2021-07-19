@@ -19,7 +19,7 @@ Just a digital business landing page template with different pages layout based 
   - [Babel.js](https://babeljs.io) by a lot of contributors.
 - [Bulma](https://bulma.io), open source UI framework by Jeremy Thomas.
 - [SASS](https://sass-lang.com), CSS extension language by numerous contributors.
-- [Firebase](https://firebase.google.com/), to build and run apps by Google.
+- [Firebase](https://firebase.google.com/), REST API to build and run apps by Google.
 
 ## License
 
