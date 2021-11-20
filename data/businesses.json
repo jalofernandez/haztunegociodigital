@@ -2029,8 +2029,8 @@
             "img": "racion-braviolis",
             "desc": "Ración de patatas bravas picantes o mitad bravas y mitad ali oli.",
             "prices": [
-              { "name": "Ración", "price": "10" },
-              { "name": "1/2 ración", "price": "7" }
+              { "name": "Ración", "price": "10,50" },
+              { "name": "1/2 ración", "price": "7,50" }
             ],
             "allergens": ["sulfitos", "huevos"]
           },
@@ -2040,8 +2040,8 @@
             "img": "racion-carnepincho",
             "desc": "Ración de carne de pincho con patatas fritas y pimientos de Padrón.",
             "prices": [
-              { "name": "Ración", "price": "15,90" },
-              { "name": "1/2 ración", "price": "10,90" }
+              { "name": "Ración", "price": "16,90" },
+              { "name": "1/2 ración", "price": "11,90" }
             ],
             "allergens": ["sulfitos"]
           },
@@ -2051,7 +2051,7 @@
             "img": "racion-croquetas",
             "desc": "Ración de croquetas caseras de jamón serrano.",
             "prices": [
-              { "name": "Ración", "price": "10" },
+              { "name": "Ración", "price": "11" },
               { "name": "1/2 ración", "price": "7,50" }
             ],
             "allergens": ["huevos", "lacteos", "sulfitos"]
@@ -2062,8 +2062,8 @@
             "img": "racion-ensalada-mixta",
             "desc": "Ensalada de mezclun de lechugas, tomate, espáragos, atún, maiz...",
             "prices": [
-              { "name": "Entera", "price": "9,90" },
-              { "name": "1/2 ensalada", "price": "7,90" }
+              { "name": "Entera", "price": "10,90" },
+              { "name": "1/2 ensalada", "price": "8,90" }
             ],
             "allergens": ["huevos"]
           },
@@ -2084,8 +2084,8 @@
             "img": null,
             "desc": null,
             "prices": [
-              { "name": "Ración", "price": "13" },
-              { "name": "1/2 ración", "price": "8,50" }
+              { "name": "Ración", "price": "14" },
+              { "name": "1/2 ración", "price": "9" }
             ],
             "allergens": ["lacteos"]
           },
@@ -2095,8 +2095,8 @@
             "img": null,
             "desc": "Lacón de cerdo cocido con patatas y su toque de pimentón y aceite de oliva virgen.",
             "prices": [
-              { "name": "Ración", "price": "12" },
-              { "name": "1/2 ración", "price": "8" }
+              { "name": "Ración", "price": "13" },
+              { "name": "1/2 ración", "price": "9" }
             ],
             "allergens": null
           },
@@ -2117,8 +2117,8 @@
             "img": "racion-tortilla",
             "desc": "Básico de la comida española. Con o sin cebolla. Al punto, jugosilla.",
             "prices": [
-              { "name": "Entera", "price": "9" },
-              { "name": "Media", "price": "5" }
+              { "name": "Entera", "price": "10" },
+              { "name": "Media", "price": "5,50" }
             ],
             "allergens": ["huevos", "sulfitos"]
           },
@@ -2150,8 +2150,8 @@
             "img": null,
             "desc": "La tradicional oreja de cerdo a la plancha al punto que desse con un toque picante.",
             "prices": [
-              { "name": "Ración", "price": "14" },
-              { "name": "1/2 ración", "price": "9,90" }
+              { "name": "Ración", "price": "15" },
+              { "name": "1/2 ración", "price": "10,50" }
             ],
             "allergens": ["sulfitos"]
           },
@@ -2161,8 +2161,8 @@
             "img": null,
             "desc": "Revuelto de patatas fritas, huevos fritos y jamón curado. Un clásico.",
             "prices": [
-              { "name": "Ración", "price": "13" },
-              { "name": "1/2 ración", "price": "8,90" }
+              { "name": "Ración", "price": "14" },
+              { "name": "1/2 ración", "price": "9,90" }
             ],
             "allergens": ["huevos", "sulfitos"]
           },
@@ -2182,7 +2182,7 @@
             "name": "Pulpo a la gallega",
             "img": "racion-pulpo",
             "desc": "Pulpo cocido con cachelos y su toque de sal, aceite de oliva y pimentón.",
-            "prices": [{ "name": "Ración", "price": "17" }],
+            "prices": [{ "name": "Ración", "price": "18" }],
             "allergens": ["moluscos", "pescado"]
           },
           {
@@ -2191,8 +2191,8 @@
             "img": null,
             "desc": null,
             "prices": [
-              { "name": "Ración", "price": "14" },
-              { "name": "1/2 ración", "price": "9,90" }
+              { "name": "Ración", "price": "14,90" },
+              { "name": "1/2 ración", "price": "10,50" }
             ],
             "allergens": ["moluscos", "pescado", "sulfitos"]
           },
@@ -2202,8 +2202,8 @@
             "img": null,
             "desc": "Calamares rebozados fritos con su toque de limón.",
             "prices": [
-              { "name": "Ración", "price": "15" },
-              { "name": "1/2 ración", "price": "9,90" }
+              { "name": "Ración", "price": "16" },
+              { "name": "1/2 ración", "price": "10,90" }
             ],
             "allergens": ["moluscos", "pescado", "sulfitos"]
           },
@@ -2213,8 +2213,8 @@
             "img": "racion-boquerones-fritos",
             "desc": "Al estilo andaluz, con su toque de vinagre, pimentón y limón.",
             "prices": [
-              { "name": "Ración", "price": "13" },
-              { "name": "1/2 ración", "price": "7,90" }
+              { "name": "Ración", "price": "13,50" },
+              { "name": "1/2 ración", "price": "8,90" }
             ],
             "allergens": ["pescado", "sulfitos"]
           },
@@ -2224,8 +2224,8 @@
             "img": "racion-rabas",
             "desc": "Patas de calamar rebozadas fritas con su toque de limón.",
             "prices": [
-              { "name": "Ración", "price": "15" },
-              { "name": "1/2 ración", "price": "9,90" }
+              { "name": "Ración", "price": "16" },
+              { "name": "1/2 ración", "price": "10,90" }
             ],
             "allergens": ["moluscos", "pescado", "sulfitos"]
           },
@@ -2235,8 +2235,8 @@
             "img": "racion-fritura",
             "desc": "Fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...",
             "prices": [
-              { "name": "Ración", "price": "15,90" },
-              { "name": "1/2 ración", "price": "10,90" }
+              { "name": "Ración", "price": "16,90" },
+              { "name": "1/2 ración", "price": "11,90" }
             ],
             "allergens": ["moluscos", "crustaceos", "pescado", "sulfitos"]
           },
@@ -2245,7 +2245,7 @@
             "name": "Sepia a la plancha",
             "img": "racion-sepia",
             "desc": "Sepia con salsa alioli y guarnición de ensalada.",
-            "prices": [{ "name": "Ración", "price": "14" }],
+            "prices": [{ "name": "Ración", "price": "14,50" }],
             "allergens": ["moluscos", "pescado", "huevos", "sulfitos"]
           },
           {
@@ -2253,7 +2253,7 @@
             "name": "Gambón a la plancha",
             "img": null,
             "desc": null,
-            "prices": [{ "name": "Ración", "price": "18" }],
+            "prices": [{ "name": "Ración", "price": "19" }],
             "allergens": ["crustaceos", "pescado", "sulfitos"]
           },
           {
@@ -2273,8 +2273,8 @@
             "img": null,
             "desc": "Anchoas en aceite de oliva virgen.",
             "prices": [
-              { "name": "Ración", "price": "12" },
-              { "name": "1/2 ración", "price": "7,50" }
+              { "name": "Ración", "price": "13" },
+              { "name": "1/2 ración", "price": "8,50" }
             ],
             "allergens": ["pescado"]
           },
@@ -2284,8 +2284,8 @@
             "img": null,
             "desc": "Clásico combinado de anchoas en aceite y boquerones en vinagre.",
             "prices": [
-              { "name": "Ración", "price": "11" },
-              { "name": "1/2 ración", "price": "7" }
+              { "name": "Ración", "price": "12" },
+              { "name": "1/2 ración", "price": "8" }
             ],
             "allergens": ["pescado"]
           }
@@ -2314,7 +2314,7 @@
             "img": "desayuno-tostada-tomate",
             "desc": "Café al gusto (cortado, sólo, con leche...) con tostada de mantequilla y mermelada o tomate.",
             "prices": [
-              { "name": "Entera", "price": "2,50" },
+              { "name": "Entera", "price": "2,60" },
               { "name": "Media", "price": "2,20" }
             ],
             "allergens": null
@@ -2344,7 +2344,7 @@
             "desc": "Disponemos de grifos de: Estrella de Galicia, Mahou y Heineken.",
             "prices": [
               { "name": "Caña", "price": "1,80" },
-              { "name": "Copa", "price": "2,50" },
+              { "name": "Copa", "price": "2,60" },
               { "name": "Maceta", "price": "3" },
               { "name": "Jarra", "price": "3,40" }
             ],
@@ -2357,7 +2357,7 @@
             "desc": "Disponemos de: Estrella de Galicia, Mahou y Heineken.",
             "prices": [
               { "name": "Botellín", "price": "1,80" },
-              { "name": "Tercio", "price": "2,50" }
+              { "name": "Tercio", "price": "2,60" }
             ],
             "allergens": ["gluten"]
           },
@@ -2383,7 +2383,7 @@
             "name": "Cerveza tostada 0,0",
             "img": "cerveza-tostada-00",
             "desc": "Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.",
-            "prices": [{ "name": "Tercio", "price": "2,50" }],
+            "prices": [{ "name": "Tercio", "price": "2,60" }],
             "allergens": ["gluten"]
           }
         ]
@@ -2402,7 +2402,7 @@
             "img": "vino-condado-haza",
             "desc": "Crianza 2017 es un vino limpio y brillante, ideal para maridar con asados de carne.",
             "prices": [
-              { "name": "Copa", "price": "3" },
+              { "name": "Copa", "price": "3,20" },
               { "name": "Botella", "price": "18" }
             ],
             "allergens": null
@@ -2424,8 +2424,8 @@
             "img": "vino-altos-de-torona",
             "desc": "Vino blanco de uva Albariño, recogida en las laderas del río Miño.",
             "prices": [
-              { "name": "Copa", "price": "2,50" },
-              { "name": "Botella", "price": "14" }
+              { "name": "Copa", "price": "2,60" },
+              { "name": "Botella", "price": "15" }
             ],
             "allergens": null
           },
@@ -2446,7 +2446,7 @@
             "img": "vino-portocelo-rivera",
             "desc": "Vino tinto tempranillo con denominación de origen Ribera del Duero.",
             "prices": [
-              { "name": "Copa", "price": "2,20" },
+              { "name": "Copa", "price": "2,30" },
               { "name": "Botella", "price": "12" }
             ],
             "allergens": null
@@ -2468,7 +2468,7 @@
             "img": "vino-rueda-penalosa",
             "desc": "Vino blanco 100% Verdejo con denominación de origen Rueda.",
             "prices": [
-              { "name": "Copa", "price": "2,20" },
+              { "name": "Copa", "price": "2,30" },
               { "name": "Botella", "price": "12" }
             ],
             "allergens": null
@@ -2479,7 +2479,7 @@
             "img": "vino-alma-valdeguerra",
             "desc": "Vino rosado semidulce con denominación de origen Madrid.",
             "prices": [
-              { "name": "Copa", "price": "2,20" },
+              { "name": "Copa", "price": "2,30" },
               { "name": "Botella", "price": "12" }
             ],
             "allergens": null
@@ -2490,7 +2490,7 @@
             "img": "vino-vinaredo-godello",
             "desc": "Vino blanco fresco y afrutado procedente de viñedos de Valdeorras.",
             "prices": [
-              { "name": "Copa", "price": "2,40" },
+              { "name": "Copa", "price": "2,60" },
               { "name": "Botella", "price": "15" }
             ],
             "allergens": null
@@ -2501,8 +2501,8 @@
             "img": "vino-el-vinculo",
             "desc": "Vino tinto tempranillo de gran frescura y crianza en barrica de roble americano. D.O. La Mancha.",
             "prices": [
-              { "name": "Copa", "price": "2,40" },
-              { "name": "Botella", "price": "15" }
+              { "name": "Copa", "price": "2,80" },
+              { "name": "Botella", "price": "16" }
             ],
             "allergens": null
           }
@@ -2521,7 +2521,7 @@
             "name": "Café o infusión",
             "img": "cafe-con-leche",
             "desc": "Café al gusto (cortado, sólo, con leche...) o infusión.",
-            "prices": [{ "name": "Precio", "price": "1,30" }],
+            "prices": [{ "name": "Precio", "price": "1,40" }],
             "allergens": null
           },
           {
@@ -2529,7 +2529,7 @@
             "name": "Carajillo",
             "img": null,
             "desc": null,
-            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "prices": [{ "name": "Precio", "price": "2,80" }],
             "allergens": null
           },
           {
@@ -2537,7 +2537,7 @@
             "name": "Colacao",
             "img": null,
             "desc": null,
-            "prices": [{ "name": "Precio", "price": "1,40" }],
+            "prices": [{ "name": "Precio", "price": "1,50" }],
             "allergens": null
           },
           {
@@ -2565,7 +2565,7 @@
             "name": "Zumos",
             "img": "zumos",
             "desc": "De piña, melocotón...",
-            "prices": [{ "name": "Precio", "price": "2,40" }],
+            "prices": [{ "name": "Precio", "price": "2,50" }],
             "allergens": null
           }
         ]
@@ -2594,7 +2594,7 @@
             "name": "Chupito",
             "img": null,
             "desc": null,
-            "prices": [{ "name": "Precio", "price": "1,40" }],
+            "prices": [{ "name": "Precio", "price": "1,50" }],
             "allergens": null
           },
           {
@@ -2602,7 +2602,7 @@
             "name": "Copa de licor",
             "img": null,
             "desc": null,
-            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "prices": [{ "name": "Precio", "price": "2,60" }],
             "allergens": null
           },
           {
@@ -2619,15 +2619,15 @@
             "img": "combinados",
             "desc": "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores.",
             "prices": [
-              { "name": "Nacional", "price": "5,30" },
-              { "name": "Importación", "price": "5,80" },
+              { "name": "Nacional", "price": "5,50" },
+              { "name": "Importación", "price": "6" },
               { "name": "Nordes", "price": "7,30" },
-              { "name": "Legendario", "price": "5,80" }
+              { "name": "Legendario", "price": "6" }
             ],
             "allergens": null
           }
         ]
       }
     ]
-  }  
+  }    
 ]
