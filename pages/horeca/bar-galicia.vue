@@ -473,7 +473,7 @@ $border-radius: 3px
       &.info .name:not(.price)
         font-weight: 600
       &.img
-        width: 120px
+        width: 175px
         height: auto
 
     .aside-menu
