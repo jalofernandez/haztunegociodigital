@@ -1433,6 +1433,22 @@
             "desc": null,
             "prices": [{ "name": "Precio", "price": "17" }],
             "allergens": ["crustaceos", "pescado"]
+          },
+          {
+            "id": 24,
+            "name": "Cocochas de bacalao",
+            "img": null,
+            "desc": "Tradicional plato bilbaíno: kokotxas de bacalao al pil pil en salsa verde.",
+            "prices": [{ "name": "Precio", "price": "14" }],
+            "allergens": ["crustaceos", "pescado"]
+          },
+          {
+            "id": 130,
+            "name": "Cocochas de merluza",
+            "img": null,
+            "desc": "Plato típico del País Vasco: kokotxas de merluza al pil pil con su ajo y guindilla.",
+            "prices": [{ "name": "Precio", "price": "19" }],
+            "allergens": ["crustaceos", "pescado"]
           }
         ]
       },
@@ -1533,6 +1549,121 @@
             "img": null,
             "desc": "Carrillera de cerdo <span class='semibold'>en salsa o a la parrilla</span> a elección del comensal.",
             "prices": [{ "name": "Precio", "price": "14" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Tapas",
+        "desc":
+          "Disfruta de nuestras fantásticas <span class='semibold'>tapas gourmet</span> para disfrutar solo o acompañado.",
+        "imgs": {
+          "width": 120,
+          "height": 120
+        },
+        "items": [
+          {
+            "id": 110,
+            "name": "Alcachofa confitada con foie",
+            "img": "alcachofa-foie",
+            "desc": "Alcachofa confitada a baja temperatura con foie gras de pato y aceite cruda.",
+            "prices": [{ "name": "Precio", "price": "6" }],
+            "allergens": null
+          },
+          {
+            "id": 111,
+            "name": "Patata asada a la feria",
+            "img": null,
+            "desc": "Un cásico de la feria nacional: patatas asada rellena de remolacha, maíz, cebolla…",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 112,
+            "name": "Carpaccio",
+            "img": null,
+            "desc": "Carpaccio de champiñón moreno macerado en soja y trufa.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 113,
+            "name": "Migas manchegas",
+            "img": null,
+            "desc": "Clásicas migas manchegas con su arenque, pimiento, panceta, chorizo...",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 114,
+            "name": "Duelos y quebrantos",
+            "img": null,
+            "desc": "Otro clásico de la gastronomía manchega con huevo revuelto, chorizo y tocino de cerdo a la sartén.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 115,
+            "name": "Setas shiitake con ali oli a la miel",
+            "img": null,
+            "desc": "Jugosas setas chinas shiitake con espuma de ali oli a la miel.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 116,
+            "name": "Pulpo a la brasa",
+            "img": null,
+            "desc": "Pulpo cocido a la brasa con patata asada.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 117,
+            "name": "Tataki de atún",
+            "img": null,
+            "desc": "Atún macerado con vinagre y jengibre a la plancha con sésamo, soja y alga wakame.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 118,
+            "name": "Tataki de pez mantequilla",
+            "img": null,
+            "desc": "Piezas de pez mantequilla salpimentadas y maceradas con vinagre y jengibre a la plancha acompañadas de sésamo wasabi",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 119,
+            "name": "Ensalada de burrata y tomate",
+            "img": null,
+            "desc": "Burrata, queso italiano, con tomates naturales de la huerta y rúcula salpimentados.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 120,
+            "name": "Púlpitos Illa de Arousa",
+            "img": null,
+            "desc": "Mini púlpitos estilo illa de arousa o pulpo a la arousana con sus patatas y la allada.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 121,
+            "name": "Secreto ibérico con foie",
+            "img": null,
+            "desc": "Secreto ibérico con foie a la plancha al punto que prefieras.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
+            "allergens": null
+          },
+          {
+            "id": 122,
+            "name": "Carpaccio de ternera",
+            "img": null,
+            "desc": "Clásico italiano: carpaccio de ternera con alcaparras, queso parmesano y mostaza en grano.",
+            "prices": [{ "name": "Precio", "price": "¿?" }],
             "allergens": null
           }
         ]
