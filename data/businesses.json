@@ -2141,7 +2141,7 @@
             "name": "Menú diario",
             "img": null,
             "desc": "Preguntar los platos ofrecidos cada día. Incluye pan, bebida, postre o café.",
-            "prices": [{ "name": "Precio", "price": "10" }],
+            "prices": [{ "name": "Precio", "price": "11" }],
             "allergens": null
           }
         ]
