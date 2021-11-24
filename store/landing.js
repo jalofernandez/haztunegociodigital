@@ -22,7 +22,7 @@ export const state = () => ({
     whatsapp: 34696682791,
     footer: '<span class="has-text-weight-medium">Digitaliza tu</span> <b class="has-text-success">negocio</b>',
     dataImage: 'haz-tu-negocio-digital-metadata-card.jpg',
-    version: '1.2.4',
+    version: '1.2.5',
     schema: {
       '@context': 'http://schema.org',
       '@type': 'LocalBusiness',
