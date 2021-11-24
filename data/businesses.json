@@ -2132,8 +2132,8 @@
         "title": "Menú del día <span>🍲</span>",
         "desc": "Disponible de <span class='semibold'>Martes</span> a <span class='semibold'>Viernes</span>.",
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2150,8 +2150,8 @@
         "title": "Raciones <span>🧆</span>",
         "desc": "También <span class='semibold'>para llevar</span>. Recoger en el local.",
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2426,8 +2426,8 @@
         "title": "Bocadillos y Montados <span>🥪</span>",
         "desc": "Preguntar precios y disponibilidad.",
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": []
       },
@@ -2435,8 +2435,8 @@
         "title": "Desayunos <span>☕️</span>",
         "desc": "En horario de mañana.",
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2464,8 +2464,8 @@
         "title": "Cervezas <span>🍺</span>",
         "desc": null,
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2523,8 +2523,8 @@
         "title": "Vinos <span>🍷</span>",
         "desc": "Amplia variedad de vinos.",
         "imgs": {
-          "width": 120,
-          "height": 134
+          "width": 112,
+          "height": 126
         },
         "items": [
           {
@@ -2643,8 +2643,8 @@
         "title": "Bebidas <span>🥤</span>",
         "desc": null,
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2705,8 +2705,8 @@
         "title": "Licores y combinados <span>🍸</span>",
         "desc": null,
         "imgs": {
-          "width": 120,
-          "height": 120
+          "width": 112,
+          "height": 112
         },
         "items": [
           {
@@ -2760,5 +2760,5 @@
         ]
       }
     ]
-  }    
+  }
 ]
