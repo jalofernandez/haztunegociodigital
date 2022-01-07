@@ -1,9 +1,17 @@
 <template>
   <header>
-    <nav :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]" role="navigation" aria-label="Site main navigation">
+    <nav
+      :class="['navbar', 'is-fixed-top', { 'has-shadow': scrollin }]"
+      role="navigation"
+      aria-label="Site main navigation"
+    >
       <div class="container">
         <div class="navbar-brand">
-          <NuxtLink class="navbar-item logo" to="/" :title="`Ir a la página de inicio de #${owner.name}`">
+          <NuxtLink
+            class="navbar-item logo"
+            to="/"
+            :title="`Ir a la página de inicio de #${owner.name}`"
+          >
             <img
               src="/haztunegociodigital-icon.svg"
               :title="`Logotipo de #${owner.name}`"
@@ -15,7 +23,12 @@
           <div class="has-cta-btn is-flex">
             <a
               :href="`https://wa.me/${owner.whatsapp}`"
-              class="navbar-item button has-img is-dark is-rounded is-overlay is-hidden-desktop"
+              class="
+                navbar-item
+                button
+                has-img
+                is-dark is-rounded is-overlay is-hidden-desktop
+              "
               :title="`Whatsapp de #${owner.name}`"
               target="_blank"
               rel="noopener noreferrer"
@@ -38,19 +51,27 @@
               aria-expanded="false"
               @click.prevent="active = !active"
             >
-              <span aria-hidden="true" v-for="item in 3"></span>
+              <span aria-hidden="true" v-for="item in 3" :key="item"></span>
             </a>
           </div>
         </div>
 
         <div :class="['navbar-menu', { 'is-active': active }]">
           <div class="navbar-start has-text-centered">
-            <NuxtLink to="/" class="navbar-item" :title="`Ir a la página de inicio de #${owner.name}`">
+            <NuxtLink
+              to="/"
+              class="navbar-item"
+              :title="`Ir a la página de inicio de #${owner.name}`"
+            >
               <span>
                 #<strong>{{ owner.name }}</strong>
               </span>
             </NuxtLink>
-            <NuxtLink to="/negocios-en-internet" class="navbar-item" :title="`Ir a la página de negocios digitalizados por #${owner.name}`">
+            <NuxtLink
+              to="/negocios-en-internet"
+              class="navbar-item"
+              :title="`Ir a la página de negocios digitalizados por #${owner.name}`"
+            >
               <span>Showcase</span>
             </NuxtLink>
             <!-- <NuxtLink to="/servicios" class="navbar-item" :title="`Ir a la página de servicios ofrecidos por #${owner.name}`">
@@ -59,7 +80,10 @@
             <NuxtLink to="/precios" class="navbar-item" :title="`Ir a la página de precios de los servicios de #${owner.name}`">
               <span>Precios</span>
             </NuxtLink> -->
-            <div class="navbar-item has-dropdown is-hoverable" v-if="$route.name !== 'legal'">
+            <div
+              class="navbar-item has-dropdown is-hoverable"
+              v-if="$route.name !== 'legal'"
+            >
               <a class="navbar-link"> Ya nos usan </a>
               <div class="navbar-dropdown">
                 <NuxtLink
@@ -104,7 +128,7 @@
                 <!-- <NuxtLink to="/servicios/jalofernandez" class="navbar-item" :title="`Ir a la página de @jalofernandez en #${owner.name}`">
                   <span>Jalofernandez: designer + coder</span>
                 </NuxtLink> -->
-                <hr class="navbar-divider"/>
+                <hr class="navbar-divider" />
                 <a
                   :href="`https://wa.me/${owner.whatsapp}`"
                   class="navbar-item dropdown-inner has-text-weight-medium"
@@ -116,13 +140,26 @@
                 </a>
               </div>
             </div>
-            <NuxtLink to="/sitemap" class="navbar-item" :title="`Ir a la página de Mapa del sitio web de #${owner.name}`" v-if="$route.name === 'legal'">
+            <NuxtLink
+              to="/sitemap"
+              class="navbar-item"
+              :title="`Ir a la página de Mapa del sitio web de #${owner.name}`"
+              v-if="$route.name === 'legal'"
+            >
               <span>Sitemap</span>
             </NuxtLink>
-            <NuxtLink to="/equipo" class="navbar-item" :title="`Ir a la página de los responsables de #${owner.name}`">
+            <NuxtLink
+              to="/equipo"
+              class="navbar-item"
+              :title="`Ir a la página de los responsables de #${owner.name}`"
+            >
               <span>Equipo</span>
             </NuxtLink>
-            <NuxtLink to="/contacto" class="navbar-item" :title="`Ir a la página de contacto de #${owner.name}`">
+            <NuxtLink
+              to="/contacto"
+              class="navbar-item"
+              :title="`Ir a la página de contacto de #${owner.name}`"
+            >
               <span>Contacto</span>
             </NuxtLink>
           </div>
@@ -157,7 +194,7 @@
 
 <script>
 export default {
-  name: 'TheNavbar',
+  name: "TheNavbar",
   // props: {
   //   data: {
   //     type: String,
@@ -170,23 +207,27 @@ export default {
       active: false,
       scrollin: false,
       owner: this.$store.state.landing.owner,
-    }
+    };
   },
   created() {
     if (process.client) {
-      window.addEventListener('scroll', this.handleScroll)
+      window.addEventListener("scroll", this.handleScroll);
     }
   },
   destroyed() {
     if (process.client) {
-      window.removeEventListener('scroll', this.handleScroll)
+      window.removeEventListener("scroll", this.handleScroll);
     }
   },
   methods: {
     handleScroll() {
-      const top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-      this.scrollin = top > 30
+      const top =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      this.scrollin = top > 30;
     },
   },
-}
+};
 </script>

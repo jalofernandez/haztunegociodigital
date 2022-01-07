@@ -59,9 +59,7 @@
             "name": "Margaritta",
             "img": "pizza-margaritta",
             "desc": "Tomate y mozzarella.",
-            "prices": [
-              { "name": "Entera", "price": "8" }
-            ],
+            "prices": [{ "name": "Entera", "price": "8" }],
             "allergens": ["gluten"]
           },
           {
@@ -69,9 +67,7 @@
             "name": "Diavola",
             "img": "pizza-diavola",
             "desc": "Tomate, mozzarella, chorizo picante, pimiento rojo y aceitunas.",
-            "prices": [
-              { "name": "Entera", "price": "9,50" }
-            ],
+            "prices": [{ "name": "Entera", "price": "9,50" }],
             "allergens": ["gluten"]
           },
           {
@@ -79,9 +75,7 @@
             "name": "Sfiziosa",
             "img": "pizza-sfiziosa",
             "desc": "Tomate, mozzarella, jamón, bacon y cebolla.",
-            "prices": [
-              { "name": "Entera", "price": "10" }
-            ],
+            "prices": [{ "name": "Entera", "price": "10" }],
             "allergens": ["gluten", "soja"]
           }
         ]
@@ -98,11 +92,8 @@
             "id": 50,
             "name": "Spaghetti, Penne, Paccheri",
             "img": null,
-            "desc":
-              "- <em>Elige una salsa</em> - <br/><strong>Pesto:</strong> albahaca, ajo y piñones. <br/><strong>Pommodoro:</strong> salsa de tomate. <br/><strong>Bolognesa:</strong> carne de ternera y tomate. <br/><strong>Arrabiata:</strong> tomate picante. <br/><strong>Carbonara:</strong> bacon, huevo y parmiggiano.",
-            "prices": [
-              { "name": "Plato", "price": "8,50" }
-            ],
+            "desc": "- <em>Elige una salsa</em> - <br/><strong>Pesto:</strong> albahaca, ajo y piñones. <br/><strong>Pommodoro:</strong> salsa de tomate. <br/><strong>Bolognesa:</strong> carne de ternera y tomate. <br/><strong>Arrabiata:</strong> tomate picante. <br/><strong>Carbonara:</strong> bacon, huevo y parmiggiano.",
+            "prices": [{ "name": "Plato", "price": "8,50" }],
             "allergens": ["gluten", "huevos"]
           },
           {
@@ -110,10 +101,14 @@
             "name": "Spaghetti Nero Mare",
             "img": "pasta-spaghetti-nero-mare",
             "desc": "Spaghetti con tinta de sepia y mix de mariscos.",
-            "prices": [
-              { "name": "Tostada", "price": "11,00" }
-            ],
-            "allergens": ["gluten", "huevos", "crustaceos", "moluscos", "pescado"]
+            "prices": [{ "name": "Tostada", "price": "11,00" }],
+            "allergens": [
+              "gluten",
+              "huevos",
+              "crustaceos",
+              "moluscos",
+              "pescado"
+            ]
           }
         ]
       },
@@ -130,9 +125,7 @@
             "name": "Café italiano",
             "img": "capuccino",
             "desc": "Café al gusto: cortado, sólo, con leche, capuccino...",
-            "prices": [
-              { "name": "Precio", "price": "1,20" }
-            ],
+            "prices": [{ "name": "Precio", "price": "1,20" }],
             "allergens": null
           },
           {
@@ -140,9 +133,7 @@
             "name": "Tostada",
             "img": "tostada",
             "desc": "Tostada de tomate o con mantequilla y mermelada.",
-            "prices": [
-              { "name": "Precio", "price": "1,80" }
-            ],
+            "prices": [{ "name": "Precio", "price": "1,80" }],
             "allergens": null
           }
         ]
@@ -160,9 +151,7 @@
             "name": "Tiramisú",
             "img": "postre-tiramisu",
             "desc": "Pastel frío en capas de nata y bizcocho de café y espolboreado con cacao.",
-            "prices": [
-              { "name": "Unidad", "price": "4,00" }
-            ],
+            "prices": [{ "name": "Unidad", "price": "4,00" }],
             "allergens": ["gluten", "huevos", "lacteos", "sulfitos"]
           }
         ]
@@ -180,9 +169,7 @@
             "name": "Botella de agua",
             "img": "botella-agua",
             "desc": "Agua mineral bien fresquita.",
-            "prices": [
-              { "name": "1/2 litro", "price": "0,70" }
-            ],
+            "prices": [{ "name": "1/2 litro", "price": "0,70" }],
             "allergens": null
           },
           {
@@ -198,9 +185,7 @@
             "name": "Cerveza",
             "img": "cerveza",
             "desc": "Disponemos de: Mahou y Heineken.",
-            "prices": [
-              { "name": "Lata", "price": "1,00" }
-            ],
+            "prices": [{ "name": "Lata", "price": "1,00" }],
             "allergens": ["gluten"]
           }
         ]
@@ -248,14 +233,13 @@
             "id": 99,
             "name": "Menú del día",
             "img": null,
-            "desc":
-            "Preguntar los platos ofrecidos cada día. <br/>Incluye pan, bebida, postre o café. <br/><small>Disponibles de <b>Lunes</b> a <b>Viernes</b>.</small>",
+            "desc": "Preguntar los platos ofrecidos cada día. <br/>Incluye pan, bebida, postre o café. <br/><small>Disponibles de <b>Lunes</b> a <b>Viernes</b>.</small>",
             "prices": [{ "name": "Precio", "price": "10" }],
             "allergens": null
           },
           {
             "id": 100,
-  
+
             "name": "Menú especial",
             "img": null,
             "desc": "Preguntar los platos ofrecidos y su disponibilidad.",
@@ -467,8 +451,7 @@
             "id": 20,
             "name": "Torreznos de Soria",
             "img": "racion-torreznos-soria",
-            "desc":
-              "Disponemos de los auténticos torreznos de Soria. Elaborados con panceta de cerdo frita crujiente por fuera y jugosos por dentro.",
+            "desc": "Disponemos de los auténticos torreznos de Soria. Elaborados con panceta de cerdo frita crujiente por fuera y jugosos por dentro.",
             "prices": [{ "name": "Unidad", "price": "4,50" }],
             "allergens": ["sulfitos"]
           },
@@ -476,8 +459,7 @@
             "id": 21,
             "name": "Tortilla de patatas",
             "img": "racion-tortilla-patatas",
-            "desc":
-              "Tortilla de patatas casera con <strong>huevos de corral</strong> y cebolla. ¡Un clásico español!",
+            "desc": "Tortilla de patatas casera con <strong>huevos de corral</strong> y cebolla. ¡Un clásico español!",
             "prices": [
               { "name": "Pincho", "price": "3" },
               { "name": "Entera", "price": "10" }
@@ -569,8 +551,7 @@
             "id": 29,
             "name": "Fritura de la casa",
             "img": "racion-fritura",
-            "desc":
-              "Clásica fritura variada de pescado rebozado: calamares, chopitos, patas de calamar, gambas, merluza...",
+            "desc": "Clásica fritura variada de pescado rebozado: calamares, chopitos, patas de calamar, gambas, merluza...",
             "prices": [
               { "name": "Ración", "price": "16,50" },
               { "name": "1/2 ración", "price": "9,50" }
@@ -613,8 +594,7 @@
             "id": 32,
             "name": "Ensalada césar",
             "img": "ensalada-cesar",
-            "desc":
-              "Ensalada césar con pollo crujiente, lechuga romana, piña, manzana, huevo y nuestra salsa casera (preguntad por ella).",
+            "desc": "Ensalada césar con pollo crujiente, lechuga romana, piña, manzana, huevo y nuestra salsa casera (preguntad por ella).",
             "prices": [{ "name": "Entera", "price": "13,50" }],
             "allergens": ["gluten", "huevos"]
           }
@@ -674,8 +654,7 @@
             "id": 76,
             "name": "Parrillada de carne",
             "img": "parrillada-carne",
-            "desc":
-              "Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.",
+            "desc": "Carnes a la brasa: costillas de cerdo, pechuga de pollo, chorizitos, longaniza, panceta, alitas de pollo, chuleta de cerdo... Y patatas fritas.",
             "prices": [{ "name": "Parrillada", "price": "18,50" }],
             "allergens": null
           },
@@ -683,18 +662,16 @@
             "id": 77,
             "name": "Parrillada de verduras",
             "img": "parrillada-verduras",
-            "desc":
-              "Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacín, champiñones, espárragos con sal de escamos y aceite cruda.",
+            "desc": "Compuesta de verduras frescas como tomate, pimiento verde y rojo, cebolla, brocoli, berenjena, calabacín, champiñones, espárragos con sal de escamos y aceite cruda.",
             "prices": [{ "name": "Parrillada", "price": "15,50" }],
             "allergens": null
           },
           {
             "id": 78,
-  
+
             "name": "Parrillada de marisco",
             "img": "parrillada-marisco",
-            "desc":
-              "Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br/>Bajo <b>reserva previa</b>.",
+            "desc": "Del mar a tu mesa: cigalas, navajas, gambas y gambones, mejillones, centollo o buey de mar... <br/>Bajo <b>reserva previa</b>.",
             "prices": [{ "name": "Parrillada", "price": "45" }],
             "allergens": null
           }
@@ -754,8 +731,7 @@
             "id": 51,
             "name": "Hamburguesa Olé",
             "img": "hamburguesa-ole",
-            "desc":
-              "De ternera, lechuga, pepinillos, tomate, mayonesa, cebolla, queso, jamón de york, bacón y huevo a la plancha.",
+            "desc": "De ternera, lechuga, pepinillos, tomate, mayonesa, cebolla, queso, jamón de york, bacón y huevo a la plancha.",
             "prices": [{ "name": "Unidad", "price": "6,50" }],
             "allergens": ["gluten", "huevos"]
           }
@@ -887,8 +863,7 @@
             "id": 69,
             "name": "Tosta de pulpo",
             "img": "tosta-pulpo",
-            "desc":
-              "Pan tostado con pulpo a la gallega sobre cama de puré de patatas. Todo con su toque de pimentón de la vera, sal gorda y aceite cruda.",
+            "desc": "Pan tostado con pulpo a la gallega sobre cama de puré de patatas. Todo con su toque de pimentón de la vera, sal gorda y aceite cruda.",
             "prices": [{ "name": "Unidad", "price": "9" }],
             "allergens": ["gluten", "moluscos", "pescado"]
           },
@@ -896,8 +871,7 @@
             "id": 70,
             "name": "Tosta Olé",
             "img": "tosta-ole",
-            "desc":
-              "Pan tostado sobre lecho de manzana vaporizada (ligeramente hervida) con paté y queso de cabra y miel.",
+            "desc": "Pan tostado sobre lecho de manzana vaporizada (ligeramente hervida) con paté y queso de cabra y miel.",
             "prices": [{ "name": "Unidad", "price": "8,50" }],
             "allergens": ["gluten", "lacteos"]
           },
@@ -905,8 +879,7 @@
             "id": 71,
             "name": "Tosta Veinti3",
             "img": "tosta-veinti3",
-            "desc":
-              "Pan tostado con jamón de york, espárragos trigueros con queso y caramelo sobre lecho de cebolla pochada.",
+            "desc": "Pan tostado con jamón de york, espárragos trigueros con queso y caramelo sobre lecho de cebolla pochada.",
             "prices": [{ "name": "Unidad", "price": "8,00" }],
             "allergens": ["gluten", "lacteos"]
           }
@@ -1022,8 +995,7 @@
             "id": 90,
             "name": "Ladrón de Manzanas",
             "img": "sidra-ladron-manzanas",
-            "desc":
-              "<b>Sidra</b> elaborada con 7 tipos de manzanas dulces y ácidas, sin gluten, con bajo contenido alcohólico y un toque de gas.",
+            "desc": "<b>Sidra</b> elaborada con 7 tipos de manzanas dulces y ácidas, sin gluten, con bajo contenido alcohólico y un toque de gas.",
             "prices": [{ "name": "Tercio", "price": "2,70" }],
             "allergens": null
           }
@@ -1106,8 +1078,7 @@
             "id": 111,
             "name": "Combinados",
             "img": "combinados",
-            "desc":
-              "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.",
+            "desc": "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.",
             "prices": [
               { "name": "Nacional", "price": "4,70" },
               { "name": "Importación", "price": "5,20" },
@@ -1142,8 +1113,7 @@
             "id": 121,
             "name": "Café irlandés o vienés",
             "img": "cafe-irlandes",
-            "desc":
-              "<small>En temporada de invierno disponemos de:</small> <br/><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br/><strong>café vienés</strong>: café y nata montada.",
+            "desc": "<small>En temporada de invierno disponemos de:</small> <br/><strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br/><strong>café vienés</strong>: café y nata montada.",
             "prices": [
               { "name": "Irlandés", "price": "5,50" },
               { "name": "Vienés", "price": "3,50" }
@@ -1162,8 +1132,7 @@
             "id": 123,
             "name": "Refrescos",
             "img": "refrescos",
-            "desc":
-              "Coca-Cola <small>Nomal y Zero</small>, Nestea, Fanta y Acuarius (<small>naranja y limón</small>)...",
+            "desc": "Coca-Cola <small>Nomal y Zero</small>, Nestea, Fanta y Acuarius (<small>naranja y limón</small>)...",
             "prices": [
               { "name": "Coca-Cola", "price": "2,50" },
               { "name": "Fanta", "price": "2,50" },
@@ -1225,8 +1194,7 @@
             "id": 1,
             "name": "Tomates con arbequina y sal Maldon",
             "img": "tomates-arbequina",
-            "desc":
-              "Tomates naturales de la granja con aceite de oliva virgen extra de Arbequina y la tradicional sal de escamas de Essex (Maldon).",
+            "desc": "Tomates naturales de la granja con aceite de oliva virgen extra de Arbequina y la tradicional sal de escamas de Essex (Maldon).",
             "prices": [{ "name": "Precio", "price": "9" }],
             "allergens": null
           },
@@ -1266,8 +1234,7 @@
             "id": 6,
             "name": "Foie con canónigos al caramelo de naranja",
             "img": "foie-canonigos",
-            "desc":
-              "Foie de pato en virutas sobre cama de canónigos rehogados con vinagreta de caramelo a la naranja.",
+            "desc": "Foie de pato en virutas sobre cama de canónigos rehogados con vinagreta de caramelo a la naranja.",
             "prices": [{ "name": "Precio", "price": "12" }],
             "allergens": null
           },
@@ -1373,8 +1340,7 @@
             "id": 22,
             "name": "Pulpo a la parrilla con patata asada",
             "img": "pulpo-parrilla",
-            "desc":
-              "Pulpo cocido con un toque de parrilla además de su pimentón de la Vera, sal gruesa y patata asada.",
+            "desc": "Pulpo cocido con un toque de parrilla además de su pimentón de la Vera, sal gruesa y patata asada.",
             "prices": [{ "name": "Precio", "price": "19" }],
             "allergens": ["moluscos", "pescado"]
           },
@@ -1421,7 +1387,7 @@
           {
             "id": 29,
             "name": "Gambas blancas a la plancha 🍤",
-            "img": "gambas-plancha",  
+            "img": "gambas-plancha",
             "desc": "Ración de gambas blancas frescas a la plancha con un toque de sal.",
             "prices": [{ "name": "Precio", "price": "16" }],
             "allergens": null
@@ -1470,7 +1436,7 @@
           },
           {
             "id": 41,
-            
+
             "name": "Foie plancha con reducción de mermelada de rosa mosqueta",
             "img": null,
             "desc": null,
@@ -1497,8 +1463,7 @@
             "id": 44,
             "name": "Entrecot a la parrilla",
             "img": "entrecot-parrilla",
-            "desc":
-              "Entrecot de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.",
+            "desc": "Entrecot de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.",
             "prices": [{ "name": "Precio", "price": "22" }],
             "allergens": null
           },
@@ -1506,8 +1471,7 @@
             "id": 45,
             "name": "Chuletón a la parrilla",
             "img": "chuleton-parrilla",
-            "desc":
-              "Chuletón de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.",
+            "desc": "Chuletón de vaca gallega a la parrilla de piedra volcánica acompañada de patatas fritas, verduras o tomate natural.",
             "prices": [{ "name": "Precio", "price": "38" }],
             "allergens": null
           },
@@ -1555,8 +1519,7 @@
       },
       {
         "title": "Tapas",
-        "desc":
-          "Disfruta de nuestras fantásticas <span class='semibold'>tapas gourmet</span> para disfrutar solo o acompañado.",
+        "desc": "Disfruta de nuestras fantásticas <span class='semibold'>tapas gourmet</span> para disfrutar solo o acompañado.",
         "imgs": {
           "width": 120,
           "height": 120
@@ -1670,8 +1633,7 @@
       },
       {
         "title": "Arroces",
-        "desc":
-          "Selección de arroces caldosos o melosos de marisco. <span class='semibold'>40 minutos</span> de tiempo de elaboración. <span class='semibold'>Pedido mínimo</span> para 2 comensales.",
+        "desc": "Selección de arroces caldosos o melosos de marisco. <span class='semibold'>40 minutos</span> de tiempo de elaboración. <span class='semibold'>Pedido mínimo</span> para 2 comensales.",
         "imgs": {
           "width": 120,
           "height": 120
@@ -1687,7 +1649,7 @@
           },
           {
             "id": 61,
-            
+
             "name": "Arroz con zamburiñas",
             "img": "arroz-zamburinas",
             "desc": "Arroz con zamburiñas al gusto: caldoso o suelto.",
@@ -1788,8 +1750,7 @@
             "id": 84,
             "name": "Cocido madrileño",
             "img": null,
-            "desc":
-              "Preparamos el guiso madrileño de garbanzos, verduras, carnes, tocino de cerdo, chorizo, morcilla...",
+            "desc": "Preparamos el guiso madrileño de garbanzos, verduras, carnes, tocino de cerdo, chorizo, morcilla...",
             "prices": [{ "name": "Preguntar precio", "price": null }],
             "allergens": null
           },
@@ -1797,8 +1758,7 @@
             "id": 85,
             "name": "Sopa de ajo",
             "img": null,
-            "desc":
-              "La famosa sopa castellana de caldo, pan, pimentón, laurel, ajo, aceite de oliva y huevo escalfado.",
+            "desc": "La famosa sopa castellana de caldo, pan, pimentón, laurel, ajo, aceite de oliva y huevo escalfado.",
             "prices": [{ "name": "Preguntar precio", "price": null }],
             "allergens": null
           }
@@ -1995,8 +1955,7 @@
       },
       {
         "title": "Cerveza artesanal Yria",
-        "desc":
-          "Yria es una pequeña <span class='semibold'>cervecera nacional</span> con una marcada tendencia a la innovación.",
+        "desc": "Yria es una pequeña <span class='semibold'>cervecera nacional</span> con una marcada tendencia a la innovación.",
         "imgs": {
           "width": 120,
           "height": 120
@@ -2064,8 +2023,7 @@
             "id": 37,
             "name": "Combinados",
             "img": "combinados",
-            "desc":
-              "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.",
+            "desc": "Combinados nacionales o de importación. Preguntar al camarero por nuestra selección de licores sus precios.",
             "prices": null,
             "allergens": null
           }
@@ -2510,7 +2468,7 @@
           },
           {
             "id": 54,
-            
+
             "name": "Cerveza tostada 0,0",
             "img": "cerveza-tostada-00",
             "desc": "Mahou 0,0 Tostada tiene una combinación inimitable de maltas tostadas.",
@@ -2673,7 +2631,7 @@
           },
           {
             "id": 63,
-            
+
             "name": "Botella de agua",
             "img": "botella-agua",
             "desc": "El agua de Cabreiroá destaca por sus propiedades minero-medicinales.",

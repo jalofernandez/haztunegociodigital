@@ -1,5 +1,12 @@
 <template>
-  <div :class="['page', 'business', business.id, { 'aside-menu-open': openedAside }]">
+  <div
+    :class="[
+      'page',
+      'business',
+      business.id,
+      { 'aside-menu-open': openedAside },
+    ]"
+  >
     <!-- Floating button to trigger Aside navbar -->
     <nav
       v-if="['mobile', 'smartphone', 'tablet'].includes($mq)"
@@ -27,7 +34,9 @@
         <img
           v-if="business.logo"
           :class="['navbar-brand-logo', { 'ml-1': !business.whatsapp }]"
-          :src="require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)"
+          :src="
+            require(`~/assets/negocios/${business.id}/${business.id}-logo-color.png`)
+          "
           :alt="`Logotipo de ${business.name} en ${business.place}`"
           :title="`Logotipo de ${business.name} en ${business.place}`"
         />
@@ -39,15 +48,13 @@
             aria-expanded="false"
             :aria-pressed="openedAside ? 'true' : 'false'"
           >
-            <span v-for="item in 3" aria-hidden="true"></span>
+            <span v-for="item in 3" aria-hidden="true" :key="item"></span>
           </a>
           <div class="burger-copy">
             <small v-if="!openedAside" class="opener">
               Abrir <b>Carta</b>
             </small>
-            <small v-else class="closer">
-              Cerrar <b>Carta</b>
-            </small>
+            <small v-else class="closer"> Cerrar <b>Carta</b> </small>
           </div>
         </div>
       </div>
@@ -66,7 +73,12 @@
         aria-labelledby="name"
         aria-describedby="schedule"
       >
-        <button class="btn js-close" type="button" @click="closeModal()" aria-labelledby="cerrar">
+        <button
+          class="btn js-close"
+          type="button"
+          @click="closeModal()"
+          aria-labelledby="cerrar"
+        >
           <small>Cerrar</small>
           <span>&times;</span>
         </button>
@@ -74,13 +86,21 @@
           <div class="details">
             <div class="notification is-warning is-size-6">
               Debido a las medidas especiales por la crisis del covid-19, el
-              <span class="has-text-weight-medium">horario de apertura podría variar</span>.
+              <span class="has-text-weight-medium"
+                >horario de apertura podría variar</span
+              >.
             </div>
             <h4 class="name has-text-centered">Horario de apertura</h4>
             <ul class="schedule-list">
-              <li class="schedule" v-for="workday in business.schedule.days" :key="workday.day">
+              <li
+                class="schedule"
+                v-for="workday in business.schedule.days"
+                :key="workday.day"
+              >
                 <small class="day">{{ workday.day }}:</small>
-                <span :class="setSchedule(workday.hour)">{{ workday.hour }}</span>
+                <span :class="setSchedule(workday.hour)">{{
+                  workday.hour
+                }}</span>
               </li>
             </ul>
           </div>
@@ -96,7 +116,11 @@
 
     <!-- ...for each item to shown info details -->
     <transition name="fd" appear>
-      <div v-if="openedItemDetail" class="md-overlay" @click="closeItemDetail()"></div>
+      <div
+        v-if="openedItemDetail"
+        class="md-overlay"
+        @click="closeItemDetail()"
+      ></div>
     </transition>
     <transition name="pop" appear>
       <div
@@ -123,14 +147,20 @@
             class="img cover"
             :style="{
               'background-image':
-                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) + ')',
+                'url(' +
+                require(`@/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`) +
+                ')',
             }"
           ></div>
           <div class="details">
             <h4 class="name">{{ item.name }}</h4>
             <p v-if="item.desc" v-html="item.desc" class="desc"></p>
             <div class="prices">
-              <div class="price item" v-for="(price, index) in item.prices" :key="index">
+              <div
+                class="price item"
+                v-for="(price, index) in item.prices"
+                :key="index"
+              >
                 <small class="price name">{{ price.name }}</small>
                 <span v-if="price.price" class="price quantity">
                   <b>{{ price.price }}</b> €
@@ -138,7 +168,11 @@
               </div>
             </div>
             <div v-if="item.allergens" class="allergens prices">
-              <div class="price item" v-for="(allergen, index) in item.allergens" :key="index">
+              <div
+                class="price item"
+                v-for="(allergen, index) in item.allergens"
+                :key="index"
+              >
                 <small class="helper">{{ allergen }}</small>
                 <img
                   class="allergen"
@@ -157,7 +191,11 @@
     <!-- <BusinessItemModal :businessId="business.id" :menus="business.menus" /> -->
 
     <!-- Aside to navigate across dishes sections -->
-    <TheAside :business="business" @aside="asideBehaviour()" :aria-expanded="openedAside ? 'true' : 'false'"/>
+    <TheAside
+      :business="business"
+      @aside="asideBehaviour()"
+      :aria-expanded="openedAside ? 'true' : 'false'"
+    />
 
     <main class="wrapper-menu">
       <div class="dishes">
@@ -168,12 +206,18 @@
             class="business cover"
             :style="{
               'background-image':
-                'url(' + require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) + ')',
+                'url(' +
+                require(`@/assets/negocios/${business.id}/${business.id}-${business.cover}.jpg`) +
+                ')',
             }"
           ></div>
           <address class="business data">
             <h1 class="data name">{{ business.name }}</h1>
-            <h4 v-if="business.desc" v-html="business.desc" class="data desc"></h4>
+            <h4
+              v-if="business.desc"
+              v-html="business.desc"
+              class="data desc"
+            ></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
                 <a
@@ -193,7 +237,7 @@
                   class="data phone"
                   :href="`tel:${business.phone}`"
                   :title="`Llamar al ${business.name}: ${business.phone}`"
-                  >
+                >
                   <strong>{{ business.phone }}</strong>
                 </a>
                 <button
@@ -208,9 +252,12 @@
               </li>
             </ul>
           </address>
-          <BaseMessage :data="business.messages.gluten" v-if="business.messages" />
+          <BaseMessage
+            :data="business.messages.gluten"
+            v-if="business.messages"
+          />
         </header>
-        
+
         <!-- Items list :: all Menu Dishes & Beverages -->
         <div class="sections-list">
           <section
@@ -218,7 +265,11 @@
             v-for="(menu, index) in business.menus"
             :key="index"
           >
-            <h2 v-html="menu.title" :id="`longdesc-${index}`" class="section name"></h2>
+            <h2
+              v-html="menu.title"
+              :id="`longdesc-${index}`"
+              class="section name"
+            ></h2>
             <p v-if="menu.desc" v-html="menu.desc" class="section desc"></p>
             <div class="dish-area">
               <article
@@ -229,11 +280,23 @@
               >
                 <div class="dish info">
                   <h3 class="name">{{ item.name }}</h3>
-                  <p v-if="item.desc" v-html="item.desc" :id="`longdesc-${item.id}`" class="desc"></p>
+                  <p
+                    v-if="item.desc"
+                    v-html="item.desc"
+                    :id="`longdesc-${item.id}`"
+                    class="desc"
+                  ></p>
                   <!-- <p v-if="item.desc" class="desc">{{ setDescription(item.desc) }}</p> -->
                   <div class="prices">
-                    <div v-if="item.prices" class="price item" v-for="(price, index) in item.prices" :key="index">
-                      <small v-if="price.name" class="price name">{{ price.name }}</small>
+                    <div
+                      v-if="item.prices"
+                      class="price item"
+                      v-for="(price, index) in item.prices"
+                      :key="index"
+                    >
+                      <small v-if="price.name" class="price name">{{
+                        price.name
+                      }}</small>
                       <span v-if="price.price" class="price quantity">
                         <strong>{{ price.price }}</strong> €
                       </span>
@@ -254,7 +317,9 @@
                 </div>
                 <figure v-if="item.img" class="dish img">
                   <img
-                    :src="require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)"
+                    :src="
+                      require(`~/assets/negocios/${business.id}/${business.id}-${item.img}.jpg`)
+                    "
                     :title="`${business.name}: ${item.name}`"
                     :alt="`${business.name}: ${item.name}`"
                     :longdesc="`#longdesc-${item.id}`"
@@ -282,11 +347,11 @@
 // import BaseModal from '~/components/BaseModal.vue'
 // import BusinessItemModal from '~/components/BusinessItemModal.vue'
 // import BusinessItemList from '~/components/BusinessItemList.vue'
-import BaseMessage from '~/components/BaseMessage.vue'
-import TheAside from '~/components/TheAside.vue'
-import TheFooter from '~/components/TheFooter.vue'
+import BaseMessage from "~/components/BaseMessage.vue";
+import TheAside from "~/components/TheAside.vue";
+import TheFooter from "~/components/TheFooter.vue";
 
-import businesses from '~/data/businesses'
+import businesses from "~/data/businesses";
 
 export default {
   components: {
@@ -303,13 +368,14 @@ export default {
       openedSchedule: false,
       openedItemDetail: false,
       openedAside: false,
-      business: businesses.find(business => business.id == 'bar-galicia'),
+      business: businesses.find((business) => business.id == "bar-galicia"),
       structuredData: {
-        '@context': 'http://schema.org',
-        '@type': 'LocalBusiness',
-        'additionalType': 'Bar Galicia de Valdemoro en #HazTuNegocioDigital por @jalofernández',
-        '@id': 'https://haztunegociodigital.com/horeca/bar-galicia',
-        'url': 'https://haztunegociodigital.com/horeca/bar-galicia',
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        additionalType:
+          "Bar Galicia de Valdemoro en #HazTuNegocioDigital por @jalofernández",
+        "@id": "https://haztunegociodigital.com/horeca/bar-galicia",
+        url: "https://haztunegociodigital.com/horeca/bar-galicia",
         // sameAs: [
         //   "https://www.instagram.com/jalofernandez/?ref=badge",
         //   "https://twitter.com/jalofernandez",
@@ -317,92 +383,122 @@ export default {
         //   "https://www.youtube.com/channel/UCtwY5GMTiS7VQ7kYzGomUsw",
         //   "https://www.facebook.com/jalofernandez?ref=tn_tnmn",
         // ],
-        'logo': 'https://haztunegociodigital.com/negocios/bar-galicia/bar-galicia-metadata-logo.jpg',
-        'name': 'Bar Galicia Valdemoro',
-        'description': 'Bar Galicia de Valdemoro especializado en raciones y cocina gallega',
-        'telephone': '+34 91 895 53 64',
-        'email': 'haztunegociodigital@gmail.com',
-        'currenciesAccepted': 'EUR',
-        'paymentAccepted': 'Efectivo, tarjeta de crédito, Cash, Credit Card',
-        'priceRange': 'Desde 2€',
-        'image': 'https://haztunegociodigital.com/negocios/bar-galicia/bar-galicia-metadata-cover.jpg',
-        'contactPoint': {
-          '@type': 'ContactPoint',
-          'telephone': '+34 91 895 53 64',
-          'contactType': 'Llamar para reservar o recoger pedidos',
+        logo: "https://haztunegociodigital.com/negocios/bar-galicia/bar-galicia-metadata-logo.jpg",
+        name: "Bar Galicia Valdemoro",
+        description:
+          "Bar Galicia de Valdemoro especializado en raciones y cocina gallega",
+        telephone: "+34 91 895 53 64",
+        email: "haztunegociodigital@gmail.com",
+        currenciesAccepted: "EUR",
+        paymentAccepted: "Efectivo, tarjeta de crédito, Cash, Credit Card",
+        priceRange: "Desde 2€",
+        image:
+          "https://haztunegociodigital.com/negocios/bar-galicia/bar-galicia-metadata-cover.jpg",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+34 91 895 53 64",
+          contactType: "Llamar para reservar o recoger pedidos",
         },
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': 'Calle Miguel Hernández, 5',
-          'postalCode': '28342',
-          'addressLocality': 'Valdemoro',
-          'addressRegion': 'Madrid'
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Calle Miguel Hernández, 5",
+          postalCode: "28342",
+          addressLocality: "Valdemoro",
+          addressRegion: "Madrid",
         },
-        'hasMap': 'https://goo.gl/maps/w1KzohPjfHSS6hTX6',
-        'geo' : {
-          '@type': 'GeoCoordinates',
-          'latitude': '40.19315166194334',
-          'longitude': '-3.683921828879778'
+        hasMap: "https://goo.gl/maps/w1KzohPjfHSS6hTX6",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "40.19315166194334",
+          longitude: "-3.683921828879778",
         },
-        'aggregateRating': {
-          '@type': 'AggregateRating',
-          'ratingValue': '4.5',
-          'bestRating': '5',
-          'worstRating': '1',
-          'ratingCount': '1656'
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.5",
+          bestRating: "5",
+          worstRating: "1",
+          ratingCount: "1656",
         },
-        'openingHoursSpecification': [
+        openingHoursSpecification: [
           {
-            '@type': 'OpeningHoursSpecification',
-            'dayOfWeek': [
-              'Martes',
-              'Miércoles',
-              'Jueves',
-              'Viernes',
-              'Sábado',
-              'Domingo'
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Martes",
+              "Miércoles",
+              "Jueves",
+              "Viernes",
+              "Sábado",
+              "Domingo",
             ],
-            'opens': '09:00',
-            'closes': '01:00'
-          }
-        ]
+            opens: "09:00",
+            closes: "01:00",
+          },
+        ],
       },
-    }
+    };
   },
   head() {
-    const businessName = this.business.name
-    const businessId = this.business.id
-    const businessPlace = this.business.place
-    const businessType = this.business.type
+    const businessName = this.business.name;
+    const businessId = this.business.id;
+    const businessPlace = this.business.place;
+    const businessType = this.business.type;
 
-    const title = businessName
-    const description = `${businessName} en ${businessPlace} por ${this.$store.state.landing.author.alias}`
-    const type = `${businessType} en ${businessPlace}`
-    const ownerUrl = this.$store.state.landing.owner.url
+    const title = businessName;
+    const description = `${businessName} en ${businessPlace} por ${this.$store.state.landing.author.alias}`;
+    const type = `${businessType} en ${businessPlace}`;
+    const ownerUrl = this.$store.state.landing.owner.url;
 
-    const canonical = `${ownerUrl}/horeca/${businessId}`
+    const canonical = `${ownerUrl}/horeca/${businessId}`;
 
     const meta = [
-      { hid: 'description', name: 'description', content: description },
-      { hid: 'Classification', name: 'Classification', content: businessType },
-      { hid: 'subject', name: 'subject', content: type },
+      { hid: "description", name: "description", content: description },
+      { hid: "Classification", name: "Classification", content: businessType },
+      { hid: "subject", name: "subject", content: type },
 
-      { hid: 'og:title', property: 'og:title', content: title },
-      { hid: 'og:description', property: 'og:description', content: description },
-      { hid: 'og:url', property: 'og:url', content: canonical },
-      { hid: 'og:image', property: 'og:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
-      { hid: 'og:image:alt', property: 'og:image:alt', content: description },
+      { hid: "og:title", property: "og:title", content: title },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: description,
+      },
+      { hid: "og:url", property: "og:url", content: canonical },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg`,
+      },
+      {
+        hid: "og:image:secure_url",
+        property: "og:image:secure_url",
+        content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg`,
+      },
+      { hid: "og:image:alt", property: "og:image:alt", content: description },
 
-      { hid: 'twitter:title', name: 'twitter:title', content: title },
-      { hid: 'twitter:description', name: 'twitter:description', content: description },
-      { hid: 'twitter:image', name: 'twitter:image', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
-      { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: description },
-      { hid: 'twitter:site', name: 'twitter:site', content: ownerUrl },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg` },
-    ]
+      { hid: "twitter:title", name: "twitter:title", content: title },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg`,
+      },
+      {
+        hid: "twitter:image:alt",
+        name: "twitter:image:alt",
+        content: description,
+      },
+      { hid: "twitter:site", name: "twitter:site", content: ownerUrl },
+      {
+        hid: "twitter:creator",
+        name: "twitter:creator",
+        content: `${ownerUrl}/negocios/${businessId}/${businessId}-metadata-logo.jpg`,
+      },
+    ];
 
-    const link = [{ rel: 'canonical', hid: 'canonical', href: canonical }]
+    const link = [{ rel: "canonical", hid: "canonical", href: canonical }];
 
     // if (this.restaurant.web) {
     //   link.push({ rel: 'dns-prefetch', href: this.restaurant.web })
@@ -413,50 +509,50 @@ export default {
       meta,
       link,
       // Structured Data (Schema)
-      __dangerouslyDisableSanitizers: ['script'],
+      __dangerouslyDisableSanitizers: ["script"],
       script: [
         {
           innerHTML: JSON.stringify(this.structuredData),
-          type: 'application/ld+json',
+          type: "application/ld+json",
         },
       ],
-    }
+    };
   },
   computed: {
     filterItemModal() {
-      var modal = this.currentModal
-      var dishes = this.business.menus.flatMap(menu => menu.items)
-      return dishes.filter(dish => dish.id === modal)
-    }
+      var modal = this.currentModal;
+      var dishes = this.business.menus.flatMap((menu) => menu.items);
+      return dishes.filter((dish) => dish.id === modal);
+    },
   },
   methods: {
     showModal() {
-      this.openedSchedule = true
+      this.openedSchedule = true;
     },
     closeModal() {
-      this.openedSchedule = false
+      this.openedSchedule = false;
     },
     setSchedule(info) {
-      var sch = info.replace(/\s/g, '').toLowerCase()
-      if (sch !== 'cerrado') return 'abierto'
-      else return sch
+      var sch = info.replace(/\s/g, "").toLowerCase();
+      if (sch !== "cerrado") return "abierto";
+      else return sch;
     },
     asideBehaviour() {
-      this.openedAside = !this.openedAside
+      this.openedAside = !this.openedAside;
     },
     showItemDetail(id) {
-      this.currentModal = id
-      this.openedItemDetail = true
+      this.currentModal = id;
+      this.openedItemDetail = true;
       // TODO: Make me as a component!
       // this.$emit('modal', id)
       // console.log('showItemDetail: ' + id)
     },
     closeItemDetail() {
-      this.currentModal = 0
-      this.openedItemDetail = false
+      this.currentModal = 0;
+      this.openedItemDetail = false;
     },
   },
-}
+};
 </script>
 
 <style lang="sass">
