@@ -368,7 +368,7 @@ export default {
       openedSchedule: false,
       openedItemDetail: false,
       openedAside: false,
-      business: businesses.find((business) => business.id == "bar-galicia"),
+      business: businesses.find((business) => business.id === "bar-galicia"),
       structuredData: {
         "@context": "http://schema.org",
         "@type": "LocalBusiness",

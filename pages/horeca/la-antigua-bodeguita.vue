@@ -368,7 +368,7 @@ export default {
       openedItemDetail: false,
       openedAside: false,
       business: businesses.find(
-        (business) => business.id == "la-antigua-bodeguita"
+        (business) => business.id === "la-antigua-bodeguita"
       ),
       structuredData: {
         "@context": "http://schema.org",
