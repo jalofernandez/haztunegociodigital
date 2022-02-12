@@ -107,6 +107,13 @@
                 >
                   <span>Taberna Olé Veinti3</span>
                 </NuxtLink>
+                <NuxtLink
+                  to="/horeca/la-teja-verde"
+                  class="navbar-item dropdown-inner la-teja-verde"
+                  :title="`Ir a la página de Tapería Restaurante La Teja Verde en #${owner.name}`"
+                >
+                  <span>Tapería La Teja Verde</span>
+                </NuxtLink>
                 <a
                   href="https://peluqueriacanessa.com"
                   class="navbar-item dropdown-inner peluqueriacanessa"
