@@ -2718,5 +2718,1048 @@
         ]
       }
     ]
+  },
+  {
+    "id": "la-teja-verde",
+    "name": "La Teja Verde",
+    "type": null,
+    "logo": true,
+    "cover": "cover",
+    "address": "Calle Príncipe, 44, 28300 Aranjuez, Madrid.",
+    "place": "Aranjuez, Madrid",
+    "gmap": "ou3w3z4fetZ71fmx6",
+    "phone": "919127130",
+    "whatsapp": "34636683046",
+    "schedule": {
+      "days": [
+        { "day": "Lunes", "hour": "8:00 - 00:00" },
+        { "day": "Martes", "hour": "8:00 - 00:00" },
+        { "day": "Miercoles", "hour": "8:00 - 00:00" },
+        { "day": "Jueves", "hour": "8:00 - 00:00" },
+        { "day": "Viernes", "hour": "8:00 - 00:00" },
+        { "day": "Sábado", "hour": "10:00 - 00:00" },
+        { "day": "Domingo", "hour": "10:00 - 23:00" }
+      ]
+    },
+    "menus": [
+      {
+        "title": "Desayunos <span>☕️🥖</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 100,
+            "name": "Café + tostadas tomate y aceite",
+            "img": null,
+            "desc": "Café al gusto (con leche, sólo, cortado...) con tostadas con tomate y acete.",
+            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 101,
+            "name": "Café + tostadas con jamón",
+            "img": null,
+            "desc": "Café al gusto (con leche, sólo, cortado...) con tostadas con jamón serrano.",
+            "prices": [{ "name": "Precio", "price": "3,50" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 102,
+            "name": "Café + bollería",
+            "img": null,
+            "desc": "Café al gusto: con leche, sólo, cortado... Preguntar por la bollería disponible.",
+            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 103,
+            "name": "Café + montado",
+            "img": null,
+            "desc": "Café al gusto: con leche, sólo, cortado... Preguntar por los montados disponibles.",
+            "prices": [{ "name": "Precio", "price": "4" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 104,
+            "name": "Refresco + bollería",
+            "img": null,
+            "desc": "Tu refresco preferido. Preguntar por la bollería disponible.",
+            "prices": [{ "name": "Precio", "price": "3,50" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 105,
+            "name": "Refresco + montado",
+            "img": null,
+            "desc": "Tu refresco preferido. Preguntar por los montados disponibles.",
+            "prices": [{ "name": "Precio", "price": "5" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 106,
+            "name": "Croissant a la plancha",
+            "img": null,
+            "desc": "Poco que decir: clásico croissant a la plancha birn crujiente y calentito.",
+            "prices": [{ "name": "Precio", "price": "1,70" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 107,
+            "name": "Bollería",
+            "img": null,
+            "desc": "Donut - Croissant - Napolitana de chocolate - Palmera de chocolate.",
+            "prices": [{ "name": "Precio", "price": "1,20" }],
+            "allergens": ["gluten"]
+          }
+        ]
+      },
+      {
+        "title": "Entre huertas <span>🥬🍅</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 1,
+            "name": "Ensalada ribereña",
+            "img": null,
+            "desc": "Ensalada mixta con variedad de productos de la Vega de Aranjuez según mercado.",
+            "prices": [{ "name": "Precio", "price": "9" }],
+            "allergens": null
+          },
+          {
+            "id": 2,
+            "name": "Ensalada La Teja",
+            "img": null,
+            "desc": "Espinacas, frutos secos, ciruelas pasas, crujiente de bacon, rulo de cabra a la plancha, sésamo, aliño de miel y limón.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": null
+          },
+          {
+            "id": 3,
+            "name": "Tomate al perico",
+            "img": null,
+            "desc": "Tomate con aliño de ajo, orégano de monte y aceite de oliva.",
+            "prices": [{ "name": "Precio", "price": "5" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Entre despensas <span>🧀🍤</span>",
+        "desc": null,
+        "imgs": {
+          "width": 400,
+          "height": 300
+        },
+        "items": [
+          {
+            "id": 20,
+            "name": "Tronco de jamón ibérico",
+            "img": null,
+            "desc": "Ración de jamón ibérico de la dehesa extremeña.",
+            "prices": [{ "name": "Precio", "price": "22" }],
+            "allergens": null
+          },
+          {
+            "id": 21,
+            "name": "Tronco de quesos",
+            "img": null,
+            "desc": "Delicada selección de cuatro variedades de quesos extremeños y manchegos.",
+            "prices": [{ "name": "Precio", "price": "18" }],
+            "allergens": ["lacteos"]
+          },
+          {
+            "id": 22,
+            "name": "Huevos rotos con jamón",
+            "img": "huevos-rotos-jamon",
+            "desc": "Calderito de patatas, tres huevos fritos y jamón.",
+            "prices": [{ "name": "Ración", "price": "12" }],
+            "allergens": ["huevos", "sulfitos"]
+          },
+          {
+            "id": 23,
+            "name": "Huevos rotos La Teja",
+            "img": null,
+            "desc": "Calderito de patatas, tres huevos fritos, gulas y gambas.",
+            "prices": [{ "name": "Ración", "price": "13" }],
+            "allergens": ["huevos", "sulfitos"]
+          },
+          {
+            "id": 24,
+            "name": "Revuelto de la casa",
+            "img": null,
+            "desc": "Revuelto de variedad de setas, champiñón y espárragos.",
+            "prices": [{ "name": "Ración", "price": "13" }],
+            "allergens": ["huevos", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 25,
+            "name": "Tosta de rulo",
+            "img": null,
+            "desc": "Queso de cabra a la plancha con cebolla caramelizada sobre mermelada de frutos.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": ["huevos", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 26,
+            "name": "Tosta de salmón",
+            "img": null,
+            "desc": "Salmón ahumado sobre cama de queso cremoso y pinceladas de módena.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": ["pescado"]
+          },
+          {
+            "id": 27,
+            "name": "Tosta de jamón ibérico",
+            "img": null,
+            "desc": "Jamón ibérico sobre tomate y aceite extra de oliva.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": null
+          },
+          {
+            "id": 28,
+            "name": "Tosta de gulas y gambas",
+            "img": null,
+            "desc": "Gulas y gambas al ajo verde sobre cama de alioli.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": ["huevos", "sulfitos"]
+          }
+        ]
+      },
+      {
+        "title": "Entre fogones <span>🍗🍳</span>",
+        "desc": null,
+        "imgs": {
+          "width": 200,
+          "height": 229
+        },
+        "items": [
+          {
+            "id": 30,
+            "name": "Croquetones caseros",
+            "img": null,
+            "desc": "Croquetas auténticas. Consulte variedad a nuestro personal.",
+            "prices": [{ "name": "Ración", "price": "13,50" }],
+            "allergens": ["huevos", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 31,
+            "name": "Croquetas de gambas al ajillo",
+            "img": null,
+            "desc": "Patatas alargadas fritas con salsa casera a elegir.",
+            "prices": [{ "name": "Ración", "price": "13" }],
+            "allergens": ["huevos", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 32,
+            "name": "Crujientes de pollo",
+            "img": null,
+            "desc": "Tiras de pollo recién cortadas con crujiente acompañadas de patatas fritas.",
+            "prices": [{ "name": "Ración", "price": "10" }],
+            "allergens": ["sulfitos", "gluten"]
+          },
+          {
+            "id": 33,
+            "name": "Moruno a La Teja",
+            "img": null,
+            "desc": "Taquitos de carne magra con aliño La Teja a la plancha.",
+            "prices": [{ "name": "Ración", "price": "16" }],
+            "allergens": ["sulfitos"]
+          },
+          {
+            "id": 34,
+            "name": "Shish a La Teja",
+            "img": null,
+            "desc": "Carne de cordero picado con aliño la Teja a la plancha.",
+            "prices": [{ "name": "Ración", "price": "18" }],
+            "allergens": ["sulfitos"]
+          },
+          {
+            "id": 35,
+            "name": "Alitas de pollo fritas",
+            "img": "alitas-de-pollo",
+            "desc": "Clásicas alitas de pollo lfritas y crujientes.",
+            "prices": [{ "name": "Ración", "price": "9" }],
+            "allergens": ["sulfitos"]
+          },
+          {
+            "id": 36,
+            "name": "Patatas bravas o alioli",
+            "img": null,
+            "desc": "Patatas alargadas fritas con salsa casera a elegir entre brava (tomate picante) o alioli (mayonesa, ajo y perejil).",
+            "prices": [{ "name": "Ración", "price": "6,50" }],
+            "allergens": ["sulfitos", "gluten"]
+          },
+          {
+            "id": 33,
+            "name": "Tortilla de patatas",
+            "img": null,
+            "desc": "Clásico español del que poco hay que decir.",
+            "prices": [{ "name": "Precio", "price": "14" }],
+            "allergens": ["huevos", "sulfitos"]
+          },
+          {
+            "id": 37,
+            "name": "Tortilla de patatas rellena",
+            "img": null,
+            "desc": "Tortilla de patatas rellena de choricillo.",
+            "prices": [{ "name": "Precio", "price": "16" }],
+            "allergens": ["huevos", "sulfitos"]
+          }
+        ]
+      },
+      {
+        "title": "Entre mares <span>🍤 🍣</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 40,
+            "name": "Pulpo a la feira o a la plancha",
+            "img": null,
+            "desc": "Pulpo cocido con cachelos y su toque de sal, aceite de oliva y pimentón.",
+            "prices": [{ "name": "Ración", "price": "20" }],
+            "allergens": ["moluscos", "pescado"]
+          },
+          {
+            "id": 41,
+            "name": "Calamares diamante",
+            "img": null,
+            "desc": "Calamares rebozados sólo con harina fritos con su toque de limón.",
+            "prices": [{ "name": "Ración", "price": "14" }],
+            "allergens": ["moluscos", "pescado", "sulfitos", "gluten"]
+          },
+          {
+            "id": 42,
+            "name": "Sepia a la plancha con alioli",
+            "img": null,
+            "desc": "Sepia fresca a la plancha con salsa alioli y guarnición de ensalada.",
+            "prices": [{ "name": "Ración", "price": "16" }],
+            "allergens": ["moluscos", "pescado", "huevos", "sulfitos"]
+          },
+          {
+            "id": 43,
+            "name": "Gambón a la plancha",
+            "img": null,
+            "desc": null,
+            "prices": [{ "name": "Ración", "price": "18" }],
+            "allergens": ["crustaceos", "pescado", "sulfitos"]
+          },
+          {
+            "id": 44,
+            "name": "Cazuelita de gulas y gambas",
+            "img": null,
+            "desc": "Gulas y gambas al ajillo verde.",
+            "prices": [{ "name": "Precio", "price": "14" }],
+            "allergens": ["huevos", "sulfitos"]
+          },
+          {
+            "id": 45,
+            "name": "Zamburiñas a la plancha",
+            "img": null,
+            "desc": null,
+            "prices": [{ "name": "4 unds.", "price": "20" }],
+            "allergens": ["crustaceos", "pescado"]
+          },
+          {
+            "id": 46,
+            "name": "Puntillitas a la andaluza",
+            "img": null,
+            "desc": null,
+            "prices": [{ "name": "4 unds.", "price": "14" }],
+            "allergens": ["pescado", "sulfitos"]
+          },
+          {
+            "id": 47,
+            "name": "Fritura de pescado",
+            "img": null,
+            "desc": "Fritura variada de pescado rebozado: calamares, gambas, rabas, cazón...",
+            "prices": [{ "name": "Ración", "price": "17" }],
+            "allergens": ["moluscos", "crustaceos", "pescado", "sulfitos"]
+          },
+          {
+            "id": 48,
+            "name": "Cazón en adobo",
+            "img": null,
+            "desc": "Fritura de cazón en adobo.",
+            "prices": [{ "name": "Ración", "price": "13" }],
+            "allergens": ["moluscos", "crustaceos", "pescado", "sulfitos"]
+          },
+          {
+            "id": 49,
+            "name": "Boquerones fritos",
+            "img": null,
+            "desc": "Al estilo andaluz, con su toque de vinagre, pimentón y limón.",
+            "prices": [{ "name": "Ración", "price": "13,50" }],
+            "allergens": ["pescado", "sulfitos"]
+          },
+          {
+            "id": 50,
+            "name": "Vieira gratinada",
+            "img": null,
+            "desc": null,
+            "prices": [{ "name": "4 unds.", "price": "20" }],
+            "allergens": ["crustaceos", "pescado"]
+          }
+        ]
+      },
+      {
+        "title": "Entre pan y pan <span>🍔🥖</span>",
+        "desc": null,
+        "imgs": {
+          "width": 200,
+          "height": 229
+        },
+        "items": [
+          {
+            "id": 60,
+            "name": "Hamburguesa La Teja",
+            "img": "hamburgesa-la-teja",
+            "desc": "200 gr de carne vacuna, lechuga, tomate, pepinillo, baicon, queso, huevo frito y cebolla caramelizada, acompañado con patatas fritas.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": ["gluten", "sulfitos", "huevos", "lacteos"]
+          },
+          {
+            "id": 61,
+            "name": "Extra sándwich vegetal",
+            "img": null,
+            "desc": "Extra rebanadas de molde con fina capa de mahonesa, lechuga, tomate, atún, pepinillo, huevo duro y espárragos blancos.",
+            "prices": [{ "name": "Unidad", "price": "9" }],
+            "allergens": ["gluten", "huevos", "lacteos", "pescado"]
+          },
+          {
+            "id": 62,
+            "name": "Extra sándwich mixto",
+            "img": null,
+            "desc": "Extra rebanadas de pan de molde con jamón york y queso.",
+            "prices": [{ "name": "Unidad", "price": "6,50" }],
+            "allergens": ["gluten", "huevos", "lacteos"]
+          },
+          {
+            "id": 63,
+            "name": "Don Granjero",
+            "img": null,
+            "desc": "Super bocata de pollo a la plancha con tomate. Acompañado de patatas fritas. Salsa a elegir.",
+            "prices": [{ "name": "Unidad", "price": "12" }],
+            "allergens": ["gluten", "sulfitos"]
+          },
+          {
+            "id": 64,
+            "name": "Don Pepón",
+            "img": null,
+            "desc": "Super bocata de ternera, pimientos y tomate. Acompañado con patatas fritas.",
+            "prices": [{ "name": "Unidad", "price": "13" }],
+            "allergens": ["gluten", "sulfitos"]
+          },
+          {
+            "id": 65,
+            "name": "Don Avileño",
+            "img": null,
+            "desc": "Super bocata de lomo de horza, queso y tomate. Acompañado de patatas fritas.",
+            "prices": [{ "name": "Unidad", "price": "12" }],
+            "allergens": ["gluten", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 66,
+            "name": "Super Baicon",
+            "img": null,
+            "desc": "Super bocata de baicon a la plancha con queso. Acompañado de patatas fritas.",
+            "prices": [{ "name": "Unidad", "price": "12" }],
+            "allergens": ["gluten", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 67,
+            "name": "El Españolito",
+            "img": null,
+            "desc": "Super bocata de tortilla de patatas con salsa a elegir.",
+            "prices": [{ "name": "Unidad", "price": "10" }],
+            "allergens": ["gluten", "lacteos", "huevos", "sulfitos"]
+          },
+          {
+            "id": 68,
+            "name": "Don Madrileño",
+            "img": null,
+            "desc": "Super bocata de calamares acompañado de patatas fritas. Salsa a elegir.",
+            "prices": [{ "name": "Unidad", "price": "14" }],
+            "allergens": ["gluten", "pescado", "sulfitos"]
+          },
+          {
+            "id": 69,
+            "name": "Super vegetal",
+            "img": null,
+            "desc": "Super bocata con lechuga, tomate, pepinillo, atún, huevo duro, espárragos y una suave capa de mahonesa. Acompañado de patatas fritas.",
+            "prices": [{ "name": "Unidad", "price": "12" }],
+            "allergens": ["gluten", "huevos", "pescado", "lacteos", "sulfitos"]
+          },
+          {
+            "id": 70,
+            "name": "Super Serranito",
+            "img": null,
+            "desc": "Super bocata de lomo de cerdo, jamón serrano y pimientos. Acompañado de patatas fritas.",
+            "prices": [{ "name": "Unidad", "price": "14" }],
+            "allergens": ["gluten", "sulfitos"]
+          }
+        ]
+      },
+      {
+        "title": "Mondatos <span>🥖</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 71,
+            "name": "Montado de lomo con queso",
+            "img": null,
+            "desc": "Poco más que añadir: lomo de cerdo a la plancha con queso.",
+            "prices": [{ "name": "Precio", "price": "3,50" }],
+            "allergens": ["gluten", "huevos", "lacteos"]
+          },
+          {
+            "id": 72,
+            "name": "Montado de atún con tomate",
+            "img": null,
+            "desc": "Atún en aceite con tomate natural.",
+            "prices": [{ "name": "Precio", "price": "3" }],
+            "allergens": ["gluten", "pescado"]
+          },
+          {
+            "id": 73,
+            "name": "Montado de bacon con queso",
+            "img": null,
+            "desc": "Bacon frito con queso.",
+            "prices": [{ "name": "Precio", "price": "3,50" }],
+            "allergens": ["gluten", "huevos", "lacteos"]
+          },
+          {
+            "id": 74,
+            "name": "Montado de jamón con tomate",
+            "img": null,
+            "desc": "Clásico español: jamón serrano con tomate.",
+            "prices": [{ "name": "Precio", "price": "3" }],
+            "allergens": ["gluten"]
+          },
+          {
+            "id": 75,
+            "name": "Montado de tortilla de patatas",
+            "img": null,
+            "desc": "Tortilla española de patatas, el gran clásico de la gastronomía patria.",
+            "prices": [{ "name": "Precio", "price": "3" }],
+            "allergens": ["gluten", "huevos", "lacteos"]
+          }
+        ]
+      },
+      {
+        "title": "En redondo <span>🍕</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 80,
+            "name": "Pizza margarita",
+            "img": null,
+            "desc": "Tomate, mozzarella y orégano.",
+            "prices": [{ "name": "Entera", "price": "9" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 81,
+            "name": "Pizza de jamón y queso",
+            "img": null,
+            "desc": "Tomate, mozzarella, jamón, queso y orégano.",
+            "prices": [{ "name": "Entera", "price": "10,50" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 82,
+            "name": "Pizza de atún",
+            "img": null,
+            "desc": "Tomate, mozzarella y orégano.",
+            "prices": [{ "name": "Entera", "price": "11,50" }],
+            "allergens": ["gluten", "lacteos", "pescado"]
+          },
+          {
+            "id": 83,
+            "name": "Pizza mexicana",
+            "img": null,
+            "desc": "Tomate, mozzarella, carne, pimiento rojo, pimiento verde, guindilla, cebolla, salsa picante y orégano.",
+            "prices": [{ "name": "Entera", "price": "11,50" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 84,
+            "name": "Pizza franfurt",
+            "img": null,
+            "desc": "Tomate, mozzarella, salchichas, baicon y orégano.",
+            "prices": [{ "name": "Entera", "price": "10" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 85,
+            "name": "Pizza 4 quesos",
+            "img": null,
+            "desc": "Tomate, variedad de 4 quesos y orégano.",
+            "prices": [{ "name": "Entera", "price": "11" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 86,
+            "name": "Pizza vegetariana",
+            "img": null,
+            "desc": "Tomate, mozzarella, verduras según mercado.",
+            "prices": [{ "name": "Entera", "price": "11,50" }],
+            "allergens": ["gluten", "lacteos"]
+          },
+          {
+            "id": 87,
+            "name": "Pizza barbacoa",
+            "img": null,
+            "desc": "Tomate, mozzarella, carne, pimiento rojo, pimiento verde, cebolla, salsa barbacoa y orégano.",
+            "prices": [{ "name": "Entera", "price": "11,50" }],
+            "allergens": ["gluten", "lacteos"]
+          }
+        ]
+      },
+      {
+        "title": "Cordero <span>🍖</span>",
+        "desc": "Disponibles viernes, sábados y domingos en nuestro patio interior",
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 90,
+            "name": "Pinchón egipcio",
+            "img": null,
+            "desc": "Pincho de cordero en adobo de la casa con guarnición.",
+            "prices": [{ "name": "Precio", "price": "10" }],
+            "allergens": ["sulfitos"]
+          }
+        ]
+      },
+      {
+        "title": "Ternera <span>🥩</span>",
+        "desc": "Disponibles viernes, sábados y domingos en nuestro patio interior",
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 91,
+            "name": "Chuletón de ternera a la parrilla",
+            "img": null,
+            "desc": "Chuletón de ternera acompañado con guarnición y salsas de la casa. Precio según peso.",
+            "prices": [{ "name": "Kilo", "price": "26" }],
+            "allergens": null
+          },
+          {
+            "id": 92,
+            "name": "Entrecotte de ternera a la parrilla",
+            "img": null,
+            "desc": "Entrecotte de ternera a la parrilla acompañado de guarnición y salsas de la casa.",
+            "prices": [{ "name": "Precio", "price": "20" }],
+            "allergens": null
+          },
+          {
+            "id": 93,
+            "name": "Churrasco a las finas hierbas",
+            "img": null,
+            "desc": "Churrasco a las finas hierbas acompañado de guarnición y salsas de la casa.",
+            "prices": [{ "name": "Precio", "price": "12" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Cerdo <span>🐽</span>",
+        "desc": "Disponibles viernes, sábados y domingos en nuestro patio interior",
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 94,
+            "name": "Secreto",
+            "img": null,
+            "desc": "Secreto de la dehesa extremeña a la parrilla con guarnición.",
+            "prices": [{ "name": "Kilo", "price": "13" }],
+            "allergens": null
+          },
+          {
+            "id": 95,
+            "name": "Pluma",
+            "img": null,
+            "desc": "Pluma de la dehesa extremeña a la parrilla con guarnición.",
+            "prices": [{ "name": "Precio", "price": "16,50" }],
+            "allergens": null
+          },
+          {
+            "id": 96,
+            "name": "Costillar",
+            "img": null,
+            "desc": "Delicioso costillar con salsa BBQ y acompañado con guarnición.",
+            "prices": [{ "name": "Precio", "price": "14" }],
+            "allergens": null
+          },
+          {
+            "id": 97,
+            "name": "Pincho moruno",
+            "img": null,
+            "desc": "Magro en adobo especial de La Teja con guarnición.",
+            "prices": [{ "name": "Precio", "price": "8" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Para compartir <span>👫</span>",
+        "desc": "Disponibles viernes, sábados y domingos en nuestro patio interior",
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 98,
+            "name": "Parrillada para 2 personas",
+            "img": null,
+            "desc": "Parrillada de panceta, chorizo, morcilla, ternera, pincho moruno y pollo. Acompañado de guarnición y salsas de la casa.",
+            "prices": [{ "name": "Precio", "price": "28" }],
+            "allergens": null
+          },
+          {
+            "id": 99,
+            "name": "Parrillada para 4 personas",
+            "img": null,
+            "desc": "Parrillada de panceta, chorizo, morcilla, ternera, pincho moruno, pincho egipcio, entrecotte y pollo. Acompañado de guarnición y salsas de la casa.",
+            "prices": [{ "name": "Precio", "price": "60" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Bebidas calientes <span>☕️</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 110,
+            "name": "Café",
+            "img": null,
+            "desc": "Café a tu gusto: sólo, con leche, cortado, con hielo...",
+            "prices": [{ "name": "Precio", "price": "1,35" }],
+            "allergens": null
+          },
+          {
+            "id": 111,
+            "name": "Café bombón",
+            "img": null,
+            "desc": "Clásico café endulzado con leche condensada.",
+            "prices": [{ "name": "Precio", "price": "1,80" }],
+            "allergens": null
+          },
+          {
+            "id": 112,
+            "name": "Cappuccino",
+            "img": null,
+            "desc": "Clásico café italiano preparado con café expreso y leche montada con vapor para darle cremosidad.",
+            "prices": [{ "name": "Precio", "price": "1,80" }],
+            "allergens": null
+          },
+          {
+            "id": 113,
+            "name": "Cappuccino tricolor",
+            "img": null,
+            "desc": "Café espresso sobre base de leche condensada y gran capa de leche caliente emulsionada.",
+            "prices": [{ "name": "Precio", "price": "2,20" }],
+            "allergens": null
+          },
+          {
+            "id": 114,
+            "name": "Café irlandés o vienés",
+            "img": null,
+            "desc": "<strong>café irlandés</strong>: whisky, azúcar y café cubierto de crema. <br/><strong>café vienés</strong>: café y nata montada.",
+            "prices": [{ "name": "Precio", "price": "2,20" }],
+            "allergens": null
+          },
+          {
+            "id": 115,
+            "name": "Café caramel",
+            "img": null,
+            "desc": "Café, leche y leche espumada con sabor a vainilla y caramelo",
+            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "allergens": null
+          },
+          {
+            "id": 116,
+            "name": "Café cremoso",
+            "img": null,
+            "desc": "Café con espuma de leche. El barraquito o zaperoco es una bebida dulce de café muy popular en Canarias.​​ Frecuentemente se sirve por capas, gracias a las diferentes densidades de sus ingredientes, que son, del inferior al superior, leche condensada, licor, café expreso y leche espumada.",
+            "prices": [{ "name": "Precio", "price": "4,50" }],
+            "allergens": null
+          },
+          {
+            "id": 117,
+            "name": "Barraquito",
+            "img": null,
+            "desc": "Barraquito o Zaperoco canario: leche condensada, licor, café expreso y leche espumada.",
+            "prices": [{ "name": "Precio", "price": "4,50" }],
+            "allergens": null
+          },
+          {
+            "id": 118,
+            "name": "Chocolate o Colacao",
+            "img": null,
+            "desc": "<strong>Chocolate</strong> caliente a la taza o el clásico <strong>Colacao</strong>.",
+            "prices": [{ "name": "Precio", "price": "1,70" }],
+            "allergens": null
+          },
+          {
+            "id": 120,
+            "name": "Té e infusiones varias",
+            "img": null,
+            "desc": "Té rojo - Té verde - Té negro Earl Gray - Té negro con canela - Rooibos vainilla - Frutas del pacífico - Manzanilla hierba limón - Menta poleo - Frutos rojos.",
+            "prices": [{ "name": "Precio", "price": "1,70" }],
+            "allergens": null
+          },
+          {
+            "id": 121,
+            "name": "Té matcha",
+            "img": null,
+            "desc": "Té verde en polvo antioxidante.",
+            "prices": [{ "name": "Precio", "price": "2" }],
+            "allergens": null
+          },
+          {
+            "id": 122,
+            "name": "Chai latte",
+            "img": null,
+            "desc": "Famosa mezcla de leche vaporizada con té negro previamente infusionado con especias y cubierto de espuma de leche.",
+            "prices": [{ "name": "Precio", "price": "2" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Bebidas frías <span>🥤</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Refrescos",
+            "img": null,
+            "desc": "Coca cola (normal, zero o sin cafeína) - Fanta - Sprite...",
+            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "allergens": null
+          },
+          {
+            "id": 131,
+            "name": "Nestea o Acuarius",
+            "img": null,
+            "desc": "<strong>Nestea</strong>: té frío al limón sin gas.<br /><strong>Acuarius</strong>: bebida isotónica refrescante sabor naranja o limón.",
+            "prices": [{ "name": "Precio", "price": "2,80" }],
+            "allergens": null
+          },
+          {
+            "id": 132,
+            "name": "Batidos",
+            "img": null,
+            "desc": "Preguntar por los sabores disponibles.",
+            "prices": [{ "name": "Precio", "price": "2,25" }],
+            "allergens": null
+          },
+          {
+            "id": 133,
+            "name": "Zumos / Mosto",
+            "img": null,
+            "desc": "Preguntar por los sabores disponibles.",
+            "prices": [{ "name": "Precio", "price": "2,50" }],
+            "allergens": null
+          },
+          {
+            "id": 134,
+            "name": "Zumo natural",
+            "img": null,
+            "desc": "Zumos naturales reción exprimido. <br /><small>Preguntar disponibilidad</small>.",
+            "prices": [
+              { "name": "Pequeño", "price": "3" },
+              { "name": "Grande", "price": "4" }
+            ],
+            "allergens": null
+          },
+          {
+            "id": 135,
+            "name": "Agua mineral",
+            "img": null,
+            "desc": "Botellas de agua mineral grandes o pequeñas.",
+            "prices": [
+              { "name": "Pequeña", "price": "1,30" },
+              { "name": "Grande", "price": "2,25" }
+            ],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Cerveza <span>🍺</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Caña o botellín",
+            "img": null,
+            "desc": "Cerveza de barril en vaso corto de caña o en botellín de cristal de 25 cl.",
+            "prices": [
+              { "name": "Caña", "price": "1,40" },
+              { "name": "Botellín", "price": "1,40" }
+            ],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Vino tinto <span>🍷</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Rioja de la casa",
+            "img": null,
+            "desc": "Vino tinto D.O. Rioja.",
+            "prices": [
+              { "name": "Copa", "price": "1,50" },
+              { "name": "Botella", "price": "9" }
+            ],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Vino blanco <span>🍷</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Portia",
+            "img": null,
+            "desc": "Verdejo D.O. Ribera del Duero.",
+            "prices": [
+              { "name": "Copa", "price": "3" },
+              { "name": "Botella", "price": "20" }
+            ],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Vino rosado <span>🍷</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Ribera del Duero",
+            "img": null,
+            "desc": "D.O. Ribera del Duero.",
+            "prices": [
+              { "name": "Copa", "price": "3" },
+              { "name": "Botella", "price": "20" }
+            ],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Cava y Sidra <span>🥂</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Sidra",
+            "img": null,
+            "desc": "Sidra.",
+            "prices": [{ "name": "Botella", "price": "14" }],
+            "allergens": null
+          },
+          {
+            "id": 130,
+            "name": "Cava",
+            "img": null,
+            "desc": "Cava.",
+            "prices": [{ "name": "Botella", "price": "18" }],
+            "allergens": null
+          }
+        ]
+      },
+      {
+        "title": "Combinados y licores <span>🍹</span>",
+        "desc": null,
+        "imgs": {
+          "width": 112,
+          "height": 112
+        },
+        "items": [
+          {
+            "id": 130,
+            "name": "Sidra",
+            "img": null,
+            "desc": "Sidra.",
+            "prices": [{ "name": "Botella", "price": "14" }],
+            "allergens": null
+          },
+          {
+            "id": 130,
+            "name": "Cava",
+            "img": null,
+            "desc": "Cava.",
+            "prices": [{ "name": "Botella", "price": "18" }],
+            "allergens": null
+          }
+        ]
+      }
+    ]
   }
 ]
