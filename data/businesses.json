@@ -1160,20 +1160,19 @@
     "desc": "Marisquería, arrocería, carnes a la brasa...",
     "logo": false,
     "cover": "cover",
-    "address": "Pje. de Colón, 2, 28341 Valdemoro, Madrid.",
+    "address": "Cocina a domicilio. Contátanos por Whatsapp / teléfono:",
     "place": "Valdemoro, Madrid",
-    "gmap": "fGcJ3LA1DA4ETxTd8",
     "phone": "644093470",
     "whatsapp": "34644093470",
     "schedule": {
       "days": [
-        { "day": "Lunes", "hour": "11:00 - 1:00" },
-        { "day": "Martes", "hour": "11:00 - 1:00" },
-        { "day": "Miercoles", "hour": "11:00 - 1:00" },
-        { "day": "Jueves", "hour": "Cerrado" },
-        { "day": "Viernes", "hour": "11:00 - 1:00" },
-        { "day": "Sábado", "hour": "11:00 - 1:00" },
-        { "day": "Domingo", "hour": "11:00 - 1:00" }
+        { "day": "Lunes", "hour": "12:00 - 00:00" },
+        { "day": "Martes", "hour": "12:00 - 00:00" },
+        { "day": "Miercoles", "hour": "12:00 - 00:00" },
+        { "day": "Jueves", "hour": "12:00 - 00:00" },
+        { "day": "Viernes", "hour": "12:00 - 00:00" },
+        { "day": "Sábado", "hour": "12:00 - 00:00" },
+        { "day": "Domingo", "hour": "12:00 - 00:00" }
       ]
     },
     "reviews": {
@@ -2130,7 +2129,7 @@
             "desc": "Ración de carne de pincho con patatas fritas y pimientos de Padrón.",
             "prices": [
               { "name": "Ración", "price": "18,90" },
-              { "name": "1/2 ración", "price": "14" }
+              { "name": "1/2 ración", "price": "13" }
             ],
             "allergens": ["sulfitos"]
           },
@@ -2139,9 +2138,7 @@
             "name": "Pincho moruno",
             "img": null,
             "desc": "Carne de pincho trinchada.",
-            "prices": [
-              { "name": "Unidad", "price": "13,80" }
-            ],
+            "prices": [{ "name": "Unidad", "price": "3,80" }],
             "allergens": ["sulfitos"]
           },
           {
@@ -2228,7 +2225,7 @@
             "desc": "Alitas de pollo con patatas fritas y pimientos al punto de sal.",
             "prices": [
               { "name": "Ración", "price": "12,80" },
-              { "name": "1/2 ración", "price": "8" }
+              { "name": "1/2 ración", "price": "7" }
             ],
             "allergens": ["sulfitos"]
           },
@@ -2553,7 +2550,7 @@
             "img": "vino-portocelo-rivera",
             "desc": "Vino tinto tempranillo con denominación de origen Ribera del Duero.",
             "prices": [
-              { "name": "Copa", "price": "2,30" },
+              { "name": "Copa", "price": "2,50" },
               { "name": "Botella", "price": "12" }
             ],
             "allergens": null
