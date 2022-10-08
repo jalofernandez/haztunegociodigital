@@ -84,12 +84,6 @@
         </button>
         <div class="md-inner dish info">
           <div class="details">
-            <div class="notification is-warning is-size-6">
-              Debido a las medidas especiales por la crisis del covid-19, el
-              <span class="has-text-weight-medium"
-                >horario de apertura podría variar</span
-              >.
-            </div>
             <h4 class="name has-text-centered">Horario de apertura</h4>
             <ul class="schedule-list">
               <li
@@ -222,16 +216,7 @@
             ></h4>
             <ul v-if="business.address || business.phone || business.schedule">
               <li>
-                <a
-                  v-if="business.address"
-                  class="data address"
-                  :href="`https://goo.gl/maps/${business.gmap}`"
-                  :title="`Ver dirección de ${business.name}`"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <strong>{{ business.address }}</strong>
-                </a>
+                <span>{{ business.address }}</span>
               </li>
               <li :class="business.schedule ? 'has-schedule' : null">
                 <a

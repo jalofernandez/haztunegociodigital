@@ -1,16 +1,17 @@
 <template>
   <div class="modal-wrapper">
-    <div class="md-modal has-dish" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+    <div
+      class="md-modal has-dish"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalDescription"
+    >
       <div class="md-content dish info">
         <button class="btn js-close" type="button" @click="close()">
           <small>Cerrar</small>
           <span>&times;</span>
         </button>
         <div class="details">
-          <div class="notification is-warning is-size-6">
-            Debido a las medidas especiales por la crisis del covid-19, el
-            <span class="has-text-weight-medium">horario de apertura podría variar</span>.
-          </div>
           <h4 class="name has-text-centered">Horario de apertura</h4>
           <ul class="schedule-list">
             <li class="schedule" v-for="day in data.days">
@@ -27,7 +28,7 @@
 
 <script>
 export default {
-  name: 'BaseModal',
+  name: "BaseModal",
   props: {
     data: {
       type: Object,
@@ -37,16 +38,16 @@ export default {
   },
   methods: {
     close() {
-      this.$emit('close')
+      this.$emit("close");
     },
     schedule(info) {
-      var sch = info.replace(/\s/g, '').toLowerCase()
-      if (sch !== 'cerrado') {
-        return 'abierto'
+      var sch = info.replace(/\s/g, "").toLowerCase();
+      if (sch !== "cerrado") {
+        return "abierto";
       } else {
-        return sch
+        return sch;
       }
     },
   },
-}
+};
 </script>

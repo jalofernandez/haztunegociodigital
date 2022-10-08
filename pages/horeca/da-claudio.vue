@@ -83,12 +83,6 @@
         </button>
         <div class="md-inner dish info">
           <div class="details">
-            <div class="notification is-warning is-size-6">
-              Debido a las medidas especiales por la crisis del covid-19, el
-              <span class="has-text-weight-medium"
-                >horario de apertura podría variar</span
-              >.
-            </div>
             <h4 class="name has-text-centered">Horario de apertura</h4>
             <ul class="schedule-list">
               <li
